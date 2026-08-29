@@ -143,7 +143,7 @@ export default function Reviews({
             <button
               type="button"
               onClick={() => pick(null)}
-              className={`rounded-full border px-3.5 py-1.5 text-xs transition ${
+              className={`inline-flex min-h-9 items-center rounded-full border px-3.5 py-1.5 text-xs transition ${
                 filter === null
                   ? "border-gold-400/60 bg-gold-500/12 text-gold-200"
                   : "border-mist-400/16 text-mist-300 hover:border-gold-500/40"
@@ -157,7 +157,7 @@ export default function Reviews({
                 key={tag}
                 type="button"
                 onClick={() => pick(tag === filter ? null : tag)}
-                className={`rounded-full border px-3.5 py-1.5 text-xs transition ${
+                className={`inline-flex min-h-9 items-center rounded-full border px-3.5 py-1.5 text-xs transition ${
                   filter === tag
                     ? "border-gold-400/60 bg-gold-500/12 text-gold-200"
                     : "border-mist-400/16 text-mist-300 hover:border-gold-500/40"
