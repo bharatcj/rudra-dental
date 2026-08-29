@@ -96,10 +96,15 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   verification: {
+    ...(SITE.analytics.googleSiteVerification
+      ? { google: SITE.analytics.googleSiteVerification }
+      : {}),
     other: {
       "facebook-domain-verification": SITE.analytics.facebookDomainVerification,
-      "msvalidate.01": SITE.analytics.bing,
-      "yandex-verification": SITE.analytics.yandex,
+      ...(SITE.analytics.bing ? { "msvalidate.01": SITE.analytics.bing } : {}),
+      ...(SITE.analytics.yandex
+        ? { "yandex-verification": SITE.analytics.yandex }
+        : {}),
     },
   },
   other: {

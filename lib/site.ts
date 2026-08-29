@@ -31,8 +31,9 @@ export const SITE = {
     ga4: "G-4NB7KXEQSP",
     gtm: "GTM-N3Z7NKKD",
     facebookDomainVerification: "w0njjnejxtq6lgmd9i4l0z4ekkmp8h",
-    bing: "XXXXXXXXXXX",
-    yandex: "XXXXXXXXXXX",
+    bing: process.env.NEXT_PUBLIC_BING_VERIFICATION ?? "",
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION ?? "",
+    googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION ?? "",
   },
 } as const;
 
