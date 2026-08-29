@@ -341,7 +341,7 @@ export default function BookingModal() {
                           onClick={() =>
                             setConcern(concern === item.title ? "" : item.title)
                           }
-                          className={`rounded-full border px-3.5 py-1.5 text-xs transition ${
+                          className={`min-h-9 rounded-full border px-3.5 py-1.5 text-xs transition ${
                             concern === item.title
                               ? "border-gold-500/70 bg-gold-500/12 text-gold-200"
                               : "border-mist-400/15 text-mist-300 hover:border-gold-500/35"
@@ -481,7 +481,7 @@ export default function BookingModal() {
                               setSlot(item);
                               setError("");
                             }}
-                            className={`rounded-xl border px-2 py-2.5 text-xs transition ${
+                            className={`min-h-11 rounded-xl border px-2 py-2.5 text-xs transition ${
                               slot === item
                                 ? "border-gold-500/70 bg-gold-500/15 text-gold-100"
                                 : "border-mist-400/12 text-mist-300 hover:border-gold-500/35"

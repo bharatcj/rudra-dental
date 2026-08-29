@@ -24,7 +24,7 @@ export function About() {
   const imageY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
-    <section id="about" aria-label="About Rudra Dental" className="relative py-24 lg:py-32">
+    <section id="about" aria-label="About Rudra Dental" className="relative py-16 sm:py-20 lg:py-32">
       <div className="shell">
         <div ref={ref} className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
           <motion.div style={{ y: imageY }} className="relative">
@@ -121,7 +121,7 @@ export function About() {
 
 export function Stats() {
   return (
-    <section aria-label="Rudra Dental by the numbers" className="relative py-16">
+    <section aria-label="Rudra Dental by the numbers" className="relative py-12 lg:py-16">
       <div className="shell">
         <div className="surface grain relative overflow-hidden rounded-[2rem] px-6 py-12 sm:px-12">
           <div className="absolute -top-24 left-1/3 h-64 w-64 rounded-full bg-gold-500/10 blur-3xl" />
@@ -157,10 +157,10 @@ export function Process() {
   return (
     <section
       aria-label="How treatment works at Rudra Dental"
-      className="relative py-24 lg:py-32"
+      className="relative py-16 sm:py-20 lg:py-32"
     >
       <div className="shell">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-10 max-w-2xl lg:mb-14">
           <Reveal>
             <p className="eyebrow">The Rudra Method</p>
           </Reveal>
@@ -217,7 +217,7 @@ export function Process() {
         </div>
 
         <Reveal delay={0.1}>
-          <div className="mt-16 grid gap-4 sm:grid-cols-3">
+          <div className="mt-12 grid gap-4 sm:grid-cols-3 lg:mt-16">
             {[
               {
                 icon: IconMicroscope,

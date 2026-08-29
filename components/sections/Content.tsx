@@ -22,7 +22,7 @@ export function Faq() {
     <section
       id="faq"
       aria-label="Frequently asked questions"
-      className="relative py-24 lg:py-32"
+      className="relative py-16 sm:py-20 lg:py-32"
     >
       <div className="shell grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <div>
@@ -109,9 +109,9 @@ export function Blog() {
   const { openBooking } = useBooking();
 
   return (
-    <section id="blog" aria-label="Latest blog and news" className="relative py-24 lg:py-32">
+    <section id="blog" aria-label="Latest blog and news" className="relative py-16 sm:py-20 lg:py-32">
       <div className="shell">
-        <div className="mb-14 text-center">
+        <div className="mb-10 text-center lg:mb-14">
           <Reveal>
             <p className="eyebrow">Our Blog</p>
           </Reveal>
@@ -152,7 +152,7 @@ export function Blog() {
                   <button
                     type="button"
                     onClick={() => openBooking("blog")}
-                    className="mt-6 inline-flex items-center gap-2 self-start text-xs font-semibold tracking-[0.14em] text-gold-300 uppercase transition hover:text-gold-100"
+                    className="mt-5 inline-flex min-h-11 items-center gap-2 self-start text-xs font-semibold tracking-[0.14em] text-gold-300 uppercase transition hover:text-gold-100"
                   >
                     Book appointment
                     <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
@@ -171,9 +171,9 @@ export function Cta() {
   const { openBooking } = useBooking();
 
   return (
-    <section aria-label="Book a dental appointment" className="relative py-16 lg:py-24">
+    <section aria-label="Book a dental appointment" className="relative py-12 lg:py-24">
       <div className="shell">
-        <div className="grain relative overflow-hidden rounded-[2.2rem] border border-gold-500/25 bg-gradient-to-br from-gold-500/[0.15] via-ink-800 to-ink-900 px-6 py-16 text-center sm:px-14">
+        <div className="grain relative overflow-hidden rounded-[2.2rem] border border-gold-500/25 bg-gradient-to-br from-gold-500/[0.15] via-ink-800 to-ink-900 px-6 py-12 text-center sm:px-14 sm:py-16">
           <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold-500/16 blur-3xl" />
           <div className="absolute -right-20 -bottom-24 h-64 w-64 rounded-full bg-aqua-400/10 blur-3xl" />
 

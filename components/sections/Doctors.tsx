@@ -25,10 +25,10 @@ export default function Doctors() {
     <section
       id="doctors"
       aria-label="Meet the dentists at Rudra Dental"
-      className="relative py-24 lg:py-32"
+      className="relative py-16 sm:py-20 lg:py-32"
     >
       <div className="shell">
-        <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mb-9 flex flex-col gap-6 lg:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-xl">
             <Reveal>
               <p className="eyebrow">Our Doctors</p>
@@ -119,7 +119,7 @@ export default function Doctors() {
                   <button
                     type="button"
                     onClick={() => openBooking(`doctor-${doctor.name}`)}
-                    className="mt-5 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.14em] text-gold-300 uppercase transition hover:text-gold-100"
+                    className="mt-4 inline-flex min-h-11 items-center gap-2 text-xs font-semibold tracking-[0.14em] text-gold-300 uppercase transition hover:text-gold-100"
                   >
                     Book with {doctor.name.replace("Dr. ", "")}
                     <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />

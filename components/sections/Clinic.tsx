@@ -44,10 +44,10 @@ export function Gallery() {
     <section
       id="gallery"
       aria-label="Inside the Rudra Dental clinic"
-      className="relative py-24 lg:py-32"
+      className="relative py-16 sm:py-20 lg:py-32"
     >
       <div className="shell">
-        <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mb-9 flex flex-col gap-6 lg:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-xl">
             <Reveal>
               <p className="eyebrow">The Clinic</p>
@@ -161,7 +161,7 @@ export function Gallery() {
                   height={GALLERY[active].height}
                   quality={86}
                   sizes="(max-width: 1024px) 92vw, 900px"
-                  className="max-h-[74vh] w-full object-contain"
+                  className="max-h-[62vh] w-full object-contain sm:max-h-[74vh]"
                 />
               </div>
               <div className="mt-4 flex items-center justify-between gap-4">
@@ -175,7 +175,7 @@ export function Gallery() {
                     type="button"
                     onClick={() => step(-1)}
                     aria-label="Previous photo"
-                    className="grid h-10 w-10 place-items-center rounded-full border border-gold-500/30 text-gold-200 transition hover:bg-gold-500/12"
+                    className="grid h-11 w-11 place-items-center rounded-full border border-gold-500/30 text-gold-200 transition hover:bg-gold-500/12"
                   >
                     <IconChevron className="h-4 w-4 rotate-90" />
                   </button>
@@ -183,7 +183,7 @@ export function Gallery() {
                     type="button"
                     onClick={() => step(1)}
                     aria-label="Next photo"
-                    className="grid h-10 w-10 place-items-center rounded-full border border-gold-500/30 text-gold-200 transition hover:bg-gold-500/12"
+                    className="grid h-11 w-11 place-items-center rounded-full border border-gold-500/30 text-gold-200 transition hover:bg-gold-500/12"
                   >
                     <IconChevron className="h-4 w-4 -rotate-90" />
                   </button>
@@ -191,7 +191,7 @@ export function Gallery() {
                     type="button"
                     onClick={() => setActive(null)}
                     aria-label="Close photo"
-                    className="grid h-10 w-10 place-items-center rounded-full border border-gold-500/30 text-gold-200 transition hover:bg-gold-500 hover:text-ink-950"
+                    className="grid h-11 w-11 place-items-center rounded-full border border-gold-500/30 text-gold-200 transition hover:bg-gold-500 hover:text-ink-950"
                   >
                     <IconClose className="h-4 w-4" />
                   </button>
@@ -226,7 +226,7 @@ export function Story() {
     <section
       id="story"
       aria-label="The Rudra Dental story"
-      className="relative overflow-hidden py-24 lg:py-32"
+      className="relative overflow-hidden py-16 sm:py-20 lg:py-32"
     >
       <div className="absolute inset-0 -z-10">
         <video

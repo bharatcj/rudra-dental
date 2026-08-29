@@ -9,13 +9,13 @@ const MARQUEE = STRUCTURED_SERVICES.map((item) => item.name);
 
 export function ServiceMarquee() {
   return (
-    <div className="group relative border-y border-gold-500/12 bg-ink-900/50 py-5">
+    <div className="group relative border-y border-gold-500/12 bg-ink-900/50 py-4 lg:py-5">
       <div className="mask-fade-x flex overflow-hidden">
-        <div className="anim-marquee flex shrink-0 items-center gap-10 pr-10">
+        <div className="anim-marquee flex shrink-0 items-center gap-6 pr-6 lg:gap-10 lg:pr-10">
           {[...MARQUEE, ...MARQUEE].map((item, index) => (
             <span
               key={`${item}-${index}`}
-              className="flex shrink-0 items-center gap-10 text-[0.78rem] tracking-[0.22em] whitespace-nowrap text-mist-400 uppercase"
+              className="flex shrink-0 items-center gap-6 text-[0.7rem] tracking-[0.18em] whitespace-nowrap text-mist-400 uppercase lg:gap-10 lg:text-[0.78rem] lg:tracking-[0.22em]"
             >
               {item}
               <span className="h-1 w-1 rotate-45 bg-gold-500/70" />
@@ -34,10 +34,10 @@ export default function Services() {
     <section
       id="services"
       aria-label="Dental services at Rudra Dental"
-      className="relative py-24 lg:py-32"
+      className="relative py-16 sm:py-20 lg:py-32"
     >
       <div className="shell">
-        <div className="mb-14 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mb-10 flex flex-col gap-6 lg:mb-14 lg:gap-7 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <Reveal>
               <p className="eyebrow">Our Services</p>
@@ -110,7 +110,7 @@ export default function Services() {
                   <button
                     type="button"
                     onClick={() => openBooking(service.slug)}
-                    className="relative mt-auto flex items-center gap-2 pt-6 text-[0.68rem] font-semibold tracking-[0.18em] text-gold-400 uppercase transition hover:text-gold-200"
+                    className="relative mt-auto flex min-h-11 items-center gap-2 pt-6 text-[0.68rem] font-semibold tracking-[0.18em] text-gold-400 uppercase transition hover:text-gold-200"
                   >
                     Book this treatment
                     <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />

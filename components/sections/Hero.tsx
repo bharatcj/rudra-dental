@@ -36,7 +36,7 @@ export default function Hero() {
       ref={ref}
       id="home"
       aria-label="Rudra Dental, best dental clinic in Anakaputhur Chennai"
-      className="grain relative isolate overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32"
+      className="grain relative isolate overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-24 lg:pb-32"
     >
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-10">
         <div className="absolute -top-[22%] left-[6%] h-[46rem] w-[46rem] rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.22),transparent_62%)] blur-[70px] anim-aurora" />
@@ -60,13 +60,13 @@ export default function Hero() {
       </motion.div>
 
       <motion.div style={{ y: contentY }} className="shell relative">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-gold-500/25 bg-gold-500/[0.07] py-1.5 pr-4 pl-1.5"
+              className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-gold-500/25 bg-gold-500/[0.07] py-1.5 pr-4 pl-1.5 lg:mb-7"
             >
               <span className="grid h-6 w-6 place-items-center rounded-full bg-gold-500/15">
                 <IconSparkle className="h-3.5 w-3.5 text-gold-300" />
@@ -90,7 +90,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-7 max-w-xl text-[1.05rem] leading-relaxed text-mist-300"
+              className="mt-5 max-w-xl text-[1.02rem] leading-relaxed text-mist-300 lg:mt-7 lg:text-[1.05rem]"
             >
               Root canals, implants, braces, aligners and full mouth rehabilitation
               delivered by five in-house specialists. Sterile protocols, digital
@@ -101,7 +101,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.68, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-9 flex flex-wrap items-center gap-3"
+              className="mt-7 flex flex-wrap items-center gap-2.5 lg:mt-9 lg:gap-3"
             >
               <button
                 type="button"
@@ -136,7 +136,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9, duration: 0.9 }}
-              className="mt-12 grid max-w-lg grid-cols-3 gap-4 border-t border-gold-500/12 pt-7"
+              className="mt-9 grid max-w-lg grid-cols-3 gap-4 border-t border-gold-500/12 pt-6 lg:mt-12 lg:pt-7"
             >
               {HIGHLIGHTS.map((item) => (
                 <div key={item.label}>
@@ -155,7 +155,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.35, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mx-auto aspect-square w-full max-w-[30rem]"
+            className="relative mx-auto aspect-square w-full max-w-[22rem] sm:max-w-[26rem] lg:max-w-[30rem]"
           >
             <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.2),transparent_66%)] blur-2xl" />
 
@@ -236,7 +236,7 @@ export default function Hero() {
                   right: chip.right,
                   bottom: chip.bottom,
                 }}
-                className="surface absolute rounded-full px-3.5 py-2 text-[0.7rem] font-medium whitespace-nowrap text-mist-100 shadow-[0_10px_30px_-14px_rgba(0,0,0,0.9)]"
+                className="surface absolute rounded-full px-3 py-1.5 text-[0.72rem] font-medium whitespace-nowrap text-mist-100 shadow-[0_10px_30px_-14px_rgba(0,0,0,0.9)]"
               >
                 {chip.text}
               </motion.span>
@@ -248,17 +248,22 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.05, duration: 0.8 }}
-          className="mt-16 flex flex-wrap items-center gap-x-7 gap-y-3 border-t border-gold-500/10 pt-7 text-xs text-mist-400"
+          className="mt-12 border-t border-gold-500/10 pt-6 lg:mt-16 lg:pt-7"
         >
-          <span className="flex items-center gap-2 text-gold-300">
+          <span className="flex items-center gap-2 text-xs text-gold-300">
             <IconShield className="h-4 w-4" />
             Serving
           </span>
-          {SERVICE_AREAS.map((area) => (
-            <span key={area} className="transition hover:text-gold-200">
-              {area}
-            </span>
-          ))}
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {SERVICE_AREAS.map((area) => (
+              <span
+                key={area}
+                className="rounded-full border border-gold-500/14 px-2.5 py-1 text-[0.7rem] text-mist-400 transition hover:border-gold-500/35 hover:text-gold-200"
+              >
+                {area}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </motion.div>
     </section>

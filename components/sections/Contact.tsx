@@ -48,9 +48,9 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" aria-label="Contact and find Rudra Dental" className="relative py-24 lg:py-32">
+    <section id="contact" aria-label="Contact and find Rudra Dental" className="relative py-16 sm:py-20 lg:py-32">
       <div className="shell">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-10 max-w-2xl lg:mb-14">
           <Reveal>
             <p className="eyebrow">Find Us</p>
           </Reveal>

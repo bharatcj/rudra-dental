@@ -67,12 +67,12 @@ export default function Reviews({
     <section
       id="reviews"
       aria-label="Google reviews for Rudra Dental"
-      className="relative overflow-hidden py-24 lg:py-32"
+      className="relative overflow-hidden py-16 sm:py-20 lg:py-32"
     >
       <div className="absolute inset-x-0 top-1/2 -z-10 h-[34rem] -translate-y-1/2 bg-[radial-gradient(ellipse_58%_50%_at_50%_50%,rgba(195,150,69,0.09),transparent_70%)]" />
 
       <div className="shell">
-        <div className="mb-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-14">
+        <div className="mb-9 grid gap-7 lg:mb-12 lg:gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-14">
           <div>
             <Reveal>
               <p className="eyebrow">Patient Reviews</p>
@@ -231,7 +231,7 @@ export default function Reviews({
             href={SITE.social.googleReviews}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-[0.7rem] font-semibold tracking-[0.16em] text-gold-400 uppercase transition hover:text-gold-200"
+            className="group inline-flex min-h-11 items-center gap-2 text-[0.7rem] font-semibold tracking-[0.16em] text-gold-400 uppercase transition hover:text-gold-200"
           >
             Read them all on Google
             <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
