@@ -14,8 +14,6 @@ import {
   IconSparkle,
   IconStar,
 } from "@/components/ui/Icons";
-import { LogoMark } from "@/components/ui/Logo";
-import { StatusPill } from "@/components/ui/ClinicStatus";
 
 const HIGHLIGHTS = [
   { value: "5.0", label: "Rated on Google" },
@@ -32,7 +30,6 @@ export default function Hero() {
   });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-14%"]);
-  const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
     <section
@@ -62,34 +59,20 @@ export default function Hero() {
         />
       </motion.div>
 
-      <motion.div style={{ y: contentY, opacity: fade }} className="shell relative">
+      <motion.div style={{ y: contentY }} className="shell relative">
         <div className="grid items-center gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="mb-7 flex flex-wrap items-center gap-2.5"
-            >
-              <StatusPill />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.06, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-gold-500/25 bg-gold-500/[0.07] py-1.5 pr-4 pl-1.5"
             >
               <span className="grid h-6 w-6 place-items-center rounded-full bg-gold-500/15">
                 <IconSparkle className="h-3.5 w-3.5 text-gold-300" />
               </span>
-              <span className="flex items-center gap-2 text-xs tracking-wide text-gold-200">
-                <span className="flex items-center gap-0.5">
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <IconStar key={index} className="h-3 w-3 text-gold-400" />
-                  ))}
-                </span>
-                5.0 from 275 Google reviews
+              <span className="text-xs tracking-wide text-gold-200">
+                Two years of brighter smiles in Anakaputhur
               </span>
             </motion.div>
 
@@ -174,46 +157,73 @@ export default function Hero() {
             transition={{ delay: 0.35, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
             className="relative mx-auto aspect-square w-full max-w-[30rem]"
           >
-            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.18),transparent_65%)] blur-2xl" />
+            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.2),transparent_66%)] blur-2xl" />
 
-            <div className="anim-orbit absolute inset-[3%] rounded-full border border-dashed border-gold-500/22">
-              <LogoMark
-                className="absolute top-0 left-1/2 h-5 w-4 -translate-x-1/2 -translate-y-1/2 opacity-90"
-                sizes="24px"
-              />
-              <LogoMark
-                className="absolute bottom-[8%] left-[12%] h-3.5 w-3 opacity-55"
-                sizes="18px"
-              />
-              <span className="absolute top-[22%] right-[4%] h-1 w-1 rounded-full bg-gold-300/70" />
-            </div>
-            <div className="anim-orbit-slow absolute inset-[13%] rounded-full border border-gold-500/14">
-              <LogoMark
-                className="absolute top-1/2 right-0 h-4 w-3.5 translate-x-1/2 -translate-y-1/2 opacity-70"
-                sizes="20px"
-              />
-              <span className="absolute bottom-[10%] left-[16%] h-1 w-1 rounded-full bg-aqua-400/60" />
+            <div
+              className="anim-orbit absolute inset-0 rounded-full"
+              style={{
+                background:
+                  "conic-gradient(from 0deg, transparent 0deg, rgba(195,150,69,0.05) 40deg, rgba(224,203,133,0.65) 96deg, rgba(239,227,169,0.9) 118deg, rgba(195,150,69,0.28) 150deg, transparent 210deg, transparent 360deg)",
+                mask: "radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px))",
+                WebkitMask:
+                  "radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px))",
+              }}
+            />
+            <div className="absolute inset-0 rounded-full border border-gold-500/20" />
+
+            <div className="absolute inset-[7%]">
+              {Array.from({ length: 60 }).map((_, index) => (
+                <span
+                  key={index}
+                  className="absolute top-1/2 left-1/2 origin-left"
+                  style={{ transform: `rotate(${index * 6}deg) translateX(calc(50% - 1px))` }}
+                >
+                  <span
+                    className={
+                      index % 5 === 0
+                        ? "block h-px w-2.5 bg-gold-400/70"
+                        : "block h-px w-1 bg-gold-500/25"
+                    }
+                  />
+                </span>
+              ))}
             </div>
 
-            <div className="absolute inset-[19%] overflow-hidden rounded-full border border-gold-500/25">
+            <div className="absolute inset-[13%] overflow-hidden rounded-full border border-gold-500/30 shadow-[0_30px_80px_-24px_rgba(0,0,0,0.9)]">
               <Image
                 src="/gallery/logo-wall.jpg"
                 alt="The Rudra Dental reception lounge in Anakaputhur"
                 fill
                 priority
-                quality={80}
-                sizes="(max-width: 1024px) 74vw, 420px"
-                className="object-cover"
+                quality={82}
+                sizes="(max-width: 1024px) 74vw, 460px"
+                className="scale-[1.02] object-cover"
               />
-              <span className="absolute inset-0 bg-gradient-to-t from-ink-950/74 via-ink-950/16 to-ink-950/10" />
-              <span className="absolute inset-0 rounded-full shadow-[inset_0_0_60px_18px_rgba(6,8,14,0.65)]" />
+              <span className="absolute inset-0 bg-gradient-to-t from-ink-950/72 via-transparent to-ink-950/20" />
+              <span className="absolute inset-0 rounded-full shadow-[inset_0_0_70px_22px_rgba(6,8,14,0.55)]" />
             </div>
 
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.95, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="surface absolute bottom-[3%] left-1/2 flex -translate-x-1/2 items-center gap-2.5 rounded-full px-4 py-2 whitespace-nowrap shadow-[0_16px_40px_-16px_rgba(0,0,0,0.95)]"
+            >
+              <span className="flex items-center gap-0.5">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <IconStar key={index} className="h-3 w-3 text-gold-400" />
+                ))}
+              </span>
+              <span className="text-[0.72rem] font-medium text-mist-100">5.0</span>
+              <span className="h-3 w-px bg-gold-500/30" />
+              <span className="text-[0.72rem] text-mist-400">275 reviews</span>
+            </motion.div>
+
             {[
-              { text: "Single sitting RCT", top: "6%", left: "-2%", delay: 1.0 },
-              { text: "Digital X-ray", top: "40%", right: "-6%", delay: 1.15 },
-              { text: "Clear aligners", bottom: "16%", left: "-6%", delay: 1.3 },
-              { text: "Same day emergency", bottom: "2%", right: "2%", delay: 1.45 },
+              { text: "Single sitting RCT", top: "7%", left: "-1%", delay: 1.0 },
+              { text: "Same day emergency", top: "24%", right: "-3%", delay: 1.15 },
+              { text: "Digital X-ray", top: "52%", right: "-6%", delay: 1.3 },
+              { text: "Clear aligners", bottom: "24%", left: "-5%", delay: 1.45 },
             ].map((chip) => (
               <motion.span
                 key={chip.text}
