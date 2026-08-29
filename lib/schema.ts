@@ -47,7 +47,7 @@ export const dentistSchema = {
     bestRating: 5,
     worstRating: 1,
   },
-  review: REVIEWS.map((item) => ({
+  review: REVIEWS.slice(0, 24).map((item) => ({
     "@type": "Review",
     author: { "@type": "Person", name: item.author },
     reviewRating: {

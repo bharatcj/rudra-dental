@@ -77,14 +77,14 @@ The clinic management SPA at `/app` and its PHP API at `/backend` still run on t
 
 ## Google reviews
 
-The reviews section renders the twelve reviews in `lib/site.ts` by default. Setting `GOOGLE_PLACES_API_KEY` switches it to the live Google feed with a daily revalidate, and the checked in reviews stay as the fallback for any failure or empty response.
+The reviews section renders the 116 written reviews in `lib/googleReviews.ts` by default, transcribed from the Rudra Dental Google Business Profile. The remaining reviews of the 275 total are star ratings with no text, so there is nothing to display for them. Setting `GOOGLE_PLACES_API_KEY` switches it to the live Google feed with a daily revalidate, and the checked in reviews stay as the fallback for any failure or empty response.
 
 ```bash
 GOOGLE_PLACES_API_KEY=your_key
 GOOGLE_PLACE_ID=ChIJXzibfZpfUjoRWuSi32qhkHM
 ```
 
-Create the key in Google Cloud, enable the Places API (New), and restrict it to that API. The Place Details endpoint returns the five reviews Google exposes publicly along with the live rating and total count, so `lib/reviews.ts` tops the list up from the static set to keep twelve cards. Returning every review needs the Google Business Profile API instead, which requires OAuth as the profile owner.
+Create the key in Google Cloud, enable the Places API (New), and restrict it to that API. The Place Details endpoint returns the five reviews Google exposes publicly along with the live rating and total count, so `lib/reviews.ts` tops the list up from the transcribed set. Returning every review needs the Google Business Profile API instead, which requires OAuth as the profile owner.
 
 ## Booking flow
 
