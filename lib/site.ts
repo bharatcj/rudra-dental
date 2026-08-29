@@ -291,68 +291,98 @@ export const STATS = [
 export { REVIEWS, REVIEW_TOPICS } from "./googleReviews";
 export type { Review } from "./googleReviews";
 
-export type GalleryItem = { src: string; alt: string; caption: string };
+export type GalleryItem = {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+};
 
 export const GALLERY: GalleryItem[] = [
   {
     src: "/gallery/logo-wall.jpg",
     alt: "The gold Rudra Dental mark in the reception lounge",
     caption: "Reception lounge",
+    width: 1500,
+    height: 1187,
   },
   {
     src: "/gallery/reception.jpg",
     alt: "Reception and waiting lounge at Rudra Dental Anakaputhur",
     caption: "Front of house",
+    width: 1500,
+    height: 908,
   },
   {
     src: "/gallery/operatory.jpg",
     alt: "Fully equipped dental operatory with a modern chair unit",
     caption: "Operatory one",
+    width: 1500,
+    height: 1000,
   },
   {
     src: "/gallery/exterior-night.jpg",
     alt: "Rudra Dental clinic frontage lit at night in Anakaputhur",
     caption: "Open until 9pm",
+    width: 1125,
+    height: 1500,
   },
   {
     src: "/gallery/front-desk.jpg",
     alt: "Front desk at Rudra Dental",
     caption: "Front desk",
+    width: 844,
+    height: 1500,
   },
   {
     src: "/gallery/corridor.jpg",
     alt: "Treatment corridor with operatory rooms",
     caption: "Treatment wing",
+    width: 720,
+    height: 1280,
   },
   {
     src: "/gallery/operatory-two.jpg",
     alt: "Second operatory with dental chair and equipment",
     caption: "Operatory two",
+    width: 1170,
+    height: 613,
   },
   {
     src: "/gallery/waiting-lounge.jpg",
     alt: "Patient waiting lounge with seating",
     caption: "Waiting lounge",
+    width: 1500,
+    height: 1130,
   },
   {
     src: "/gallery/exterior-day.jpg",
     alt: "Rudra Dental street frontage on Kamaraj Street, Anakaputhur",
     caption: "Kamaraj Street",
+    width: 652,
+    height: 984,
   },
   {
     src: "/gallery/logo-panel.jpg",
     alt: "Rudra Dental signage panel inside the clinic",
     caption: "Signage",
+    width: 720,
+    height: 1280,
   },
   {
     src: "/gallery/waiting-logo.jpg",
     alt: "Waiting area facing the Rudra Dental logo wall",
     caption: "Waiting area",
+    width: 1079,
+    height: 566,
   },
   {
     src: "/gallery/consult-corridor.jpg",
     alt: "Corridor leading to the consultation rooms",
     caption: "Consult rooms",
+    width: 1500,
+    height: 846,
   },
 ];
 
@@ -383,7 +413,16 @@ export const FAQS = [
   },
 ];
 
-export const ARTICLES = [
+export type Article = {
+  title: string;
+  date: string;
+  dateDisplay: string;
+  excerpt: string;
+  tag: string;
+  image: string;
+};
+
+export const ARTICLES: Article[] = [
   {
     title: "Brushing and Flossing Techniques",
     date: "2024-08-12",
@@ -391,6 +430,7 @@ export const ARTICLES = [
     excerpt:
       "Brush your teeth at least twice a day using a soft-bristle toothbrush. The angle matters more than the pressure, and flossing reaches the 40 percent of tooth surface a brush never touches.",
     tag: "Prevention",
+    image: "/blog/brushing-and-flossing.jpg",
   },
   {
     title: "The Power of Proper Nutrition",
@@ -399,6 +439,7 @@ export const ARTICLES = [
     excerpt:
       "A healthy diet plays a significant role in maintaining your dental health. Frequency of sugar exposure damages enamel far more than the total quantity you consume in a day.",
     tag: "Lifestyle",
+    image: "/blog/proper-nutrition.jpg",
   },
   {
     title: "Regular Dental Check-ups",
@@ -407,6 +448,7 @@ export const ARTICLES = [
     excerpt:
       "Do not underestimate the importance of routine dental visits. Most cavities and gum problems are painless until they become expensive, and a six month recall catches them early.",
     tag: "Checkups",
+    image: "/blog/regular-checkups.jpg",
   },
 ];
 

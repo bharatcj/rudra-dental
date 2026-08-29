@@ -214,6 +214,7 @@ export const blogSchema = {
   blogPost: ARTICLES.map((article) => ({
     "@type": "BlogPosting",
     headline: article.title,
+    image: `${SITE.url}${article.image}`,
     datePublished: article.date,
     description: article.excerpt,
     author: { "@type": "Organization", name: SITE.name },

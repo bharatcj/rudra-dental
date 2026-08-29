@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { FAQS, ARTICLES, SITE } from "@/lib/site";
@@ -125,13 +126,17 @@ export function Blog() {
           {ARTICLES.map((article) => (
             <StaggerItem key={article.title}>
               <article className="group surface grain flex h-full flex-col overflow-hidden rounded-3xl transition duration-500 hover:border-gold-500/35">
-                <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-gradient-to-br from-ink-700 via-ink-800 to-ink-900">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(212,175,55,0.16),transparent_65%)] transition duration-700 group-hover:scale-125" />
-                  <LogoMark className="relative h-24 w-20 opacity-75 transition duration-700 group-hover:scale-110 group-hover:opacity-100" sizes="96px" />
-                  <span className="absolute top-4 left-4 rounded-full border border-gold-500/25 bg-ink-900/70 px-3 py-1 text-[0.65rem] tracking-[0.14em] text-gold-300 uppercase backdrop-blur">
-                    {article.tag}
-                  </span>
-                  <span className="absolute right-4 bottom-4 flex items-center gap-1.5 rounded-full bg-ink-900/75 px-3 py-1 text-[0.68rem] text-mist-300 backdrop-blur">
+                <div className="relative aspect-[16/10] overflow-hidden bg-ink-900">
+                  <Image
+                    src={article.image}
+                    alt={`${article.title}, an article from Rudra Dental`}
+                    fill
+                    quality={82}
+                    sizes="(max-width: 768px) 92vw, 400px"
+                    className="object-cover transition duration-700 group-hover:scale-[1.05]"
+                  />
+                  <span className="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+                  <span className="absolute right-4 bottom-4 flex items-center gap-1.5 rounded-full border border-gold-500/22 bg-ink-950/80 px-3 py-1 text-[0.68rem] text-mist-300 backdrop-blur">
                     <IconCalendar className="h-3 w-3" />
                     <time dateTime={article.date}>{article.dateDisplay}</time>
                   </span>
