@@ -75,6 +75,17 @@ The legacy structured data declared `@context: https://schema.com`, which is not
 
 The clinic management SPA at `/app` and its PHP API at `/backend` still run on the original cPanel host. `next.config.ts` rewrites those paths to `LEGACY_ORIGIN` so both keep working on the same domain after the DNS cutover. Set `LEGACY_ORIGIN` as an environment variable to point at a different origin.
 
+## Google reviews
+
+The reviews section renders the twelve reviews in `lib/site.ts` by default. Setting `GOOGLE_PLACES_API_KEY` switches it to the live Google feed with a daily revalidate, and the checked in reviews stay as the fallback for any failure or empty response.
+
+```bash
+GOOGLE_PLACES_API_KEY=your_key
+GOOGLE_PLACE_ID=ChIJXzibfZpfUjoRWuSi32qhkHM
+```
+
+Create the key in Google Cloud, enable the Places API (New), and restrict it to that API. The Place Details endpoint returns the five reviews Google exposes publicly along with the live rating and total count, so `lib/reviews.ts` tops the list up from the static set to keep twelve cards. Returning every review needs the Google Business Profile API instead, which requires OAuth as the profile owner.
+
 ## Booking flow
 
 The appointment modal collects dentist, treatment, date and time, then hands off to WhatsApp with a prefilled message. Business rules match the legacy behaviour: minimum 12 hours notice, maximum 30 days ahead, slots between 09:00 and 21:00. Booking interactions push `booking_modal_open` and `appointment_request` events to the GTM data layer.

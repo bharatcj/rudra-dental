@@ -2,7 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { REVIEWS, REVIEW_TOPICS, SITE } from "@/lib/site";
+import { REVIEWS, REVIEW_TOPICS, SITE, type Review } from "@/lib/site";
 import { Reveal, Counter } from "@/components/ui/Motion";
 import { IconArrow, IconChevron, IconQuote, IconStar } from "@/components/ui/Icons";
 
@@ -30,16 +30,27 @@ function Stars({ value, className }: { value: number; className?: string }) {
   );
 }
 
-export default function Reviews() {
+export default function Reviews({
+  reviews = REVIEWS,
+  rating = SITE.rating.value,
+  count = SITE.rating.count,
+}: {
+  reviews?: Review[];
+  rating?: number;
+  count?: number;
+}) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [filter, setFilter] = useState<string | null>(null);
 
   const shown = useMemo(
-    () => (filter ? REVIEWS.filter((r) => r.tag === filter) : REVIEWS),
-    [filter],
+    () => (filter ? reviews.filter((r) => r.tag === filter) : reviews),
+    [filter, reviews],
   );
 
-  const tags = useMemo(() => Array.from(new Set(REVIEWS.map((r) => r.tag))), []);
+  const tags = useMemo(
+    () => Array.from(new Set(reviews.map((r) => r.tag))),
+    [reviews],
+  );
 
   const scrollBy = (direction: 1 | -1) => {
     const track = trackRef.current;
@@ -64,8 +75,11 @@ export default function Reviews() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl">
-                Rated <span className="text-gold-sheen anim-sheen">5.0</span> by
-                Anakaputhur
+                Rated{" "}
+                <span className="text-gold-sheen anim-sheen">
+                  {rating.toFixed(1)}
+                </span>{" "}
+                by Anakaputhur
               </h2>
             </Reveal>
 
@@ -74,11 +88,11 @@ export default function Reviews() {
                 <div className="flex items-end gap-5">
                   <div>
                     <p className="display text-6xl leading-none text-gold-sheen">
-                      {SITE.rating.value.toFixed(1)}
+                      {rating.toFixed(1)}
                     </p>
                     <Stars value={5} className="mt-2" />
                     <p className="mt-2 text-xs text-mist-400">
-                      <Counter to={SITE.rating.count} /> Google reviews
+                      <Counter to={count} /> Google reviews
                     </p>
                   </div>
 

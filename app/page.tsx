@@ -17,8 +17,11 @@ import { Blog, Cta, Faq } from "@/components/sections/Content";
 import { Gallery, Story } from "@/components/sections/Clinic";
 import Reviews from "@/components/sections/Reviews";
 import Contact from "@/components/sections/Contact";
+import { getReviewFeed } from "@/lib/reviews";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const feed = await getReviewFeed();
+
   return (
     <BookingProvider>
       <Preloader />
@@ -35,7 +38,7 @@ export default function HomePage() {
         <Gallery />
         <Process />
         <Doctors />
-        <Reviews />
+        <Reviews reviews={feed.reviews} rating={feed.rating} count={feed.count} />
         <Faq />
         <Blog />
         <Cta />
