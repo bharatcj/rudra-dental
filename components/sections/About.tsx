@@ -200,7 +200,7 @@ export function Process() {
                   className={`absolute top-1 left-0 grid h-12 w-12 place-items-center rounded-full border border-gold-500/30 bg-ink-800 font-[family-name:var(--font-mark)] text-sm font-semibold text-gold-300 lg:top-0 ${
                     index % 2 === 0
                       ? "lg:right-0 lg:left-auto lg:translate-x-1/2"
-                      : "lg:-left-6 lg:-translate-x-1/2"
+                      : "lg:left-0 lg:-translate-x-1/2"
                   }`}
                 >
                   {item.step}

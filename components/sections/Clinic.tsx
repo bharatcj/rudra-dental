@@ -78,7 +78,7 @@ export function Gallery() {
           </Reveal>
         </div>
 
-        <div className="columns-2 gap-3 lg:columns-3 [&>*]:mb-3">
+        <div className="columns-2 gap-3 lg:columns-3 xl:columns-4 [&>*]:mb-3">
           {GALLERY.map((item, index) => (
             <motion.button
               key={item.src}
@@ -101,7 +101,7 @@ export function Gallery() {
                 width={item.width}
                 height={item.height}
                 quality={78}
-                sizes="(max-width: 640px) 46vw, (max-width: 1024px) 44vw, 400px"
+                sizes="(max-width: 640px) 46vw, (max-width: 1024px) 44vw, (max-width: 1280px) 400px, 310px"
                 className="w-full transition duration-700 group-hover:scale-[1.05]"
               />
 

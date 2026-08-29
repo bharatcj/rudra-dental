@@ -69,17 +69,17 @@ export default function Doctors() {
         </div>
       </div>
 
-      <div
-        ref={trackRef}
-        className="scroll-x flex snap-x snap-mandatory gap-5 overflow-x-auto px-[var(--gutter)] pb-4"
-        onScroll={(event) => {
-          const track = event.currentTarget;
-          const card = track.querySelector("[data-doctor-card]") as HTMLElement | null;
-          const width = card ? card.offsetWidth + 20 : 340;
-          setActiveIndex(Math.round(track.scrollLeft / width));
-        }}
-      >
-        <div className="hidden shrink-0 lg:block lg:w-[calc((100vw-var(--shell))/2-var(--gutter))]" />
+      <div className="shell">
+        <div
+          ref={trackRef}
+          className="scroll-x -mr-[var(--gutter)] flex snap-x snap-proximity gap-5 overflow-x-auto pr-[var(--gutter)] pb-4"
+          onScroll={(event) => {
+            const track = event.currentTarget;
+            const card = track.querySelector("[data-doctor-card]") as HTMLElement | null;
+            const width = card ? card.offsetWidth + 20 : 340;
+            setActiveIndex(Math.round(track.scrollLeft / width));
+          }}
+        >
         {DOCTORS.map((doctor, index) => (
           <motion.div
             key={doctor.name}
@@ -129,7 +129,7 @@ export default function Doctors() {
             </Tilt>
           </motion.div>
         ))}
-        <div className="w-[var(--gutter)] shrink-0" />
+        </div>
       </div>
 
       <div className="shell mt-6 flex justify-center gap-1.5">

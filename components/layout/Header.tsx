@@ -69,14 +69,14 @@ export default function Header() {
           <div className="flex items-center gap-6 text-mist-300">
             <a
               href={`mailto:${SITE.email}`}
-              className="flex items-center gap-2 transition hover:text-gold-300"
+              className="flex items-center gap-2 py-2 transition hover:text-gold-300"
             >
               <IconMail className="h-3.5 w-3.5" />
               {SITE.email}
             </a>
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 transition hover:text-gold-300"
+              className="flex items-center gap-2 py-2 transition hover:text-gold-300"
             >
               <IconPhone className="h-3.5 w-3.5" />
               {SITE.phoneDisplay}
@@ -89,7 +89,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Rudra Dental on Facebook"
-              className="text-mist-400 transition hover:text-gold-300"
+              className="p-2 text-mist-400 transition hover:text-gold-300"
             >
               <IconFacebook className="h-4 w-4" />
             </a>
@@ -98,7 +98,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Rudra Dental on Instagram"
-              className="text-mist-400 transition hover:text-gold-300"
+              className="p-2 text-mist-400 transition hover:text-gold-300"
             >
               <IconInstagram className="h-4 w-4" />
             </a>
@@ -107,7 +107,7 @@ export default function Header() {
               href={`https://wa.me/${SITE.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-mist-400 transition hover:text-gold-300"
+              className="flex items-center gap-1.5 py-2 text-mist-400 transition hover:text-gold-300"
             >
               <IconWhatsapp className="h-4 w-4" />
               WhatsApp

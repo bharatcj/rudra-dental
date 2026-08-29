@@ -122,7 +122,7 @@ export function Blog() {
           </Reveal>
         </div>
 
-        <Stagger className="grid gap-5 md:grid-cols-3">
+        <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {ARTICLES.map((article) => (
             <StaggerItem key={article.title}>
               <article className="group surface grain flex h-full flex-col overflow-hidden rounded-3xl transition duration-500 hover:border-gold-500/35">
