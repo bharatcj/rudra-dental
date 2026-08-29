@@ -1,0 +1,20 @@
+import type { MetadataRoute } from "next";
+import { SITE } from "@/lib/site";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date();
+  return [
+    {
+      url: SITE.canonical,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: `${SITE.url}/privacy-policy`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+  ];
+}
