@@ -97,7 +97,8 @@ export default function Doctors() {
                     src={doctor.image}
                     alt={`${doctor.name}, ${doctor.role} at Rudra Dental`}
                     fill
-                    sizes="(max-width: 640px) 76vw, 19rem"
+                    quality={82}
+                    sizes="(max-width: 640px) 78vw, 320px"
                     className="object-cover object-top transition duration-700 group-hover:scale-[1.04]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/25 to-transparent" />

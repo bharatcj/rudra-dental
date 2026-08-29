@@ -35,8 +35,9 @@ export function About() {
                 alt="Rudra Dental clinic care illustration"
                 width={820}
                 height={934}
+                quality={82}
                 className="relative w-full object-cover"
-                sizes="(max-width: 1024px) 100vw, 46vw"
+                sizes="(max-width: 1024px) 92vw, 620px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink-900/70 via-transparent to-transparent" />
             </div>
