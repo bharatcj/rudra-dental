@@ -13,14 +13,14 @@ export const SITE = {
   clinicPortal: "/app/",
   established: 2023,
   address: {
-    street: "India T.N. PIN 600070",
+    street: "Anakaputhur",
     locality: "Chennai",
     region: "Tamil Nadu",
     postalCode: "600070",
     country: "IN",
     display: "Anakaputhur, Chennai, Tamil Nadu 600070",
   },
-  geo: { latitude: 13.0827, longitude: 80.2707 },
+  geo: { latitude: 12.9821704, longitude: 80.1293464 },
   hours: { opens: "09:00", closes: "22:00", display: "Monday to Sunday, 9:00 AM to 9:00 PM" },
   social: {
     facebook: "https://www.facebook.com/people/Rudra-Dental/61565090079593/",
