@@ -53,7 +53,7 @@ export function Gallery() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
-                Step <span className="text-gold-sheen anim-sheen">inside</span>
+                Step <span className="text-gold-sheen">inside</span>
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
@@ -114,7 +114,7 @@ export function Gallery() {
               </span>
 
               <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-4">
-                <span className="translate-y-1 text-left text-[0.74rem] font-medium tracking-wide text-mist-100 transition duration-500 group-hover:translate-y-0">
+                <span className="translate-y-1 text-left text-[0.78rem] font-medium tracking-wide text-mist-100 transition duration-500 group-hover:translate-y-0">
                   {item.caption}
                 </span>
                 <span className="grid h-7 w-7 shrink-0 translate-y-2 place-items-center rounded-full border border-gold-400/50 bg-ink-950/70 text-gold-300 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
@@ -279,10 +279,10 @@ export function Story() {
               </div>
 
               <div className="mt-4 flex items-center justify-between px-2">
-                <span className="text-[0.7rem] tracking-[0.2em] text-mist-400 uppercase">
+                <span className="text-[0.75rem] tracking-[0.2em] text-mist-400 uppercase">
                   Launch film
                 </span>
-                <span className="text-[0.7rem] tracking-[0.2em] text-gold-400 uppercase">
+                <span className="text-[0.75rem] tracking-[0.2em] text-gold-400 uppercase">
                   Anakaputhur, 2023
                 </span>
               </div>
@@ -301,7 +301,7 @@ export function Story() {
             <Reveal delay={0.08}>
               <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.3rem]">
                 Two years of{" "}
-                <span className="text-gold-sheen anim-sheen">brighter smiles</span>
+                <span className="text-gold-sheen">brighter smiles</span>
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
@@ -327,8 +327,7 @@ export function Story() {
                   onClick={() => openBooking("story")}
                   className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-gold-sheen px-7 py-3.5 text-sm font-semibold text-ink-950 transition hover:shadow-[0_16px_44px_-12px_rgba(195,150,69,0.75)]"
                 >
-                  <span className="shimmer-line" />
-                  <span className="relative">Book your visit</span>
+                                    <span className="relative">Book your visit</span>
                   <IconArrow className="relative h-4 w-4 transition group-hover:translate-x-1" />
                 </button>
                 <a

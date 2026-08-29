@@ -259,7 +259,7 @@ export default function BookingModal() {
               {steps.map((label, index) => (
                 <div key={label} className="flex flex-1 items-center gap-2">
                   <div
-                    className={`flex items-center gap-2 text-[0.7rem] tracking-[0.18em] uppercase transition ${
+                    className={`flex items-center gap-2 text-[0.75rem] tracking-[0.18em] uppercase transition ${
                       index <= step ? "text-gold-300" : "text-mist-400/60"
                     }`}
                   >

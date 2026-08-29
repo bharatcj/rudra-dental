@@ -8,7 +8,7 @@ export default function NotFound() {
     <div className="relative grid min-h-screen place-items-center overflow-hidden px-6 text-center">
       <div className="absolute top-1/4 left-1/2 -z-10 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-gold-500/10 blur-3xl" />
       <div>
-        <LogoMark className="anim-float mx-auto h-20 w-16" sizes="80px" />
+        <LogoMark className="mx-auto h-20 w-16" sizes="80px" />
         <p className="eyebrow mt-8">Page not found</p>
         <h1 className="display mt-4 text-5xl text-mist-50 sm:text-7xl">
           <span className="text-gold-sheen">404</span>

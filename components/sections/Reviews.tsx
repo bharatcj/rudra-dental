@@ -80,7 +80,7 @@ export default function Reviews({
             <Reveal delay={0.08}>
               <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.3rem]">
                 Rated{" "}
-                <span className="text-gold-sheen anim-sheen">{rating.toFixed(1)}</span>{" "}
+                <span className="text-gold-sheen">{rating.toFixed(1)}</span>{" "}
                 by Anakaputhur
               </h2>
             </Reveal>
@@ -128,7 +128,7 @@ export default function Reviews({
                   href={SITE.social.googleReviews}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group hidden shrink-0 items-center gap-2 self-center rounded-full border border-gold-500/30 px-5 py-3 text-[0.7rem] font-semibold tracking-[0.14em] text-gold-300 uppercase transition hover:bg-gold-500/10 sm:inline-flex"
+                  className="group hidden shrink-0 items-center gap-2 self-center rounded-full border border-gold-500/30 px-5 py-3 text-[0.75rem] font-semibold tracking-[0.14em] text-gold-300 uppercase transition hover:bg-gold-500/10 sm:inline-flex"
                 >
                   On Google
                   <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
@@ -197,7 +197,7 @@ export default function Reviews({
                   <span className="block truncate text-sm font-medium text-mist-50">
                     {review.author}
                   </span>
-                  <span className="block truncate text-[0.7rem] text-mist-400">
+                  <span className="block truncate text-[0.75rem] text-mist-400">
                     {review.meta} <span className="text-mist-500">|</span> {review.when}
                   </span>
                 </span>
@@ -231,7 +231,7 @@ export default function Reviews({
             href={SITE.social.googleReviews}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex min-h-11 items-center gap-2 text-[0.7rem] font-semibold tracking-[0.16em] text-gold-400 uppercase transition hover:text-gold-200"
+            className="group inline-flex min-h-11 items-center gap-2 text-[0.75rem] font-semibold tracking-[0.16em] text-gold-400 uppercase transition hover:text-gold-200"
           >
             Read them all on Google
             <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />

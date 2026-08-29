@@ -54,8 +54,8 @@ export function About() {
                   <IconShield className="h-5 w-5" />
                 </span>
                 <div>
-                  <p className="display text-xl text-gold-sheen anim-sheen">100%</p>
-                  <p className="text-[0.7rem] text-mist-400">Sterile protocols</p>
+                  <p className="display text-xl text-gold-sheen">100%</p>
+                  <p className="text-[0.75rem] text-mist-400">Sterile protocols</p>
                 </div>
               </div>
             </motion.div>
@@ -70,7 +70,7 @@ export function About() {
             <Reveal delay={0.08}>
               <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
                 We care for your{" "}
-                <span className="text-gold-sheen anim-sheen">dental health</span>
+                <span className="text-gold-sheen">dental health</span>
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
@@ -131,7 +131,7 @@ export function Stats() {
                 {index > 0 ? (
                   <span className="absolute top-1/2 -left-4 hidden h-12 w-px -translate-y-1/2 bg-gradient-to-b from-transparent via-gold-500/25 to-transparent lg:block" />
                 ) : null}
-                <p className="display text-4xl text-gold-sheen anim-sheen sm:text-5xl">
+                <p className="display text-4xl text-gold-sheen sm:text-5xl">
                   <Counter to={stat.value} suffix={stat.suffix} />
                 </p>
                 <p className="mt-2 text-xs tracking-[0.18em] text-mist-400 uppercase">
@@ -166,7 +166,7 @@ export function Process() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
-              Five steps, <span className="text-gold-sheen anim-sheen">zero surprises</span>
+              Five steps, <span className="text-gold-sheen">zero surprises</span>
             </h2>
           </Reveal>
           <Reveal delay={0.14}>

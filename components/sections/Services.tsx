@@ -15,7 +15,7 @@ export function ServiceMarquee() {
           {[...MARQUEE, ...MARQUEE].map((item, index) => (
             <span
               key={`${item}-${index}`}
-              className="flex shrink-0 items-center gap-6 text-[0.7rem] tracking-[0.18em] whitespace-nowrap text-mist-400 uppercase lg:gap-10 lg:text-[0.78rem] lg:tracking-[0.22em]"
+              className="flex shrink-0 items-center gap-6 text-[0.75rem] tracking-[0.18em] whitespace-nowrap text-mist-400 uppercase lg:gap-10 lg:text-[0.78rem] lg:tracking-[0.22em]"
             >
               {item}
               <span className="h-1 w-1 rotate-45 bg-gold-500/70" />
@@ -44,7 +44,7 @@ export default function Services() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
-                What we <span className="text-gold-sheen anim-sheen">provide</span>
+                What we <span className="text-gold-sheen">provide</span>
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
@@ -72,7 +72,7 @@ export default function Services() {
             const Icon = SERVICE_ICONS[service.icon];
             return (
               <StaggerItem key={service.slug} className="h-full">
-                <Spotlight className="surface grain group relative flex h-full flex-col overflow-hidden rounded-3xl p-7 transition duration-500 hover:border-gold-500/40">
+                <Spotlight className="surface grain group relative flex h-full flex-col overflow-hidden rounded-3xl p-6 transition duration-500 sm:p-7 hover:border-gold-500/40">
                   <span
                     className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     style={{
@@ -110,7 +110,7 @@ export default function Services() {
                   <button
                     type="button"
                     onClick={() => openBooking(service.slug)}
-                    className="relative mt-auto flex min-h-11 items-center gap-2 pt-6 text-[0.68rem] font-semibold tracking-[0.18em] text-gold-400 uppercase transition hover:text-gold-200"
+                    className="relative mt-auto flex min-h-11 items-center gap-2 pt-6 text-[0.72rem] font-semibold tracking-[0.18em] text-gold-400 uppercase transition hover:text-gold-200"
                   >
                     Book this treatment
                     <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
@@ -142,7 +142,7 @@ export default function Services() {
                 {STRUCTURED_SERVICES.slice(3).map((item) => (
                   <span
                     key={item.name}
-                    className="rounded-full border border-gold-500/22 bg-ink-950/45 px-3.5 py-1.5 text-[0.72rem] text-mist-300 transition hover:border-gold-400/50 hover:text-gold-200"
+                    className="rounded-full border border-gold-500/22 bg-ink-950/45 px-3.5 py-1.5 text-[0.78rem] text-mist-300 transition hover:border-gold-400/50 hover:text-gold-200"
                   >
                     {item.name}
                   </span>

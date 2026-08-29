@@ -72,7 +72,7 @@ export default function BrandLogo({
     <span className={`flex items-center gap-3 ${className ?? ""}`}>
       <LogoMark className={markClassName} priority={priority} sizes="64px" />
       <span className="leading-none">
-        <span className="block font-[family-name:var(--font-mark)] text-[1.02rem] font-bold tracking-[0.2em] text-gold-sheen anim-sheen">
+        <span className="block font-[family-name:var(--font-mark)] text-[1.02rem] font-bold tracking-[0.2em] text-gold-sheen">
           RUDRA
         </span>
         <span className="mt-1 block text-[0.58rem] font-medium tracking-[0.46em] text-mist-400 uppercase">

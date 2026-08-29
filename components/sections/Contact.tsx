@@ -56,7 +56,7 @@ export default function Contact() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
-              Come see us in <span className="text-gold-sheen anim-sheen">Anakaputhur</span>
+              Come see us in <span className="text-gold-sheen">Anakaputhur</span>
             </h2>
           </Reveal>
           <Reveal delay={0.14}>

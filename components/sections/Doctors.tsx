@@ -35,7 +35,7 @@ export default function Doctors() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
-                Best <span className="text-gold-sheen anim-sheen">expert dentists</span>
+                Best <span className="text-gold-sheen">expert dentists</span>
               </h2>
             </Reveal>
             <Reveal delay={0.14}>

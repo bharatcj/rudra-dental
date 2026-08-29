@@ -31,7 +31,7 @@ export function Faq() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl">
-              Answers before you <span className="text-gold-sheen anim-sheen">sit down</span>
+              Answers before you <span className="text-gold-sheen">sit down</span>
             </h2>
           </Reveal>
           <Reveal delay={0.14}>
@@ -117,7 +117,7 @@ export function Blog() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
-              Latest blog <span className="text-gold-sheen anim-sheen">and news</span>
+              Latest blog <span className="text-gold-sheen">and news</span>
             </h2>
           </Reveal>
         </div>
@@ -136,7 +136,7 @@ export function Blog() {
                     className="object-cover transition duration-700 group-hover:scale-[1.05]"
                   />
                   <span className="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
-                  <span className="absolute right-4 bottom-4 flex items-center gap-1.5 rounded-full border border-gold-500/22 bg-ink-950/80 px-3 py-1 text-[0.68rem] text-mist-300 backdrop-blur">
+                  <span className="absolute right-4 bottom-4 flex items-center gap-1.5 rounded-full border border-gold-500/22 bg-ink-950/80 px-3 py-1 text-[0.72rem] text-mist-300 backdrop-blur">
                     <IconCalendar className="h-3 w-3" />
                     <time dateTime={article.date}>{article.dateDisplay}</time>
                   </span>
@@ -178,7 +178,7 @@ export function Cta() {
           <div className="absolute -right-20 -bottom-24 h-64 w-64 rounded-full bg-aqua-400/10 blur-3xl" />
 
           <Reveal>
-            <LogoMark className="anim-float mx-auto h-16 w-14" sizes="72px" />
+            <LogoMark className="mx-auto h-16 w-14" sizes="72px" />
           </Reveal>
           <Reveal delay={0.08}>
             <p className="eyebrow mt-6">Book Dental Appointment</p>
@@ -186,7 +186,7 @@ export function Cta() {
           <Reveal delay={0.14}>
             <h2 className="display mx-auto mt-4 max-w-3xl text-4xl text-mist-50 sm:text-5xl lg:text-[3.6rem]">
               We are open and{" "}
-              <span className="text-gold-sheen anim-sheen">welcoming patients</span>
+              <span className="text-gold-sheen">welcoming patients</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
@@ -202,8 +202,7 @@ export function Cta() {
                 onClick={() => openBooking("cta")}
                 className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-gold-sheen px-8 py-4 text-sm font-semibold text-ink-950 transition hover:shadow-[0_16px_44px_-12px_rgba(195,150,69,0.85)]"
               >
-                <span className="shimmer-line" />
-                <span className="relative">Book appointment</span>
+                                <span className="relative">Book appointment</span>
                 <IconArrow className="relative h-4 w-4 transition group-hover:translate-x-1" />
               </button>
               <a

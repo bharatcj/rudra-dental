@@ -65,11 +65,8 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-gold-500/25 bg-gold-500/[0.07] py-1.5 pr-4 pl-1.5 lg:mb-7"
+              className="mb-5 inline-flex items-center rounded-full border border-gold-500/25 bg-gold-500/[0.07] px-4 py-1.5 lg:mb-7"
             >
-              <span className="grid h-6 w-6 place-items-center rounded-full bg-gold-500/15">
-                <span className="h-1.5 w-1.5 rotate-45 bg-gradient-to-br from-gold-200 to-gold-600" />
-              </span>
               <span className="text-xs tracking-wide text-gold-200">
                 Two years of brighter smiles in Anakaputhur
               </span>
@@ -78,7 +75,7 @@ export default function Hero() {
             <h1 className="display text-[2.7rem] leading-[1.03] text-mist-50 sm:text-6xl lg:text-[4.4rem]">
               <SplitHeading text="We are the best" />
               <br />
-              <span className="text-gold-sheen anim-sheen">
+              <span className="text-gold-sheen">
                 <SplitHeading text="dental service" delay={0.18} />
               </span>
               <br />
@@ -107,8 +104,7 @@ export default function Hero() {
                 onClick={() => openBooking("hero")}
                 className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-gold-sheen px-7 py-3.5 text-sm font-semibold text-ink-950 transition hover:shadow-[0_16px_40px_-12px_rgba(195,150,69,0.8)]"
               >
-                <span className="shimmer-line" />
-                <span className="relative">Book appointment</span>
+                                <span className="relative">Book appointment</span>
                 <IconArrow className="relative h-4 w-4 transition group-hover:translate-x-1" />
               </button>
 
@@ -139,7 +135,7 @@ export default function Hero() {
             >
               {HIGHLIGHTS.map((item) => (
                 <div key={item.label}>
-                  <dt className="display text-2xl text-gold-sheen anim-sheen sm:text-3xl">
+                  <dt className="display text-2xl text-gold-sheen sm:text-3xl">
                     {item.value}
                   </dt>
                   <dd className="mt-1 text-xs leading-snug text-mist-400">
@@ -213,9 +209,9 @@ export default function Hero() {
                   <IconStar key={index} className="h-3 w-3 text-gold-400" />
                 ))}
               </span>
-              <span className="text-[0.72rem] font-medium text-mist-100">5.0</span>
+              <span className="text-[0.78rem] font-medium text-mist-100">5.0</span>
               <span className="h-3 w-px bg-gold-500/30" />
-              <span className="text-[0.72rem] text-mist-400">275 reviews</span>
+              <span className="text-[0.78rem] text-mist-400">275 reviews</span>
             </motion.div>
 
             {[
@@ -235,7 +231,7 @@ export default function Hero() {
                   right: chip.right,
                   bottom: chip.bottom,
                 }}
-                className="surface absolute rounded-full px-3 py-1.5 text-[0.72rem] font-medium whitespace-nowrap text-mist-100 shadow-[0_10px_30px_-14px_rgba(0,0,0,0.9)]"
+                className="surface absolute rounded-full px-3 py-1.5 text-[0.78rem] font-medium whitespace-nowrap text-mist-100 shadow-[0_10px_30px_-14px_rgba(0,0,0,0.9)]"
               >
                 {chip.text}
               </motion.span>
@@ -257,7 +253,7 @@ export default function Hero() {
             {SERVICE_AREAS.map((area) => (
               <span
                 key={area}
-                className="rounded-full border border-gold-500/14 px-2.5 py-1 text-[0.7rem] text-mist-400 transition hover:border-gold-500/35 hover:text-gold-200"
+                className="rounded-full border border-gold-500/14 px-2.5 py-1 text-[0.75rem] text-mist-400 transition hover:border-gold-500/35 hover:text-gold-200"
               >
                 {area}
               </span>

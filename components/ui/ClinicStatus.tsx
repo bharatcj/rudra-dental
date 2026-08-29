@@ -201,7 +201,7 @@ export function StatusCard({ className }: { className?: string }) {
           {state.ready ? state.label : "Open all 7 days"}
         </p>
         {state.clock ? (
-          <span className="ml-auto font-[family-name:var(--font-mark)] text-[0.68rem] tracking-widest text-mist-400">
+          <span className="ml-auto font-[family-name:var(--font-mark)] text-[0.72rem] tracking-widest text-mist-400">
             {state.clock}
           </span>
         ) : null}

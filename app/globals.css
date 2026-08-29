@@ -171,11 +171,6 @@
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
 }
 
-@utility surface-solid {
-  background: linear-gradient(158deg, var(--color-ink-800), var(--color-ink-900));
-  border: 1px solid rgba(195, 150, 69, 0.16);
-}
-
 @utility edge-gold {
   border: 1px solid transparent;
   background:
@@ -226,41 +221,12 @@
   }
 }
 
-@keyframes shimmer-sweep {
-  0% {
-    transform: translateX(-130%) skewX(-18deg);
-  }
-  100% {
-    transform: translateX(340%) skewX(-18deg);
-  }
-}
-
-@keyframes sheen-slide {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
 @keyframes orbit-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes float-soft {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-14px);
   }
 }
 
@@ -292,14 +258,8 @@
 .anim-marquee {
   animation: marquee-x 42s linear infinite;
 }
-.anim-float {
-  animation: float-soft 7s ease-in-out infinite;
-}
 .anim-orbit {
   animation: orbit-spin 30s linear infinite;
-}
-.anim-orbit-slow {
-  animation: orbit-spin 48s linear infinite reverse;
 }
 .anim-pulse-ring {
   animation: pulse-ring 2.6s ease-out infinite;
@@ -307,35 +267,10 @@
 .anim-aurora {
   animation: aurora-drift 24s ease-in-out infinite;
 }
-.anim-sheen {
-  animation: sheen-slide 7s ease-in-out infinite;
-}
 
 .group:hover .anim-marquee,
 .anim-marquee:hover {
   animation-play-state: paused;
-}
-
-.shimmer-line {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  border-radius: inherit;
-}
-.shimmer-line::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 38%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 250, 224, 0.34),
-    transparent
-  );
-  animation: shimmer-sweep 3.8s ease-in-out infinite;
 }
 
 .mask-fade-x {

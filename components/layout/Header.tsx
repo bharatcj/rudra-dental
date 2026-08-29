@@ -164,8 +164,7 @@ export default function Header() {
               onClick={() => openBooking("header")}
               className="group relative hidden overflow-hidden rounded-full bg-gold-sheen px-5 py-2.5 text-sm font-semibold text-ink-950 transition hover:shadow-[0_10px_30px_-10px_rgba(195,150,69,0.75)] sm:inline-flex"
             >
-              <span className="shimmer-line" />
-              <span className="relative">Book appointment</span>
+                            <span className="relative">Book appointment</span>
             </button>
             <button
               type="button"

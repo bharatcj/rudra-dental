@@ -179,7 +179,7 @@ export default function Footer() {
       </div>
 
       <div className="shell relative border-t border-gold-500/10 py-6">
-        <p className="text-[0.7rem] leading-relaxed text-mist-400/70">
+        <p className="text-[0.75rem] leading-relaxed text-mist-400/70">
           {SERVICE_AREAS.map((area) => `Dental clinic in ${area}`).join(" | ")}
         </p>
       </div>
