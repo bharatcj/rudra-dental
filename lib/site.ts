@@ -222,9 +222,9 @@ export const DOCTORS: Doctor[] = [
     credentials: "BDS, MDS",
   },
   {
-    name: "Dr. Jalapathi",
+    name: "Dr. Rakesh Mohan",
     role: "Oral & Maxillofacial Surgeon",
-    image: "/doctors/dr-jalapathi.jpg",
+    image: "/doctors/dr-rakesh-mohan.jpg",
     focus: "Impaction surgery, orthognathic and facial trauma procedures",
     credentials: "BDS, MDS",
   },
