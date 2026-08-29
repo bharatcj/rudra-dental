@@ -13,15 +13,16 @@ import {
   IconMenu,
   IconPhone,
   IconWhatsapp,
-  ToothMark,
 } from "@/components/ui/Icons";
+import BrandLogo, { LogoMark } from "@/components/ui/Logo";
 
 const NAV = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
   { label: "About Us", href: "#about" },
+  { label: "Clinic", href: "#gallery" },
   { label: "Doctors", href: "#doctors" },
-  { label: "Blog", href: "#blog" },
+  { label: "Reviews", href: "#reviews" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -62,7 +63,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="relative z-50 hidden border-b border-gold-500/10 bg-ink-900/80 backdrop-blur lg:block">
+      <div className="relative z-50 hidden border-b border-gold-500/10 bg-ink-950/85 backdrop-blur lg:block">
         <div className="shell flex h-11 items-center justify-between text-xs">
           <div className="flex items-center gap-6 text-mist-300">
             <a
@@ -123,21 +124,13 @@ export default function Header() {
       <header
         className={`sticky top-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "border-b border-gold-500/12 bg-ink-900/88 backdrop-blur-xl"
+            ? "border-b border-gold-500/12 bg-ink-950/90 backdrop-blur-xl"
             : "border-b border-transparent bg-transparent"
         }`}
       >
         <div className="shell flex h-[var(--header-h)] items-center justify-between gap-6">
-          <Link href="/" className="flex items-center gap-3" aria-label="Rudra Dental home">
-            <ToothMark className="h-9 w-8 shrink-0" />
-            <span className="leading-none">
-              <span className="block font-[family-name:var(--font-mark)] text-[1.05rem] font-bold tracking-[0.16em] text-gold-gradient">
-                RUDRA
-              </span>
-              <span className="block text-[0.6rem] font-medium tracking-[0.42em] text-mist-400 uppercase">
-                Dental
-              </span>
-            </span>
+          <Link href="/" aria-label="Rudra Dental home">
+            <BrandLogo markClassName="h-11 w-9 shrink-0" priority />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
@@ -174,7 +167,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => openBooking("header")}
-              className="group relative hidden overflow-hidden rounded-full bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 px-5 py-2.5 text-sm font-semibold text-ink-900 transition hover:shadow-[0_10px_30px_-10px_rgba(212,175,55,0.75)] sm:inline-flex"
+              className="group relative hidden overflow-hidden rounded-full bg-gold-sheen px-5 py-2.5 text-sm font-semibold text-ink-950 transition hover:shadow-[0_10px_30px_-10px_rgba(195,150,69,0.75)] sm:inline-flex"
             >
               <span className="shimmer-line" />
               <span className="relative">Book appointment</span>
@@ -200,7 +193,7 @@ export default function Header() {
             exit={{ opacity: 0 }}
           >
             <div
-              className="absolute inset-0 bg-ink-900/90 backdrop-blur-lg"
+              className="absolute inset-0 bg-ink-950/92 backdrop-blur-lg"
               onClick={() => setMenuOpen(false)}
             />
             <motion.nav
@@ -213,8 +206,8 @@ export default function Header() {
             >
               <div className="mb-8 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <ToothMark className="h-8 w-7" />
-                  <span className="font-[family-name:var(--font-mark)] text-sm tracking-[0.2em] text-gold-gradient">
+                  <LogoMark className="h-10 w-8" sizes="48px" />
+                  <span className="font-[family-name:var(--font-mark)] text-sm tracking-[0.2em] text-gold-sheen">
                     RUDRA DENTAL
                   </span>
                 </div>
@@ -251,7 +244,7 @@ export default function Header() {
                     setMenuOpen(false);
                     openBooking("mobile-menu");
                   }}
-                  className="w-full rounded-full bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 py-3.5 text-sm font-semibold text-ink-900"
+                  className="w-full rounded-full bg-gold-sheen py-3.5 text-sm font-semibold text-ink-950"
                 >
                   Book appointment
                 </button>

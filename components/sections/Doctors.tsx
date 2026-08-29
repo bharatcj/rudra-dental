@@ -35,7 +35,7 @@ export default function Doctors() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
-                Best <span className="text-gold-gradient">expert dentists</span>
+                Best <span className="text-gold-sheen anim-sheen">expert dentists</span>
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
@@ -92,7 +92,7 @@ export default function Doctors() {
           >
             <Tilt max={6}>
               <article className="group surface relative overflow-hidden rounded-3xl transition duration-500 hover:border-gold-500/40">
-                <div className="relative aspect-[46/50] overflow-hidden bg-gradient-to-b from-ink-700 to-ink-900">
+                <div className="relative aspect-[46/50] overflow-hidden bg-gradient-to-b from-ink-700 to-ink-950">
                   <Image
                     src={doctor.image}
                     alt={`${doctor.name}, ${doctor.role} at Rudra Dental`}
@@ -101,8 +101,8 @@ export default function Doctors() {
                     sizes="(max-width: 640px) 78vw, 320px"
                     className="object-cover object-top transition duration-700 group-hover:scale-[1.04]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/25 to-transparent" />
-                  <span className="absolute top-4 left-4 rounded-full border border-gold-500/30 bg-ink-900/70 px-3 py-1 text-[0.65rem] tracking-[0.16em] text-gold-300 uppercase backdrop-blur">
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/25 to-transparent" />
+                  <span className="absolute top-4 left-4 rounded-full border border-gold-500/30 bg-ink-950/70 px-3 py-1 text-[0.65rem] tracking-[0.16em] text-gold-300 uppercase backdrop-blur">
                     {doctor.credentials}
                   </span>
                 </div>

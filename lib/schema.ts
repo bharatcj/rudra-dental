@@ -1,4 +1,13 @@
-import { SITE, SERVICE_AREAS, STRUCTURED_SERVICES, FAQS, DOCTORS, ARTICLES } from "./site";
+import {
+  SITE,
+  SERVICE_AREAS,
+  STRUCTURED_SERVICES,
+  FAQS,
+  DOCTORS,
+  ARTICLES,
+  REVIEWS,
+  GALLERY,
+} from "./site";
 
 const OG_IMAGE = `${SITE.url}/og.png`;
 
@@ -31,6 +40,29 @@ export const dentistSchema = {
     longitude: SITE.geo.longitude,
   },
   hasMap: SITE.mapsShortLink,
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: SITE.rating.value,
+    reviewCount: SITE.rating.count,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  review: REVIEWS.map((item) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: item.author },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: item.rating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    reviewBody: item.text,
+  })),
+  photo: GALLERY.map((item) => ({
+    "@type": "ImageObject",
+    url: `${SITE.url}${item.src}`,
+    caption: item.alt,
+  })),
   areaServed: SERVICE_AREAS.map((area) => ({
     "@type": "City",
     name: area,
@@ -196,4 +228,35 @@ export const privacySchema = {
   url: `${SITE.url}/privacy-policy`,
   isPartOf: { "@type": "WebSite", name: SITE.name, url: SITE.canonical },
   description: "Rudra Dental Privacy Policy.",
+};
+
+export const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Rudra Dental clinic launch in Anakaputhur",
+  description:
+    "Opening day at Rudra Dental, the dental clinic on Kamaraj Street in Anakaputhur, Chennai.",
+  thumbnailUrl: [`${SITE.url}/media/launch-2023-poster.jpg`],
+  uploadDate: "2024-09-05",
+  duration: "PT50S",
+  contentUrl: `${SITE.url}/media/launch-2023.mp4`,
+  embedUrl: `${SITE.url}/#story`,
+  publisher: {
+    "@type": "Organization",
+    name: SITE.name,
+    logo: { "@type": "ImageObject", url: `${SITE.url}/brand/logo-full.png` },
+  },
+};
+
+export const gallerySchema = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  name: `Inside ${SITE.name}, Anakaputhur`,
+  url: `${SITE.url}/#gallery`,
+  associatedMedia: GALLERY.map((item) => ({
+    "@type": "ImageObject",
+    contentUrl: `${SITE.url}${item.src}`,
+    name: item.caption,
+    description: item.alt,
+  })),
 };

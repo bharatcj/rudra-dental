@@ -40,7 +40,7 @@ export default function Contact() {
     {
       icon: IconPin,
       label: "Find us",
-      value: SITE.address.display,
+      value: SITE.address.shortDisplay,
       href: SITE.mapsShortLink,
       external: true,
     },
@@ -55,7 +55,7 @@ export default function Contact() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
-              Come see us in <span className="text-gold-gradient">Anakaputhur</span>
+              Come see us in <span className="text-gold-sheen anim-sheen">Anakaputhur</span>
             </h2>
           </Reveal>
           <Reveal delay={0.14}>
@@ -96,7 +96,7 @@ export default function Contact() {
                     rel={card.external ? "noopener noreferrer" : undefined}
                     className="group surface flex items-center gap-4 rounded-2xl p-5 transition hover:border-gold-500/35"
                   >
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-gold-500/25 bg-gold-500/10 text-gold-300 transition group-hover:bg-gold-500 group-hover:text-ink-900">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-gold-500/25 bg-gold-500/10 text-gold-300 transition group-hover:bg-gold-500 group-hover:text-ink-950">
                       <card.icon className="h-5 w-5" />
                     </span>
                     <span className="min-w-0 flex-1">
@@ -117,7 +117,7 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={() => openBooking("contact")}
-                className="group w-full rounded-2xl bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 px-6 py-4 text-sm font-semibold text-ink-900 transition hover:shadow-[0_16px_40px_-12px_rgba(212,175,55,0.8)]"
+                className="group w-full rounded-2xl bg-gold-sheen px-6 py-4 text-sm font-semibold text-ink-950 transition hover:shadow-[0_16px_40px_-12px_rgba(195,150,69,0.8)]"
               >
                 Book your appointment
               </button>

@@ -13,7 +13,9 @@ import Hero from "@/components/sections/Hero";
 import Services, { ServiceMarquee } from "@/components/sections/Services";
 import { About, Process, Stats } from "@/components/sections/About";
 import Doctors from "@/components/sections/Doctors";
-import { Blog, Cta, Faq, Testimonials } from "@/components/sections/Content";
+import { Blog, Cta, Faq } from "@/components/sections/Content";
+import { Gallery, Story } from "@/components/sections/Clinic";
+import Reviews from "@/components/sections/Reviews";
 import Contact from "@/components/sections/Contact";
 
 export default function HomePage() {
@@ -27,11 +29,13 @@ export default function HomePage() {
         <Hero />
         <ServiceMarquee />
         <Services />
+        <Story />
         <About />
         <Stats />
+        <Gallery />
         <Process />
         <Doctors />
-        <Testimonials />
+        <Reviews />
         <Faq />
         <Blog />
         <Cta />

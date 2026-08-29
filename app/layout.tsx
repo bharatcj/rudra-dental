@@ -10,6 +10,8 @@ import {
   organizationSchema,
   breadcrumbSchema,
   blogSchema,
+  videoSchema,
+  gallerySchema,
 } from "@/lib/schema";
 import "./globals.css";
 
@@ -138,6 +140,8 @@ const GRAPH = [
   breadcrumbSchema,
   faqSchema,
   blogSchema,
+  videoSchema,
+  gallerySchema,
 ];
 
 export default function RootLayout({

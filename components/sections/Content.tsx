@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { TESTIMONIALS, FAQS, ARTICLES, SITE } from "@/lib/site";
+import { FAQS, ARTICLES, SITE } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Motion";
 import {
@@ -11,64 +11,8 @@ import {
   IconPhone,
   IconPlus,
   IconQuote,
-  ToothMark,
 } from "@/components/ui/Icons";
-
-export function Testimonials() {
-  const column = (start: number) =>
-    TESTIMONIALS.filter((_, index) => index % 3 === start);
-
-  return (
-    <section
-      aria-label="What patients say about Rudra Dental"
-      className="relative overflow-hidden py-24 lg:py-32"
-    >
-      <div className="absolute inset-x-0 top-1/2 -z-10 h-[30rem] -translate-y-1/2 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(212,175,55,0.08),transparent_70%)]" />
-      <div className="shell">
-        <div className="mb-14 text-center">
-          <Reveal>
-            <p className="eyebrow">Patient Stories</p>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h2 className="display mx-auto mt-4 max-w-3xl text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
-              Trusted across <span className="text-gold-gradient">south Chennai</span>
-            </h2>
-          </Reveal>
-        </div>
-
-        <Stagger className="grid gap-4 md:grid-cols-3">
-          {[0, 1, 2].map((columnIndex) => (
-            <div key={columnIndex} className="flex flex-col gap-4">
-              {column(columnIndex).map((item) => (
-                <StaggerItem key={item.author}>
-                  <figure className="surface grain group relative h-full rounded-2xl p-6 transition duration-500 hover:border-gold-500/30">
-                    <IconQuote className="h-7 w-7 text-gold-500/35 transition group-hover:text-gold-500/60" />
-                    <blockquote className="mt-4 text-[0.92rem] leading-relaxed text-mist-200">
-                      {item.quote}
-                    </blockquote>
-                    <figcaption className="mt-5 flex items-center gap-3 border-t border-gold-500/10 pt-4">
-                      <span className="grid h-9 w-9 place-items-center rounded-full border border-gold-500/25 bg-gold-500/10 font-[family-name:var(--font-mark)] text-xs text-gold-300">
-                        {item.author.charAt(0)}
-                      </span>
-                      <span>
-                        <span className="block text-sm font-medium text-mist-50">
-                          {item.author}
-                        </span>
-                        <span className="block text-xs text-mist-400">
-                          {item.location}
-                        </span>
-                      </span>
-                    </figcaption>
-                  </figure>
-                </StaggerItem>
-              ))}
-            </div>
-          ))}
-        </Stagger>
-      </div>
-    </section>
-  );
-}
+import { LogoMark } from "@/components/ui/Logo";
 
 export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -86,7 +30,7 @@ export function Faq() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl">
-              Answers before you <span className="text-gold-gradient">sit down</span>
+              Answers before you <span className="text-gold-sheen anim-sheen">sit down</span>
             </h2>
           </Reveal>
           <Reveal delay={0.14}>
@@ -128,7 +72,7 @@ export function Faq() {
                     <span
                       className={`mt-1 grid h-7 w-7 shrink-0 place-items-center rounded-full border transition duration-300 ${
                         isOpen
-                          ? "rotate-45 border-gold-500 bg-gold-500 text-ink-900"
+                          ? "rotate-45 border-gold-500 bg-gold-500 text-ink-950"
                           : "border-gold-500/30 text-gold-300"
                       }`}
                     >
@@ -172,7 +116,7 @@ export function Blog() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
-              Latest blog <span className="text-gold-gradient">and news</span>
+              Latest blog <span className="text-gold-sheen anim-sheen">and news</span>
             </h2>
           </Reveal>
         </div>
@@ -183,7 +127,7 @@ export function Blog() {
               <article className="group surface grain flex h-full flex-col overflow-hidden rounded-3xl transition duration-500 hover:border-gold-500/35">
                 <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-gradient-to-br from-ink-700 via-ink-800 to-ink-900">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(212,175,55,0.16),transparent_65%)] transition duration-700 group-hover:scale-125" />
-                  <ToothMark className="relative h-24 w-auto opacity-70 transition duration-700 group-hover:scale-110 group-hover:opacity-100" />
+                  <LogoMark className="relative h-24 w-20 opacity-75 transition duration-700 group-hover:scale-110 group-hover:opacity-100" sizes="96px" />
                   <span className="absolute top-4 left-4 rounded-full border border-gold-500/25 bg-ink-900/70 px-3 py-1 text-[0.65rem] tracking-[0.14em] text-gold-300 uppercase backdrop-blur">
                     {article.tag}
                   </span>
@@ -229,7 +173,7 @@ export function Cta() {
           <div className="absolute -right-20 -bottom-24 h-64 w-64 rounded-full bg-aqua-400/10 blur-3xl" />
 
           <Reveal>
-            <ToothMark className="anim-float mx-auto h-14 w-auto" />
+            <LogoMark className="anim-float mx-auto h-16 w-14" sizes="72px" />
           </Reveal>
           <Reveal delay={0.08}>
             <p className="eyebrow mt-6">Book Dental Appointment</p>
@@ -237,7 +181,7 @@ export function Cta() {
           <Reveal delay={0.14}>
             <h2 className="display mx-auto mt-4 max-w-3xl text-4xl text-mist-50 sm:text-5xl lg:text-[3.6rem]">
               We are open and{" "}
-              <span className="text-gold-gradient">welcoming patients</span>
+              <span className="text-gold-sheen anim-sheen">welcoming patients</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
@@ -251,7 +195,7 @@ export function Cta() {
               <button
                 type="button"
                 onClick={() => openBooking("cta")}
-                className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 px-8 py-4 text-sm font-semibold text-ink-900 transition hover:shadow-[0_16px_44px_-12px_rgba(212,175,55,0.85)]"
+                className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-gold-sheen px-8 py-4 text-sm font-semibold text-ink-950 transition hover:shadow-[0_16px_44px_-12px_rgba(195,150,69,0.85)]"
               >
                 <span className="shimmer-line" />
                 <span className="relative">Book appointment</span>

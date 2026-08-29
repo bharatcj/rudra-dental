@@ -31,15 +31,15 @@ export function About() {
             <div className="relative overflow-hidden rounded-[2rem] border border-gold-500/20">
               <div className="absolute inset-0 bg-gradient-to-tr from-gold-500/12 via-transparent to-aqua-400/8" />
               <Image
-                src="/images/service-banner.png"
-                alt="Rudra Dental clinic care illustration"
-                width={820}
-                height={934}
+                src="/gallery/logo-wall.jpg"
+                alt="The Rudra Dental reception lounge in Anakaputhur, Chennai"
+                width={1500}
+                height={1187}
                 quality={82}
                 className="relative w-full object-cover"
                 sizes="(max-width: 1024px) 92vw, 620px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-900/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-transparent to-transparent" />
             </div>
 
             <motion.div
@@ -54,7 +54,7 @@ export function About() {
                   <IconShield className="h-5 w-5" />
                 </span>
                 <div>
-                  <p className="display text-xl text-gold-gradient">100%</p>
+                  <p className="display text-xl text-gold-sheen anim-sheen">100%</p>
                   <p className="text-[0.7rem] text-mist-400">Sterile protocols</p>
                 </div>
               </div>
@@ -70,7 +70,7 @@ export function About() {
             <Reveal delay={0.08}>
               <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
                 We care for your{" "}
-                <span className="text-gold-gradient">dental health</span>
+                <span className="text-gold-sheen anim-sheen">dental health</span>
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
@@ -106,7 +106,7 @@ export function About() {
               <button
                 type="button"
                 onClick={() => openBooking("about")}
-                className="group mt-9 inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 px-7 py-3.5 text-sm font-semibold text-ink-900 transition hover:shadow-[0_16px_40px_-12px_rgba(212,175,55,0.8)]"
+                className="group mt-9 inline-flex items-center gap-2.5 rounded-full bg-gold-sheen px-7 py-3.5 text-sm font-semibold text-ink-950 transition hover:shadow-[0_16px_40px_-12px_rgba(195,150,69,0.8)]"
               >
                 Book appointment
                 <IconArrow className="h-4 w-4 transition group-hover:translate-x-1" />
@@ -128,7 +128,7 @@ export function Stats() {
           <Stagger className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {STATS.map((stat) => (
               <StaggerItem key={stat.label} className="text-center">
-                <p className="display text-4xl text-gold-gradient sm:text-5xl">
+                <p className="display text-4xl text-gold-sheen anim-sheen sm:text-5xl">
                   <Counter to={stat.value} suffix={stat.suffix} />
                 </p>
                 <p className="mt-2 text-xs tracking-[0.18em] text-mist-400 uppercase">
@@ -163,7 +163,7 @@ export function Process() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
-              Five steps, <span className="text-gold-gradient">zero surprises</span>
+              Five steps, <span className="text-gold-sheen anim-sheen">zero surprises</span>
             </h2>
           </Reveal>
           <Reveal delay={0.14}>

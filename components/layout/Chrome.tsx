@@ -9,8 +9,8 @@ import {
   IconChevron,
   IconPhone,
   IconWhatsapp,
-  ToothMark,
 } from "@/components/ui/Icons";
+import { LogoLockup } from "@/components/ui/Logo";
 
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
@@ -22,7 +22,7 @@ export function ScrollProgress() {
   return (
     <motion.div
       style={{ scaleX }}
-      className="fixed inset-x-0 top-0 z-[130] h-[2px] origin-left bg-gradient-to-r from-gold-600 via-gold-300 to-gold-500"
+      className="fixed inset-x-0 top-0 z-[130] h-[2px] origin-left bg-gradient-to-r from-gold-700 via-gold-200 to-gold-500"
       aria-hidden="true"
     />
   );
@@ -47,7 +47,7 @@ export function Preloader() {
     <AnimatePresence>
       {!done ? (
         <motion.div
-          className="fixed inset-0 z-[300] grid place-items-center bg-ink-900"
+          className="fixed inset-0 z-[300] grid place-items-center bg-ink-950"
           exit={{ opacity: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }}
         >
           <div className="flex flex-col items-center gap-6">
@@ -57,23 +57,15 @@ export function Preloader() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="relative"
             >
-              <span className="absolute inset-0 -m-10 rounded-full bg-gold-500/12 blur-3xl" />
-              <ToothMark className="relative h-20 w-[4.4rem]" />
+              <span className="absolute inset-0 -m-10 rounded-full bg-gold-500/14 blur-3xl" />
+              <LogoLockup className="relative h-28 w-24" priority sizes="120px" />
             </motion.div>
-            <motion.span
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25, duration: 0.5 }}
-              className="font-[family-name:var(--font-mark)] text-xs tracking-[0.55em] text-gold-400"
-            >
-              RUDRA DENTAL
-            </motion.span>
             <div className="h-px w-40 overflow-hidden bg-mist-400/15">
               <motion.div
                 initial={{ x: "-100%" }}
                 animate={{ x: "0%" }}
                 transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-                className="h-full w-full bg-gradient-to-r from-transparent via-gold-400 to-gold-500"
+                className="h-full w-full bg-gradient-to-r from-transparent via-gold-300 to-gold-500"
               />
             </div>
           </div>
@@ -115,7 +107,7 @@ export function BackToTop() {
 export function MobileDock() {
   const { openBooking } = useBooking();
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[100] border-t border-gold-500/15 bg-ink-900/92 px-3 py-2.5 backdrop-blur-xl lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-[100] border-t border-gold-500/15 bg-ink-950/94 px-3 py-2.5 backdrop-blur-xl lg:hidden">
       <div className="flex items-center gap-2">
         <a
           href={`tel:${SITE.phone}`}
@@ -128,7 +120,7 @@ export function MobileDock() {
           href={`https://wa.me/${SITE.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-1 items-center justify-center gap-2 rounded-full border border-emerald-400/30 py-3 text-sm font-medium text-emerald-300"
+          className="flex flex-1 items-center justify-center gap-2 rounded-full border border-gold-500/30 py-3 text-sm font-medium text-gold-200"
         >
           <IconWhatsapp className="h-4 w-4" />
           Chat
@@ -136,7 +128,7 @@ export function MobileDock() {
         <button
           type="button"
           onClick={() => openBooking("mobile-dock")}
-          className="flex flex-[1.4] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 py-3 text-sm font-semibold text-ink-900"
+          className="flex flex-[1.4] items-center justify-center gap-2 rounded-full bg-gold-sheen py-3 text-sm font-semibold text-ink-950"
         >
           <IconCalendar className="h-4 w-4" />
           Book now
@@ -155,7 +147,7 @@ export function FloatingWhatsapp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Rudra Dental on WhatsApp"
-      className="anim-pulse-ring fixed right-5 bottom-6 z-[110] hidden h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_14px_36px_-10px_rgba(37,211,102,0.7)] transition hover:scale-105 lg:grid"
+      className="anim-pulse-ring fixed right-5 bottom-6 z-[110] hidden h-14 w-14 place-items-center rounded-full bg-gold-sheen text-ink-950 shadow-[0_14px_36px_-10px_rgba(195,150,69,0.75)] transition hover:scale-105 lg:grid"
     >
       <IconWhatsapp className="h-7 w-7" />
     </a>

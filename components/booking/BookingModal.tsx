@@ -10,8 +10,8 @@ import {
   IconChevron,
   IconClose,
   IconWhatsapp,
-  ToothMark,
 } from "@/components/ui/Icons";
+import { LogoMark } from "@/components/ui/Logo";
 
 const LEAD_HOURS = 12;
 const MAX_DAYS = 30;
@@ -224,7 +224,7 @@ export default function BookingModal() {
           aria-label="Book an appointment at Rudra Dental"
         >
           <div
-            className="absolute inset-0 bg-ink-900/85 backdrop-blur-md"
+            className="absolute inset-0 bg-ink-950/88 backdrop-blur-md"
             onClick={closeBooking}
           />
 
@@ -237,7 +237,7 @@ export default function BookingModal() {
           >
             <div className="flex items-start justify-between gap-4 border-b border-gold-500/12 px-6 py-5 sm:px-8">
               <div className="flex items-center gap-3">
-                <ToothMark className="h-9 w-8 shrink-0" />
+                <LogoMark className="h-11 w-9 shrink-0" sizes="48px" />
                 <div>
                   <p className="eyebrow">Appointment</p>
                   <h2 className="display text-2xl text-mist-50 sm:text-[1.7rem]">
@@ -249,7 +249,7 @@ export default function BookingModal() {
                 type="button"
                 onClick={closeBooking}
                 aria-label="Close booking"
-                className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gold-500/25 text-gold-300 transition hover:bg-gold-500 hover:text-ink-900"
+                className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gold-500/25 text-gold-300 transition hover:bg-gold-500 hover:text-ink-950"
               >
                 <IconClose className="h-4 w-4" />
               </button>
@@ -266,7 +266,7 @@ export default function BookingModal() {
                     <span
                       className={`grid h-6 w-6 place-items-center rounded-full border text-[0.65rem] ${
                         index < step
-                          ? "border-gold-500 bg-gold-500 text-ink-900"
+                          ? "border-gold-500 bg-gold-500 text-ink-950"
                           : index === step
                             ? "border-gold-400 text-gold-300"
                             : "border-mist-400/25 text-mist-400/60"
@@ -366,7 +366,7 @@ export default function BookingModal() {
                       value={name}
                       onChange={(event) => setName(event.target.value)}
                       placeholder="So we can greet you properly"
-                      className="w-full rounded-xl border border-mist-400/15 bg-ink-800/60 px-4 py-3 text-sm text-mist-100 outline-none transition placeholder:text-mist-400/60 focus:border-gold-500/60"
+                      className="w-full rounded-xl border border-mist-400/15 bg-ink-800/70 px-4 py-3 text-sm text-mist-100 outline-none transition placeholder:text-mist-400/60 focus:border-gold-500/60"
                     />
                   </div>
                 </div>
@@ -443,7 +443,7 @@ export default function BookingModal() {
                             }}
                             className={`aspect-square rounded-lg text-sm transition ${
                               active
-                                ? "bg-gold-500 font-semibold text-ink-900"
+                                ? "bg-gold-500 font-semibold text-ink-950"
                                 : disabled
                                   ? "cursor-not-allowed text-mist-400/25"
                                   : "text-mist-200 hover:bg-gold-500/15 hover:text-gold-200"
@@ -571,7 +571,7 @@ export default function BookingModal() {
                     setError("");
                     setStep(step + 1);
                   }}
-                  className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 px-6 py-3 text-sm font-semibold text-ink-900 transition hover:shadow-[0_10px_30px_-8px_rgba(212,175,55,0.6)]"
+                  className="group inline-flex items-center gap-2 rounded-full bg-gold-sheen px-6 py-3 text-sm font-semibold text-ink-950 transition hover:shadow-[0_10px_30px_-8px_rgba(195,150,69,0.65)]"
                 >
                   Continue
                   <IconArrow className="h-4 w-4 transition group-hover:translate-x-1" />
@@ -580,7 +580,7 @@ export default function BookingModal() {
                 <button
                   type="button"
                   onClick={submit}
-                  className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 px-6 py-3 text-sm font-semibold text-ink-900 transition hover:shadow-[0_10px_30px_-8px_rgba(212,175,55,0.6)]"
+                  className="group inline-flex items-center gap-2 rounded-full bg-gold-sheen px-6 py-3 text-sm font-semibold text-ink-950 transition hover:shadow-[0_10px_30px_-8px_rgba(195,150,69,0.65)]"
                 >
                   <IconWhatsapp className="h-4 w-4" />
                   Send on WhatsApp

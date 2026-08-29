@@ -12,8 +12,8 @@ import {
   IconPin,
   IconPlus,
   IconWhatsapp,
-  ToothMark,
 } from "@/components/ui/Icons";
+import BrandLogo from "@/components/ui/Logo";
 
 const OTHER_LINKS = [
   { label: "Home", href: "#home" },
@@ -30,21 +30,13 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden border-t border-gold-500/12 bg-ink-800/50 pb-24 lg:pb-0">
+    <footer className="relative overflow-hidden border-t border-gold-500/12 bg-ink-900/60 pb-24 lg:pb-0">
       <div className="absolute -top-32 left-1/4 h-64 w-64 rounded-full bg-gold-500/[0.07] blur-3xl" />
 
       <div className="shell relative grid gap-12 py-16 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr] lg:gap-8 lg:py-20">
         <div>
-          <Link href="/" className="inline-flex items-center gap-3" aria-label="Rudra Dental home">
-            <ToothMark className="h-10 w-9" />
-            <span className="leading-none">
-              <span className="block font-[family-name:var(--font-mark)] text-lg font-bold tracking-[0.16em] text-gold-gradient">
-                RUDRA
-              </span>
-              <span className="block text-[0.6rem] font-medium tracking-[0.42em] text-mist-400 uppercase">
-                Dental
-              </span>
-            </span>
+          <Link href="/" className="inline-flex" aria-label="Rudra Dental home">
+            <BrandLogo markClassName="h-14 w-11" />
           </Link>
 
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-mist-400">
@@ -59,7 +51,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Rudra Dental on Facebook"
-              className="grid h-10 w-10 place-items-center rounded-full border border-gold-500/20 text-mist-300 transition hover:border-gold-500/60 hover:bg-gold-500 hover:text-ink-900"
+              className="grid h-10 w-10 place-items-center rounded-full border border-gold-500/20 text-mist-300 transition hover:border-gold-500/60 hover:bg-gold-500 hover:text-ink-950"
             >
               <IconFacebook className="h-4 w-4" />
             </a>
@@ -68,7 +60,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Rudra Dental on Instagram"
-              className="grid h-10 w-10 place-items-center rounded-full border border-gold-500/20 text-mist-300 transition hover:border-gold-500/60 hover:bg-gold-500 hover:text-ink-900"
+              className="grid h-10 w-10 place-items-center rounded-full border border-gold-500/20 text-mist-300 transition hover:border-gold-500/60 hover:bg-gold-500 hover:text-ink-950"
             >
               <IconInstagram className="h-4 w-4" />
             </a>
@@ -77,7 +69,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Rudra Dental on WhatsApp"
-              className="grid h-10 w-10 place-items-center rounded-full border border-gold-500/20 text-mist-300 transition hover:border-gold-500/60 hover:bg-gold-500 hover:text-ink-900"
+              className="grid h-10 w-10 place-items-center rounded-full border border-gold-500/20 text-mist-300 transition hover:border-gold-500/60 hover:bg-gold-500 hover:text-ink-950"
             >
               <IconWhatsapp className="h-4 w-4" />
             </a>
@@ -86,7 +78,7 @@ export default function Footer() {
           <button
             type="button"
             onClick={() => openBooking("footer")}
-            className="mt-7 rounded-full bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600 px-6 py-3 text-sm font-semibold text-ink-900 transition hover:shadow-[0_12px_32px_-10px_rgba(212,175,55,0.8)]"
+            className="mt-7 rounded-full bg-gold-sheen px-6 py-3 text-sm font-semibold text-ink-950 transition hover:shadow-[0_12px_32px_-10px_rgba(195,150,69,0.8)]"
           >
             Book appointment
           </button>
@@ -156,7 +148,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-mist-400 transition hover:text-gold-200"
                 >
-                  {SITE.address.display}
+                  {SITE.address.shortDisplay}
                 </a>
               </address>
             </li>

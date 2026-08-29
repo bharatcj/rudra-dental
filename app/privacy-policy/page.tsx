@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { privacySchema } from "@/lib/schema";
-import { IconArrow, IconMail, IconPhone, ToothMark } from "@/components/ui/Icons";
+import { IconArrow, IconMail, IconPhone } from "@/components/ui/Icons";
+import BrandLogo from "@/components/ui/Logo";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -87,16 +88,8 @@ export default function PrivacyPolicyPage() {
 
         <header className="border-b border-gold-500/12">
           <div className="shell flex h-[var(--header-h)] items-center justify-between">
-            <Link href="/" className="flex items-center gap-3" aria-label="Rudra Dental home">
-              <ToothMark className="h-9 w-8" />
-              <span className="leading-none">
-                <span className="block font-[family-name:var(--font-mark)] text-[1.05rem] font-bold tracking-[0.16em] text-gold-gradient">
-                  RUDRA
-                </span>
-                <span className="block text-[0.6rem] font-medium tracking-[0.42em] text-mist-400 uppercase">
-                  Dental
-                </span>
-              </span>
+            <Link href="/" aria-label="Rudra Dental home">
+              <BrandLogo markClassName="h-11 w-9" />
             </Link>
             <Link
               href="/"
@@ -112,7 +105,7 @@ export default function PrivacyPolicyPage() {
           <p className="eyebrow">Privacy Policy</p>
           <h1 className="display mt-4 max-w-3xl text-4xl text-mist-50 sm:text-5xl lg:text-[3.4rem]">
             Your privacy is{" "}
-            <span className="text-gold-gradient">important to us</span>
+            <span className="text-gold-sheen">important to us</span>
           </h1>
 
           <div className="mt-14 grid gap-10 lg:grid-cols-[0.32fr_0.68fr]">

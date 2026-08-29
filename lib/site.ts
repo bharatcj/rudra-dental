@@ -13,19 +13,26 @@ export const SITE = {
   clinicPortal: "/app/",
   established: 2023,
   address: {
-    street: "Anakaputhur",
-    locality: "Chennai",
+    street: "Babu Reddy Avenue, Plot No.1, Kamaraj St, Kamatchi Nagar, Guruswamy Nagar",
+    locality: "Anakaputhur",
     region: "Tamil Nadu",
     postalCode: "600070",
     country: "IN",
-    display: "Anakaputhur, Chennai, Tamil Nadu 600070",
+    display:
+      "Babu Reddy Avenue, Plot No.1, Kamaraj St, Kamatchi Nagar, Guruswamy Nagar, Anakaputhur, Chennai, Tamil Nadu 600070",
+    shortDisplay: "Kamaraj St, Guruswamy Nagar, Anakaputhur, Chennai 600070",
   },
   geo: { latitude: 12.9821704, longitude: 80.1293464 },
   hours: { opens: "09:00", closes: "22:00", display: "Monday to Sunday, 9:00 AM to 9:00 PM" },
   social: {
     facebook: "https://www.facebook.com/people/Rudra-Dental/61565090079593/",
-    instagram: "https://www.instagram.com/rudra_dental.clinic/",
-    instagramHandle: "@rudra_dental.clinic",
+    instagram: "https://www.instagram.com/rudradentalofficial/",
+    instagramHandle: "@rudradentalofficial",
+    googleReviews: "https://g.co/kgs/tn1CaxF",
+  },
+  rating: {
+    value: 5.0,
+    count: 275,
   },
   analytics: {
     ga4: "G-4NB7KXEQSP",
@@ -281,42 +288,183 @@ export const STATS = [
   { value: 7, suffix: " days", label: "Open every week" },
 ];
 
-export const TESTIMONIALS = [
+export type Review = {
+  author: string;
+  meta: string;
+  when: string;
+  rating: number;
+  text: string;
+  tag: string;
+};
+
+export const REVIEWS: Review[] = [
   {
-    quote:
-      "I walked in terrified of a root canal and walked out an hour later with zero pain. The team explained every single step before doing it.",
-    author: "Priya R.",
-    location: "Pallavaram",
+    author: "Plato Bose",
+    meta: "3 reviews",
+    when: "6 months ago",
+    rating: 5,
+    text: "Last week I had a root canal, filling, and crown placement done by Dr. Gopi, and I cannot recommend him enough. The clinic is well-equipped with the latest dental technology, and Dr. Gopi utilizes these tools to their maximum potential.",
+    tag: "Root canal",
   },
   {
-    quote:
-      "Got my braces done here two years ago. The follow ups were never rushed and the result is exactly what was shown to me on day one.",
-    author: "Karthik S.",
-    location: "Chromepet",
+    author: "S Mariappan",
+    meta: "Local Guide, 21 reviews",
+    when: "3 months ago",
+    rating: 5,
+    text: "Seven years back one of my teeth had been removed and replaced by artificial removeable teeth. Since it was inconvenient, I threw it and left the gap as it is. Two months back, I felt that the adjacent teeth were getting weaker. I went to Rudra Dental.",
+    tag: "Dental implant",
   },
   {
-    quote:
-      "My father needed full mouth implants at 68. Dr. Gururaj planned it in stages so it was comfortable and affordable for us.",
-    author: "Anand M.",
-    location: "Anakaputhur",
+    author: "Geethashree Gunasekaran",
+    meta: "Local Guide, 104 reviews",
+    when: "2 months ago",
+    rating: 5,
+    text: "I recently visited Rudra Dental Clinic for a regular teeth cleaning, and the service was fantastic! My teeth are noticeably cleaner, and the price was really reasonable. I also took my husband after he returned from abroad, and he had a great experience as well. Highly recommend them!",
+    tag: "Teeth cleaning",
   },
   {
-    quote:
-      "Took my six year old for a filling. They made it feel like a game. She now reminds me when her next dental visit is due.",
-    author: "Fathima N.",
-    location: "Pammal",
+    author: "Suriya Scooby",
+    meta: "6 reviews",
+    when: "5 months ago",
+    rating: 5,
+    text: "Visited Rudra Dental Clinic for my 5-year-old son's tooth cavity treatment. The doctor handled him with so much patience and care, which made my son feel very comfortable. The clinic is very clean and hygienic. Overall a very good experience.",
+    tag: "Kids dentistry",
   },
   {
-    quote:
-      "Clean clinic, on time appointments and transparent pricing. Rare combination anywhere in Chennai.",
-    author: "Vignesh K.",
-    location: "Kundrathur",
+    author: "Selvan Suresh",
+    meta: "Local Guide, 11 reviews",
+    when: "6 months ago",
+    rating: 5,
+    text: "I recently visited RUDRA Dental for a root canal treatment followed by fixing a dual cap (crown) on one of my teeth, and I must say I am extremely satisfied with the entire experience!",
+    tag: "Crowns",
   },
   {
-    quote:
-      "The whitening result was natural, not the fake bright white I was worried about. Exactly what I wanted for my wedding.",
-    author: "Divya L.",
-    location: "Tambaram",
+    author: "Bharat CJ",
+    meta: "Local Guide, 25 reviews",
+    when: "a year ago",
+    rating: 5,
+    text: "I recently visited RUDRA DENTAL in Anakaputhur and had an excellent experience! The clinic is very welcoming and the staff is incredibly friendly and professional. From routine check-ups to advanced treatments, they offer comprehensive care.",
+    tag: "General",
+  },
+  {
+    author: "Pitchi Parimalam",
+    meta: "1 review",
+    when: "6 months ago",
+    rating: 5,
+    text: "Dr Gopinath is very polite, he explained the causes for my teeth pain and treatment clearly. Modern equipment and painless treatment made me very comfortable. Very punctual, after treatment followup is a plus point. Recommend this clinic wholeheartedly.",
+    tag: "Consultation",
+  },
+  {
+    author: "Girija Ganesan",
+    meta: "12 reviews",
+    when: "6 months ago",
+    rating: 5,
+    text: "Amazing dental cleaning service! The staff was patient, gentle, and very professional. They explained each step and made the visit relaxing. Perfect for anyone who gets nervous at the dentist.",
+    tag: "Teeth cleaning",
+  },
+  {
+    author: "Subhadeepan K",
+    meta: "Local Guide, 19 reviews",
+    when: "a year ago",
+    rating: 5,
+    text: "Dr. Gopinath's Rudra dental clinic is simply outstanding! A couple of months ago, I underwent treatment for seven teeth, which included two surgeries and root canal. From start to finish, the care I received was exceptional.",
+    tag: "Oral surgery",
+  },
+  {
+    author: "Shamir Khan",
+    meta: "4 reviews",
+    when: "9 months ago",
+    rating: 5,
+    text: "I had a wonderful experience with my check up with doctor Gopinath, I must say he is one of the best doctors I have met, not only did he take care of my dental concern but explained the process in detail, and even made my kids first dental experience a good one.",
+    tag: "Family dentistry",
+  },
+  {
+    author: "Prem Karthik",
+    meta: "5 reviews",
+    when: "a year ago",
+    rating: 5,
+    text: "I started my ortho braces treatment. Doctor has been very supportive and has provided proper guidance for dental care. I recommend Rudra dental one of the best clinic.",
+    tag: "Braces",
+  },
+  {
+    author: "Madhu Augustine",
+    meta: "11 reviews",
+    when: "2 years ago",
+    rating: 5,
+    text: "The dental clinic is known for its five-star hygiene standards and exceptional work quality. The doctor is multilingual, speaking all South Indian languages as well as Hindi. I highly recommend it.",
+    tag: "Hygiene",
+  },
+];
+
+export const REVIEW_TOPICS = [
+  { label: "Friendly doctor", count: 12 },
+  { label: "Root canal treatment", count: 8 },
+  { label: "Dental implant", count: 2 },
+  { label: "Cavity treatment", count: 2 },
+];
+
+export type GalleryItem = { src: string; alt: string; caption: string };
+
+export const GALLERY: GalleryItem[] = [
+  {
+    src: "/gallery/logo-wall.jpg",
+    alt: "The gold Rudra Dental mark in the reception lounge",
+    caption: "Reception lounge",
+  },
+  {
+    src: "/gallery/reception.jpg",
+    alt: "Reception and waiting lounge at Rudra Dental Anakaputhur",
+    caption: "Front of house",
+  },
+  {
+    src: "/gallery/operatory.jpg",
+    alt: "Fully equipped dental operatory with a modern chair unit",
+    caption: "Operatory one",
+  },
+  {
+    src: "/gallery/exterior-night.jpg",
+    alt: "Rudra Dental clinic frontage lit at night in Anakaputhur",
+    caption: "Open until 9pm",
+  },
+  {
+    src: "/gallery/front-desk.jpg",
+    alt: "Front desk at Rudra Dental",
+    caption: "Front desk",
+  },
+  {
+    src: "/gallery/corridor.jpg",
+    alt: "Treatment corridor with operatory rooms",
+    caption: "Treatment wing",
+  },
+  {
+    src: "/gallery/operatory-two.jpg",
+    alt: "Second operatory with dental chair and equipment",
+    caption: "Operatory two",
+  },
+  {
+    src: "/gallery/waiting-lounge.jpg",
+    alt: "Patient waiting lounge with seating",
+    caption: "Waiting lounge",
+  },
+  {
+    src: "/gallery/exterior-day.jpg",
+    alt: "Rudra Dental street frontage on Kamaraj Street, Anakaputhur",
+    caption: "Kamaraj Street",
+  },
+  {
+    src: "/gallery/logo-panel.jpg",
+    alt: "Rudra Dental signage panel inside the clinic",
+    caption: "Signage",
+  },
+  {
+    src: "/gallery/waiting-logo.jpg",
+    alt: "Waiting area facing the Rudra Dental logo wall",
+    caption: "Waiting area",
+  },
+  {
+    src: "/gallery/consult-corridor.jpg",
+    alt: "Corridor leading to the consultation rooms",
+    caption: "Consult rooms",
   },
 ];
 
