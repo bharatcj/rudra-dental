@@ -15,6 +15,7 @@ import {
   IconWhatsapp,
 } from "@/components/ui/Icons";
 import BrandLogo, { LogoMark } from "@/components/ui/Logo";
+import { StatusInline, StatusPill } from "@/components/ui/ClinicStatus";
 
 const NAV = [
   { label: "Home", href: "#home" },
@@ -80,13 +81,7 @@ export default function Header() {
               <IconPhone className="h-3.5 w-3.5" />
               {SITE.phoneDisplay}
             </a>
-            <span className="flex items-center gap-2 text-mist-400">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              </span>
-              Open all 7 days, 9am to 9pm
-            </span>
+            <StatusInline />
           </div>
           <div className="flex items-center gap-3">
             <a
@@ -255,6 +250,9 @@ export default function Header() {
                   <IconPhone className="h-4 w-4" />
                   {SITE.phoneDisplay}
                 </a>
+                <div className="flex justify-center pt-1">
+                  <StatusPill />
+                </div>
                 <div className="flex items-center justify-center gap-4 pt-2">
                   <a
                     href={SITE.social.facebook}

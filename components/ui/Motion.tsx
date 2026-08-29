@@ -328,3 +328,24 @@ export function useMounted() {
   useEffect(() => setMounted(true), []);
   return mounted;
 }
+
+export function GoldRule({ className }: { className?: string }) {
+  return (
+    <div className={`relative flex items-center justify-center ${className ?? ""}`}>
+      <motion.span
+        initial={{ scaleX: 0, opacity: 0 }}
+        whileInView={{ scaleX: 1, opacity: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 1.1, ease: EASE }}
+        className="hairline w-full origin-center"
+      />
+      <motion.span
+        initial={{ scale: 0, rotate: 0 }}
+        whileInView={{ scale: 1, rotate: 45 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, delay: 0.35, ease: EASE }}
+        className="absolute h-1.5 w-1.5 bg-gradient-to-br from-gold-200 to-gold-700"
+      />
+    </div>
+  );
+}

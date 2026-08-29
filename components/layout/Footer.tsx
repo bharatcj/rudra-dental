@@ -14,6 +14,7 @@ import {
   IconWhatsapp,
 } from "@/components/ui/Icons";
 import BrandLogo from "@/components/ui/Logo";
+import { StatusInline } from "@/components/ui/ClinicStatus";
 
 const OTHER_LINKS = [
   { label: "Home", href: "#home" },
@@ -135,6 +136,7 @@ export default function Footer() {
                 Monday - Sunday
                 <br />
                 9:00am - 9:00pm
+                <StatusInline className="mt-2 flex-wrap text-[0.7rem]" />
               </span>
             </li>
             <li className="flex items-start gap-3">

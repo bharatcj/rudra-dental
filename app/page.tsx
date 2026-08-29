@@ -18,6 +18,7 @@ import { Gallery, Story } from "@/components/sections/Clinic";
 import Reviews from "@/components/sections/Reviews";
 import Contact from "@/components/sections/Contact";
 import { getReviewFeed } from "@/lib/reviews";
+import { GoldRule } from "@/components/ui/Motion";
 
 export default async function HomePage() {
   const feed = await getReviewFeed();
@@ -33,11 +34,17 @@ export default async function HomePage() {
         <ServiceMarquee />
         <Services />
         <Story />
+        <div className="shell">
+          <GoldRule className="py-2" />
+        </div>
         <About />
         <Stats />
         <Gallery />
         <Process />
         <Doctors />
+        <div className="shell">
+          <GoldRule className="py-2" />
+        </div>
         <Reviews reviews={feed.reviews} rating={feed.rating} count={feed.count} />
         <Faq />
         <Blog />

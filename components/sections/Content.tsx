@@ -14,6 +14,7 @@ import {
   IconQuote,
 } from "@/components/ui/Icons";
 import { LogoMark } from "@/components/ui/Logo";
+import { StatusPill } from "@/components/ui/ClinicStatus";
 
 export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -194,6 +195,11 @@ export function Cta() {
               Seven days a week, 9:00 AM to 9:00 PM. Emergency cases are given priority
               slots on the same day.
             </p>
+          </Reveal>
+          <Reveal delay={0.23}>
+            <div className="mt-6 flex justify-center">
+              <StatusPill />
+            </div>
           </Reveal>
           <Reveal delay={0.26}>
             <div className="mt-9 flex flex-wrap justify-center gap-3">

@@ -126,8 +126,11 @@ export function Stats() {
         <div className="surface grain relative overflow-hidden rounded-[2rem] px-6 py-12 sm:px-12">
           <div className="absolute -top-24 left-1/3 h-64 w-64 rounded-full bg-gold-500/10 blur-3xl" />
           <Stagger className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {STATS.map((stat) => (
-              <StaggerItem key={stat.label} className="text-center">
+            {STATS.map((stat, index) => (
+              <StaggerItem key={stat.label} className="relative text-center">
+                {index > 0 ? (
+                  <span className="absolute top-1/2 -left-4 hidden h-12 w-px -translate-y-1/2 bg-gradient-to-b from-transparent via-gold-500/25 to-transparent lg:block" />
+                ) : null}
                 <p className="display text-4xl text-gold-sheen anim-sheen sm:text-5xl">
                   <Counter to={stat.value} suffix={stat.suffix} />
                 </p>

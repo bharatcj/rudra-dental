@@ -95,7 +95,7 @@ export function BackToTop() {
           exit={{ opacity: 0, scale: 0.8, y: 12 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Back to top"
-          className="surface fixed right-5 bottom-24 z-[110] grid h-11 w-11 place-items-center rounded-full text-gold-300 transition hover:border-gold-500/40 hover:text-gold-100 lg:bottom-6"
+          className="surface fixed right-5 bottom-[9.5rem] z-[110] grid h-11 w-11 place-items-center rounded-full text-gold-300 transition hover:border-gold-500/40 hover:text-gold-100 lg:bottom-24"
         >
           <IconChevron className="h-4 w-4 rotate-180" />
         </motion.button>
@@ -147,9 +147,9 @@ export function FloatingWhatsapp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Rudra Dental on WhatsApp"
-      className="anim-pulse-ring fixed right-5 bottom-6 z-[110] hidden h-14 w-14 place-items-center rounded-full bg-gold-sheen text-ink-950 shadow-[0_14px_36px_-10px_rgba(195,150,69,0.75)] transition hover:scale-105 lg:grid"
+      className="anim-pulse-ring fixed right-5 bottom-24 z-[110] grid h-12 w-12 place-items-center rounded-full bg-gold-sheen text-ink-950 shadow-[0_14px_36px_-10px_rgba(195,150,69,0.75)] transition hover:scale-105 lg:bottom-6 lg:h-14 lg:w-14"
     >
-      <IconWhatsapp className="h-7 w-7" />
+      <IconWhatsapp className="h-6 w-6 lg:h-7 lg:w-7" />
     </a>
   );
 }

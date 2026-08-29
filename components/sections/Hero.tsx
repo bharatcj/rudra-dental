@@ -15,6 +15,7 @@ import {
   IconStar,
 } from "@/components/ui/Icons";
 import { LogoMark } from "@/components/ui/Logo";
+import { StatusPill } from "@/components/ui/ClinicStatus";
 
 const HIGHLIGHTS = [
   { value: "5.0", label: "Rated on Google" },
@@ -68,6 +69,15 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="mb-7 flex flex-wrap items-center gap-2.5"
+            >
+              <StatusPill />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.06, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-gold-500/25 bg-gold-500/[0.07] py-1.5 pr-4 pl-1.5"
             >
               <span className="grid h-6 w-6 place-items-center rounded-full bg-gold-500/15">
@@ -167,11 +177,22 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.18),transparent_65%)] blur-2xl" />
 
             <div className="anim-orbit absolute inset-[3%] rounded-full border border-dashed border-gold-500/22">
-              <span className="absolute top-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-gradient-to-br from-gold-200 to-gold-700" />
-              <span className="absolute bottom-[8%] left-[12%] h-1.5 w-1.5 rounded-full bg-gold-400/80" />
+              <LogoMark
+                className="absolute top-0 left-1/2 h-5 w-4 -translate-x-1/2 -translate-y-1/2 opacity-90"
+                sizes="24px"
+              />
+              <LogoMark
+                className="absolute bottom-[8%] left-[12%] h-3.5 w-3 opacity-55"
+                sizes="18px"
+              />
+              <span className="absolute top-[22%] right-[4%] h-1 w-1 rounded-full bg-gold-300/70" />
             </div>
             <div className="anim-orbit-slow absolute inset-[13%] rounded-full border border-gold-500/14">
-              <span className="absolute top-1/2 right-0 h-2 w-2 translate-x-1/2 -translate-y-1/2 rotate-45 bg-aqua-400/70" />
+              <LogoMark
+                className="absolute top-1/2 right-0 h-4 w-3.5 translate-x-1/2 -translate-y-1/2 opacity-70"
+                sizes="20px"
+              />
+              <span className="absolute bottom-[10%] left-[16%] h-1 w-1 rounded-full bg-aqua-400/60" />
             </div>
 
             <div className="absolute inset-[19%] overflow-hidden rounded-full border border-gold-500/25">
@@ -184,14 +205,8 @@ export default function Hero() {
                 sizes="(max-width: 1024px) 74vw, 420px"
                 className="object-cover"
               />
-              <span className="absolute inset-0 bg-gradient-to-t from-ink-950/88 via-ink-950/45 to-ink-950/25" />
-              <span className="absolute inset-0 grid place-items-center">
-                <LogoMark
-                  className="anim-float h-[46%] w-[36%] drop-shadow-[0_10px_30px_rgba(0,0,0,0.65)]"
-                  priority
-                  sizes="200px"
-                />
-              </span>
+              <span className="absolute inset-0 bg-gradient-to-t from-ink-950/74 via-ink-950/16 to-ink-950/10" />
+              <span className="absolute inset-0 rounded-full shadow-[inset_0_0_60px_18px_rgba(6,8,14,0.65)]" />
             </div>
 
             {[

@@ -3,6 +3,7 @@
 import { SITE, SERVICE_AREAS } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
 import { Reveal } from "@/components/ui/Motion";
+import { StatusCard } from "@/components/ui/ClinicStatus";
 import {
   IconArrow,
   IconClock,
@@ -74,15 +75,7 @@ export default function Contact() {
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-gold-500/25 bg-gold-500/10 text-gold-300">
                     <IconClock className="h-5 w-5" />
                   </span>
-                  <div>
-                    <p className="text-xs tracking-[0.16em] text-mist-400 uppercase">
-                      Opening hours
-                    </p>
-                    <p className="mt-1.5 text-lg font-medium text-mist-50">
-                      Monday to Sunday
-                    </p>
-                    <p className="text-sm text-gold-200">9:00 AM to 9:00 PM</p>
-                  </div>
+                  <StatusCard className="min-w-0 flex-1" />
                 </div>
               </div>
             </Reveal>

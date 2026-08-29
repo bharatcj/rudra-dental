@@ -282,7 +282,7 @@ export const PROCESS = [
 ];
 
 export const STATS = [
-  { value: 12000, suffix: "+", label: "Smiles restored" },
+  { value: 275, suffix: "", label: "Google reviews" },
   { value: 5, suffix: "", label: "Specialist dentists" },
   { value: 14, suffix: "+", label: "Treatment specialities" },
   { value: 7, suffix: " days", label: "Open every week" },
