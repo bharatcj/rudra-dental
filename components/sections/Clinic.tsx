@@ -12,7 +12,6 @@ import {
   IconChevron,
   IconClose,
   IconPin,
-  IconSparkle,
 } from "@/components/ui/Icons";
 
 
@@ -78,7 +77,7 @@ export function Gallery() {
           </Reveal>
         </div>
 
-        <div className="columns-2 gap-3 lg:columns-3 xl:columns-4 [&>*]:mb-3">
+        <div className="columns-2 gap-3 md:columns-3 xl:columns-4 [&>*]:mb-3">
           {GALLERY.map((item, index) => (
             <motion.button
               key={item.src}
@@ -101,7 +100,7 @@ export function Gallery() {
                 width={item.width}
                 height={item.height}
                 quality={78}
-                sizes="(max-width: 640px) 46vw, (max-width: 1024px) 44vw, (max-width: 1280px) 400px, 310px"
+                sizes="(max-width: 640px) 46vw, (max-width: 768px) 44vw, (max-width: 1280px) 30vw, 310px"
                 className="w-full transition duration-700 group-hover:scale-[1.05]"
               />
 
@@ -294,8 +293,8 @@ export function Story() {
 
           <div>
             <Reveal>
-              <p className="eyebrow flex items-center gap-2">
-                <IconSparkle className="h-3.5 w-3.5" />
+              <p className="eyebrow flex items-center gap-2.5">
+                <span className="h-px w-6 bg-gold-400/70" />
                 Our Story
               </p>
             </Reveal>

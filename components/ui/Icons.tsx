@@ -235,16 +235,6 @@ export function IconShield(props: IconProps) {
   );
 }
 
-export function IconSparkle(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" {...base} {...props}>
-      <path d="M12 3.2 13.9 9l5.9 1.9-5.9 1.9L12 18.7l-1.9-5.9L4.2 11 10.1 9 12 3.2Z" />
-      <path d="M19 3.5v3" />
-      <path d="M17.5 5h3" />
-    </svg>
-  );
-}
-
 export function IconQuote(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>

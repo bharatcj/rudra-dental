@@ -11,7 +11,6 @@ import {
   IconPhone,
   IconPin,
   IconShield,
-  IconSparkle,
   IconStar,
 } from "@/components/ui/Icons";
 
@@ -69,7 +68,7 @@ export default function Hero() {
               className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-gold-500/25 bg-gold-500/[0.07] py-1.5 pr-4 pl-1.5 lg:mb-7"
             >
               <span className="grid h-6 w-6 place-items-center rounded-full bg-gold-500/15">
-                <IconSparkle className="h-3.5 w-3.5 text-gold-300" />
+                <span className="h-1.5 w-1.5 rotate-45 bg-gradient-to-br from-gold-200 to-gold-600" />
               </span>
               <span className="text-xs tracking-wide text-gold-200">
                 Two years of brighter smiles in Anakaputhur

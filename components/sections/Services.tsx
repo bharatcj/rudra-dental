@@ -3,7 +3,7 @@
 import { SERVICES, STRUCTURED_SERVICES } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
 import { Reveal, Spotlight, Stagger, StaggerItem } from "@/components/ui/Motion";
-import { SERVICE_ICONS, IconArrow, IconCheck, IconSparkle } from "@/components/ui/Icons";
+import { SERVICE_ICONS, IconArrow, IconCheck } from "@/components/ui/Icons";
 
 const MARQUEE = STRUCTURED_SERVICES.map((item) => item.name);
 
@@ -124,8 +124,8 @@ export default function Services() {
             <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-gold-500/28 bg-gradient-to-br from-gold-500/[0.16] via-ink-800 to-ink-900 p-8">
               <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-gold-500/14 blur-3xl" />
               <div className="relative">
-                <p className="eyebrow flex items-center gap-2">
-                  <IconSparkle className="h-3.5 w-3.5" />
+                <p className="eyebrow flex items-center gap-2.5">
+                  <span className="h-px w-6 bg-gold-400/70" />
                   Beyond the seven
                 </p>
                 <h3 className="display mt-3 max-w-xl text-2xl text-mist-50 sm:text-[1.75rem]">

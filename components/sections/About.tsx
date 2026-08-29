@@ -11,7 +11,7 @@ import {
   IconCheck,
   IconMicroscope,
   IconShield,
-  IconSparkle,
+  IconOrtho,
 } from "@/components/ui/Icons";
 
 export function About() {
@@ -47,7 +47,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.25, duration: 0.7 }}
-              className="surface absolute -right-3 -bottom-6 w-56 rounded-2xl p-5 sm:-right-8"
+              className="surface absolute -right-2 -bottom-6 w-56 rounded-2xl p-5 lg:-right-8"
             >
               <div className="flex items-center gap-3">
                 <span className="grid h-10 w-10 place-items-center rounded-full bg-gold-500/15 text-gold-300">
@@ -230,7 +230,7 @@ export function Process() {
                 body: "Autoclaved instruments, single use consumables and documented sterilisation cycles.",
               },
               {
-                icon: IconSparkle,
+                icon: IconOrtho,
                 title: "Predictable aesthetics",
                 body: "Smile design previews let you approve the result before the first preparation.",
               },
