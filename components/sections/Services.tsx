@@ -122,7 +122,7 @@ export default function Services() {
 
           <StaggerItem className="h-full sm:col-span-2 lg:col-span-2">
             <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-gold-500/28 bg-gradient-to-br from-gold-500/[0.16] via-ink-800 to-ink-900 p-8">
-              <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-gold-500/14" />
+              <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.21),transparent_70%)]" />
               <div className="relative">
                 <p className="eyebrow flex items-center gap-2.5">
                   <span className="h-px w-6 bg-gold-400/70" />

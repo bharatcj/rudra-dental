@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
       />
 
       <div className="relative min-h-screen overflow-hidden">
-        <div className="absolute -top-40 left-1/3 -z-10 h-[34rem] w-[34rem] rounded-full bg-gold-500/[0.09] blur-3xl" />
+        <div className="absolute -top-40 left-1/3 -z-10 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.13),transparent_70%)]" />
 
         <header className="border-b border-gold-500/12">
           <div className="shell flex h-[var(--header-h)] items-center justify-between">

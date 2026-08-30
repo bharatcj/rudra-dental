@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { GALLERY, SITE } from "@/lib/site";
+import { GALLERY, SITE, type GalleryItem } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
 import { Reveal } from "@/components/ui/Motion";
 import { LogoMark } from "@/components/ui/Logo";
@@ -14,6 +14,84 @@ import {
   IconPin,
 } from "@/components/ui/Icons";
 
+
+type TileEntry = { item: GalleryItem; index: number };
+
+function balance(items: GalleryItem[], columns: number): TileEntry[][] {
+  const buckets = Array.from({ length: columns }, () => ({
+    entries: [] as TileEntry[],
+    weight: 0,
+  }));
+
+  const ordered = items
+    .map((item, index) => ({ item, index, weight: item.height / item.width }))
+    .sort((a, b) => b.weight - a.weight);
+
+  ordered.forEach((entry) => {
+    const target = buckets.reduce((a, b) => (b.weight < a.weight ? b : a));
+    target.entries.push({ item: entry.item, index: entry.index });
+    target.weight += entry.weight;
+  });
+
+  return buckets.map((bucket) =>
+    bucket.entries.sort((a, b) => a.index - b.index),
+  );
+}
+
+function Tile({
+  item,
+  index,
+  onOpen,
+}: {
+  item: GalleryItem;
+  index: number;
+  onOpen: (index: number) => void;
+}) {
+  return (
+    <motion.button
+      type="button"
+      onClick={() => onOpen(index)}
+      aria-label={`Open photo: ${item.caption}`}
+      initial={{ opacity: 0, y: 22 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{
+        duration: 0.65,
+        delay: Math.min(index, 5) * 0.06,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className="group relative block w-full overflow-hidden rounded-2xl border border-gold-500/14 bg-ink-800"
+    >
+      <Image
+        src={item.src}
+        alt={item.alt}
+        width={item.width}
+        height={item.height}
+        quality={78}
+        sizes="(max-width: 768px) 46vw, (max-width: 1280px) 31vw, 300px"
+        className="w-full transition duration-700 group-hover:scale-[1.05]"
+      />
+
+      <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/10 to-transparent opacity-70 transition duration-500 group-hover:opacity-95" />
+
+      <span className="pointer-events-none absolute inset-3 opacity-0 transition duration-500 group-hover:opacity-100">
+        <span className="absolute top-0 left-0 h-5 w-5 border-t border-l border-gold-300/80" />
+        <span className="absolute top-0 right-0 h-5 w-5 border-t border-r border-gold-300/80" />
+        <span className="absolute bottom-0 left-0 h-5 w-5 border-b border-l border-gold-300/80" />
+        <span className="absolute right-0 bottom-0 h-5 w-5 border-r border-b border-gold-300/80" />
+      </span>
+
+      <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-4">
+        <span className="translate-y-1 text-left text-[0.78rem] font-medium tracking-wide text-mist-100 transition duration-500 group-hover:translate-y-0">
+          {item.caption}
+        </span>
+        <span className="grid h-7 w-7 shrink-0 translate-y-2 place-items-center rounded-full border border-gold-400/50 bg-ink-950/70 text-gold-300 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+          <IconArrow className="h-3.5 w-3.5 -rotate-45" />
+        </span>
+      </span>
+    </motion.button>
+  );
+}
 
 export function Gallery() {
   const [active, setActive] = useState<number | null>(null);
@@ -77,55 +155,48 @@ export function Gallery() {
           </Reveal>
         </div>
 
-        <div className="columns-2 gap-3 md:columns-3 xl:columns-4 [&>*]:mb-3">
-          {GALLERY.map((item, index) => (
-            <motion.button
-              key={item.src}
-              type="button"
-              onClick={() => setActive(index)}
-              aria-label={`Open photo: ${item.caption}`}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{
-                duration: 0.65,
-                delay: Math.min(index, 5) * 0.06,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="group relative block w-full break-inside-avoid overflow-hidden rounded-2xl border border-gold-500/14 bg-ink-800"
-            >
-              <Image
-                src={item.src}
-                alt={item.alt}
-                width={item.width}
-                height={item.height}
-                quality={78}
-                sizes="(max-width: 640px) 46vw, (max-width: 768px) 44vw, (max-width: 1280px) 30vw, 310px"
-                className="w-full transition duration-700 group-hover:scale-[1.05]"
-              />
+        <div className="grid grid-cols-2 gap-3 md:hidden">
+          {balance(GALLERY, 2).map((column, columnIndex) => (
+            <div key={columnIndex} className="flex flex-col gap-3">
+              {column.map((entry) => (
+                <Tile
+                  key={entry.item.src}
+                  item={entry.item}
+                  index={entry.index}
+                  onOpen={setActive}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
 
-              <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/10 to-transparent opacity-70 transition duration-500 group-hover:opacity-95" />
+        <div className="hidden gap-3 md:grid md:grid-cols-3 xl:hidden">
+          {balance(GALLERY, 3).map((column, columnIndex) => (
+            <div key={columnIndex} className="flex flex-col gap-3">
+              {column.map((entry) => (
+                <Tile
+                  key={entry.item.src}
+                  item={entry.item}
+                  index={entry.index}
+                  onOpen={setActive}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
 
-              <span className="pointer-events-none absolute inset-3 opacity-0 transition duration-500 group-hover:opacity-100">
-                <span className="absolute top-0 left-0 h-5 w-5 border-t border-l border-gold-300/80" />
-                <span className="absolute top-0 right-0 h-5 w-5 border-t border-r border-gold-300/80" />
-                <span className="absolute bottom-0 left-0 h-5 w-5 border-b border-l border-gold-300/80" />
-                <span className="absolute right-0 bottom-0 h-5 w-5 border-r border-b border-gold-300/80" />
-              </span>
-
-              <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-4">
-                <span className="translate-y-1 text-left text-[0.78rem] font-medium tracking-wide text-mist-100 transition duration-500 group-hover:translate-y-0">
-                  {item.caption}
-                </span>
-                <span className="grid h-7 w-7 shrink-0 translate-y-2 place-items-center rounded-full border border-gold-400/50 bg-ink-950/70 text-gold-300 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                  <IconArrow className="h-3.5 w-3.5 -rotate-45" />
-                </span>
-              </span>
-
-              <span className="pointer-events-none absolute top-3 left-3 rounded-full border border-gold-500/25 bg-ink-950/80 px-2 py-0.5 font-[family-name:var(--font-mark)] text-[0.6rem] text-gold-300 opacity-0 transition duration-500 group-hover:opacity-100">
-                {`${index + 1}`.padStart(2, "0")}
-              </span>
-            </motion.button>
+        <div className="hidden gap-3 xl:grid xl:grid-cols-4">
+          {balance(GALLERY, 4).map((column, columnIndex) => (
+            <div key={columnIndex} className="flex flex-col gap-3">
+              {column.map((entry) => (
+                <Tile
+                  key={entry.item.src}
+                  item={entry.item}
+                  index={entry.index}
+                  onOpen={setActive}
+                />
+              ))}
+            </div>
           ))}
         </div>
       </div>
@@ -287,7 +358,7 @@ export function Story() {
                 </span>
               </div>
 
-              <div className="absolute -top-8 -left-8 -z-10 h-32 w-32 rounded-full bg-gold-500/14" />
+              <div className="absolute -top-8 -left-8 -z-10 h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.21),transparent_70%)]" />
             </div>
           </Reveal>
 

@@ -60,7 +60,7 @@ export function About() {
               </div>
             </motion.div>
 
-            <div className="absolute -top-8 -left-6 h-32 w-32 rounded-full bg-gold-500/10" />
+            <div className="absolute -top-8 -left-6 h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.15),transparent_70%)]" />
           </motion.div>
 
           <div>
@@ -124,7 +124,7 @@ export function Stats() {
     <section aria-label="Rudra Dental by the numbers" className="relative py-12 lg:py-16">
       <div className="shell">
         <div className="surface relative overflow-hidden rounded-[2rem] px-6 py-12 sm:px-12">
-          <div className="absolute -top-24 left-1/3 h-64 w-64 rounded-full bg-gold-500/10" />
+          <div className="absolute -top-24 left-1/3 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.15),transparent_70%)]" />
           <Stagger className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {STATS.map((stat, index) => (
               <StaggerItem key={stat.label} className="relative text-center">

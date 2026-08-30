@@ -6,7 +6,7 @@ import { SITE } from "@/lib/site";
 export default function NotFound() {
   return (
     <div className="relative grid min-h-screen place-items-center overflow-hidden px-6 text-center">
-      <div className="absolute top-1/4 left-1/2 -z-10 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-gold-500/10 blur-3xl" />
+      <div className="absolute top-1/4 left-1/2 -z-10 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.15),transparent_70%)]" />
       <div>
         <LogoMark className="mx-auto h-20 w-16" sizes="80px" />
         <p className="eyebrow mt-8">Page not found</p>

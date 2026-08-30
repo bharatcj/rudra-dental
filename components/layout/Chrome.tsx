@@ -57,7 +57,7 @@ export function Preloader() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="relative"
             >
-              <span className="absolute inset-0 -m-10 rounded-full bg-gold-500/14" />
+              <span className="absolute inset-0 -m-10 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.21),transparent_70%)]" />
               <LogoLockup className="relative h-28 w-24" priority sizes="120px" />
             </motion.div>
             <div className="h-px w-40 overflow-hidden bg-mist-400/15">

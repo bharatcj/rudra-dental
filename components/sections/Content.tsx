@@ -174,8 +174,8 @@ export function Cta() {
     <section aria-label="Book a dental appointment" className="relative py-12 lg:py-24">
       <div className="shell">
         <div className="grain relative overflow-hidden rounded-[2.2rem] border border-gold-500/25 bg-gradient-to-br from-gold-500/[0.15] via-ink-800 to-ink-900 px-6 py-12 text-center sm:px-14 sm:py-16">
-          <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold-500/16" />
-          <div className="absolute -right-20 -bottom-24 h-64 w-64 rounded-full bg-aqua-400/10" />
+          <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.24),transparent_70%)]" />
+          <div className="absolute -right-20 -bottom-24 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(86,200,189,0.15),transparent_70%)]" />
 
           <Reveal>
             <LogoMark className="mx-auto h-16 w-14" sizes="72px" />
