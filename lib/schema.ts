@@ -10,17 +10,25 @@ import {
 } from "./site";
 
 const OG_IMAGE = `${SITE.url}/og.png`;
+const CLINIC_ID = `${SITE.url}/#clinic`;
+const ORG_ID = `${SITE.url}/#organization`;
+const SAME_AS = [
+  SITE.social.facebook,
+  SITE.social.instagram,
+  SITE.social.googleMaps,
+];
 
 export const dentistSchema = {
   "@context": "https://schema.org",
   "@type": "Dentist",
   name: SITE.name,
-  alternateName: SITE.legalName,
+  alternateName: [SITE.legalName, "Rudra Dental Anakaputhur", "RUDRA DENTAL"],
   image: OG_IMAGE,
   logo: `${SITE.url}/logo.png`,
-  "@id": SITE.canonical,
+  "@id": CLINIC_ID,
   url: SITE.canonical,
   telephone: SITE.phone,
+  branchOf: { "@id": ORG_ID },
   email: SITE.email,
   priceRange: "$$",
   currenciesAccepted: "INR",
@@ -81,7 +89,7 @@ export const dentistSchema = {
     opens: SITE.hours.opens,
     closes: SITE.hours.closes,
   },
-  sameAs: [SITE.social.facebook, SITE.social.instagram],
+  sameAs: SAME_AS,
   employee: DOCTORS.map((doctor) => ({
     "@type": "Physician",
     name: doctor.name,
@@ -130,20 +138,16 @@ export const websiteSchema = {
   name: SITE.name,
   url: SITE.canonical,
   inLanguage: "en-IN",
-  publisher: {
-    "@type": "Organization",
-    name: SITE.name,
-    logo: {
-      "@type": "ImageObject",
-      url: `${SITE.url}/logo.png`,
-    },
-  },
+  publisher: { "@id": ORG_ID },
+  about: { "@id": CLINIC_ID },
 };
 
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalOrganization",
+  "@id": ORG_ID,
   name: SITE.name,
+  alternateName: [SITE.legalName, "Rudra Dental Anakaputhur"],
   legalName: SITE.legalName,
   url: SITE.canonical,
   logo: `${SITE.url}/logo.png`,
@@ -166,7 +170,8 @@ export const organizationSchema = {
     areaServed: "IN",
     availableLanguage: ["English", "Tamil"],
   },
-  sameAs: [SITE.social.facebook, SITE.social.instagram],
+  department: { "@id": CLINIC_ID },
+  sameAs: SAME_AS,
 };
 
 export const breadcrumbSchema = {

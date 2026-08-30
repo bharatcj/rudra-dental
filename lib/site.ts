@@ -29,7 +29,10 @@ export const SITE = {
     instagram: "https://www.instagram.com/rudradentalofficial/",
     instagramHandle: "@rudradentalofficial",
     googleReviews: "https://g.co/kgs/tn1CaxF",
+    googleMaps:
+      "https://www.google.com/maps/place/?q=place_id:ChIJXzibfZpfUjoRWuSi32qhkHM",
   },
+  placeId: "ChIJXzibfZpfUjoRWuSi32qhkHM",
   rating: {
     value: 5.0,
     count: 275,
@@ -398,6 +401,10 @@ export const FAQS = [
   {
     q: "Where is Rudra Dental located?",
     a: "Rudra Dental is located in Anakaputhur, Chennai, with services extending to nearby areas like Pallavaram, Pammal, Chromepet, and Kundrathur.",
+  },
+  {
+    q: "Is Rudra Dental the same as Dr Rudra Dental Care?",
+    a: "No. Rudra Dental is an independent clinic on Kamaraj Street in Anakaputhur, Chennai 600070, reachable on +91 80721 43199 and online at rudradental.com. Any other practice with a similar name is unrelated to us.",
   },
   {
     q: "Do you treat dental emergencies on the same day?",

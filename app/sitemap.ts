@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 
+const LAST_MODIFIED = new Date("2026-08-30T00:00:00.000Z");
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const now = LAST_MODIFIED;
   return [
     {
       url: SITE.canonical,

@@ -37,11 +37,13 @@ const cinzel = Cinzel({
   weight: ["400", "500", "600", "700"],
 });
 
-const TITLE =
+const TITLE = "Rudra Dental | Dental Clinic in Anakaputhur, Chennai";
+
+const TITLE_LONG =
   "Rudra Dental - Best Dental Clinic in Anakaputhur, Pallavaram, Pammal, Chromepet, Kundrathur, Chennai";
 
 const DESCRIPTION =
-  "Rudra Dental, the best dental clinic in Anakaputhur, Pallavaram, Pammal, Chromepet, Kundrathur, and surrounding areas, offers comprehensive dental care including root canal treatment, dental implants, orthodontic treatment, braces, Invisalign, cosmetic dentistry, teeth whitening, veneers, crowns, bridges, gum surgery, dentures, pediatric dentistry, emergency dental care, TMJ treatment, and more. We provide high-quality, affordable dental services for both adults and children, ensuring optimal oral health in Chennai and nearby locations.";
+  "Rudra Dental on Kamaraj Street, Anakaputhur, Chennai. Root canals, implants, braces, aligners and same day emergency care. Rated 5.0 by 275 patients, open 7 days.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -49,9 +51,9 @@ export const metadata: Metadata = {
     default: TITLE,
     template: "%s | Rudra Dental",
   },
+  applicationName: SITE.name,
   description: DESCRIPTION,
   keywords: SEO_KEYWORDS,
-  applicationName: SITE.name,
   authors: [{ name: SITE.name, url: SITE.url }],
   creator: SITE.name,
   publisher: SITE.name,
@@ -74,7 +76,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Rudra Dental Clinic",
-    title: "Rudra Dental - Best Dental Clinic in Anakaputhur, Chennai",
+    title: TITLE_LONG,
     description:
       "Providing top dental services such as root canal, dental implants, orthodontic treatment, teeth whitening, and more in Anakaputhur, Pallavaram, Chromepet, Kundrathur, and nearby areas.",
     url: SITE.canonical,
