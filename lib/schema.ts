@@ -5,7 +5,6 @@ import {
   FAQS,
   DOCTORS,
   ARTICLES,
-  REVIEWS,
   GALLERY,
 } from "./site";
 
@@ -48,24 +47,6 @@ export const dentistSchema = {
     longitude: SITE.geo.longitude,
   },
   hasMap: SITE.mapsShortLink,
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: SITE.rating.value,
-    reviewCount: SITE.rating.count,
-    bestRating: 5,
-    worstRating: 1,
-  },
-  review: REVIEWS.slice(0, 24).map((item) => ({
-    "@type": "Review",
-    author: { "@type": "Person", name: item.author },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: item.rating,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    reviewBody: item.text,
-  })),
   photo: GALLERY.map((item) => ({
     "@type": "ImageObject",
     url: `${SITE.url}${item.src}`,
