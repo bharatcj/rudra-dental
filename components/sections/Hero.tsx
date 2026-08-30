@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { SITE, SERVICE_AREAS } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
-import { SplitHeading } from "@/components/ui/Motion";
+import { SplitHeading, useParallaxEnabled } from "@/components/ui/Motion";
 import {
   IconArrow,
   IconPhone,
@@ -27,8 +27,11 @@ export default function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-14%"]);
+  const parallax = useParallaxEnabled();
+  const bgShift = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
+  const contentShift = useTransform(scrollYProgress, [0, 1], ["0%", "-14%"]);
+  const bgY = parallax ? bgShift : undefined;
+  const contentY = parallax ? contentShift : undefined;
 
   return (
     <section

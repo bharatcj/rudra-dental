@@ -5,7 +5,13 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { TRUST_MARKERS, STATS, PROCESS } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
-import { Counter, Reveal, Stagger, StaggerItem } from "@/components/ui/Motion";
+import {
+  Counter,
+  Reveal,
+  Stagger,
+  StaggerItem,
+  useParallaxEnabled,
+} from "@/components/ui/Motion";
 import {
   IconArrow,
   IconCheck,
@@ -21,7 +27,9 @@ export function About() {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const imageY = useTransform(scrollYProgress, [0, 1], [40, -40]);
+  const parallax = useParallaxEnabled();
+  const imageShift = useTransform(scrollYProgress, [0, 1], [40, -40]);
+  const imageY = parallax ? imageShift : undefined;
 
   return (
     <section id="about" aria-label="About Rudra Dental" className="relative py-16 sm:py-20 lg:py-32">
@@ -152,7 +160,7 @@ export function Process() {
     target: ref,
     offset: ["start 75%", "end 60%"],
   });
-  const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const railScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
     <section
@@ -180,8 +188,8 @@ export function Process() {
         <div ref={ref} className="relative">
           <div className="absolute top-0 bottom-0 left-[1.45rem] w-px bg-mist-400/12 lg:left-1/2 lg:-translate-x-1/2">
             <motion.div
-              style={{ height }}
-              className="w-full bg-gradient-to-b from-gold-300 via-gold-500 to-gold-600"
+              style={{ scaleY: railScale, transformOrigin: "top" }}
+              className="h-full w-full bg-gradient-to-b from-gold-300 via-gold-500 to-gold-600"
             />
           </div>
 
