@@ -236,7 +236,6 @@ export function Spotlight({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [pos, setPos] = useState({ x: -400, y: -400 });
 
   return (
     <div
@@ -246,15 +245,15 @@ export function Spotlight({
         const node = ref.current;
         if (!node) return;
         const rect = node.getBoundingClientRect();
-        setPos({ x: event.clientX - rect.left, y: event.clientY - rect.top });
+        node.style.setProperty("--spot-x", `${event.clientX - rect.left}px`);
+        node.style.setProperty("--spot-y", `${event.clientY - rect.top}px`);
       }}
-      onPointerLeave={() => setPos({ x: -400, y: -400 })}
-      style={
-        {
-          "--spot-x": `${pos.x}px`,
-          "--spot-y": `${pos.y}px`,
-        } as React.CSSProperties
-      }
+      onPointerLeave={() => {
+        const node = ref.current;
+        if (!node) return;
+        node.style.setProperty("--spot-x", "-400px");
+        node.style.setProperty("--spot-y", "-400px");
+      }}
     >
       {children}
     </div>

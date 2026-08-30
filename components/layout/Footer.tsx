@@ -31,7 +31,7 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t border-gold-500/12 bg-ink-900/60 pb-24 lg:pb-0">
-      <div className="absolute -top-32 left-1/4 h-64 w-64 rounded-full bg-gold-500/[0.07] blur-3xl" />
+      <div className="absolute -top-32 left-1/4 h-64 w-64 rounded-full bg-gold-500/[0.07]" />
 
       <div className="shell relative grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr] lg:gap-8 lg:py-20">
         <div>

@@ -43,7 +43,7 @@ export function Gallery() {
     <section
       id="gallery"
       aria-label="Inside the Rudra Dental clinic"
-      className="relative py-16 sm:py-20 lg:py-32"
+      className="deferred relative py-16 sm:py-20 lg:py-32"
     >
       <div className="shell">
         <div className="mb-9 flex flex-col gap-6 lg:mb-12 sm:flex-row sm:items-end sm:justify-between">
@@ -122,7 +122,7 @@ export function Gallery() {
                 </span>
               </span>
 
-              <span className="pointer-events-none absolute top-3 left-3 rounded-full border border-gold-500/25 bg-ink-950/65 px-2 py-0.5 font-[family-name:var(--font-mark)] text-[0.6rem] text-gold-300 opacity-0 backdrop-blur transition duration-500 group-hover:opacity-100">
+              <span className="pointer-events-none absolute top-3 left-3 rounded-full border border-gold-500/25 bg-ink-950/80 px-2 py-0.5 font-[family-name:var(--font-mark)] text-[0.6rem] text-gold-300 opacity-0 transition duration-500 group-hover:opacity-100">
                 {`${index + 1}`.padStart(2, "0")}
               </span>
             </motion.button>
@@ -225,11 +225,11 @@ export function Story() {
     <section
       id="story"
       aria-label="The Rudra Dental story"
-      className="relative overflow-hidden py-16 sm:py-20 lg:py-32"
+      className="deferred relative overflow-hidden py-16 sm:py-20 lg:py-32"
     >
       <div className="absolute inset-0 -z-10">
         <video
-          className="mask-fade-b h-full w-full object-cover opacity-[0.16]"
+          className="hidden h-full w-full object-cover opacity-[0.14] lg:block"
           autoPlay
           muted
           loop
@@ -287,7 +287,7 @@ export function Story() {
                 </span>
               </div>
 
-              <div className="absolute -top-8 -left-8 -z-10 h-32 w-32 rounded-full bg-gold-500/14 blur-3xl" />
+              <div className="absolute -top-8 -left-8 -z-10 h-32 w-32 rounded-full bg-gold-500/14" />
             </div>
           </Reveal>
 

@@ -38,9 +38,9 @@ export default function Hero() {
       className="grain relative isolate overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-24 lg:pb-32"
     >
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-10">
-        <div className="absolute -top-[22%] left-[6%] h-[46rem] w-[46rem] rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.22),transparent_62%)] blur-[70px] anim-aurora" />
+        <div className="absolute -top-[22%] left-[6%] h-[46rem] w-[46rem] rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.22),transparent_62%)] anim-aurora" />
         <div
-          className="absolute top-[12%] right-[-8%] h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(circle,rgba(79,209,197,0.14),transparent_65%)] blur-[80px] anim-aurora"
+          className="absolute top-[12%] right-[-8%] h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(circle,rgba(79,209,197,0.14),transparent_65%)] anim-aurora"
           style={{ animationDelay: "-8s" }}
         />
         <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-ink-950 to-transparent" />
@@ -152,7 +152,7 @@ export default function Hero() {
             transition={{ delay: 0.35, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
             className="relative mx-auto aspect-square w-full max-w-[22rem] sm:max-w-[26rem] lg:max-w-[30rem]"
           >
-            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.2),transparent_66%)] blur-2xl" />
+            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.2),transparent_66%)]" />
 
             <div
               className="anim-orbit absolute inset-0 rounded-full"

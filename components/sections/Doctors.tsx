@@ -25,7 +25,7 @@ export default function Doctors() {
     <section
       id="doctors"
       aria-label="Meet the dentists at Rudra Dental"
-      className="relative py-16 sm:py-20 lg:py-32"
+      className="deferred relative py-16 sm:py-20 lg:py-32"
     >
       <div className="shell">
         <div className="mb-9 flex flex-col gap-6 lg:mb-12 sm:flex-row sm:items-end sm:justify-between">
@@ -102,7 +102,7 @@ export default function Doctors() {
                     className="object-cover object-top transition duration-700 group-hover:scale-[1.04]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/25 to-transparent" />
-                  <span className="absolute top-4 left-4 rounded-full border border-gold-500/30 bg-ink-950/70 px-3 py-1 text-[0.65rem] tracking-[0.16em] text-gold-300 uppercase backdrop-blur">
+                  <span className="absolute top-4 left-4 rounded-full border border-gold-500/30 bg-ink-950/70 px-3 py-1 text-[0.65rem] tracking-[0.16em] text-gold-300 uppercase">
                     {doctor.credentials}
                   </span>
                 </div>

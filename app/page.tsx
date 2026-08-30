@@ -3,7 +3,6 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import {
   BackToTop,
-  CursorGlow,
   FloatingWhatsapp,
   MobileDock,
   Preloader,
@@ -27,7 +26,6 @@ export default async function HomePage() {
     <BookingProvider>
       <Preloader />
       <ScrollProgress />
-      <CursorGlow />
       <Header />
       <main className="relative z-10">
         <Hero />

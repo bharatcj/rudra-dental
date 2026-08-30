@@ -64,7 +64,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="relative z-50 hidden border-b border-gold-500/10 bg-ink-950/85 backdrop-blur lg:block">
+      <div className="relative z-50 hidden border-b border-gold-500/10 bg-ink-950/95 lg:block">
         <div className="shell flex h-11 items-center justify-between text-xs">
           <div className="flex items-center gap-6 text-mist-300">
             <a
@@ -119,7 +119,7 @@ export default function Header() {
       <header
         className={`sticky top-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "border-b border-gold-500/12 bg-ink-950/90 backdrop-blur-xl"
+            ? "border-b border-gold-500/12 bg-ink-950/92 backdrop-blur"
             : "border-b border-transparent bg-transparent"
         }`}
       >

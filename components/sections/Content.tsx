@@ -109,7 +109,7 @@ export function Blog() {
   const { openBooking } = useBooking();
 
   return (
-    <section id="blog" aria-label="Latest blog and news" className="relative py-16 sm:py-20 lg:py-32">
+    <section id="blog" aria-label="Latest blog and news" className="deferred relative py-16 sm:py-20 lg:py-32">
       <div className="shell">
         <div className="mb-10 text-center lg:mb-14">
           <Reveal>
@@ -125,7 +125,7 @@ export function Blog() {
         <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {ARTICLES.map((article) => (
             <StaggerItem key={article.title}>
-              <article className="group surface grain flex h-full flex-col overflow-hidden rounded-3xl transition duration-500 hover:border-gold-500/35">
+              <article className="group surface flex h-full flex-col overflow-hidden rounded-3xl transition duration-500 hover:border-gold-500/35">
                 <div className="relative aspect-[16/10] overflow-hidden bg-ink-900">
                   <Image
                     src={article.image}
@@ -136,7 +136,7 @@ export function Blog() {
                     className="object-cover transition duration-700 group-hover:scale-[1.05]"
                   />
                   <span className="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
-                  <span className="absolute right-4 bottom-4 flex items-center gap-1.5 rounded-full border border-gold-500/22 bg-ink-950/80 px-3 py-1 text-[0.72rem] text-mist-300 backdrop-blur">
+                  <span className="absolute right-4 bottom-4 flex items-center gap-1.5 rounded-full border border-gold-500/22 bg-ink-950/90 px-3 py-1 text-[0.72rem] text-mist-300">
                     <IconCalendar className="h-3 w-3" />
                     <time dateTime={article.date}>{article.dateDisplay}</time>
                   </span>
@@ -174,8 +174,8 @@ export function Cta() {
     <section aria-label="Book a dental appointment" className="relative py-12 lg:py-24">
       <div className="shell">
         <div className="grain relative overflow-hidden rounded-[2.2rem] border border-gold-500/25 bg-gradient-to-br from-gold-500/[0.15] via-ink-800 to-ink-900 px-6 py-12 text-center sm:px-14 sm:py-16">
-          <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold-500/16 blur-3xl" />
-          <div className="absolute -right-20 -bottom-24 h-64 w-64 rounded-full bg-aqua-400/10 blur-3xl" />
+          <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold-500/16" />
+          <div className="absolute -right-20 -bottom-24 h-64 w-64 rounded-full bg-aqua-400/10" />
 
           <Reveal>
             <LogoMark className="mx-auto h-16 w-14" sizes="72px" />

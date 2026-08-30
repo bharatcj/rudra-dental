@@ -57,7 +57,7 @@ export function Preloader() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="relative"
             >
-              <span className="absolute inset-0 -m-10 rounded-full bg-gold-500/14 blur-3xl" />
+              <span className="absolute inset-0 -m-10 rounded-full bg-gold-500/14" />
               <LogoLockup className="relative h-28 w-24" priority sizes="120px" />
             </motion.div>
             <div className="h-px w-40 overflow-hidden bg-mist-400/15">
@@ -79,7 +79,15 @@ export function BackToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 600);
+    let queued = false;
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => {
+        queued = false;
+        setVisible(window.scrollY > 600);
+      });
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
@@ -107,7 +115,7 @@ export function BackToTop() {
 export function MobileDock() {
   const { openBooking } = useBooking();
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[100] border-t border-gold-500/15 bg-ink-950/94 px-3 py-2.5 backdrop-blur-xl lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-[100] border-t border-gold-500/15 bg-ink-950 px-3 py-2.5 lg:hidden">
       <div className="flex items-center gap-2">
         <a
           href={`tel:${SITE.phone}`}
@@ -154,31 +162,3 @@ export function FloatingWhatsapp() {
   );
 }
 
-export function CursorGlow() {
-  const [pos, setPos] = useState({ x: -600, y: -600 });
-  const [enabled, setEnabled] = useState(false);
-
-  useEffect(() => {
-    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-    setEnabled(true);
-    const onMove = (event: MouseEvent) =>
-      setPos({ x: event.clientX, y: event.clientY });
-    window.addEventListener("mousemove", onMove, { passive: true });
-    return () => window.removeEventListener("mousemove", onMove);
-  }, []);
-
-  if (!enabled) return null;
-
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none fixed z-0 h-[440px] w-[440px] rounded-full opacity-[0.28] blur-[90px] transition-transform duration-300 ease-out"
-      style={{
-        left: pos.x - 220,
-        top: pos.y - 220,
-        background:
-          "radial-gradient(circle, rgba(212,175,55,0.42) 0%, rgba(212,175,55,0.08) 45%, transparent 70%)",
-      }}
-    />
-  );
-}

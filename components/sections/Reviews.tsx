@@ -67,7 +67,7 @@ export default function Reviews({
     <section
       id="reviews"
       aria-label="Google reviews for Rudra Dental"
-      className="relative overflow-hidden py-16 sm:py-20 lg:py-32"
+      className="deferred relative overflow-hidden py-16 sm:py-20 lg:py-32"
     >
       <div className="absolute inset-x-0 top-1/2 -z-10 h-[34rem] -translate-y-1/2 bg-[radial-gradient(ellipse_58%_50%_at_50%_50%,rgba(195,150,69,0.09),transparent_70%)]" />
 
@@ -178,7 +178,7 @@ export default function Reviews({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.55, delay: Math.min(index % PAGE, 6) * 0.05 }}
-              className="surface grain group relative flex break-inside-avoid flex-col rounded-2xl p-6 transition duration-500 hover:border-gold-500/35"
+              className="surface group relative flex break-inside-avoid flex-col rounded-2xl p-6 transition duration-500 hover:border-gold-500/35"
             >
               <div className="flex items-start justify-between gap-3">
                 <Stars value={review.rating} />

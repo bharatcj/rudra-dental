@@ -170,7 +170,7 @@ export function StatusPill({ className }: { className?: string }) {
 
   return (
     <span
-      className={`inline-flex items-center gap-2.5 rounded-full border px-3.5 py-1.5 text-xs backdrop-blur transition-colors duration-500 ${ring} ${className ?? ""}`}
+      className={`inline-flex items-center gap-2.5 rounded-full border px-3.5 py-1.5 text-xs transition-colors duration-500 ${ring} ${className ?? ""}`}
     >
       <StatusDot state={state} />
       <span className={`font-medium ${tone}`}>

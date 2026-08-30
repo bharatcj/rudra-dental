@@ -233,7 +233,7 @@ export default function BookingModal() {
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 30, opacity: 0, scale: 0.985 }}
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="surface grain relative z-10 flex max-h-[92vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-3xl border-gold-500/25 sm:rounded-3xl"
+            className="surface relative z-10 flex max-h-[92vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-3xl border-gold-500/25 sm:rounded-3xl"
           >
             <div className="flex items-start justify-between gap-4 border-b border-gold-500/12 px-6 py-5 sm:px-8">
               <div className="flex items-center gap-3">

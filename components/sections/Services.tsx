@@ -72,7 +72,7 @@ export default function Services() {
             const Icon = SERVICE_ICONS[service.icon];
             return (
               <StaggerItem key={service.slug} className="h-full">
-                <Spotlight className="surface grain group relative flex h-full flex-col overflow-hidden rounded-3xl p-6 transition duration-500 sm:p-7 hover:border-gold-500/40">
+                <Spotlight className="surface group relative flex h-full flex-col overflow-hidden rounded-3xl p-6 transition duration-500 sm:p-7 hover:border-gold-500/40">
                   <span
                     className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     style={{
@@ -122,7 +122,7 @@ export default function Services() {
 
           <StaggerItem className="h-full sm:col-span-2 lg:col-span-2">
             <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-gold-500/28 bg-gradient-to-br from-gold-500/[0.16] via-ink-800 to-ink-900 p-8">
-              <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-gold-500/14 blur-3xl" />
+              <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-gold-500/14" />
               <div className="relative">
                 <p className="eyebrow flex items-center gap-2.5">
                   <span className="h-px w-6 bg-gold-400/70" />
