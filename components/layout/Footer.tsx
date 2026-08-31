@@ -18,7 +18,7 @@ import BrandLogo from "@/components/ui/Logo";
 const OTHER_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
+  { label: "Treatments", href: "/treatments" },
   { label: "Our Team", href: "#doctors" },
   { label: "Latest Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
@@ -110,13 +110,13 @@ export default function Footer() {
           <ul className="mt-6 space-y-3">
             {FOOTER_SERVICES.map((service) => (
               <li key={service}>
-                <a
-                  href="#services"
+                <Link
+                  href="/treatments"
                   className="group flex items-start gap-2 text-sm text-mist-400 transition hover:text-gold-200"
                 >
                   <IconPlus className="mt-1 h-3 w-3 shrink-0 text-gold-500/60 transition group-hover:rotate-90 group-hover:text-gold-400" />
                   {service}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

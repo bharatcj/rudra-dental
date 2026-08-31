@@ -5,13 +5,8 @@ import { SITE } from "@/lib/site";
 import { SEO_KEYWORDS } from "@/lib/keywords";
 import {
   dentistSchema,
-  faqSchema,
   websiteSchema,
   organizationSchema,
-  breadcrumbSchema,
-  blogSchema,
-  videoSchema,
-  gallerySchema,
 } from "@/lib/schema";
 import "./globals.css";
 
@@ -135,16 +130,7 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
-const GRAPH = [
-  dentistSchema,
-  organizationSchema,
-  websiteSchema,
-  breadcrumbSchema,
-  faqSchema,
-  blogSchema,
-  videoSchema,
-  gallerySchema,
-];
+const GRAPH = [dentistSchema, organizationSchema, websiteSchema];
 
 export default function RootLayout({
   children,

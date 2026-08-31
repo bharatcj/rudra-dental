@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SITE } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
@@ -19,7 +20,7 @@ import { StatusInline, StatusPill } from "@/components/ui/ClinicStatus";
 
 const NAV = [
   { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
+  { label: "Treatments", href: "/treatments" },
   { label: "About Us", href: "#about" },
   { label: "Clinic", href: "#gallery" },
   { label: "Doctors", href: "#doctors" },
@@ -33,15 +34,17 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("#home");
+  const pathname = usePathname();
+  const onHome = pathname === "/";
 
   useMotionValueEvent(scrollY, "change", (value) => {
     setScrolled(value > 40);
   });
 
   useEffect(() => {
-    const sections = NAV.map((item) => document.querySelector(item.href)).filter(
-      Boolean,
-    ) as Element[];
+    const sections = NAV.filter((item) => item.href.startsWith("#"))
+      .map((item) => document.querySelector(item.href))
+      .filter(Boolean) as Element[];
     if (!sections.length) return;
     const observer = new IntersectionObserver(
       (entries) => {
@@ -129,26 +132,30 @@ export default function Header() {
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
-            {NAV.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className={`relative rounded-full px-4 py-2 text-sm transition ${
-                  active === item.href
-                    ? "text-gold-200"
-                    : "text-mist-300 hover:text-mist-50"
-                }`}
-              >
-                {active === item.href ? (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 rounded-full border border-gold-500/25 bg-gold-500/10"
-                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                  />
-                ) : null}
-                <span className="relative">{item.label}</span>
-              </a>
-            ))}
+            {NAV.map((item) => {
+              const isActive = onHome
+                ? active === item.href
+                : item.href === "/treatments" && pathname.startsWith("/treatments");
+              const href = onHome || item.href.startsWith("/") ? item.href : `/${item.href}`;
+              return (
+                <Link
+                  key={item.href}
+                  href={href}
+                  className={`relative rounded-full px-4 py-2 text-sm transition ${
+                    isActive ? "text-gold-200" : "text-mist-300 hover:text-mist-50"
+                  }`}
+                >
+                  {isActive ? (
+                    <motion.span
+                      layoutId="nav-pill"
+                      className="absolute inset-0 rounded-full border border-gold-500/25 bg-gold-500/10"
+                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                    />
+                  ) : null}
+                  <span className="relative">{item.label}</span>
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-3">
@@ -219,7 +226,9 @@ export default function Header() {
                 {NAV.map((item, index) => (
                   <motion.a
                     key={item.href}
-                    href={item.href}
+                    href={
+                      onHome || item.href.startsWith("/") ? item.href : `/${item.href}`
+                    }
                     onClick={() => setMenuOpen(false)}
                     initial={{ opacity: 0, x: 24 }}
                     animate={{ opacity: 1, x: 0 }}

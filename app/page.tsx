@@ -17,13 +17,35 @@ import { Gallery, Story } from "@/components/sections/Clinic";
 import Reviews from "@/components/sections/Reviews";
 import Contact from "@/components/sections/Contact";
 import { getReviewFeed } from "@/lib/reviews";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  blogSchema,
+  videoSchema,
+  gallerySchema,
+} from "@/lib/schema";
 import { GoldRule } from "@/components/ui/Motion";
 
 export default async function HomePage() {
   const feed = await getReviewFeed();
 
+  const graph = [
+    breadcrumbSchema,
+    faqSchema,
+    blogSchema,
+    videoSchema,
+    gallerySchema,
+  ];
+
   return (
     <BookingProvider>
+      {graph.map((node, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(node) }}
+        />
+      ))}
       <Preloader />
       <ScrollProgress />
       <Header />

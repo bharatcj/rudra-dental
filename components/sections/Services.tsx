@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { SERVICES, STRUCTURED_SERVICES } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
 import { Reveal, Spotlight, Stagger, StaggerItem } from "@/components/ui/Motion";
@@ -89,7 +90,12 @@ export default function Services() {
                   </div>
 
                   <h3 className="display relative pr-12 text-[1.4rem] text-mist-50">
-                    {service.title}
+                    <Link
+                      href={`/treatments/${service.slug}`}
+                      className="transition hover:text-gold-100"
+                    >
+                      {service.title}
+                    </Link>
                   </h3>
                   <p className="relative mt-2.5 text-sm leading-relaxed text-mist-300">
                     {service.short}
@@ -107,14 +113,22 @@ export default function Services() {
                     ))}
                   </ul>
 
-                  <button
-                    type="button"
-                    onClick={() => openBooking(service.slug)}
-                    className="relative mt-auto flex min-h-11 items-center gap-2 pt-6 text-[0.72rem] font-semibold tracking-[0.18em] text-gold-400 uppercase transition hover:text-gold-200"
-                  >
-                    Book this treatment
-                    <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
-                  </button>
+                  <div className="relative mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-6">
+                    <Link
+                      href={`/treatments/${service.slug}`}
+                      className="flex min-h-11 items-center gap-2 text-[0.72rem] font-semibold tracking-[0.18em] text-gold-400 uppercase transition hover:text-gold-200"
+                    >
+                      Read more
+                      <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => openBooking(service.slug)}
+                      className="flex min-h-11 items-center text-[0.72rem] font-semibold tracking-[0.18em] text-mist-400 uppercase transition hover:text-gold-200"
+                    >
+                      Book
+                    </button>
+                  </div>
                 </Spotlight>
               </StaggerItem>
             );

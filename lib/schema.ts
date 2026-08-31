@@ -7,6 +7,7 @@ import {
   ARTICLES,
   GALLERY,
 } from "./site";
+import type { Treatment } from "./treatments";
 
 const OG_IMAGE = `${SITE.url}/og.png`;
 const IST_OFFSET = "+05:30";
@@ -121,6 +122,7 @@ export const faqSchema = {
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${SITE.url}/#website`,
   name: SITE.name,
   url: SITE.canonical,
   inLanguage: "en-IN",
@@ -252,4 +254,73 @@ export const gallerySchema = {
     name: item.caption,
     description: item.alt,
   })),
+};
+
+export function treatmentSchema(treatment: Treatment) {
+  const url = `${SITE.url}/treatments/${treatment.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": url,
+    url,
+    name: treatment.metaTitle,
+    description: treatment.metaDescription,
+    inLanguage: "en-IN",
+    isPartOf: { "@id": `${SITE.url}/#website` },
+    about: {
+      "@type": "MedicalProcedure",
+      name: treatment.procedure,
+      alternateName: treatment.name,
+      description: treatment.summary,
+      bodyLocation: treatment.bodyPart,
+      procedureType: "https://schema.org/NoninvasiveProcedure",
+      howPerformed: treatment.steps
+        .map((step) => `${step.title}. ${step.body}`)
+        .join(" "),
+      preparation: treatment.signs.map((sign) => sign.title).join(", "),
+      followup: treatment.aftercare.join(" "),
+      provider: { "@id": CLINIC_ID },
+    },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${SITE.url}${treatment.image}`,
+      caption: treatment.imageAlt,
+    },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE.canonical },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Treatments",
+          item: `${SITE.url}/treatments`,
+        },
+        { "@type": "ListItem", position: 3, name: treatment.name, item: url },
+      ],
+    },
+  };
+}
+
+export function treatmentFaqSchema(treatment: Treatment) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: treatment.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+}
+
+export const treatmentIndexSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${SITE.url}/treatments`,
+  url: `${SITE.url}/treatments`,
+  name: "Dental treatments at Rudra Dental, Anakaputhur",
+  inLanguage: "en-IN",
+  isPartOf: { "@id": `${SITE.url}/#website` },
+  about: { "@id": CLINIC_ID },
 };
