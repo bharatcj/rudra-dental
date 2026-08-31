@@ -113,7 +113,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
-      <section aria-label="About the treatment" className="relative py-14 lg:py-20">
+      <section aria-label="About the treatment" className="relative py-12 lg:py-16">
         <div className="shell grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <div>
             {treatment.intro.map((paragraph, index) => (
@@ -152,7 +152,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
-      <section aria-label="When this treatment is needed" className="relative py-14 lg:py-20">
+      <section aria-label="When this treatment is needed" className="relative py-12 lg:py-16">
         <div className="shell">
           <Reveal>
             <p className="eyebrow">When it is needed</p>
@@ -178,7 +178,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
-      <section aria-label="How the treatment works" className="relative py-14 lg:py-20">
+      <section aria-label="How the treatment works" className="relative py-12 lg:py-16">
         <div className="shell">
           <Reveal>
             <p className="eyebrow">Step by step</p>
@@ -209,7 +209,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
-      <section aria-label="Aftercare" className="relative py-14 lg:py-20">
+      <section aria-label="Aftercare" className="relative py-12 lg:py-16">
         <div className="shell">
           <div className="rounded-[2rem] border border-gold-500/22 bg-gradient-to-br from-gold-500/[0.12] via-ink-800 to-ink-950 p-8 sm:p-12">
             <Reveal>
@@ -236,7 +236,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
-      <section aria-label="Questions about this treatment" className="relative py-14 lg:py-20">
+      <section aria-label="Questions about this treatment" className="relative py-12 lg:py-16">
         <div className="shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div>
             <Reveal>
@@ -305,7 +305,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
-      <section aria-label="Related treatments" className="relative py-14 lg:py-20">
+      <section aria-label="Related treatments" className="relative py-12 lg:py-16">
         <div className="shell">
           <Reveal>
             <p className="eyebrow">Also relevant</p>

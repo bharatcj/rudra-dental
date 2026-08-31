@@ -101,7 +101,7 @@ export default function BlogIndex() {
           </div>
         </section>
 
-        <section aria-label="All articles" className="relative pb-16 lg:pb-24">
+        <section aria-label="All articles" className="relative pb-14 lg:pb-16">
           <div className="shell">
             <BlogGrid />
 
@@ -110,7 +110,7 @@ export default function BlogIndex() {
                 <p className="text-xs tracking-[0.16em] text-gold-400 uppercase">
                   {POSTS.length} articles and counting
                 </p>
-                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-mist-300">
+                <p className="mt-3 max-w-[62ch] text-sm leading-relaxed text-mist-300">
                   Looking for something we have not covered yet, or want a straight
                   answer about your own case? Ask at your next appointment, or send
                   the question through WhatsApp and one of the team will reply.

@@ -98,7 +98,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
           </div>
         </section>
 
-        <section className="relative pb-14 lg:pb-20">
+        <section className="relative pb-12 lg:pb-14">
           <div className="shell">
             <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-14">
               <div>
@@ -165,27 +165,31 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
               </div>
 
               <aside className="lg:sticky lg:top-28 lg:self-start">
-                <div className="surface rounded-3xl p-7">
-                  <p className="eyebrow">Talk to a dentist</p>
-                  <p className="mt-4 text-sm leading-relaxed text-mist-300">
-                    Reading only takes you so far. Five specialists sit on one floor
-                    on Kamaraj Street, open until nine every day including Sunday.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => openBooking(`blog-${post.slug}`)}
-                    className="group mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gold-sheen px-6 py-3.5 text-sm font-semibold text-ink-950 transition hover:shadow-[0_16px_40px_-12px_rgba(195,150,69,0.8)]"
-                  >
-                    Book appointment
-                    <IconArrow className="h-4 w-4 transition group-hover:translate-x-1" />
-                  </button>
-                  <a
-                    href={`tel:${SITE.phone}`}
-                    className="mt-3 inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-gold-500/28 px-6 py-3.5 text-sm font-medium text-gold-100 transition hover:bg-gold-500/10"
-                  >
-                    <IconPhone className="h-4 w-4" />
-                    {SITE.phoneDisplay}
-                  </a>
+                <div className="surface rounded-3xl p-7 sm:flex sm:items-center sm:justify-between sm:gap-8 lg:block">
+                  <div className="max-w-[46ch]">
+                    <p className="eyebrow">Talk to a dentist</p>
+                    <p className="mt-4 text-sm leading-relaxed text-mist-300">
+                      Reading only takes you so far. Five specialists sit on one floor
+                      on Kamaraj Street, open until nine every day including Sunday.
+                    </p>
+                  </div>
+                  <div className="mt-6 flex flex-col gap-3 sm:mt-0 sm:shrink-0 lg:mt-6">
+                    <button
+                      type="button"
+                      onClick={() => openBooking(`blog-${post.slug}`)}
+                      className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-gold-sheen px-6 py-3.5 text-sm font-semibold whitespace-nowrap text-ink-950 transition hover:shadow-[0_16px_40px_-12px_rgba(195,150,69,0.8)]"
+                    >
+                      Book appointment
+                      <IconArrow className="h-4 w-4 transition group-hover:translate-x-1" />
+                    </button>
+                    <a
+                      href={`tel:${SITE.phone}`}
+                      className="inline-flex items-center justify-center gap-2.5 rounded-full border border-gold-500/28 px-6 py-3.5 text-sm font-medium whitespace-nowrap text-gold-100 transition hover:bg-gold-500/10"
+                    >
+                      <IconPhone className="h-4 w-4" />
+                      {SITE.phoneDisplay}
+                    </a>
+                  </div>
                 </div>
               </aside>
             </div>
@@ -193,7 +197,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
         </section>
       </article>
 
-      <section aria-label="More articles" className="relative pb-16 lg:pb-24">
+      <section aria-label="More articles" className="relative pb-14 lg:pb-16">
         <div className="shell">
           <Reveal>
             <p className="eyebrow">Keep reading</p>

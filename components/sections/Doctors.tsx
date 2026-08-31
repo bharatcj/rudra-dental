@@ -25,7 +25,7 @@ export default function Doctors() {
     <section
       id="doctors"
       aria-label="Meet the dentists at Rudra Dental"
-      className="relative py-16 sm:py-20 lg:py-32"
+      className="relative py-12 sm:py-14 lg:py-16"
     >
       <div className="shell">
         <div className="mb-9 flex flex-col gap-6 lg:mb-12 sm:flex-row sm:items-end sm:justify-between">

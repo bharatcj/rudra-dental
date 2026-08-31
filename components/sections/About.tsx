@@ -32,7 +32,7 @@ export function About() {
   const imageY = parallax ? imageShift : undefined;
 
   return (
-    <section id="about" aria-label="About Rudra Dental" className="relative py-16 sm:py-20 lg:py-32">
+    <section id="about" aria-label="About Rudra Dental" className="relative py-12 sm:py-14 lg:py-16">
       <div className="shell">
         <div ref={ref} className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
           <motion.div style={{ y: imageY }} className="relative">
@@ -129,7 +129,7 @@ export function About() {
 
 export function Stats() {
   return (
-    <section aria-label="Rudra Dental by the numbers" className="relative py-12 lg:py-16">
+    <section aria-label="Rudra Dental by the numbers" className="relative py-10 lg:py-12">
       <div className="shell">
         <div className="surface relative overflow-hidden rounded-[2rem] px-6 py-12 sm:px-12">
           <div className="absolute -top-24 left-1/3 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.15),transparent_70%)]" />
@@ -165,7 +165,7 @@ export function Process() {
   return (
     <section
       aria-label="How treatment works at Rudra Dental"
-      className="relative py-16 sm:py-20 lg:py-32"
+      className="relative py-12 sm:py-14 lg:py-16"
     >
       <div className="shell">
         <div className="mb-10 max-w-2xl lg:mb-14">

@@ -35,7 +35,7 @@ export default function Services() {
     <section
       id="services"
       aria-label="Dental services at Rudra Dental"
-      className="relative py-16 sm:py-20 lg:py-32"
+      className="relative py-12 sm:py-14 lg:py-16"
     >
       <div className="shell">
         <div className="mb-10 flex flex-col gap-6 lg:mb-14 lg:gap-7 lg:flex-row lg:items-end lg:justify-between">
@@ -145,7 +145,7 @@ export default function Services() {
                   Cosmetic dentistry, periodontics, TMJ care, prosthodontics and
                   emergency treatment
                 </h3>
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-mist-300">
+                <p className="mt-4 max-w-[62ch] text-sm leading-relaxed text-mist-300">
                   Veneers, smile design, teeth whitening, zirconia crowns, gum grafting,
                   gingivitis treatment, nightguards, dentures, oral cancer screening and
                   same day emergency care are all available in house.

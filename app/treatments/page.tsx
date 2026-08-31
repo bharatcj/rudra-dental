@@ -106,7 +106,7 @@ export default function TreatmentsIndex() {
             <Reveal delay={0.1}>
               <div className="mt-6 rounded-3xl border border-gold-500/22 bg-gradient-to-br from-gold-500/[0.12] via-ink-800 to-ink-950 p-8">
                 <p className="eyebrow">Also available</p>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-mist-300">
+                <p className="mt-4 max-w-[62ch] text-sm leading-relaxed text-mist-300">
                   Cosmetic dentistry, teeth whitening, veneers, crowns and bridges, gum
                   surgery, dentures, nightguards, TMJ care, oral cancer screening and
                   same day emergency treatment are all handled in house. Ask at the

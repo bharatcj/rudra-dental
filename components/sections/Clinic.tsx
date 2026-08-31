@@ -185,7 +185,7 @@ export function Gallery() {
     <section
       id="gallery"
       aria-label="Inside the Rudra Dental clinic"
-      className="relative py-16 sm:py-20 lg:py-32"
+      className="relative py-12 sm:py-14 lg:py-16"
     >
       <div className="shell">
         <div className="mb-9 flex flex-col gap-6 lg:mb-12 sm:flex-row sm:items-end sm:justify-between">
@@ -360,7 +360,7 @@ export function Story() {
     <section
       id="story"
       aria-label="The Rudra Dental story"
-      className="relative overflow-hidden py-16 sm:py-20 lg:py-32"
+      className="relative overflow-hidden py-12 sm:py-14 lg:py-16"
     >
       <div className="absolute inset-0 -z-10">
         <video

@@ -38,7 +38,7 @@ export default function Hero() {
       ref={ref}
       id="home"
       aria-label="Rudra Dental, best dental clinic in Anakaputhur Chennai"
-      className="grain relative isolate overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-24 lg:pb-32"
+      className="grain relative isolate overflow-hidden pt-10 pb-12 sm:pt-14 sm:pb-14 lg:pt-20 lg:pb-20"
     >
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-10">
         <div className="absolute -top-[22%] left-[6%] h-[46rem] w-[46rem] rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.22),transparent_62%)] anim-aurora" />

@@ -24,7 +24,7 @@ export function Faq() {
     <section
       id="faq"
       aria-label="Frequently asked questions"
-      className="relative py-16 sm:py-20 lg:py-32"
+      className="relative py-12 sm:py-14 lg:py-16"
     >
       <div className="shell grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <div>
@@ -112,7 +112,7 @@ export function Blog() {
   const latest = POSTS_BY_DATE.slice(0, 3);
 
   return (
-    <section id="blog" aria-label="Latest blog and news" className="relative py-16 sm:py-20 lg:py-32">
+    <section id="blog" aria-label="Latest blog and news" className="relative py-12 sm:py-14 lg:py-16">
       <div className="shell">
         <div className="mb-10 text-center lg:mb-14">
           <Reveal>
@@ -200,7 +200,7 @@ export function Cta() {
   const { openBooking } = useBooking();
 
   return (
-    <section aria-label="Book a dental appointment" className="relative py-12 lg:py-24">
+    <section aria-label="Book a dental appointment" className="relative py-10 lg:py-14">
       <div className="shell">
         <div className="grain relative overflow-hidden rounded-[2.2rem] border border-gold-500/25 bg-gradient-to-br from-gold-500/[0.15] via-ink-800 to-ink-900 px-6 py-12 text-center sm:px-14 sm:py-16">
           <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.24),transparent_70%)]" />
