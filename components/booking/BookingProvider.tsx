@@ -10,11 +10,17 @@ import {
 } from "react";
 import BookingModal from "./BookingModal";
 
+export type BookingPreset = {
+  doctor?: string;
+  treatment?: string;
+};
+
 type BookingContextValue = {
   open: boolean;
-  openBooking: (source?: string) => void;
+  openBooking: (source?: string, preset?: BookingPreset) => void;
   closeBooking: () => void;
   source: string;
+  preset: BookingPreset;
 };
 
 const BookingContext = createContext<BookingContextValue | null>(null);
@@ -30,9 +36,11 @@ export function useBooking() {
 export default function BookingProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const [source, setSource] = useState("site");
+  const [preset, setPreset] = useState<BookingPreset>({});
 
-  const openBooking = useCallback((from = "site") => {
+  const openBooking = useCallback((from = "site", next: BookingPreset = {}) => {
     setSource(from);
+    setPreset(next);
     setOpen(true);
     if (typeof window !== "undefined") {
       const layer = (window as unknown as { dataLayer?: unknown[] }).dataLayer;
@@ -45,8 +53,8 @@ export default function BookingProvider({ children }: { children: ReactNode }) {
   const closeBooking = useCallback(() => setOpen(false), []);
 
   const value = useMemo(
-    () => ({ open, openBooking, closeBooking, source }),
-    [open, openBooking, closeBooking, source],
+    () => ({ open, openBooking, closeBooking, source, preset }),
+    [open, openBooking, closeBooking, source, preset],
   );
 
   return (

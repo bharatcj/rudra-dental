@@ -118,10 +118,12 @@ export default function Doctors() {
 
                   <button
                     type="button"
-                    onClick={() => openBooking(`doctor-${doctor.name}`)}
-                    className="mt-4 inline-flex min-h-11 items-center gap-2 text-xs font-semibold tracking-[0.14em] text-gold-300 uppercase transition hover:text-gold-100"
+                    onClick={() =>
+                      openBooking(`doctor-${doctor.name}`, { doctor: doctor.name })
+                    }
+                    className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full bg-gold-sheen px-5 text-xs font-semibold tracking-[0.12em] whitespace-nowrap text-ink-950 uppercase transition hover:shadow-[0_12px_32px_-12px_rgba(195,150,69,0.85)]"
                   >
-                    Book with {doctor.name.replace("Dr. ", "")}
+                    Book with {doctor.name.replace("Dr. ", "").split(" ")[0]}
                     <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
                   </button>
                 </div>

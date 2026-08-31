@@ -364,10 +364,7 @@ export function Story() {
 
           <div>
             <Reveal>
-              <p className="eyebrow flex items-center gap-2.5">
-                <span className="h-px w-6 bg-gold-400/70" />
-                Our Story
-              </p>
+              <p className="eyebrow">Our Story</p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display mt-4 text-4xl text-mist-50 sm:text-5xl lg:text-[3.3rem]">

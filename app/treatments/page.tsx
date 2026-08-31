@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE, SERVICE_AREAS, STRUCTURED_SERVICES } from "@/lib/site";
-import { TREATMENTS } from "@/lib/treatments";
 import {
   treatmentIndexSchema,
   treatmentIndexBreadcrumb,
@@ -16,8 +15,9 @@ import {
   MobileDock,
   ScrollProgress,
 } from "@/components/layout/Chrome";
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/Motion";
-import { SERVICE_ICONS, IconArrow, IconPhone } from "@/components/ui/Icons";
+import { Reveal } from "@/components/ui/Motion";
+import { IconPhone } from "@/components/ui/Icons";
+import TreatmentGrid from "@/components/sections/TreatmentGrid";
 
 const TITLE = "Dental Treatments in Anakaputhur, Chennai";
 const DESCRIPTION =
@@ -101,46 +101,11 @@ export default function TreatmentsIndex() {
 
         <section aria-label="All treatments" className="relative py-12 lg:py-16">
           <div className="shell">
-            <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {TREATMENTS.map((treatment, index) => {
-                const Icon = SERVICE_ICONS[treatment.icon];
-                return (
-                  <StaggerItem key={treatment.slug} className="h-full">
-                    <Link
-                      href={`/treatments/${treatment.slug}`}
-                      className="surface group relative flex h-full flex-col overflow-hidden rounded-3xl p-6 transition duration-500 hover:border-gold-500/40 sm:p-7"
-                    >
-                      <span className="pointer-events-none absolute top-6 right-7 font-[family-name:var(--font-mark)] text-[2.6rem] leading-none text-gold-500/10 transition duration-500 group-hover:text-gold-500/22">
-                        {`${index + 1}`.padStart(2, "0")}
-                      </span>
-
-                      <span className="relative mb-6 inline-grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-gold-500/25 bg-gradient-to-br from-gold-500/18 to-transparent text-gold-300 transition duration-500 group-hover:border-gold-400/60">
-                        <Icon className="h-7 w-7" />
-                      </span>
-
-                      <h2 className="display relative pr-12 text-[1.4rem] text-mist-50">
-                        {treatment.name}
-                      </h2>
-                      <p className="relative mt-3 flex-1 text-sm leading-relaxed text-mist-300">
-                        {treatment.summary}
-                      </p>
-
-                      <span className="relative mt-6 inline-flex items-center gap-2 text-[0.72rem] font-semibold tracking-[0.18em] text-gold-400 uppercase">
-                        Read more
-                        <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
-                      </span>
-                    </Link>
-                  </StaggerItem>
-                );
-              })}
-            </Stagger>
+            <TreatmentGrid />
 
             <Reveal delay={0.1}>
               <div className="mt-6 rounded-3xl border border-gold-500/22 bg-gradient-to-br from-gold-500/[0.12] via-ink-800 to-ink-950 p-8">
-                <p className="eyebrow flex items-center gap-2.5">
-                  <span className="h-px w-6 bg-gold-400/70" />
-                  Also available
-                </p>
+                <p className="eyebrow">Also available</p>
                 <p className="mt-4 max-w-3xl text-sm leading-relaxed text-mist-300">
                   Cosmetic dentistry, teeth whitening, veneers, crowns and bridges, gum
                   surgery, dentures, nightguards, TMJ care, oral cancer screening and

@@ -75,7 +75,9 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
                 <div className="mt-8 flex flex-wrap items-center gap-2.5">
                   <button
                     type="button"
-                    onClick={() => openBooking(treatment.slug)}
+                    onClick={() =>
+                      openBooking(treatment.slug, { treatment: treatment.slug })
+                    }
                     className="group inline-flex items-center gap-2.5 rounded-full bg-gold-sheen px-7 py-3.5 text-sm font-semibold text-ink-950 transition hover:shadow-[0_16px_40px_-12px_rgba(195,150,69,0.8)]"
                   >
                     Book a consultation

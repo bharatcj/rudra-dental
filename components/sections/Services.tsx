@@ -113,7 +113,16 @@ export default function Services() {
                     ))}
                   </ul>
 
-                  <div className="relative mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-6">
+                  <div className="relative mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-6">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        openBooking(service.slug, { treatment: service.slug })
+                      }
+                      className="inline-flex min-h-11 items-center rounded-full bg-gold-sheen px-5 text-[0.72rem] font-semibold tracking-[0.18em] text-ink-950 uppercase transition hover:shadow-[0_12px_32px_-12px_rgba(195,150,69,0.85)]"
+                    >
+                      Book
+                    </button>
                     <Link
                       href={`/treatments/${service.slug}`}
                       className="flex min-h-11 items-center gap-2 text-[0.72rem] font-semibold tracking-[0.18em] text-gold-400 uppercase transition hover:text-gold-200"
@@ -121,13 +130,6 @@ export default function Services() {
                       Read more
                       <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
                     </Link>
-                    <button
-                      type="button"
-                      onClick={() => openBooking(service.slug)}
-                      className="flex min-h-11 items-center text-[0.72rem] font-semibold tracking-[0.18em] text-mist-400 uppercase transition hover:text-gold-200"
-                    >
-                      Book
-                    </button>
                   </div>
                 </Spotlight>
               </StaggerItem>
@@ -138,10 +140,7 @@ export default function Services() {
             <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-gold-500/28 bg-gradient-to-br from-gold-500/[0.16] via-ink-800 to-ink-900 p-8">
               <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.21),transparent_70%)]" />
               <div className="relative">
-                <p className="eyebrow flex items-center gap-2.5">
-                  <span className="h-px w-6 bg-gold-400/70" />
-                  Beyond the seven
-                </p>
+                <p className="eyebrow">Beyond the seven</p>
                 <h3 className="display mt-3 max-w-xl text-2xl text-mist-50 sm:text-[1.75rem]">
                   Cosmetic dentistry, periodontics, TMJ care, prosthodontics and
                   emergency treatment

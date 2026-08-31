@@ -79,7 +79,7 @@ function formatSlot(slot: string) {
 }
 
 export default function BookingModal() {
-  const { open, closeBooking, source } = useBooking();
+  const { open, closeBooking, source, preset } = useBooking();
   const [step, setStep] = useState(0);
   const [doctor, setDoctor] = useState("");
   const [concern, setConcern] = useState("");
@@ -103,11 +103,21 @@ export default function BookingModal() {
     if (!open) return;
     setStep(0);
     setError("");
+    if (preset.doctor) {
+      const match = DOCTORS.find((item) => item.name === preset.doctor);
+      if (match) setDoctor(match.name);
+    }
+    if (preset.treatment) {
+      const match = SERVICES.find(
+        (item) => item.slug === preset.treatment || item.title === preset.treatment,
+      );
+      if (match) setConcern(match.title);
+    }
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [open]);
+  }, [open, preset]);
 
   useEffect(() => {
     if (!open) return;
