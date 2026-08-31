@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE, SERVICE_AREAS, STRUCTURED_SERVICES } from "@/lib/site";
 import { TREATMENTS } from "@/lib/treatments";
-import { treatmentIndexSchema } from "@/lib/schema";
+import {
+  treatmentIndexSchema,
+  treatmentIndexBreadcrumb,
+  treatmentItemList,
+} from "@/lib/schema";
 import BookingProvider from "@/components/booking/BookingProvider";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -36,10 +40,15 @@ export const metadata: Metadata = {
 export default function TreatmentsIndex() {
   return (
     <BookingProvider>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(treatmentIndexSchema) }}
-      />
+      {[treatmentIndexSchema, treatmentIndexBreadcrumb, treatmentItemList].map(
+        (node, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(node) }}
+          />
+        ),
+      )}
       <ScrollProgress />
       <Header />
 

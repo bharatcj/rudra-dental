@@ -7,7 +7,7 @@ import {
   ARTICLES,
   GALLERY,
 } from "./site";
-import type { Treatment } from "./treatments";
+import { TREATMENTS, type Treatment } from "./treatments";
 
 const OG_IMAGE = `${SITE.url}/og.png`;
 const IST_OFFSET = "+05:30";
@@ -301,6 +301,54 @@ export function treatmentSchema(treatment: Treatment) {
     },
   };
 }
+
+export function treatmentBreadcrumb(treatment: Treatment) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE.canonical },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Treatments",
+        item: `${SITE.url}/treatments`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: treatment.name,
+        item: `${SITE.url}/treatments/${treatment.slug}`,
+      },
+    ],
+  };
+}
+
+export const treatmentIndexBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE.canonical },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Treatments",
+      item: `${SITE.url}/treatments`,
+    },
+  ],
+};
+
+export const treatmentItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Dental treatments at Rudra Dental",
+  itemListElement: TREATMENTS.map((treatment, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: treatment.name,
+    url: `${SITE.url}/treatments/${treatment.slug}`,
+  })),
+};
 
 export function treatmentFaqSchema(treatment: Treatment) {
   return {

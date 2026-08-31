@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SITE } from "@/lib/site";
 import { TREATMENTS, treatmentBySlug } from "@/lib/treatments";
-import { treatmentSchema, treatmentFaqSchema } from "@/lib/schema";
+import {
+  treatmentSchema,
+  treatmentFaqSchema,
+  treatmentBreadcrumb,
+} from "@/lib/schema";
 import BookingProvider from "@/components/booking/BookingProvider";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -69,6 +73,12 @@ export default async function Page({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(treatmentFaqSchema(treatment)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(treatmentBreadcrumb(treatment)),
         }}
       />
       <ScrollProgress />

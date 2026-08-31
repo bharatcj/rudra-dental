@@ -117,9 +117,9 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
             {treatment.intro.map((paragraph, index) => (
               <Reveal key={paragraph.slice(0, 30)} delay={index * 0.05}>
                 <p
-                  className={`leading-relaxed text-mist-300 ${index > 0 ? "mt-5" : ""} ${
-                    index === 0 ? "text-[1.05rem] text-mist-200" : ""
-                  }`}
+                  className={`max-w-[68ch] leading-relaxed text-mist-300 ${
+                    index > 0 ? "mt-5" : ""
+                  } ${index === 0 ? "text-[1.05rem] text-mist-200" : ""}`}
                 >
                   {paragraph}
                 </p>
@@ -166,7 +166,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
               <StaggerItem key={sign.title} className="h-full">
                 <div className="surface h-full rounded-2xl p-6 transition hover:border-gold-500/32">
                   <h3 className="display text-lg text-mist-50">{sign.title}</h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-mist-300">
+                  <p className="mt-2.5 max-w-[62ch] text-sm leading-relaxed text-mist-300">
                     {sign.body}
                   </p>
                 </div>
@@ -187,16 +187,16 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
             </h2>
           </Reveal>
 
-          <ol className="mt-10 space-y-4">
+          <ol className="mt-10 grid gap-4 sm:grid-cols-2">
             {treatment.steps.map((step, index) => (
               <Reveal key={step.title} delay={index * 0.04}>
-                <li className="surface flex gap-5 rounded-2xl p-6">
+                <li className="surface flex h-full gap-5 rounded-2xl p-6">
                   <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gold-500/28 font-[family-name:var(--font-mark)] text-sm text-gold-300">
                     {`${index + 1}`.padStart(2, "0")}
                   </span>
                   <div>
                     <h3 className="display text-lg text-mist-50">{step.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-mist-300">
+                    <p className="mt-2 max-w-[62ch] text-sm leading-relaxed text-mist-300">
                       {step.body}
                     </p>
                   </div>
@@ -223,7 +223,9 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
                 <StaggerItem key={item.slice(0, 30)} y={14}>
                   <div className="flex items-start gap-3 rounded-xl border border-gold-500/12 bg-ink-950/40 px-4 py-3.5">
                     <IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
-                    <span className="text-sm leading-relaxed text-mist-200">{item}</span>
+                    <span className="max-w-[62ch] text-sm leading-relaxed text-mist-200">
+                      {item}
+                    </span>
                   </div>
                 </StaggerItem>
               ))}
@@ -288,7 +290,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                         className="overflow-hidden"
                       >
-                        <p className="pb-5 text-sm leading-relaxed text-mist-300">
+                        <p className="max-w-[68ch] pb-5 text-sm leading-relaxed text-mist-300">
                           {faq.a}
                         </p>
                       </motion.div>
@@ -306,7 +308,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
           <Reveal>
             <p className="eyebrow">Also relevant</p>
           </Reveal>
-          <Stagger className="mt-8 grid gap-4 sm:grid-cols-3">
+          <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((item) => {
               const RelatedIcon = SERVICE_ICONS[item.icon];
               return (
@@ -353,7 +355,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
           <Reveal delay={0.14}>
             <Link
               href="/treatments"
-              className="group mt-8 inline-flex items-center gap-2 text-sm text-gold-300 transition hover:text-gold-100"
+              className="group mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-gold-300 transition hover:text-gold-100"
             >
               <IconChevron className="h-4 w-4 rotate-90" />
               All treatments
