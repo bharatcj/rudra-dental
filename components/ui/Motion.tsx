@@ -2,7 +2,6 @@
 
 import {
   motion,
-  useInView,
   useMotionValue,
   useSpring,
   useTransform,
@@ -165,33 +164,44 @@ export function Counter({
   className?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-  const armed = useRef(false);
   const [value, setValue] = useState(to);
 
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-    if (node.getBoundingClientRect().top > window.innerHeight) {
-      armed.current = true;
-      setValue(0);
-    }
-  }, []);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  useEffect(() => {
-    if (!inView || !armed.current) return;
-    armed.current = false;
     let frame = 0;
-    const start = performance.now();
-    const tick = (now: number) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 4);
-      setValue(Math.round(eased * to));
-      if (progress < 1) frame = requestAnimationFrame(tick);
+    let started = false;
+
+    const play = () => {
+      if (started) return;
+      started = true;
+      const start = performance.now();
+      const tick = (now: number) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 4);
+        setValue(Math.round(eased * to));
+        if (progress < 1) frame = requestAnimationFrame(tick);
+      };
+      frame = requestAnimationFrame(tick);
     };
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
-  }, [inView, to, duration]);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        observer.disconnect();
+        play();
+      },
+      { rootMargin: "0px 0px -80px 0px" },
+    );
+    observer.observe(node);
+
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(frame);
+    };
+  }, [to, duration]);
 
   return (
     <span ref={ref} className={className}>

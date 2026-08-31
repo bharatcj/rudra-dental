@@ -119,7 +119,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
             {treatment.intro.map((paragraph, index) => (
               <Reveal key={paragraph.slice(0, 30)} delay={index * 0.05}>
                 <p
-                  className={`max-w-[68ch] leading-relaxed text-mist-300 ${
+                  className={`max-w-[58ch] leading-relaxed text-mist-300 ${
                     index > 0 ? "mt-5" : ""
                   } ${index === 0 ? "text-[1.05rem] text-mist-200" : ""}`}
                 >
@@ -168,7 +168,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
               <StaggerItem key={sign.title} className="h-full">
                 <div className="surface h-full rounded-2xl p-6 transition hover:border-gold-500/32">
                   <h3 className="display text-lg text-mist-50">{sign.title}</h3>
-                  <p className="mt-2.5 max-w-[62ch] text-sm leading-relaxed text-mist-300">
+                  <p className="mt-2.5 max-w-[53ch] text-sm leading-relaxed text-mist-300">
                     {sign.body}
                   </p>
                 </div>
@@ -198,7 +198,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
                   </span>
                   <div>
                     <h3 className="display text-lg text-mist-50">{step.title}</h3>
-                    <p className="mt-2 max-w-[62ch] text-sm leading-relaxed text-mist-300">
+                    <p className="mt-2 max-w-[53ch] text-sm leading-relaxed text-mist-300">
                       {step.body}
                     </p>
                   </div>
@@ -225,7 +225,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
                 <StaggerItem key={item.slice(0, 30)} y={14}>
                   <div className="flex items-start gap-3 rounded-xl border border-gold-500/12 bg-ink-950/40 px-4 py-3.5">
                     <IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
-                    <span className="max-w-[62ch] text-sm leading-relaxed text-mist-200">
+                    <span className="max-w-[53ch] text-sm leading-relaxed text-mist-200">
                       {item}
                     </span>
                   </div>
@@ -292,7 +292,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                         className="overflow-hidden"
                       >
-                        <p className="max-w-[68ch] pb-5 text-sm leading-relaxed text-mist-300">
+                        <p className="max-w-[58ch] pb-5 text-sm leading-relaxed text-mist-300">
                           {faq.a}
                         </p>
                       </motion.div>
