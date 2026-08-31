@@ -67,7 +67,7 @@ export default function Reviews({
     <section
       id="reviews"
       aria-label="Google reviews for Rudra Dental"
-      className="deferred relative overflow-hidden py-16 sm:py-20 lg:py-32"
+      className="relative overflow-hidden py-16 sm:py-20 lg:py-32"
     >
       <div className="absolute inset-x-0 top-1/2 -z-10 h-[34rem] -translate-y-1/2 bg-[radial-gradient(ellipse_58%_50%_at_50%_50%,rgba(195,150,69,0.09),transparent_70%)]" />
 

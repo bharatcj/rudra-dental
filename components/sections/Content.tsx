@@ -109,7 +109,7 @@ export function Blog() {
   const { openBooking } = useBooking();
 
   return (
-    <section id="blog" aria-label="Latest blog and news" className="deferred relative py-16 sm:py-20 lg:py-32">
+    <section id="blog" aria-label="Latest blog and news" className="relative py-16 sm:py-20 lg:py-32">
       <div className="shell">
         <div className="mb-10 text-center lg:mb-14">
           <Reveal>

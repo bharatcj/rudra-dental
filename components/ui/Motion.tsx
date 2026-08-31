@@ -166,10 +166,21 @@ export function Counter({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-  const [value, setValue] = useState(0);
+  const armed = useRef(false);
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
-    if (!inView) return;
+    const node = ref.current;
+    if (!node) return;
+    if (node.getBoundingClientRect().top > window.innerHeight) {
+      armed.current = true;
+      setValue(0);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!inView || !armed.current) return;
+    armed.current = false;
     let frame = 0;
     const start = performance.now();
     const tick = (now: number) => {
