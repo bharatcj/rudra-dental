@@ -9,6 +9,11 @@ import {
 } from "./site";
 
 const OG_IMAGE = `${SITE.url}/og.png`;
+const IST_OFFSET = "+05:30";
+
+function istTimestamp(date: string, time = "10:00:00") {
+  return `${date}T${time}${IST_OFFSET}`;
+}
 const CLINIC_ID = `${SITE.url}/#clinic`;
 const ORG_ID = `${SITE.url}/#organization`;
 const SAME_AS = [
@@ -201,7 +206,8 @@ export const blogSchema = {
     "@type": "BlogPosting",
     headline: article.title,
     image: `${SITE.url}${article.image}`,
-    datePublished: article.date,
+    datePublished: istTimestamp(article.date),
+    dateModified: istTimestamp(article.date),
     description: article.excerpt,
     author: { "@type": "Organization", name: SITE.name },
     publisher: { "@type": "Organization", name: SITE.name },
@@ -224,7 +230,7 @@ export const videoSchema = {
   description:
     "Opening day at Rudra Dental, the dental clinic on Kamaraj Street in Anakaputhur, Chennai.",
   thumbnailUrl: [`${SITE.url}/media/launch-2023-poster.jpg`],
-  uploadDate: "2024-09-05",
+  uploadDate: istTimestamp("2024-09-05"),
   duration: "PT50S",
   contentUrl: `${SITE.url}/media/launch-2023.mp4`,
   embedUrl: `${SITE.url}/#story`,
