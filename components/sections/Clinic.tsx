@@ -17,26 +17,90 @@ import {
 
 type TileEntry = { item: GalleryItem; index: number };
 
+const GAP_WEIGHT = 0.04;
+
 function balance(items: GalleryItem[], columns: number): TileEntry[][] {
-  const buckets = Array.from({ length: columns }, () => ({
-    entries: [] as TileEntry[],
-    weight: 0,
-  }));
+  const weight = items.map((item) => item.height / item.width + GAP_WEIGHT);
+  const lanes: number[][] = Array.from({ length: columns }, () => []);
+  const totals: number[] = Array.from({ length: columns }, () => 0);
 
-  const ordered = items
-    .map((item, index) => ({ item, index, weight: item.height / item.width }))
-    .sort((a, b) => b.weight - a.weight);
+  items
+    .map((_, index) => index)
+    .sort((a, b) => weight[b] - weight[a])
+    .forEach((index) => {
+      let target = 0;
+      for (let lane = 1; lane < columns; lane += 1) {
+        if (totals[lane] < totals[target]) target = lane;
+      }
+      lanes[target].push(index);
+      totals[target] += weight[index];
+    });
 
-  ordered.forEach((entry) => {
-    const target = buckets.reduce((a, b) => (b.weight < a.weight ? b : a));
-    target.entries.push({ item: entry.item, index: entry.index });
-    target.weight += entry.weight;
-  });
+  const spread = () => Math.max(...totals) - Math.min(...totals);
 
-  return buckets.map((bucket) =>
-    bucket.entries.sort((a, b) => a.index - b.index),
+  for (let pass = 0; pass < 40; pass += 1) {
+    let gain = 1e-6;
+    let best: [number, number, number, number] | null = null;
+    const before = spread();
+
+    for (let from = 0; from < columns; from += 1) {
+      for (let to = 0; to < columns; to += 1) {
+        if (from === to) continue;
+        for (let i = 0; i < lanes[from].length; i += 1) {
+          const moved = weight[lanes[from][i]];
+
+          totals[from] -= moved;
+          totals[to] += moved;
+          const shifted = spread();
+          totals[from] += moved;
+          totals[to] -= moved;
+          if (before - shifted > gain) {
+            gain = before - shifted;
+            best = [from, to, i, -1];
+          }
+
+          for (let j = 0; j < lanes[to].length; j += 1) {
+            const delta = moved - weight[lanes[to][j]];
+            totals[from] -= delta;
+            totals[to] += delta;
+            const swapped = spread();
+            totals[from] += delta;
+            totals[to] -= delta;
+            if (before - swapped > gain) {
+              gain = before - swapped;
+              best = [from, to, i, j];
+            }
+          }
+        }
+      }
+    }
+
+    if (!best) break;
+
+    const [from, to, i, j] = best;
+    if (j < 0) {
+      const [index] = lanes[from].splice(i, 1);
+      lanes[to].push(index);
+      totals[from] -= weight[index];
+      totals[to] += weight[index];
+    } else {
+      const outgoing = lanes[from][i];
+      const incoming = lanes[to][j];
+      lanes[from][i] = incoming;
+      lanes[to][j] = outgoing;
+      totals[from] += weight[incoming] - weight[outgoing];
+      totals[to] += weight[outgoing] - weight[incoming];
+    }
+  }
+
+  return lanes.map((lane) =>
+    lane
+      .slice()
+      .sort((a, b) => a - b)
+      .map((index) => ({ item: items[index], index })),
   );
 }
+
 
 function Tile({
   item,

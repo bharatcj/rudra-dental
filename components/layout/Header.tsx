@@ -19,14 +19,21 @@ import BrandLogo, { LogoMark } from "@/components/ui/Logo";
 import { StatusInline, StatusPill } from "@/components/ui/ClinicStatus";
 
 const NAV = [
-  { label: "Home", href: "#home" },
+  { label: "Home", href: "#home", top: true },
   { label: "Treatments", href: "/treatments" },
   { label: "About Us", href: "#about" },
   { label: "Clinic", href: "#gallery" },
   { label: "Doctors", href: "#doctors" },
   { label: "Reviews", href: "#reviews" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#contact" },
 ];
+
+function navHref(item: (typeof NAV)[number], onHome: boolean) {
+  if (item.href.startsWith("/")) return item.href;
+  if (onHome) return item.href;
+  return item.top ? "/" : `/${item.href}`;
+}
 
 export default function Header() {
   const { openBooking } = useBooking();
@@ -86,7 +93,7 @@ export default function Header() {
             </a>
             <StatusInline />
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-3">
             <a
               href={SITE.social.facebook}
               target="_blank"
@@ -131,17 +138,21 @@ export default function Header() {
             <BrandLogo markClassName="h-11 w-9 shrink-0" priority />
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+          <nav className="hidden items-center gap-0.5 lg:flex xl:gap-1" aria-label="Primary">
             {NAV.map((item) => {
               const isActive = onHome
                 ? active === item.href
-                : item.href === "/treatments" && pathname.startsWith("/treatments");
-              const href = onHome || item.href.startsWith("/") ? item.href : `/${item.href}`;
+                : item.href.startsWith("/") && pathname.startsWith(item.href);
               return (
                 <Link
                   key={item.href}
-                  href={href}
-                  className={`relative rounded-full px-4 py-2 text-sm transition ${
+                  href={navHref(item, onHome)}
+                  onClick={(event) => {
+                    if (!item.top || !onHome) return;
+                    event.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className={`relative shrink-0 rounded-full px-3 py-2 text-sm transition xl:px-4 ${
                     isActive ? "text-gold-200" : "text-mist-300 hover:text-mist-50"
                   }`}
                 >
@@ -224,19 +235,25 @@ export default function Header() {
 
               <div className="flex flex-col gap-1">
                 {NAV.map((item, index) => (
-                  <motion.a
+                  <motion.div
                     key={item.href}
-                    href={
-                      onHome || item.href.startsWith("/") ? item.href : `/${item.href}`
-                    }
-                    onClick={() => setMenuOpen(false)}
                     initial={{ opacity: 0, x: 24 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.06 + index * 0.05, duration: 0.4 }}
-                    className="display border-b border-gold-500/10 py-4 text-2xl text-mist-100 transition hover:text-gold-300"
                   >
-                    {item.label}
-                  </motion.a>
+                    <Link
+                      href={navHref(item, onHome)}
+                      onClick={(event) => {
+                        setMenuOpen(false);
+                        if (!item.top || !onHome) return;
+                        event.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      className="display block border-b border-gold-500/10 py-4 text-2xl text-mist-100 transition hover:text-gold-300"
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
 

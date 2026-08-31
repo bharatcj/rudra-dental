@@ -16,12 +16,12 @@ import {
 import BrandLogo from "@/components/ui/Logo";
 
 const OTHER_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/#about" },
   { label: "Treatments", href: "/treatments" },
-  { label: "Our Team", href: "#doctors" },
-  { label: "Latest Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Our Team", href: "/#doctors" },
+  { label: "Latest Blog", href: "/blog" },
+  { label: "Contact", href: "/#contact" },
   { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 

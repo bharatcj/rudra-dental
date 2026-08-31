@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 import { TREATMENTS } from "@/lib/treatments";
+import { POSTS_BY_DATE } from "@/lib/blog";
 
 const LAST_MODIFIED = new Date("2026-08-31T00:00:00.000Z");
 
@@ -24,6 +25,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    {
+      url: `${SITE.url}/blog`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    ...POSTS_BY_DATE.map((post) => ({
+      url: `${SITE.url}/blog/${post.slug}`,
+      lastModified: new Date(`${post.date}T10:00:00+05:30`),
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
     })),
     {
       url: `${SITE.url}/privacy-policy`,

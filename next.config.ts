@@ -93,11 +93,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/blog",
-        destination: "/#blog",
-        permanent: true,
-      },
-      {
         source: "/doctors",
         destination: "/#doctors",
         permanent: true,

@@ -311,6 +311,13 @@ export const GALLERY: GalleryItem[] = [
     height: 1187,
   },
   {
+    src: "/gallery/exterior-day.jpg",
+    alt: "Rudra Dental street frontage on Kamaraj Street, Anakaputhur",
+    caption: "Kamaraj Street",
+    width: 652,
+    height: 745,
+  },
+  {
     src: "/gallery/reception.jpg",
     alt: "Reception and waiting lounge at Rudra Dental Anakaputhur",
     caption: "Front of house",
@@ -358,13 +365,6 @@ export const GALLERY: GalleryItem[] = [
     caption: "Waiting lounge",
     width: 1500,
     height: 1130,
-  },
-  {
-    src: "/gallery/exterior-day.jpg",
-    alt: "Rudra Dental street frontage on Kamaraj Street, Anakaputhur",
-    caption: "Kamaraj Street",
-    width: 652,
-    height: 984,
   },
   {
     src: "/gallery/logo-panel.jpg",
@@ -417,45 +417,6 @@ export const FAQS = [
   {
     q: "Can I book an appointment on WhatsApp?",
     a: "Yes. Use the booking form on this page to pick your dentist, date and time, and it opens a prefilled WhatsApp message to our front desk for instant confirmation.",
-  },
-];
-
-export type Article = {
-  title: string;
-  date: string;
-  dateDisplay: string;
-  excerpt: string;
-  tag: string;
-  image: string;
-};
-
-export const ARTICLES: Article[] = [
-  {
-    title: "Brushing and Flossing Techniques",
-    date: "2024-08-12",
-    dateDisplay: "12th Aug 2024",
-    excerpt:
-      "Brush your teeth at least twice a day using a soft-bristle toothbrush. The angle matters more than the pressure, and flossing reaches the 40 percent of tooth surface a brush never touches.",
-    tag: "Prevention",
-    image: "/blog/brushing-and-flossing.jpg",
-  },
-  {
-    title: "The Power of Proper Nutrition",
-    date: "2024-10-18",
-    dateDisplay: "18th Oct 2024",
-    excerpt:
-      "A healthy diet plays a significant role in maintaining your dental health. Frequency of sugar exposure damages enamel far more than the total quantity you consume in a day.",
-    tag: "Lifestyle",
-    image: "/blog/proper-nutrition.jpg",
-  },
-  {
-    title: "Regular Dental Check-ups",
-    date: "2022-05-21",
-    dateDisplay: "21th May 2022",
-    excerpt:
-      "Do not underestimate the importance of routine dental visits. Most cavities and gum problems are painless until they become expensive, and a six month recall catches them early.",
-    tag: "Checkups",
-    image: "/blog/regular-checkups.jpg",
   },
 ];
 

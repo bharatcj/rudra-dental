@@ -28,20 +28,31 @@ export function ScrollProgress() {
   );
 }
 
+const BOOT_PATH =
+  typeof window === "undefined" ? "/" : window.location.pathname;
+
+let introPlayed = false;
+
 export function Preloader() {
+  const [skip] = useState(() => introPlayed || BOOT_PATH !== "/");
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    if (skip) return;
+    introPlayed = true;
     const timer = window.setTimeout(() => setDone(true), 1250);
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [skip]);
 
   useEffect(() => {
+    if (skip) return;
     document.body.style.overflow = done ? "" : "hidden";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [done]);
+  }, [done, skip]);
+
+  if (skip) return null;
 
   return (
     <AnimatePresence>

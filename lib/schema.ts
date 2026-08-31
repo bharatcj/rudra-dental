@@ -4,10 +4,10 @@ import {
   STRUCTURED_SERVICES,
   FAQS,
   DOCTORS,
-  ARTICLES,
   GALLERY,
 } from "./site";
 import { TREATMENTS, type Treatment } from "./treatments";
+import { POSTS_BY_DATE, type BlogPost } from "./blog";
 
 const OG_IMAGE = `${SITE.url}/og.png`;
 const IST_OFFSET = "+05:30";
@@ -202,17 +202,19 @@ export const breadcrumbSchema = {
 export const blogSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
+  "@id": `${SITE.url}/blog`,
   name: `${SITE.name} Blog`,
-  url: `${SITE.url}/#blog`,
-  blogPost: ARTICLES.map((article) => ({
+  url: `${SITE.url}/blog`,
+  blogPost: POSTS_BY_DATE.slice(0, 3).map((post) => ({
     "@type": "BlogPosting",
-    headline: article.title,
-    image: `${SITE.url}${article.image}`,
-    datePublished: istTimestamp(article.date),
-    dateModified: istTimestamp(article.date),
-    description: article.excerpt,
-    author: { "@type": "Organization", name: SITE.name },
-    publisher: { "@type": "Organization", name: SITE.name },
+    headline: post.title,
+    url: `${SITE.url}/blog/${post.slug}`,
+    image: `${SITE.url}${post.image}`,
+    datePublished: istTimestamp(post.date),
+    dateModified: istTimestamp(post.date),
+    description: post.excerpt,
+    author: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
   })),
 };
 
@@ -371,4 +373,104 @@ export const treatmentIndexSchema = {
   inLanguage: "en-IN",
   isPartOf: { "@id": `${SITE.url}/#website` },
   about: { "@id": CLINIC_ID },
+};
+
+export const blogIndexSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": `${SITE.url}/blog`,
+  url: `${SITE.url}/blog`,
+  name: `${SITE.name} Blog`,
+  description:
+    "Practical dentistry written by the team at Rudra Dental, Anakaputhur.",
+  inLanguage: "en-IN",
+  isPartOf: { "@id": `${SITE.url}/#website` },
+  publisher: { "@id": ORG_ID },
+  blogPost: POSTS_BY_DATE.map((post) => ({
+    "@type": "BlogPosting",
+    headline: post.title,
+    url: `${SITE.url}/blog/${post.slug}`,
+    image: `${SITE.url}${post.image}`,
+    datePublished: istTimestamp(post.date),
+    dateModified: istTimestamp(post.date),
+    description: post.excerpt,
+    author: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
+  })),
+};
+
+export const blogIndexBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE.canonical },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: `${SITE.url}/blog`,
+    },
+  ],
+};
+
+export function postSchema(post: BlogPost) {
+  const url = `${SITE.url}/blog/${post.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": url,
+    mainEntityOfPage: url,
+    url,
+    headline: post.title,
+    alternativeHeadline: post.metaTitle,
+    description: post.metaDescription,
+    articleSection: post.tag,
+    inLanguage: "en-IN",
+    wordCount: [
+      ...post.intro,
+      ...post.sections.flatMap((section) => section.body),
+    ]
+      .join(" ")
+      .split(/\s+/).length,
+    image: {
+      "@type": "ImageObject",
+      url: `${SITE.url}${post.image}`,
+      caption: post.imageAlt,
+    },
+    datePublished: istTimestamp(post.date),
+    dateModified: istTimestamp(post.date),
+    author: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
+    isPartOf: { "@id": `${SITE.url}/blog` },
+    about: { "@id": CLINIC_ID },
+  };
+}
+
+export function postBreadcrumb(post: BlogPost) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE.canonical },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE.url}/blog` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `${SITE.url}/blog/${post.slug}`,
+      },
+    ],
+  };
+}
+
+export const postItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Articles from Rudra Dental",
+  itemListElement: POSTS_BY_DATE.map((post, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: post.title,
+    url: `${SITE.url}/blog/${post.slug}`,
+  })),
 };

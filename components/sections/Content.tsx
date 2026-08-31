@@ -3,7 +3,9 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { FAQS, ARTICLES, SITE } from "@/lib/site";
+import Link from "next/link";
+import { FAQS, SITE } from "@/lib/site";
+import { POSTS_BY_DATE } from "@/lib/blog";
 import { useBooking } from "@/components/booking/BookingProvider";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Motion";
 import {
@@ -107,6 +109,7 @@ export function Faq() {
 
 export function Blog() {
   const { openBooking } = useBooking();
+  const latest = POSTS_BY_DATE.slice(0, 3);
 
   return (
     <section id="blog" aria-label="Latest blog and news" className="relative py-16 sm:py-20 lg:py-32">
@@ -123,45 +126,71 @@ export function Blog() {
         </div>
 
         <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {ARTICLES.map((article) => (
-            <StaggerItem key={article.title}>
+          {latest.map((post) => (
+            <StaggerItem key={post.slug}>
               <article className="group surface flex h-full flex-col overflow-hidden rounded-3xl transition duration-500 hover:border-gold-500/35">
-                <div className="relative aspect-[16/10] overflow-hidden bg-ink-900">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="relative block aspect-[16/10] overflow-hidden bg-ink-900"
+                >
                   <Image
-                    src={article.image}
-                    alt={`${article.title}, an article from Rudra Dental`}
+                    src={post.image}
+                    alt={post.imageAlt}
                     fill
                     quality={82}
                     sizes="(max-width: 768px) 92vw, 400px"
                     className="object-cover transition duration-700 group-hover:scale-[1.05]"
                   />
                   <span className="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+                  <span className="absolute top-4 left-4 rounded-full border border-gold-500/30 bg-ink-950/80 px-3 py-1 text-[0.65rem] tracking-[0.14em] text-gold-300 uppercase">
+                    {post.tag}
+                  </span>
                   <span className="absolute right-4 bottom-4 flex items-center gap-1.5 rounded-full border border-gold-500/22 bg-ink-950/90 px-3 py-1 text-[0.72rem] text-mist-300">
                     <IconCalendar className="h-3 w-3" />
-                    <time dateTime={article.date}>{article.dateDisplay}</time>
+                    <time dateTime={post.date}>{post.dateDisplay}</time>
                   </span>
-                </div>
+                </Link>
 
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="display text-xl text-mist-50 transition group-hover:text-gold-100">
-                    {article.title}
+                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-mist-400">
-                    {article.excerpt}
+                    {post.excerpt}
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => openBooking("blog")}
-                    className="mt-5 inline-flex min-h-11 items-center gap-2 self-start text-xs font-semibold tracking-[0.14em] text-gold-300 uppercase transition hover:text-gold-100"
-                  >
-                    Book appointment
-                    <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
-                  </button>
+                  <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <button
+                      type="button"
+                      onClick={() => openBooking("blog")}
+                      className="inline-flex min-h-11 items-center gap-2 rounded-full bg-gold-sheen px-5 text-xs font-semibold tracking-[0.12em] whitespace-nowrap text-ink-950 uppercase transition hover:shadow-[0_12px_32px_-12px_rgba(195,150,69,0.85)]"
+                    >
+                      Book appointment
+                    </button>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="inline-flex min-h-11 items-center gap-2 text-xs font-semibold tracking-[0.14em] text-gold-400 uppercase transition hover:text-gold-200"
+                    >
+                      Read
+                      <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
+                    </Link>
+                  </div>
                 </div>
               </article>
             </StaggerItem>
           ))}
         </Stagger>
+
+        <Reveal delay={0.12}>
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/blog"
+              className="group inline-flex items-center gap-2.5 rounded-full border border-gold-500/28 px-7 py-3.5 text-sm font-medium text-gold-100 transition hover:border-gold-400/60 hover:bg-gold-500/10"
+            >
+              All {POSTS_BY_DATE.length} articles
+              <IconArrow className="h-4 w-4 transition group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
