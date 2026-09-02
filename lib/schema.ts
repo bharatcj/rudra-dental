@@ -199,25 +199,6 @@ export const breadcrumbSchema = {
   ],
 };
 
-export const blogSchema = {
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "@id": `${SITE.url}/blog`,
-  name: `${SITE.name} Blog`,
-  url: `${SITE.url}/blog`,
-  blogPost: POSTS_BY_DATE.slice(0, 3).map((post) => ({
-    "@type": "BlogPosting",
-    headline: post.title,
-    url: `${SITE.url}/blog/${post.slug}`,
-    image: `${SITE.url}${post.image}`,
-    datePublished: istTimestamp(post.date),
-    dateModified: istTimestamp(post.date),
-    description: post.excerpt,
-    author: { "@id": ORG_ID },
-    publisher: { "@id": ORG_ID },
-  })),
-};
-
 export const privacySchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",

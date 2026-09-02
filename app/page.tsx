@@ -20,7 +20,6 @@ import { getReviewFeed } from "@/lib/reviews";
 import {
   breadcrumbSchema,
   faqSchema,
-  blogSchema,
   videoSchema,
   gallerySchema,
 } from "@/lib/schema";
@@ -32,7 +31,6 @@ export default async function HomePage() {
   const graph = [
     breadcrumbSchema,
     faqSchema,
-    blogSchema,
     videoSchema,
     gallerySchema,
   ];
