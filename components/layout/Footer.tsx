@@ -192,13 +192,6 @@ export default function Footer() {
           <Link href="/privacy-policy" className="transition hover:text-gold-200">
             Privacy Policy
           </Link>
-          <a
-            href={SITE.clinicPortal}
-            className="transition hover:text-gold-200"
-            rel="nofollow"
-          >
-            Clinic Portal
-          </a>
         </div>
       </div>
     </footer>

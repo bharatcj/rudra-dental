@@ -10,7 +10,6 @@ export const SITE = {
   mapsShortLink: "https://g.co/kgs/tn1CaxF",
   mapEmbed:
     "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15551.354560344702!2d80.1293464!3d12.9821704!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525f9a7d9b385f%3A0x7390a16adfa2e45a!2sRUDRA%20DENTAL!5e0!3m2!1sen!2sin!4v1725458735814!5m2!1sen!2sin",
-  clinicPortal: "/app/",
   established: 2023,
   address: {
     street: "Babu Reddy Avenue, Plot No.1, Kamaraj St, Kamatchi Nagar, Guruswamy Nagar",

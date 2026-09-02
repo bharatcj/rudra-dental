@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
-const LEGACY_ORIGIN =
-  process.env.LEGACY_ORIGIN ?? "https://www.rudradental.com";
+const LEGACY_ORIGIN = process.env.LEGACY_ORIGIN;
 
 const SECURITY_HEADERS = [
   { key: "X-DNS-Prefetch-Control", value: "on" },
@@ -101,6 +100,9 @@ const nextConfig: NextConfig = {
   },
 
   async rewrites() {
+    if (!LEGACY_ORIGIN) {
+      return { beforeFiles: [], afterFiles: [], fallback: [] };
+    }
     return {
       beforeFiles: [
         {
