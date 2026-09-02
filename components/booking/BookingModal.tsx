@@ -17,6 +17,7 @@ const LEAD_HOURS = 12;
 const MAX_DAYS = 30;
 const OPEN_HOUR = 9;
 const CLOSE_HOUR = 21;
+const CLOSED_DAY = 0;
 const WEEKDAYS = ["S", "M", "T", "W", "T", "F", "S"];
 const MONTHS = [
   "January",
@@ -54,7 +55,7 @@ function toKey(date: Date) {
 }
 
 function buildSlots(selected: Date | null, earliest: Date) {
-  if (!selected) return [] as string[];
+  if (!selected || selected.getDay() === CLOSED_DAY) return [] as string[];
   const slots: string[] = [];
   for (let hour = OPEN_HOUR; hour <= CLOSE_HOUR; hour += 1) {
     for (const minute of [0, 30]) {
@@ -159,7 +160,7 @@ export default function BookingModal() {
 
   const isDisabledDay = (date: Date) => {
     const day = startOfDay(date);
-    return day < minSelectable || day > lastDate;
+    return day < minSelectable || day > lastDate || day.getDay() === CLOSED_DAY;
   };
 
   const submit = () => {
@@ -470,7 +471,7 @@ export default function BookingModal() {
                     <p className="mb-3 text-sm font-medium text-mist-200">
                       Pick a time
                       <span className="ml-2 text-xs text-mist-400">
-                        clinic open 9:00 AM to 9:00 PM
+                        {SITE.hours.days}, 9:00 AM to 9:00 PM
                       </span>
                     </p>
                     {!selectedDate ? (
@@ -479,7 +480,7 @@ export default function BookingModal() {
                       </p>
                     ) : slots.length === 0 ? (
                       <p className="rounded-xl border border-dashed border-gold-500/25 px-4 py-6 text-center text-sm text-gold-200">
-                        No slots left on this date. Please choose the next day.
+                        No slots left on this date. Please choose another day.
                       </p>
                     ) : (
                       <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">

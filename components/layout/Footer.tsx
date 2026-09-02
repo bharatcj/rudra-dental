@@ -132,7 +132,7 @@ export default function Footer() {
                 <IconClock className="h-4 w-4" />
               </span>
               <span className="text-mist-400">
-                Monday - Sunday
+                Monday - Saturday
                 <br />
                 9:00am - 9:00pm
               </span>

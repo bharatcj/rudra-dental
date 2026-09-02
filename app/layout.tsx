@@ -38,7 +38,7 @@ const TITLE_LONG =
   "Rudra Dental - Best Dental Clinic in Anakaputhur, Pallavaram, Pammal, Chromepet, Kundrathur, Chennai";
 
 const DESCRIPTION =
-  "Rudra Dental on Kamaraj Street, Anakaputhur, Chennai. Root canals, implants, braces, aligners and same day emergency care. Rated 5.0 by 275 patients, open 7 days.";
+  "Rudra Dental on Kamaraj Street, Anakaputhur, Chennai. Root canals, implants, braces, aligners and same day emergency care. Rated 5.0 by 275 patients, Monday to Saturday.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),

@@ -220,7 +220,7 @@ export function Cta() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-5 max-w-xl text-mist-300">
-              Seven days a week, 9:00 AM to 9:00 PM. Emergency cases are given priority
+              Monday to Saturday, 9:00 AM to 9:00 PM. Emergency cases are given priority
               slots on the same day.
             </p>
           </Reveal>

@@ -145,7 +145,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
               ))}
               <div className="mt-5 flex items-center gap-2.5 border-t border-gold-500/12 pt-5 text-xs text-mist-400">
                 <IconClock className="h-4 w-4 shrink-0 text-gold-400" />
-                Open every day, 9:00 AM to 9:00 PM
+                Monday to Saturday, 9:00 AM to 9:00 PM
               </div>
             </dl>
           </Reveal>

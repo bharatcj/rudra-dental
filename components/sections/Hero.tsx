@@ -17,7 +17,7 @@ import {
 const HIGHLIGHTS = [
   { value: "5.0", label: "Rated on Google" },
   { value: "275", label: "Patient reviews" },
-  { value: "7 days", label: "Open every week" },
+  { value: "6 days", label: "Open every week" },
 ];
 
 export default function Hero() {

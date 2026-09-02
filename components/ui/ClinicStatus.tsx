@@ -6,6 +6,8 @@ import { SITE } from "@/lib/site";
 const ZONE = "Asia/Kolkata";
 const OPEN_HOUR = 9;
 const CLOSE_HOUR = 21;
+const CLOSED_DAY = 0;
+const DAY_KEYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 export type ClinicState = {
   ready: boolean;
@@ -20,7 +22,7 @@ const IDLE: ClinicState = {
   ready: false,
   open: true,
   closingSoon: false,
-  label: "Open all 7 days",
+  label: SITE.hours.days,
   detail: "9am to 9pm",
   clock: "",
 };
@@ -28,6 +30,7 @@ const IDLE: ClinicState = {
 function readIst() {
   const parts = new Intl.DateTimeFormat("en-GB", {
     timeZone: ZONE,
+    weekday: "short",
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
@@ -35,17 +38,29 @@ function readIst() {
 
   const hour = Number(parts.find((p) => p.type === "hour")?.value ?? "0");
   const minute = Number(parts.find((p) => p.type === "minute")?.value ?? "0");
-  return { hour: hour === 24 ? 0 : hour, minute };
+  const weekday = parts.find((p) => p.type === "weekday")?.value ?? "Mon";
+  const day = DAY_KEYS.indexOf(weekday);
+  return { hour: hour === 24 ? 0 : hour, minute, day: day < 0 ? 1 : day };
 }
 
-function describe(hour: number, minute: number): ClinicState {
+function describe(hour: number, minute: number, day: number): ClinicState {
   const minutes = hour * 60 + minute;
   const opens = OPEN_HOUR * 60;
   const closes = CLOSE_HOUR * 60;
-  const open = minutes >= opens && minutes < closes;
   const clock = `${`${hour}`.padStart(2, "0")}:${`${minute}`.padStart(2, "0")} IST`;
+  const closed = {
+    ready: true,
+    open: false,
+    closingSoon: false,
+    label: "Closed now",
+    clock,
+  };
 
-  if (open) {
+  if (day === CLOSED_DAY) {
+    return { ...closed, detail: "Opens Monday 9am" };
+  }
+
+  if (minutes >= opens && minutes < closes) {
     const left = closes - minutes;
     if (left <= 60) {
       return {
@@ -71,25 +86,18 @@ function describe(hour: number, minute: number): ClinicState {
     const until = opens - minutes;
     const hours = Math.floor(until / 60);
     return {
-      ready: true,
-      open: false,
-      closingSoon: false,
-      label: "Closed now",
+      ...closed,
       detail: hours >= 1 ? `Opens in ${hours}h` : `Opens in ${until} min`,
-      clock,
     };
+  }
+
+  if (day === DAY_KEYS.length - 1) {
+    return { ...closed, detail: "Opens Monday 9am" };
   }
 
   const until = 24 * 60 - minutes + opens;
   const hours = Math.floor(until / 60);
-  return {
-    ready: true,
-    open: false,
-    closingSoon: false,
-    label: "Closed now",
-    detail: `Opens tomorrow 9am, in ${hours}h`,
-    clock,
-  };
+  return { ...closed, detail: `Opens tomorrow 9am, in ${hours}h` };
 }
 
 export function useClinicStatus() {
@@ -97,8 +105,8 @@ export function useClinicStatus() {
 
   useEffect(() => {
     const tick = () => {
-      const { hour, minute } = readIst();
-      setState(describe(hour, minute));
+      const { hour, minute, day } = readIst();
+      setState(describe(hour, minute, day));
     };
     tick();
     const timer = window.setInterval(tick, 30000);
@@ -142,7 +150,7 @@ export function StatusInline({ className }: { className?: string }) {
   return (
     <span className={`flex items-center gap-2 ${className ?? ""}`}>
       <StatusDot state={state} />
-      <span className={tone}>{state.ready ? state.label : "Open all 7 days"}</span>
+      <span className={tone}>{state.ready ? state.label : SITE.hours.days}</span>
       <span className="text-mist-500">|</span>
       <span className="text-mist-400">
         {state.ready ? state.detail : "9am to 9pm"}
@@ -174,7 +182,7 @@ export function StatusPill({ className }: { className?: string }) {
     >
       <StatusDot state={state} />
       <span className={`font-medium ${tone}`}>
-        {state.ready ? state.label : "Open all 7 days"}
+        {state.ready ? state.label : SITE.hours.days}
       </span>
       <span className="text-mist-400">
         {state.ready ? state.detail : "9am to 9pm"}
@@ -198,7 +206,7 @@ export function StatusCard({ className }: { className?: string }) {
       <div className="flex items-center gap-2.5">
         <StatusDot state={state} />
         <p className={`text-sm font-medium ${tone}`}>
-          {state.ready ? state.label : "Open all 7 days"}
+          {state.ready ? state.label : SITE.hours.days}
         </p>
         {state.clock ? (
           <span className="ml-auto font-[family-name:var(--font-mark)] text-[0.72rem] tracking-widest text-mist-400">
@@ -206,9 +214,9 @@ export function StatusCard({ className }: { className?: string }) {
           </span>
         ) : null}
       </div>
-      <p className="mt-1.5 text-lg font-medium text-mist-50">Monday to Sunday</p>
+      <p className="mt-1.5 text-lg font-medium text-mist-50">{SITE.hours.days}</p>
       <p className="text-sm text-gold-200">
-        {SITE.hours.opens.slice(0, 5)} to 21:00, all 7 days
+        {SITE.hours.opens} to {SITE.hours.closes}, closed {SITE.hours.closedDay}
       </p>
       <p className="mt-1 text-xs text-mist-400">
         {state.ready ? state.detail : "Reception answers until 9pm"}

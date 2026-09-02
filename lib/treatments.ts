@@ -26,7 +26,7 @@ export const TREATMENTS: Treatment[] = [
     heading: "Root canal treatment",
     metaTitle: "Root Canal Treatment in Anakaputhur, Chennai",
     metaDescription:
-      "Single sitting and multi visit root canal treatment at Rudra Dental, Anakaputhur. Rotary endodontics, digital x-ray, and a crown to finish. Open 7 days.",
+      "Single sitting and multi visit root canal treatment at Rudra Dental, Anakaputhur. Rotary endodontics, digital x-ray, and a crown to finish. Open Monday to Saturday.",
     summary:
       "Removing infected pulp from inside a tooth, disinfecting the canals and sealing them, so the tooth can stay in the mouth instead of coming out.",
     procedure: "Endodontic therapy",

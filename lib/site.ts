@@ -22,7 +22,13 @@ export const SITE = {
     shortDisplay: "Kamaraj St, Guruswamy Nagar, Anakaputhur, Chennai 600070",
   },
   geo: { latitude: 12.9821704, longitude: 80.1293464 },
-  hours: { opens: "09:00", closes: "22:00", display: "Monday to Sunday, 9:00 AM to 9:00 PM" },
+  hours: {
+    opens: "09:00",
+    closes: "21:00",
+    days: "Monday to Saturday",
+    closedDay: "Sunday",
+    display: "Monday to Saturday, 9:00 AM to 9:00 PM",
+  },
   social: {
     facebook: "https://www.facebook.com/people/Rudra-Dental/61565090079593/",
     instagram: "https://www.instagram.com/rudradentalofficial/",
@@ -287,7 +293,7 @@ export const STATS = [
   { value: 275, suffix: "", label: "Google reviews" },
   { value: 5, suffix: "", label: "Specialist dentists" },
   { value: 14, suffix: "+", label: "Treatment specialities" },
-  { value: 7, suffix: " days", label: "Open every week" },
+  { value: 6, suffix: " days", label: "Open every week" },
 ];
 
 export { REVIEWS, REVIEW_TOPICS } from "./googleReviews";
@@ -432,7 +438,7 @@ export const TRUST_MARKERS = [
   "Sterilised single use instruments",
   "Digital X-ray and intraoral scanning",
   "Transparent written estimates",
-  "Open all 7 days, 9am to 9pm",
+  "Open Monday to Saturday, 9am to 9pm",
   "Emergency same day slots",
   "Five in-house specialists",
 ];

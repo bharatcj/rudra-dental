@@ -71,7 +71,6 @@ export const dentistSchema = {
       "Thursday",
       "Friday",
       "Saturday",
-      "Sunday",
     ],
     opens: SITE.hours.opens,
     closes: SITE.hours.closes,
