@@ -19,6 +19,7 @@ export type BlogPost = {
   intro: string[];
   sections: BlogSection[];
   takeaways: string[];
+  treatment: string;
   related: string[];
 };
 
@@ -78,6 +79,7 @@ export const POSTS: BlogPost[] = [
       "Floss before brushing, and curve it against each tooth in turn",
       "Spit after brushing rather than rinsing the fluoride away",
     ],
+    treatment: "orthodontic-treatment",
     related: ["regular-dental-check-ups", "bleeding-gums-what-they-mean"],
   },
   {
@@ -140,6 +142,7 @@ export const POSTS: BlogPost[] = [
       "Cheese and water after eating help the mouth recover",
       "Wait thirty minutes after anything acidic before brushing",
     ],
+    treatment: "kids-dentistry",
     related: ["brushing-and-flossing-techniques", "regular-dental-check-ups"],
   },
   {
@@ -195,6 +198,7 @@ export const POSTS: BlogPost[] = [
       "Screening for oral cancer takes under a minute and is part of every visit",
       "Every deferred appointment gets more expensive, not less",
     ],
+    treatment: "root-canal-treatment",
     related: ["brushing-and-flossing-techniques", "bleeding-gums-what-they-mean"],
   },
   {
@@ -252,6 +256,7 @@ export const POSTS: BlogPost[] = [
       "Expect two or three days of tenderness when biting, nothing sharper",
       "A crown on a root treated back tooth prevents it splitting later",
     ],
+    treatment: "root-canal-treatment",
     related: [
       "wisdom-tooth-pain-when-it-needs-removing",
       "bleeding-gums-what-they-mean",
@@ -318,6 +323,7 @@ export const POSTS: BlogPost[] = [
       "Smokers often bleed less while the disease progresses faster",
       "Scaling plus a review appointment resolves most early cases",
     ],
+    treatment: "laser-dentistry",
     related: ["regular-dental-check-ups", "brushing-and-flossing-techniques"],
   },
   {
@@ -381,6 +387,7 @@ export const POSTS: BlogPost[] = [
       "Milk teeth hold space for adult teeth and are worth treating",
       "Varnish and sealants prevent far more than they cost",
     ],
+    treatment: "kids-dentistry",
     related: ["brushing-and-flossing-techniques", "the-power-of-proper-nutrition"],
   },
   {
@@ -439,6 +446,7 @@ export const POSTS: BlogPost[] = [
       "Crowns and white fillings will not lighten and may need replacing",
       "Treat decay and gum disease before whitening anything",
     ],
+    treatment: "full-mouth-rehabilitation",
     related: ["regular-dental-check-ups", "the-power-of-proper-nutrition"],
   },
   {
@@ -503,9 +511,14 @@ export const POSTS: BlogPost[] = [
       "An x ray decides the approach and shows where the nerve runs",
       "No straws, no forceful rinsing and no spitting for the first day",
     ],
+    treatment: "tooth-extraction-and-impaction",
     related: ["does-a-root-canal-hurt", "regular-dental-check-ups"],
   },
 ];
+
+export function postsForTreatment(slug: string) {
+  return POSTS_BY_DATE.filter((post) => post.treatment === slug);
+}
 
 export function postBySlug(slug: string) {
   return POSTS.find((post) => post.slug === slug);

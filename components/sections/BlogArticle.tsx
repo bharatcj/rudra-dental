@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { type BlogPost, postBySlug } from "@/lib/blog";
+import { treatmentBySlug } from "@/lib/treatments";
 import { useBooking } from "@/components/booking/BookingProvider";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Motion";
 import {
@@ -17,6 +18,7 @@ import {
 
 export default function BlogArticle({ post }: { post: BlogPost }) {
   const { openBooking } = useBooking();
+  const treatmentPage = treatmentBySlug(post.treatment);
   const related = post.related
     .map((slug) => postBySlug(slug))
     .filter((item): item is BlogPost => Boolean(item));
@@ -196,6 +198,33 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
           </div>
         </section>
       </article>
+
+      {treatmentPage ? (
+        <section aria-label="Related treatment" className="relative pb-12 lg:pb-14">
+          <div className="shell">
+            <Reveal>
+              <Link
+                href={`/treatments/${treatmentPage.slug}`}
+                className="surface group flex flex-col gap-4 rounded-2xl p-7 transition hover:border-gold-500/35 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <span className="max-w-[52ch]">
+                  <span className="eyebrow">The treatment behind this article</span>
+                  <span className="display mt-3 block text-xl text-mist-50 transition group-hover:text-gold-100">
+                    {treatmentPage.name}
+                  </span>
+                  <span className="mt-2 block text-sm leading-relaxed text-mist-400">
+                    {treatmentPage.summary}
+                  </span>
+                </span>
+                <span className="inline-flex min-h-11 shrink-0 items-center gap-2 text-[0.72rem] font-semibold tracking-[0.16em] text-gold-400 uppercase">
+                  Read the treatment page
+                  <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
+                </span>
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
 
       <section aria-label="More articles" className="relative pb-14 lg:pb-16">
         <div className="shell">

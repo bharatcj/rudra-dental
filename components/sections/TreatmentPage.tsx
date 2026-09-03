@@ -6,6 +6,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SITE, SERVICE_AREAS } from "@/lib/site";
 import { type Treatment, treatmentBySlug } from "@/lib/treatments";
+import { postsForTreatment } from "@/lib/blog";
 import { useBooking } from "@/components/booking/BookingProvider";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Motion";
 import {
@@ -22,6 +23,7 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
   const { openBooking } = useBooking();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const Icon = SERVICE_ICONS[treatment.icon];
+  const posts = postsForTreatment(treatment.slug);
   const related = treatment.related
     .map((slug) => treatmentBySlug(slug))
     .filter((item): item is Treatment => Boolean(item));
@@ -304,6 +306,40 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
           </div>
         </div>
       </section>
+
+      {posts.length ? (
+        <section aria-label="Articles about this treatment" className="relative py-12 lg:py-16">
+          <div className="shell">
+            <Reveal>
+              <p className="eyebrow">Reading on this treatment</p>
+            </Reveal>
+            <Stagger className="mt-8 grid gap-4 sm:grid-cols-2">
+              {posts.map((post) => (
+                <StaggerItem key={post.slug} className="h-full">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="surface group flex h-full flex-col rounded-2xl p-6 transition hover:border-gold-500/35"
+                  >
+                    <span className="text-[0.65rem] tracking-[0.16em] text-gold-400 uppercase">
+                      {post.tag}
+                    </span>
+                    <h3 className="display mt-3 text-lg text-mist-50 transition group-hover:text-gold-100">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 max-w-[52ch] flex-1 text-sm leading-relaxed text-mist-400">
+                      {post.excerpt}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-2 text-[0.72rem] font-semibold tracking-[0.16em] text-gold-400 uppercase">
+                      Read article
+                      <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </div>
+        </section>
+      ) : null}
 
       <section aria-label="Related treatments" className="relative py-12 lg:py-16">
         <div className="shell">
