@@ -172,7 +172,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
                     <p className="eyebrow">Talk to a dentist</p>
                     <p className="mt-4 text-sm leading-relaxed text-mist-300">
                       Reading only takes you so far. Five specialists sit on one floor
-                      on Kamaraj Street, open until nine, Monday to Saturday.
+                      on Kamaraj Street, Monday to Saturday, mornings and evenings.
                     </p>
                   </div>
                   <div className="mt-6 flex flex-col gap-3 sm:mt-0 sm:shrink-0 lg:mt-6">

@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { SITE, SERVICES, SERVICE_AREAS } from "@/lib/site";
+import { SITE, SERVICES } from "@/lib/site";
+import { AREAS } from "@/lib/areas";
 import { useBooking } from "@/components/booking/BookingProvider";
 import {
   IconClock,
@@ -134,7 +135,7 @@ export default function Footer() {
               <span className="text-mist-400">
                 Monday - Saturday
                 <br />
-                9:00am - 9:00pm
+                {SITE.hours.short}
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -179,9 +180,20 @@ export default function Footer() {
       </div>
 
       <div className="shell relative border-t border-gold-500/10 py-6">
-        <p className="text-[0.75rem] leading-relaxed text-mist-400/70">
-          {SERVICE_AREAS.map((area) => `Dental clinic in ${area}`).join(" | ")}
+        <p className="text-xs tracking-[0.16em] text-gold-400 uppercase">
+          Areas we serve
         </p>
+        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">
+          {AREAS.map((area) => (
+            <Link
+              key={area.slug}
+              href={`/dental-clinic/${area.slug}`}
+              className="text-[0.78rem] text-mist-400/80 transition hover:text-gold-200"
+            >
+              {area.name}
+            </Link>
+          ))}
+        </div>
       </div>
 
       <div className="shell relative flex flex-col items-center justify-between gap-4 border-t border-gold-500/10 py-6 sm:flex-row">

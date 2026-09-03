@@ -23,11 +23,16 @@ export const SITE = {
   },
   geo: { latitude: 12.9821704, longitude: 80.1293464 },
   hours: {
-    opens: "09:00",
+    opens: "09:30",
     closes: "21:00",
     days: "Monday to Saturday",
     closedDay: "Sunday",
-    display: "Monday to Saturday, 9:00 AM to 9:00 PM",
+    sessions: [
+      { opens: "09:30", closes: "13:00", label: "9:30 AM to 1:00 PM" },
+      { opens: "16:30", closes: "21:00", label: "4:30 PM to 9:00 PM" },
+    ],
+    display: "Monday to Saturday, 9:30 AM to 1:00 PM and 4:30 PM to 9:00 PM",
+    short: "9:30am to 1pm, 4:30pm to 9pm",
   },
   social: {
     facebook: "https://www.facebook.com/people/Rudra-Dental/61565090079593/",
@@ -339,7 +344,7 @@ export const GALLERY: GalleryItem[] = [
   {
     src: "/gallery/exterior-night.jpg",
     alt: "Rudra Dental clinic frontage lit at night in Anakaputhur",
-    caption: "Open until 9pm",
+    caption: "Open till 9pm",
     width: 1125,
     height: 1500,
   },
@@ -401,7 +406,7 @@ export const FAQS = [
   },
   {
     q: "What are the clinic's hours?",
-    a: "The clinic is open from Monday to Saturday, 9 AM to 9 PM.",
+    a: "The clinic is open Monday to Saturday, 9:30 AM to 1:00 PM and 4:30 PM to 9:00 PM. We are closed on Sunday and through the afternoon break.",
   },
   {
     q: "Where is Rudra Dental located?",
@@ -438,7 +443,7 @@ export const TRUST_MARKERS = [
   "Sterilised single use instruments",
   "Digital X-ray and intraoral scanning",
   "Transparent written estimates",
-  "Open Monday to Saturday, 9am to 9pm",
+  "Open Monday to Saturday, 9:30am to 1pm and 4:30pm to 9pm",
   "Emergency same day slots",
   "Five in-house specialists",
 ];

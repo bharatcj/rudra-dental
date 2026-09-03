@@ -21,6 +21,7 @@ import { StatusInline, StatusPill } from "@/components/ui/ClinicStatus";
 const NAV = [
   { label: "Home", href: "#home", top: true },
   { label: "Treatments", href: "/treatments" },
+  { label: "Areas", href: "/dental-clinic" },
   { label: "About Us", href: "#about" },
   { label: "Clinic", href: "#gallery" },
   { label: "Doctors", href: "#doctors" },

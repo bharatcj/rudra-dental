@@ -15,9 +15,16 @@ import { LogoMark } from "@/components/ui/Logo";
 
 const LEAD_HOURS = 12;
 const MAX_DAYS = 30;
-const OPEN_HOUR = 9;
-const CLOSE_HOUR = 21;
 const CLOSED_DAY = 0;
+const SESSIONS = SITE.hours.sessions.map((session) => ({
+  opens: toMinutes(session.opens),
+  closes: toMinutes(session.closes),
+}));
+
+function toMinutes(value: string) {
+  const [hour, minute] = value.split(":").map(Number);
+  return hour * 60 + minute;
+}
 const WEEKDAYS = ["S", "M", "T", "W", "T", "F", "S"];
 const MONTHS = [
   "January",
@@ -57,9 +64,10 @@ function toKey(date: Date) {
 function buildSlots(selected: Date | null, earliest: Date) {
   if (!selected || selected.getDay() === CLOSED_DAY) return [] as string[];
   const slots: string[] = [];
-  for (let hour = OPEN_HOUR; hour <= CLOSE_HOUR; hour += 1) {
-    for (const minute of [0, 30]) {
-      if (hour === CLOSE_HOUR && minute > 0) continue;
+  for (const session of SESSIONS) {
+    for (let minutes = session.opens; minutes <= session.closes - 30; minutes += 30) {
+      const hour = Math.floor(minutes / 60);
+      const minute = minutes % 60;
       const candidate = new Date(selected);
       candidate.setHours(hour, minute, 0, 0);
       if (candidate.getTime() < earliest.getTime()) continue;
@@ -471,7 +479,7 @@ export default function BookingModal() {
                     <p className="mb-3 text-sm font-medium text-mist-200">
                       Pick a time
                       <span className="ml-2 text-xs text-mist-400">
-                        {SITE.hours.days}, 9:00 AM to 9:00 PM
+                        {SITE.hours.days}, {SITE.hours.short}
                       </span>
                     </p>
                     {!selectedDate ? (

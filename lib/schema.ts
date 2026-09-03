@@ -7,6 +7,7 @@ import {
   GALLERY,
 } from "./site";
 import { TREATMENTS, type Treatment } from "./treatments";
+import { AREAS, type ServiceArea } from "./areas";
 import { POSTS_BY_DATE, type BlogPost } from "./blog";
 
 const OG_IMAGE = `${SITE.url}/og.png`;
@@ -31,7 +32,7 @@ const LOGO = {
   height: 512,
 };
 
-const DESCRIPTION = `${SITE.name} is a dental clinic on ${SITE.address.street}, ${SITE.address.locality}, Chennai ${SITE.address.postalCode}, open since ${SITE.established}. Five in-house specialists provide root canal treatment, dental implants, braces and clear aligners, laser dentistry, children's dentistry and full mouth rehabilitation, ${SITE.hours.days.toLowerCase()}.`;
+const DESCRIPTION = `${SITE.name} is a dental clinic on ${SITE.address.street}, ${SITE.address.locality}, Chennai ${SITE.address.postalCode}, open since ${SITE.established}. Five in-house specialists provide root canal treatment, dental implants, braces and clear aligners, laser dentistry, children's dentistry and full mouth rehabilitation, ${SITE.hours.days.toLowerCase()}, ${SITE.hours.short}.`;
 
 const DISAMBIGUATION = `${SITE.name} practises only from ${SITE.address.street}, ${SITE.address.locality}, Chennai ${SITE.address.postalCode}, on ${SITE.phoneDisplay}. It has no branches and is not connected to Rudra Dental Smilelature in Salem, to Dr Rudra Dental Care, or to any other practice using a similar name.`;
 
@@ -91,7 +92,7 @@ export const dentistSchema = {
     "@type": "City",
     name: area,
   })),
-  openingHoursSpecification: {
+  openingHoursSpecification: SITE.hours.sessions.map((session) => ({
     "@type": "OpeningHoursSpecification",
     dayOfWeek: [
       "Monday",
@@ -101,9 +102,9 @@ export const dentistSchema = {
       "Friday",
       "Saturday",
     ],
-    opens: SITE.hours.opens,
-    closes: SITE.hours.closes,
-  },
+    opens: session.opens,
+    closes: session.closes,
+  })),
   sameAs: SAME_AS,
   employee: DOCTORS.map((doctor) => ({
     "@type": "Physician",
@@ -450,5 +451,106 @@ export const postItemList = {
     position: index + 1,
     name: post.title,
     url: `${SITE.url}/blog/${post.slug}`,
+  })),
+};
+
+export function areaSchema(area: ServiceArea) {
+  const url = `${SITE.url}/dental-clinic/${area.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": url,
+    url,
+    name: area.metaTitle,
+    description: area.metaDescription,
+    inLanguage: "en-IN",
+    isPartOf: { "@id": `${SITE.url}/#website` },
+    about: { "@id": CLINIC_ID },
+    mainEntity: {
+      "@type": "Dentist",
+      "@id": CLINIC_ID,
+      name: SITE.name,
+      areaServed: {
+        "@type": "Place",
+        name: `${area.name}, Chennai`,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: area.name,
+          addressRegion: SITE.address.region,
+          addressCountry: SITE.address.country,
+        },
+      },
+    },
+  };
+}
+
+export function areaFaqSchema(area: ServiceArea) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: area.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+}
+
+export function areaBreadcrumb(area: ServiceArea) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE.canonical },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Areas we serve",
+        item: `${SITE.url}/dental-clinic`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: area.name,
+        item: `${SITE.url}/dental-clinic/${area.slug}`,
+      },
+    ],
+  };
+}
+
+export const areaIndexSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${SITE.url}/dental-clinic`,
+  url: `${SITE.url}/dental-clinic`,
+  name: "Areas Rudra Dental serves around Anakaputhur",
+  inLanguage: "en-IN",
+  isPartOf: { "@id": `${SITE.url}/#website` },
+  about: { "@id": CLINIC_ID },
+};
+
+export const areaIndexBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE.canonical },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Areas we serve",
+      item: `${SITE.url}/dental-clinic`,
+    },
+  ],
+};
+
+export const areaItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Areas served by Rudra Dental",
+  itemListElement: AREAS.map((area, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: area.name,
+    url: `${SITE.url}/dental-clinic/${area.slug}`,
   })),
 };

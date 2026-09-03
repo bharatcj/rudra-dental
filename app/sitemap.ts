@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 import { TREATMENTS } from "@/lib/treatments";
 import { POSTS_BY_DATE } from "@/lib/blog";
+import { AREAS } from "@/lib/areas";
 
 const LAST_MODIFIED = new Date("2026-09-03T00:00:00.000Z");
 
@@ -37,6 +38,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "yearly" as const,
       priority: 0.6,
+    })),
+    {
+      url: `${SITE.url}/dental-clinic`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    ...AREAS.map((area) => ({
+      url: `${SITE.url}/dental-clinic/${area.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
     {
       url: `${SITE.url}/privacy-policy`,

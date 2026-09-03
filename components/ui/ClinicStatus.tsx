@@ -4,10 +4,27 @@ import { useEffect, useState } from "react";
 import { SITE } from "@/lib/site";
 
 const ZONE = "Asia/Kolkata";
-const OPEN_HOUR = 9;
-const CLOSE_HOUR = 21;
 const CLOSED_DAY = 0;
 const DAY_KEYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+const SESSIONS = SITE.hours.sessions.map((session) => ({
+  opens: toMinutes(session.opens),
+  closes: toMinutes(session.closes),
+  label: session.label,
+}));
+
+function toMinutes(value: string) {
+  const [hour, minute] = value.split(":").map(Number);
+  return hour * 60 + minute;
+}
+
+function clockLabel(minutes: number) {
+  const hour = Math.floor(minutes / 60);
+  const minute = minutes % 60;
+  const suffix = hour >= 12 ? "pm" : "am";
+  const display = hour % 12 === 0 ? 12 : hour % 12;
+  return minute ? `${display}:${`${minute}`.padStart(2, "0")}${suffix}` : `${display}${suffix}`;
+}
 
 export type ClinicState = {
   ready: boolean;
@@ -23,7 +40,7 @@ const IDLE: ClinicState = {
   open: true,
   closingSoon: false,
   label: SITE.hours.days,
-  detail: "9am to 9pm",
+  detail: SITE.hours.short,
   clock: "",
 };
 
@@ -45,30 +62,23 @@ function readIst() {
 
 function describe(hour: number, minute: number, day: number): ClinicState {
   const minutes = hour * 60 + minute;
-  const opens = OPEN_HOUR * 60;
-  const closes = CLOSE_HOUR * 60;
   const clock = `${`${hour}`.padStart(2, "0")}:${`${minute}`.padStart(2, "0")} IST`;
-  const closed = {
-    ready: true,
-    open: false,
-    closingSoon: false,
-    label: "Closed now",
-    clock,
-  };
+  const shut = { ready: true, open: false, closingSoon: false, label: "Closed now", clock };
 
   if (day === CLOSED_DAY) {
-    return { ...closed, detail: "Opens Monday 9am" };
+    return { ...shut, detail: `Opens Monday ${clockLabel(SESSIONS[0].opens)}` };
   }
 
-  if (minutes >= opens && minutes < closes) {
-    const left = closes - minutes;
-    if (left <= 60) {
+  const current = SESSIONS.find((s) => minutes >= s.opens && minutes < s.closes);
+  if (current) {
+    const left = current.closes - minutes;
+    if (left <= 45) {
       return {
         ready: true,
         open: true,
         closingSoon: true,
         label: "Closing soon",
-        detail: `${left} min left today`,
+        detail: `${left} min left this session`,
         clock,
       };
     }
@@ -77,27 +87,25 @@ function describe(hour: number, minute: number, day: number): ClinicState {
       open: true,
       closingSoon: false,
       label: "Open now",
-      detail: "Until 9:00 pm",
+      detail: `Until ${clockLabel(current.closes)}`,
       clock,
     };
   }
 
-  if (minutes < opens) {
-    const until = opens - minutes;
+  const next = SESSIONS.find((s) => minutes < s.opens);
+  if (next) {
+    const until = next.opens - minutes;
     const hours = Math.floor(until / 60);
     return {
-      ...closed,
-      detail: hours >= 1 ? `Opens in ${hours}h` : `Opens in ${until} min`,
+      ...shut,
+      detail: hours >= 1 ? `Opens ${clockLabel(next.opens)}, in ${hours}h` : `Opens in ${until} min`,
     };
   }
 
   if (day === DAY_KEYS.length - 1) {
-    return { ...closed, detail: "Opens Monday 9am" };
+    return { ...shut, detail: `Opens Monday ${clockLabel(SESSIONS[0].opens)}` };
   }
-
-  const until = 24 * 60 - minutes + opens;
-  const hours = Math.floor(until / 60);
-  return { ...closed, detail: `Opens tomorrow 9am, in ${hours}h` };
+  return { ...shut, detail: `Opens tomorrow ${clockLabel(SESSIONS[0].opens)}` };
 }
 
 export function useClinicStatus() {
@@ -153,7 +161,7 @@ export function StatusInline({ className }: { className?: string }) {
       <span className={tone}>{state.ready ? state.label : SITE.hours.days}</span>
       <span className="text-mist-500">|</span>
       <span className="text-mist-400">
-        {state.ready ? state.detail : "9am to 9pm"}
+        {state.ready ? state.detail : SITE.hours.short}
       </span>
     </span>
   );
@@ -185,7 +193,7 @@ export function StatusPill({ className }: { className?: string }) {
         {state.ready ? state.label : SITE.hours.days}
       </span>
       <span className="text-mist-400">
-        {state.ready ? state.detail : "9am to 9pm"}
+        {state.ready ? state.detail : SITE.hours.short}
       </span>
     </span>
   );
@@ -216,10 +224,10 @@ export function StatusCard({ className }: { className?: string }) {
       </div>
       <p className="mt-1.5 text-lg font-medium text-mist-50">{SITE.hours.days}</p>
       <p className="text-sm text-gold-200">
-        {SITE.hours.opens} to {SITE.hours.closes}, closed {SITE.hours.closedDay}
+        {SITE.hours.short}, closed {SITE.hours.closedDay}
       </p>
       <p className="mt-1 text-xs text-mist-400">
-        {state.ready ? state.detail : "Reception answers until 9pm"}
+        {state.ready ? state.detail : SITE.hours.short}
       </p>
     </div>
   );
