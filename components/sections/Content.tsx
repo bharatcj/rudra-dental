@@ -82,21 +82,16 @@ export function Faq() {
                       <IconPlus className="h-3.5 w-3.5" />
                     </span>
                   </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen ? (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <p className="pb-6 text-sm leading-relaxed text-mist-300">
-                          {faq.a}
-                        </p>
-                      </motion.div>
-                    ) : null}
-                  </AnimatePresence>
+                  <motion.div
+                    initial={false}
+                    animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                    transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <p className="max-w-[56ch] pb-6 text-sm leading-relaxed text-mist-300">
+                      {faq.a}
+                    </p>
+                  </motion.div>
                 </div>
               </Reveal>
             );

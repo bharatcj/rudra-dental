@@ -2,11 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display, Cinzel } from "next/font/google";
 import Script from "next/script";
 import { SITE } from "@/lib/site";
-import { SEO_KEYWORDS } from "@/lib/keywords";
 import {
   dentistSchema,
   websiteSchema,
-  organizationSchema,
 } from "@/lib/schema";
 import "./globals.css";
 
@@ -33,9 +31,10 @@ const cinzel = Cinzel({
 });
 
 const TITLE = "Rudra Dental | Dental Clinic in Anakaputhur, Chennai";
+const TITLE_SHORT = "Rudra Dental";
 
-const TITLE_LONG =
-  "Rudra Dental - Best Dental Clinic in Anakaputhur, Pallavaram, Pammal, Chromepet, Kundrathur, Chennai";
+const SOCIAL_DESCRIPTION =
+  "Rudra Dental is the dental clinic on Kamaraj Street, Anakaputhur, Chennai 600070. Root canals, implants, braces, aligners and same day emergency care from five in-house specialists. Call +91 80721 43199.";
 
 const DESCRIPTION =
   "Rudra Dental on Kamaraj Street, Anakaputhur, Chennai. Root canals, implants, braces, aligners and same day emergency care. Rated 5.0 by 275 patients, Monday to Saturday.";
@@ -48,7 +47,6 @@ export const metadata: Metadata = {
   },
   applicationName: SITE.name,
   description: DESCRIPTION,
-  keywords: SEO_KEYWORDS,
   authors: [{ name: SITE.name, url: SITE.url }],
   creator: SITE.name,
   publisher: SITE.name,
@@ -70,19 +68,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "Rudra Dental Clinic",
-    title: TITLE_LONG,
-    description:
-      "Providing top dental services such as root canal, dental implants, orthodontic treatment, teeth whitening, and more in Anakaputhur, Pallavaram, Chromepet, Kundrathur, and nearby areas.",
+    siteName: TITLE_SHORT,
+    title: TITLE,
+    description: SOCIAL_DESCRIPTION,
     url: SITE.canonical,
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Rudra Dental - Best Dental Service in Anakaputhur, Pallavaram, Chennai",
-    description:
-      "Offering dental care services such as root canal, implants, braces, cosmetic dentistry, and more in Chennai.",
+    title: TITLE,
+    description: SOCIAL_DESCRIPTION,
   },
   icons: {
     icon: [
@@ -113,7 +108,7 @@ export const metadata: Metadata = {
     rating: "general",
     "revisit-after": "7 days",
     "geo.region": "IN-TN",
-    "geo.placename": "Chennai",
+    "geo.placename": "Anakaputhur, Chennai",
     "geo.position": `${SITE.geo.latitude};${SITE.geo.longitude}`,
     ICBM: `${SITE.geo.latitude}, ${SITE.geo.longitude}`,
     "format-detection": "telephone=yes",
@@ -130,7 +125,7 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
-const GRAPH = [dentistSchema, organizationSchema, websiteSchema];
+const GRAPH = [dentistSchema, websiteSchema];
 
 export default function RootLayout({
   children,

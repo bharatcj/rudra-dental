@@ -9,6 +9,7 @@ import {
   type Variants,
 } from "framer-motion";
 import {
+  Fragment,
   useEffect,
   useRef,
   useState,
@@ -117,10 +118,12 @@ export function SplitHeading({
   text,
   className,
   delay = 0,
+  trailingSpace = false,
 }: {
   text: string;
   className?: string;
   delay?: number;
+  trailingSpace?: boolean;
 }) {
   const words = text.split(" ");
   return (
@@ -132,21 +135,22 @@ export function SplitHeading({
       style={{ display: "inline-block" }}
     >
       {words.map((word, index) => (
-        <span
-          key={`${word}-${index}`}
-          style={{ display: "inline-block", overflow: "hidden", verticalAlign: "bottom" }}
-        >
-          <motion.span
-            style={{ display: "inline-block" }}
-            variants={{
-              hidden: { y: "110%", opacity: 0 },
-              show: { y: "0%", opacity: 1, transition: { duration: 0.95, ease: EASE } },
-            }}
+        <Fragment key={`${word}-${index}`}>
+          <span
+            style={{ display: "inline-block", overflow: "hidden", verticalAlign: "bottom" }}
           >
-            {word}
-            {index < words.length - 1 ? " " : ""}
-          </motion.span>
-        </span>
+            <motion.span
+              style={{ display: "inline-block" }}
+              variants={{
+                hidden: { y: "110%", opacity: 0 },
+                show: { y: "0%", opacity: 1, transition: { duration: 0.95, ease: EASE } },
+              }}
+            >
+              {word}
+            </motion.span>
+          </span>
+          {index < words.length - 1 || trailingSpace ? " " : ""}
+        </Fragment>
       ))}
     </motion.span>
   );

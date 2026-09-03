@@ -16,29 +16,58 @@ function istTimestamp(date: string, time = "10:00:00") {
   return `${date}T${time}${IST_OFFSET}`;
 }
 const CLINIC_ID = `${SITE.url}/#clinic`;
-const ORG_ID = `${SITE.url}/#organization`;
+const ORG_ID = CLINIC_ID;
 const SAME_AS = [
   SITE.social.facebook,
   SITE.social.instagram,
   SITE.social.googleMaps,
+  SITE.social.googleReviews,
 ];
+
+const LOGO = {
+  "@type": "ImageObject",
+  url: `${SITE.url}/icon.png`,
+  width: 512,
+  height: 512,
+};
+
+const DESCRIPTION = `${SITE.name} is a dental clinic on ${SITE.address.street}, ${SITE.address.locality}, Chennai ${SITE.address.postalCode}, open since ${SITE.established}. Five in-house specialists provide root canal treatment, dental implants, braces and clear aligners, laser dentistry, children's dentistry and full mouth rehabilitation, ${SITE.hours.days.toLowerCase()}.`;
+
+const DISAMBIGUATION = `${SITE.name} practises only from ${SITE.address.street}, ${SITE.address.locality}, Chennai ${SITE.address.postalCode}, on ${SITE.phoneDisplay}. It has no branches and is not connected to Rudra Dental Smilelature in Salem, to Dr Rudra Dental Care, or to any other practice using a similar name.`;
 
 export const dentistSchema = {
   "@context": "https://schema.org",
-  "@type": "Dentist",
+  "@type": ["Dentist", "MedicalClinic"],
   name: SITE.name,
+  legalName: SITE.legalName,
   alternateName: [SITE.legalName, "Rudra Dental Anakaputhur", "RUDRA DENTAL"],
-  image: OG_IMAGE,
-  logo: `${SITE.url}/logo.png`,
+  description: DESCRIPTION,
+  disambiguatingDescription: DISAMBIGUATION,
+  image: [OG_IMAGE, `${SITE.url}/gallery/exterior-day.jpg`],
+  logo: LOGO,
   "@id": CLINIC_ID,
   url: SITE.canonical,
   telephone: SITE.phone,
-  branchOf: { "@id": ORG_ID },
   email: SITE.email,
+  foundingDate: String(SITE.established),
+  isAcceptingNewPatients: true,
   priceRange: "$$",
   currenciesAccepted: "INR",
   paymentAccepted: "Cash, UPI, Credit Card, Debit Card",
-  medicalSpecialty: "Dentistry",
+  medicalSpecialty: "https://schema.org/Dentistry",
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "GooglePlaceId",
+    value: SITE.placeId,
+  },
+  knowsAbout: STRUCTURED_SERVICES.map((item) => item.name),
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: SITE.phone,
+    contactType: "customer service",
+    areaServed: "IN",
+    availableLanguage: ["English", "Tamil"],
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: SITE.address.street,
@@ -98,8 +127,8 @@ export const dentistSchema = {
       name: "Dental appointment at Rudra Dental",
     },
   },
-  service: STRUCTURED_SERVICES.map((service) => ({
-    "@type": "MedicalService",
+  availableService: STRUCTURED_SERVICES.map((service) => ({
+    "@type": "MedicalProcedure",
     name: service.name,
     description: service.description,
   })),
@@ -129,37 +158,7 @@ export const websiteSchema = {
   about: { "@id": CLINIC_ID },
 };
 
-export const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "MedicalOrganization",
-  "@id": ORG_ID,
-  name: SITE.name,
-  alternateName: [SITE.legalName, "Rudra Dental Anakaputhur"],
-  legalName: SITE.legalName,
-  url: SITE.canonical,
-  logo: `${SITE.url}/logo.png`,
-  image: OG_IMAGE,
-  email: SITE.email,
-  telephone: SITE.phone,
-  foundingDate: String(SITE.established),
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: SITE.address.street,
-    addressLocality: SITE.address.locality,
-    addressRegion: SITE.address.region,
-    postalCode: SITE.address.postalCode,
-    addressCountry: SITE.address.country,
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: SITE.phone,
-    contactType: "customer service",
-    areaServed: "IN",
-    availableLanguage: ["English", "Tamil"],
-  },
-  department: { "@id": CLINIC_ID },
-  sameAs: SAME_AS,
-};
+export const organizationSchema = dentistSchema;
 
 export const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -250,12 +249,11 @@ export function treatmentSchema(treatment: Treatment) {
     inLanguage: "en-IN",
     isPartOf: { "@id": `${SITE.url}/#website` },
     about: {
-      "@type": "MedicalProcedure",
+      "@type": treatment.surgical ? "SurgicalProcedure" : "MedicalProcedure",
       name: treatment.procedure,
       alternateName: treatment.name,
       description: treatment.summary,
       bodyLocation: treatment.bodyPart,
-      procedureType: "https://schema.org/NoninvasiveProcedure",
       howPerformed: treatment.steps
         .map((step) => `${step.title}. ${step.body}`)
         .join(" "),

@@ -76,13 +76,13 @@ export default function Hero() {
             </motion.div>
 
             <h1 className="display text-[2.7rem] leading-[1.03] text-mist-50 sm:text-6xl lg:text-[4.4rem]">
-              <SplitHeading text="We are the best" />
+              <SplitHeading text="Rudra Dental" trailingSpace />
               <br />
               <span className="text-gold-sheen">
-                <SplitHeading text="dental service" delay={0.18} />
+                <SplitHeading text="in Anakaputhur," delay={0.18} trailingSpace />
               </span>
               <br />
-              <SplitHeading text="in Chennai" delay={0.34} />
+              <SplitHeading text="Chennai" delay={0.34} />
             </h1>
 
             <motion.p

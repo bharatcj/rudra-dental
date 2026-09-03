@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { SITE, FOOTER_SERVICES, SERVICE_AREAS } from "@/lib/site";
+import { SITE, SERVICES, SERVICE_AREAS } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
 import {
   IconClock,
@@ -108,14 +108,14 @@ export default function Footer() {
             Our Services
           </p>
           <ul className="mt-6 space-y-3">
-            {FOOTER_SERVICES.map((service) => (
-              <li key={service}>
+            {SERVICES.map((service) => (
+              <li key={service.slug}>
                 <Link
-                  href="/treatments"
+                  href={`/treatments/${service.slug}`}
                   className="group flex items-start gap-2 text-sm text-mist-400 transition hover:text-gold-200"
                 >
                   <IconPlus className="mt-1 h-3 w-3 shrink-0 text-gold-500/60 transition group-hover:rotate-90 group-hover:text-gold-400" />
-                  {service}
+                  {service.title}
                 </Link>
               </li>
             ))}

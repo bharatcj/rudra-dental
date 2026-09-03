@@ -7,6 +7,7 @@ export type Treatment = {
   summary: string;
   procedure: string;
   bodyPart: string;
+  surgical?: boolean;
   icon: string;
   image: string;
   imageAlt: string;
@@ -122,6 +123,7 @@ export const TREATMENTS: Treatment[] = [
       "A titanium post placed in the jaw to replace the root of a missing tooth, restored with a crown once the bone has grown around it.",
     procedure: "Dental implant placement",
     bodyPart: "Jaw bone and gum",
+    surgical: true,
     icon: "implant",
     image: "/treatments/dental-implants.jpg",
     imageAlt: "Cutaway jaw model showing a titanium implant post anchored in bone beside natural teeth",
@@ -304,6 +306,7 @@ export const TREATMENTS: Treatment[] = [
       "Removing a tooth that cannot be saved, and surgically removing wisdom teeth that are trapped against bone or the tooth in front.",
     procedure: "Tooth extraction and surgical removal of impacted teeth",
     bodyPart: "Tooth, socket and surrounding bone",
+    surgical: true,
     icon: "extraction",
     image: "/treatments/tooth-extraction-and-impaction.jpg",
     imageAlt: "Gloved hand holding extraction forceps beside a laid out surgical tray",
