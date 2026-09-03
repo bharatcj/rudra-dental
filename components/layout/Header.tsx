@@ -134,12 +134,12 @@ export default function Header() {
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        <div className="shell flex h-[var(--header-h)] items-center justify-between gap-6">
+        <div className="shell flex h-[var(--header-h)] items-center justify-between gap-4 xl:gap-6">
           <Link href="/" aria-label="Rudra Dental home">
             <BrandLogo markClassName="h-11 w-9 shrink-0" priority />
           </Link>
 
-          <nav className="hidden items-center gap-0.5 lg:flex xl:gap-1" aria-label="Primary">
+          <nav className="hidden min-w-0 items-center gap-0.5 lg:flex xl:gap-1" aria-label="Primary">
             {NAV.map((item) => {
               const isActive = onHome
                 ? active === item.href
@@ -153,7 +153,7 @@ export default function Header() {
                     event.preventDefault();
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
-                  className={`relative shrink-0 rounded-full px-3 py-2 text-sm transition xl:px-4 ${
+                  className={`relative shrink-0 rounded-full px-2.5 py-2 text-sm whitespace-nowrap transition xl:px-4 ${
                     isActive ? "text-gold-200" : "text-mist-300 hover:text-mist-50"
                   }`}
                 >
@@ -170,10 +170,10 @@ export default function Header() {
             })}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-3">
             <a
               href={`tel:${SITE.phone}`}
-              className="hidden items-center gap-2 rounded-full border border-gold-500/25 px-4 py-2.5 text-sm text-gold-200 transition hover:bg-gold-500/10 sm:inline-flex"
+              className="hidden shrink-0 items-center gap-2 rounded-full border border-gold-500/25 px-4 py-2.5 text-sm whitespace-nowrap text-gold-200 transition hover:bg-gold-500/10 sm:inline-flex lg:hidden xl:inline-flex"
             >
               <IconPhone className="h-4 w-4" />
               Call now
@@ -181,9 +181,9 @@ export default function Header() {
             <button
               type="button"
               onClick={() => openBooking("header")}
-              className="group relative hidden overflow-hidden rounded-full bg-gold-sheen px-5 py-2.5 text-sm font-semibold text-ink-950 transition hover:shadow-[0_10px_30px_-10px_rgba(195,150,69,0.75)] sm:inline-flex"
+              className="group relative hidden shrink-0 overflow-hidden rounded-full bg-gold-sheen px-5 py-2.5 text-sm font-semibold whitespace-nowrap text-ink-950 transition hover:shadow-[0_10px_30px_-10px_rgba(195,150,69,0.75)] sm:inline-flex"
             >
-                            <span className="relative">Book appointment</span>
+              <span className="relative">Book appointment</span>
             </button>
             <button
               type="button"

@@ -205,12 +205,12 @@ export function Gallery() {
               </p>
             </Reveal>
           </div>
-          <Reveal delay={0.18}>
+          <Reveal delay={0.18} className="shrink-0">
             <a
               href={SITE.mapsShortLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex shrink-0 items-center gap-2.5 rounded-full border border-gold-500/30 px-6 py-3.5 text-sm font-medium text-gold-200 transition hover:border-gold-400/60 hover:bg-gold-500/10"
+              className="group inline-flex shrink-0 items-center gap-2.5 rounded-full border border-gold-500/30 px-6 py-3.5 text-sm font-medium whitespace-nowrap text-gold-200 transition hover:border-gold-400/60 hover:bg-gold-500/10"
             >
               <IconPin className="h-4 w-4" />
               See it on Google Maps

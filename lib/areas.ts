@@ -96,7 +96,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Nanganallur",
     "pincode": "600061",
     "distance": "about 8 km",
-    "travel": "roughly 25 minutes by car",
+    "travel": "roughly 25 minutes",
     "route": "Come out through the Thillai Ganga Nagar subway onto GST Road, head south past the airport and Tirusulam to Pallavaram, then turn right onto the Pallavaram-Kundrathur road, also signed Pammal Main Road, and follow it through Pammal into Anakaputhur.",
     "landmarks": [
       "The 32 foot Anjaneyar at the Adhivyadhihara Sri Bhaktha Anjaneya temple",
@@ -154,7 +154,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Porur",
     "pincode": "600116",
     "distance": "about 14 km",
-    "travel": "roughly 30 to 40 minutes by car",
+    "travel": "roughly 30 to 40 minutes",
     "route": "From Porur junction take Kundrathur Main Road south past Moulivakkam and Gerugambakkam to Kundrathur. There, join the Pallavaram-Kundrathur-Poonamallee Road towards Pammal, which crosses the Adyar just before Anakaputhur. Kamatchi Nagar and Kamaraj Street are a short turn off it.",
     "landmarks": [
       "Porur junction, where Mount-Poonamallee Road meets Arcot Road",
@@ -212,7 +212,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Iyyappanthangal",
     "pincode": "600056",
     "distance": "about 16 km",
-    "travel": "roughly 35 to 45 minutes by car",
+    "travel": "roughly 35 to 45 minutes",
     "route": "From Mount-Poonamallee Road, go to Kumananchavadi and turn south onto the Pallavaram-Kundrathur-Poonamallee Road. It runs through Mangadu and Kundrathur, crosses the Adyar and comes into Anakaputhur, so the Porur junction never comes into it.",
     "landmarks": [
       "Mount-Poonamallee Road, the SH-55 out to Poonamallee",
@@ -259,7 +259,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Madipakkam",
     "pincode": "600091",
     "distance": "about 11 km",
-    "travel": "roughly 30 to 35 minutes by car",
+    "travel": "roughly 30 to 35 minutes",
     "route": "From Madipakkam head to Keelkattalai and take the Pallavaram-Thoraipakkam Radial Road west until it meets GST Road at Pallavaram. Cross over and follow Pammal Main Road through Pammal to Anakaputhur, where Kamatchi Nagar and Kamaraj Street are a short turn off the main road.",
     "landmarks": [
       "Madipakkam Lake",
@@ -306,7 +306,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Gerugambakkam",
     "pincode": "600128",
     "distance": "about 9 km",
-    "travel": "roughly 25 minutes by car",
+    "travel": "roughly 25 minutes",
     "route": "South on the Kundrathur road from Porur, through Gerugambakkam and past Kovur into Kundrathur. At Kundrathur pick up the Pallavaram road, also called Pammal Main Road, and follow it about 4 km into Anakaputhur. Kamaraj Street is off it in Kamatchi Nagar.",
     "landmarks": [
       "PSBB Millennium School",
@@ -353,7 +353,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Tambaram",
     "pincode": "600045",
     "distance": "about 9 km",
-    "travel": "roughly 25 minutes by car, closer to 40 in the evening peak",
+    "travel": "roughly 25 minutes, closer to 40 in the evening peak",
     "route": "North on GST Road through Tambaram Sanatorium and Chromepet to the Pallavaram signal, then west onto Pammal Main Road, the Pallavaram to Kundrathur road, and on through Pammal into Anakaputhur. Kamatchi Nagar comes up once you are past Pammal, and Kamaraj Street runs off the main road there.",
     "landmarks": [
       "Tambaram railway station",
@@ -411,7 +411,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Alandur",
     "pincode": "600016",
     "distance": "about 11 km",
-    "travel": "roughly 30 minutes by car",
+    "travel": "roughly 30 minutes",
     "route": "Join GST Road at Kathipara and head south past the airport and Tirusulam to Pallavaram. Turn west at the Pallavaram signal onto Pammal Main Road, the Pallavaram to Kundrathur road, and stay on it through Pammal into Anakaputhur. Once in Anakaputhur, Kamaraj Street is in Kamatchi Nagar, a turning off the main road.",
     "landmarks": [
       "Kathipara junction",
@@ -469,7 +469,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Pallavaram",
     "pincode": "600043",
     "distance": "about 4 km",
-    "travel": "roughly 15 minutes by car",
+    "travel": "roughly 15 minutes",
     "route": "From the Pallavaram junction on GST Road, turn west on to Pammal Main Road. On the highway maps this is the Pallavaram to Kundrathur road, the Pallavaram to Kundrathur to Poonamallee road. Stay on it through Pammal and it runs into Anakaputhur. Kamaraj Street is a short turn off it into Kamatchi Nagar.",
     "landmarks": [
       "Pallavaram railway station",
@@ -527,7 +527,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Thiruneermalai",
     "pincode": "",
     "distance": "about 5 km",
-    "travel": "roughly 20 minutes by car",
+    "travel": "roughly 20 minutes",
     "route": "From the temples at the foot of the hill, take Thiruneermalai Main Road north towards Polichalur and Pammal, then turn west on to Pammal Main Road, which runs into Anakaputhur. Kamaraj Street is a short turn off it in Kamatchi Nagar.",
     "landmarks": [
       "Ranganatha Perumal temple on Thiruneermalai hill, one of the 108 Divya Desams",
@@ -585,7 +585,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Perungalathur",
     "pincode": "600063",
     "distance": "about 13 km",
-    "travel": "roughly 35 minutes by car",
+    "travel": "roughly 35 minutes",
     "route": "Join GST Road at Perungalathur and head north through Irumbuliyur and Tambaram to Chromepet and Pallavaram. Turn west at Pallavaram on to Pammal Main Road and follow it through Pammal into Anakaputhur, where Kamaraj Street runs off it in Kamatchi Nagar.",
     "landmarks": [
       "Perungalathur railway station on GST Road",
@@ -642,7 +642,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Mudichur",
     "pincode": "600048",
     "distance": "about 15 km",
-    "travel": "roughly 40 minutes by car",
+    "travel": "roughly 40 minutes",
     "route": "Take the Tambaram to Mudichur road east through West Tambaram to GST Road at Tambaram, then north past Sanatorium and Chromepet to Pallavaram. Turn west on to Pammal Main Road and follow it through Pammal into Anakaputhur.",
     "landmarks": [
       "the Vandalur to Oragadam road, where the Mudichur road ends",
@@ -699,7 +699,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Pammal",
     "pincode": "600075",
     "distance": "about 2 km",
-    "travel": "under 10 minutes by car, around 20 minutes on foot from the Anakaputhur end of Pammal",
+    "travel": "under 10 minutes, around 20 minutes on foot from the Anakaputhur end of Pammal",
     "route": "Pammal Main Road, which is State Highway 113A, runs straight from Pammal into Anakaputhur. Follow it west from the Pammal bus terminus as far as the Anakaputhur stop, then turn into Kamatchi Nagar for Kamaraj Street.",
     "landmarks": [
       "Pammal bus terminus at Shankar Nagar",
@@ -756,7 +756,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Chromepet",
     "pincode": "600044",
     "distance": "about 6 km",
-    "travel": "roughly 20 to 25 minutes by car, longer in the evening peak",
+    "travel": "roughly 20 to 25 minutes, longer in the evening peak",
     "route": "Head north on GST Road from Chromepet to the Pallavaram junction, then turn west on to Pammal Main Road and follow it through Pammal into Anakaputhur. Drivers who want to keep off the GST Road stretch cut west through Nemilichery and Polichalur instead.",
     "landmarks": [
       "Chromepet railway station",
@@ -814,7 +814,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Kundrathur",
     "pincode": "600069",
     "distance": "about 5 km",
-    "travel": "roughly 15 minutes by car",
+    "travel": "roughly 15 minutes",
     "route": "Come down Kundrathur Main Road from the bus depot side, heading towards Pammal. The road runs through Andakuppam and straight into Anakaputhur, and Kamaraj Street is a short turn off it in Kamatchi Nagar.",
     "landmarks": [
       "Kundrathur Murugan Temple on the hill",
@@ -871,7 +871,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Mangadu",
     "pincode": "600122",
     "distance": "about 10 km",
-    "travel": "roughly 25 to 30 minutes by car",
+    "travel": "roughly 25 to 30 minutes",
     "route": "The Poonamallee to Pallavaram road runs through Mangadu and takes you the whole way. Come out of the temple streets on to it, head south through Kundrathur and Andakuppam into Anakaputhur, then turn off in Kamatchi Nagar for Kamaraj Street.",
     "landmarks": [
       "Kamakshi Amman Temple",
@@ -927,7 +927,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Kolapakkam",
     "pincode": "600122",
     "distance": "about 11 km",
-    "travel": "roughly 30 minutes by car",
+    "travel": "roughly 30 minutes",
     "route": "Take the Kundrathur road south through Gerugambakkam and Kovur into Kundrathur, then stay on the Pallavaram road for the last stretch. Anakaputhur comes up about 5 km on, and Kamaraj Street is a short turn off the main road in Kamatchi Nagar.",
     "landmarks": [
       "Agatheeswarar Temple on Sivan Kovil Street",
@@ -973,7 +973,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Peerkankaranai",
     "pincode": "600063",
     "distance": "about 12 km",
-    "travel": "roughly 30 to 35 minutes by car",
+    "travel": "roughly 30 to 35 minutes",
     "route": "Come out of Peerkankaranai to GST Road at Perungalathur, or go north on the Mudichur road to Tambaram. Either way you then follow GST Road north through Tambaram Sanatorium and Chromepet to Pallavaram, turn west onto Pallavaram-Kundrathur Road, and carry on through Pammal into Anakaputhur.",
     "landmarks": [
       "Peerkankaranai Lake",
@@ -1029,7 +1029,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Meenambakkam",
     "pincode": "600027",
     "distance": "about 6 km",
-    "travel": "roughly 20 minutes by car",
+    "travel": "roughly 20 minutes",
     "route": "From GST Road, drive south past Tirusulam to the Pallavaram junction, then turn right onto Pallavaram-Kundrathur Road. It runs west through Pammal into Anakaputhur, and Kamaraj Street is off it in Kamatchi Nagar.",
     "landmarks": [
       "Chennai International Airport",
@@ -1086,7 +1086,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Adambakkam",
     "pincode": "600088",
     "distance": "about 10 km",
-    "travel": "roughly 30 minutes by car",
+    "travel": "roughly 30 minutes",
     "route": "West out of Adambakkam through Nanganallur, then under the railway by the Thillai Ganga Nagar subway to join GST Road. South from there to Pallavaram, then right onto Pallavaram-Kundrathur Road and through Pammal into Anakaputhur.",
     "landmarks": [
       "Adambakkam Lake at Jeevan Nagar",
@@ -1144,7 +1144,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "name": "Moulivakkam",
     "pincode": "600125",
     "distance": "about 12 km",
-    "travel": "roughly 30 to 35 minutes by car",
+    "travel": "roughly 30 to 35 minutes",
     "route": "Kundrathur Main Road runs through Moulivakkam and it is the road to us. Follow it southwest through Kolapakkam and Kovur into Kundrathur, then turn left onto the Pallavaram-Kundrathur-Poonamallee Road towards Pammal. Anakaputhur begins just after the bridge over the Adyar.",
     "landmarks": [
       "Kundrathur Main Road",
