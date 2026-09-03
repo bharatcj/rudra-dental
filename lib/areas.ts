@@ -192,14 +192,14 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "why": "Braces and children's dentistry are the two reasons people from Iyyappanthangal make this drive. Both mean repeat visits over a long stretch of time, so what families weigh up is whether the orthodontist is in house and whether appointments actually run to time.",
     "commonTreatments": [
-      "orthodontic-treatment",
-      "kids-dentistry",
-      "root-canal-treatment"
+      "root-canal-treatment",
+      "tooth-extraction-and-impaction",
+      "full-mouth-rehabilitation"
     ],
     "faqs": [
       {
         "q": "Will we see the same orthodontist each time?",
-        "a": "Yes. The orthodontist works here full time rather than sitting one day a week, so every adjustment is with the same person and the records stay in one place. Across eighteen months of braces that is the difference families notice most."
+        "a": "Yes. Adjustments are booked with the same orthodontist each time, so the records and the plan stay with one person. Across eighteen months of braces that is the difference families notice most."
       },
       {
         "q": "How often do braces reviews come up?",
@@ -265,13 +265,12 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "slug": "gerugambakkam",
     "name": "Gerugambakkam",
     "pincode": "600128",
-    "distance": "about 11 km",
-    "travel": "roughly 30 minutes by car",
+    "distance": "about 9 km",
+    "travel": "roughly 25 minutes by car",
     "route": "South on the Kundrathur road from Porur, through Gerugambakkam and past Kovur into Kundrathur. At Kundrathur pick up the Pallavaram road, also called Pammal Main Road, and follow it about 4 km into Anakaputhur. Kamaraj Street is off it in Kamatchi Nagar.",
     "landmarks": [
       "PSBB Millennium School",
       "Little Flower Matriculation School and Polytechnic",
-      "Velammal Bodhi Campus, Kolapakkam",
       "Porur junction, 4 km north on the Kundrathur road",
       "Kovur"
     ],
@@ -281,11 +280,11 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       "Pallavaram is your nearest suburban station at roughly 7 km, and it is also the station that serves Anakaputhur, so a train and one auto works."
     ],
     "intro": [
-      "Gerugambakkam sits about 4 km from Porur junction, down the Kundrathur road. Carry on the same way and you get to us. Past Kovur into Kundrathur, then join Pammal Main Road, which is the Pallavaram to Kundrathur road, and Anakaputhur is roughly 4 km along it. Around 11 km end to end, usually half an hour.",
-      "Administratively Gerugambakkam is not in Chennai at all. It is a panchayat under Kundrathur, in Kanchipuram district, which is why the nearest suburban station is Pallavaram rather than anything closer in. Pallavaram happens to be the station that serves Anakaputhur too, so anyone here without a car is already pointed our way.",
+      "Gerugambakkam sits about 4 km from Porur junction, down the Kundrathur road. Carry on the same way and you get to us. Past Kovur into Kundrathur, then join Pammal Main Road, which is the Pallavaram to Kundrathur road, and Anakaputhur is roughly 4 km along it. Around 9 km end to end, usually half an hour.",
+      "Administratively Gerugambakkam is not in Chennai at all. Its village panchayat was annexed to Kundrathur Municipality, and the nearest suburban station is Pallavaram rather than anything closer in. Pallavaram happens to be the station that serves Anakaputhur too, so anyone here without a car is already pointed our way.",
       "Look at what counts as a landmark in Gerugambakkam and it is almost all schools. PSBB Millennium, Little Flower, Velammal over in Kolapakkam. That shows up in who calls us. A lot of the appointments from here start with something a school dental check flagged, or with a parent who has been putting their own molar off since the family moved in."
     ],
-    "why": "Gerugambakkam filled up quickly with young families, and the work reflects it. First orthodontic assessments for children of nine, ten, eleven, where the honest answer is often to wait and watch rather than start. Sealants and small fillings on permanent molars that have only just come through. And on the adult side, the parents themselves, usually a back tooth that has been filled twice already and has finally split. Very little of what comes from Gerugambakkam is emergency work. People here book because something was pointed out at a check, not because they are awake at midnight with it.",
+    "why": "Gerugambakkam went up fast and it went up for people who commute. The bookings from here cluster at either end of the day, before the run into Manapakkam and Ramapuram or after it, and they are overwhelmingly adult work that has been deferred. A molar filled twice already that has finally split. A crown that came off months ago and got glued back with the wrong thing. Wisdom teeth that have been grumbling since before the move. Almost nobody from Gerugambakkam arrives with a first problem. They arrive with a third one.",
     "commonTreatments": [
       "orthodontic-treatment",
       "kids-dentistry",
@@ -297,8 +296,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
         "a": "Yes, and it is one of the more common reasons people from Gerugambakkam call. Bring whatever films and notes you were given. If you cannot get hold of them we will take our own. The first thing we work out is whether the tooth can simply be completed as it stands or whether it needs retreating from the start, and you will get a straight answer on that before anything is agreed."
       },
       {
-        "q": "My son is nine and his school check flagged crowding. Is that too early to see anyone?",
-        "a": "No, nine is a sensible age for a first look. It is often an assessment rather than treatment. Sometimes the plan is to review him in a year and let more teeth arrive before deciding. Getting the assessment done at this age is what tends to keep the actual treatment shorter later on."
+        "q": "I leave for Manapakkam at half seven and get back after eight. Is there any slot that works?",
+        "a": "The evening session runs to nine, and the last appointments of the day are the ones we keep for people in exactly that position. Coming down the Kundrathur road at half eight is also the easiest run you will get, because everything heading into Porur has cleared by then."
       },
       {
         "q": "Which session is quietest?",
@@ -372,7 +371,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       "MKN Road"
     ],
     "transport": [
-      "Green Line one stop from Alandur to St Thomas Mount, where the metro and the suburban station share a complex, then a southbound train two stops through Tirusulam to Pallavaram. Pallavaram is the station that serves Anakaputhur.",
+      "Green Line one stop from Alandur to St Thomas Mount, where the metro and the suburban station share a complex, then a southbound train four stops through Pazhavanthangal, Meenambakkam and Tirusulam to Pallavaram. Pallavaram is the station that serves Anakaputhur.",
       "Blue Line south from Alandur towards the airport, then an auto west off GST Road through Pallavaram and Pammal.",
       "MTC buses south on GST Road from the Kathipara stops to Pallavaram, then west on Pammal Main Road."
     ],
@@ -465,7 +464,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       "Neervanna Perumal temple at the foot of the hill",
       "the flight of steps up the hill",
       "Thiruneermalai Main Road",
-      "the Chennai Bypass toll plaza at Thiruneermalai"
+      "The Chennai Bypass, which runs through Thiruneermalai"
     ],
     "transport": [
       "Buses from Thiruneermalai to Pammal or Pallavaram, then any service signed for Kundrathur, which stops at Anakaputhur",
@@ -474,7 +473,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "intro": [
       "Thiruneermalai sits under its hill about 5 km south of us, and getting here does not involve GST Road at all. Thiruneermalai Main Road runs north towards Polichalur and Pammal, and Pammal Main Road turns west from there into Anakaputhur. Twenty minutes is normal. The roads on this side are narrower than the highway routes but a good deal quieter.",
-      "The Chennai Bypass runs through Thiruneermalai and carries on past Pammal and Anakaputhur before it turns north, and there is now a toll plaza with entry and exit ramps on the Thiruneermalai stretch. If you already use that side of the road for the airport run, you are pointed the right way for us.",
+      "The Chennai Bypass runs through Thiruneermalai and carries on past Pammal and Anakaputhur before it turns north, and the entry and exit ramps on the Thiruneermalai stretch make it the quickest way west. If you already use that side of the road for the airport run, you are pointed the right way for us.",
       "Much of what we do for patients from this side is unhurried work on older mouths. A partial denture that has stopped fitting, a bridge that has given way, four or five teeth lost over as many years. Those cases start with an examination, radiographs and a written plan rather than with treatment, and we would rather you went home from the first visit holding a schedule and a cost than with a tooth half opened."
     ],
     "why": "The cases that reach us from Thiruneermalai have usually waited a while. Several teeth missing, a bridge that failed, a tooth sore for months that was managed with tablets. Work like that needs a surgical plan and a prosthetic plan that agree with each other before anything is touched, and getting that settled properly in one longer visit saves several short ones later.",
@@ -569,7 +568,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "intro": [
       "Mudichur is at the western end of the Tambaram to Mudichur road, out where it meets the Vandalur to Oragadam road. We are about 15 km northeast of that, on Kamaraj Street in Anakaputhur, and the trip means heading east into Tambaram first, then north on GST Road through Chromepet to Pallavaram before turning west.",
       "That is a real distance and we would rather say so than dress it up. Most Mudichur patients come for treatment that runs over several sittings, so the number that matters is not the 15 km but how many times you have to do it. We build those plans backwards from the visit count and tell you the number before you start.",
-      "The other thing we plan around out here is water. Mudichur floods, the road through it has gone under more than once, and residents have been living with that every monsoon since 2015. If you have a course of treatment running with us between October and December, message the clinic rather than setting out on a bad morning and we will move the appointment without any fuss. Nothing in an implant or an orthodontic schedule is timed so tightly that a week costs you anything."
+      "The other thing we plan around out here is water. Mudichur floods, the road through it has gone under more than once, and residents have been living with that since the 2015 floods. If you have a course of treatment running with us between October and December, message the clinic rather than setting out on a bad morning and we will move the appointment without any fuss. Nothing in an implant or an orthodontic schedule is timed so tightly that a week costs you anything."
     ],
     "why": "Implants and full mouth cases are what bring Mudichur patients this far. Those treatments stand or fall on the plan: where the implants go, what the finished bite will look like, what happens to the teeth that are staying. Having that decided once, by the people who will actually do the work, is worth more than the drive, and it is why these cases usually need fewer trips than patients expect when they first ring.",
     "commonTreatments": [
@@ -730,7 +729,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       },
       {
         "q": "Do you take walk-ins from Kundrathur?",
-        "a": "We do, though a call to +91 80721 43199 first saves you a wasted run. Five specialists share the clinic and they do not all sit every session, so if it is the orthodontist or an implant consultation you want, check before you set out."
+        "a": "We do, though a call to +91 80721 43199 first saves you a wasted run. Not every specialist is in at every session, so if it is the orthodontist or an implant consultation you want, check before you set out."
       }
     ],
     "heading": "Kundrathur's dental specialists, straight down the Pallavaram road",
@@ -786,9 +785,9 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
   {
     "slug": "kolapakkam",
     "name": "Kolapakkam",
-    "pincode": "600128",
-    "distance": "about 9 km",
-    "travel": "roughly 25 minutes by car",
+    "pincode": "600122",
+    "distance": "about 11 km",
+    "travel": "roughly 30 minutes by car",
     "route": "Take the Kundrathur road south through Gerugambakkam and Kovur into Kundrathur, then stay on the Pallavaram road for the last stretch. Anakaputhur comes up about 5 km on, and Kamaraj Street is a short turn off the main road in Kamatchi Nagar.",
     "landmarks": [
       "Agatheeswarar Temple on Sivan Kovil Street",
@@ -849,7 +848,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "intro": [
       "Peerkankaranai sits between Perungalathur and Mudichur, off the Tambaram to Mudichur road. It was a town panchayat of its own until 2021, when it was merged into Tambaram Corporation. Rudra Dental is about 12 km north of here, on Kamaraj Street in Anakaputhur, and the usual run is out to GST Road first and then up through Tambaram and Chromepet.",
       "There is no station in Peerkankaranai itself. Perungalathur is the nearest, southwest of the neighbourhood on GST Road, and Tambaram is the other choice, with far more services and the bus terminus beside it. If you are having anything done under local anaesthetic, decide before you leave which of the two you are coming back through rather than working it out afterwards with a numb jaw.",
-      "The lake is the fixed point everyone here navigates by, and it is also the reason the drains struggle. It was well over 160 acres once and decades of encroachment have cut it to a fraction of that, while the restoration scheme the PWD announced in 2018 has stayed on paper. The practical result is that the interior roads here go under along with Perungalathur, Irumbuliyur and Mudichur when the rain is heavy. If your road is flooded on the morning of your appointment, ring us and we will move it rather than have you attempt the drive."
+      "The lake is the fixed point everyone here navigates by, and it is also the reason the drains struggle. It was over 160 acres once and decades of encroachment have cut it to about half of that, while the restoration scheme the PWD announced in 2018 has stayed on paper. The practical result is that the interior roads here go under along with Perungalathur, Irumbuliyur and Mudichur when the rain is heavy. If your road is flooded on the morning of your appointment, ring us and we will move it rather than have you attempt the drive."
     ],
     "why": "Peerkankaranai patients usually arrive with something that has been looked at once already. A wisdom tooth that is impacted rather than simply crowded, a tooth that still aches months after a root canal, gums that bleed every time you brush. Those are the cases where the equipment and the person using it decide the outcome, and that is what brings people the twelve kilometres north.",
     "commonTreatments": [
@@ -990,7 +989,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "intro": [
       "Moulivakkam sits on Kundrathur Main Road with Porur immediately north, Kolapakkam to the south, Mugalivakkam east and Manapakkam southeast. It is administered by Mangadu Municipality rather than the Chennai Corporation. Rudra Dental is about 12 km southwest in Anakaputhur, and Kundrathur Main Road takes you most of the way there.",
-      "There is no railway station anywhere useful. The nearest is Guindy, which is back towards the city and the wrong direction entirely, so rail plays no part in this trip. That leaves the road, and the road means Kundrathur Main Road: buses run down it as far as Kundrathur, where you change for Anakaputhur, and autos are plentiful on it.",
+      "There is no railway station anywhere useful. St Thomas Mount and Guindy are both back towards the city and the wrong direction entirely, so rail plays no part in this trip. That leaves the road, and the road means Kundrathur Main Road: buses run down it as far as Kundrathur, where you change for Anakaputhur, and autos are plentiful on it.",
       "On a map Moulivakkam and Anakaputhur are less than five kilometres apart. The reason the drive is twelve is the Adyar. The river runs between the two, and the crossing the road uses is the bridge at Anakaputhur on the Kundrathur side, so you go west to Kundrathur first and come back east afterwards. It looks like a detour on a screen and it is simply the road once you have driven it, and after seven in the evening that stretch moves quickly."
     ],
     "why": "Two things bring people out from Moulivakkam. One is an implant for a tooth that came out years ago and was never replaced. The other is a second opinion after being told a tooth has to go. Both are decisions that are difficult to undo, so people want them made by someone who does that work every day rather than every so often.",
@@ -1010,7 +1009,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       },
       {
         "q": "I had a root canal years ago and never went back for the crown. Is it too late now?",
-        "a": "Sometimes, sometimes not. A root treated tooth left without a crown dries out and eventually cracks. If the crack has run below the gum the tooth cannot be kept. If it has not, a crown still saves it. We x ray it and tell you which of the two you are dealing with at the first visit, before you have paid for any treatment. Ring +91 80721 43199 and ask for a consultation."
+        "a": "Sometimes, sometimes not. A root treated tooth has lost a lot of its own structure, and without a crown to hold it together it eventually cracks under load. If the crack has run below the gum the tooth cannot be kept. If it has not, a crown still saves it. We x ray it and tell you which of the two you are dealing with at the first visit, before you have paid for any treatment. Ring +91 80721 43199 and ask for a consultation."
       }
     ],
     "heading": "Rudra Dental for Moulivakkam, down Kundrathur Main Road",
