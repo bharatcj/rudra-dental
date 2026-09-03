@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { type ServiceArea } from "@/lib/areas";
@@ -136,6 +137,45 @@ export default function AreaPage({ area }: { area: ServiceArea }) {
           </div>
         </div>
       </section>
+
+      {area.photo ? (
+        <section aria-label={`${area.name} in pictures`} className="relative pb-2 lg:pb-4">
+          <div className="shell">
+            <Reveal>
+              <figure className="relative">
+                <div className="relative aspect-[3/2] overflow-hidden rounded-[1.6rem] border border-gold-500/20 sm:aspect-[21/9]">
+                  <Image
+                    src={area.photo.src}
+                    alt={area.photo.alt}
+                    fill
+                    quality={78}
+                    sizes="(max-width: 1024px) 94vw, 1240px"
+                    className="object-cover"
+                  />
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/72 via-transparent to-transparent" />
+                  <figcaption className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                    <span className="block text-sm font-medium text-mist-50 sm:text-base">
+                      {area.photo.caption}
+                    </span>
+                  </figcaption>
+                </div>
+                <p className="mt-2.5 text-[0.7rem] leading-relaxed text-mist-500">
+                  Photograph by {area.photo.author},{" "}
+                  <a
+                    href={area.photo.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 transition hover:text-gold-300"
+                  >
+                    {area.photo.licence}
+                  </a>
+                  , via Wikimedia Commons
+                </p>
+              </figure>
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
 
       <section aria-label={`Getting here from ${area.name}`} className="relative py-12 lg:py-16">
         <div className="shell grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">

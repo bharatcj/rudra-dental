@@ -466,6 +466,19 @@ export function areaSchema(area: ServiceArea) {
     inLanguage: "en-IN",
     isPartOf: { "@id": `${SITE.url}/#website` },
     about: { "@id": CLINIC_ID },
+    ...(area.photo
+      ? {
+          primaryImageOfPage: {
+            "@type": "ImageObject",
+            url: `${SITE.url}${area.photo.src}`,
+            caption: area.photo.caption,
+            width: area.photo.width,
+            height: area.photo.height,
+            creditText: area.photo.author,
+            license: area.photo.source,
+          },
+        }
+      : {}),
     mainEntity: {
       "@type": "Dentist",
       "@id": CLINIC_ID,

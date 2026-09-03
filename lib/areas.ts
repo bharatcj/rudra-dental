@@ -15,6 +15,16 @@ export type ServiceArea = {
   heading: string;
   metaTitle: string;
   metaDescription: string;
+  photo?: {
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+    caption: string;
+    author: string;
+    licence: string;
+    source: string;
+  };
 };
 
 export type ServiceAreaSeed = ServiceArea;
@@ -69,7 +79,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "The dental clinic on Kamaraj Street, Anakaputhur",
     "metaTitle": "Dental Clinic in Anakaputhur, Chennai 600070",
-    "metaDescription": "Rudra Dental has been on Kamaraj Street in Anakaputhur since 2023. Five specialists, one floor, evenings until nine. Call +91 80721 43199."
+    "metaDescription": "Rudra Dental has been on Kamaraj Street in Anakaputhur since 2023. Five specialists, one floor, evenings until nine. Call +91 80721 43199.",
+    "photo": {
+      "src": "/areas/anakaputhur.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "Anakaputhur bridge on the Chennai Bypass over the Adyar river",
+      "caption": "Anakaputhur bridge on the Chennai Bypass over the Adyar river",
+      "author": "PlaneMad",
+      "licence": "CC BY-SA 2.5",
+      "source": "https://commons.wikimedia.org/wiki/File:West_Chennai_aerial_3.jpg"
+    }
   },
   {
     "slug": "nanganallur",
@@ -117,7 +137,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Nanganallur families, Anakaputhur clinic",
     "metaTitle": "Nanganallur families, Anakaputhur clinic",
-    "metaDescription": "Out through the Thillai Ganga Nagar subway and south on GST Road: that is how Nanganallur families reach Rudra Dental in Anakaputhur for braces and kids."
+    "metaDescription": "Out through the Thillai Ganga Nagar subway and south on GST Road: that is how Nanganallur families reach Rudra Dental in Anakaputhur for braces and kids.",
+    "photo": {
+      "src": "/areas/nanganallur.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "A tree-lined residential street in Nanganallur",
+      "caption": "A tree-lined residential street in Nanganallur",
+      "author": "SnapMeUp",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Streets_in_Nanganallur,Chennai.jpg"
+    }
   },
   {
     "slug": "porur",
@@ -165,7 +195,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Coming down from Porur for dental treatment",
     "metaTitle": "Porur to Anakaputhur, 14 km south",
-    "metaDescription": "Finishing late at Sri Ramachandra or the Commerzone blocks? Rudra Dental in Anakaputhur books to 9pm and keeps five specialists in one building, 14 km south."
+    "metaDescription": "Finishing late at Sri Ramachandra or the Commerzone blocks? Rudra Dental in Anakaputhur books to 9pm and keeps five specialists in one building, 14 km south.",
+    "photo": {
+      "src": "/areas/porur.jpg",
+      "width": 1024,
+      "height": 768,
+      "alt": "The main road junction at Porur, Chennai",
+      "caption": "The main road junction at Porur, Chennai",
+      "author": "Ravichandar84",
+      "licence": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Porur_Junction.jpg"
+    }
   },
   {
     "slug": "iyyappanthangal",
@@ -354,7 +394,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Dental specialists for Tambaram, Tambaram East and Sanatorium",
     "metaTitle": "Specialist Dentist for Tambaram",
-    "metaDescription": "Tambaram is Chennai's third railway terminal, and Pallavaram is three stops up the line from it. We are a short run west of there, in Anakaputhur."
+    "metaDescription": "Tambaram is Chennai's third railway terminal, and Pallavaram is three stops up the line from it. We are a short run west of there, in Anakaputhur.",
+    "photo": {
+      "src": "/areas/tambaram.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "Tambaram railway station",
+      "caption": "Tambaram railway station",
+      "author": "Pinakpani",
+      "licence": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tambaram_railway_station_in_Chennai_city,_Tamil_Nadu_01.jpg"
+    }
   },
   {
     "slug": "alandur",
@@ -402,7 +452,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "If you are in Alandur, the metro gets you most of the way here",
     "metaTitle": "Dental specialists for Alandur",
-    "metaDescription": "Alandur patients come to us for the long jobs: implants, full mouth work, buried wisdom teeth. Green Line to St Thomas Mount, then two stops to Pallavaram."
+    "metaDescription": "Alandur patients come to us for the long jobs: implants, full mouth work, buried wisdom teeth. Green Line to St Thomas Mount, then two stops to Pallavaram.",
+    "photo": {
+      "src": "/areas/alandur.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "Entrance to Alandur metro station",
+      "caption": "Entrance to Alandur metro station",
+      "author": "Prateek Karandikar",
+      "licence": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Alandur_station_entrance.jpg"
+    }
   },
   {
     "slug": "pallavaram",
@@ -450,7 +510,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Rudra Dental, four kilometres west of Pallavaram",
     "metaTitle": "Four kilometres west of Pallavaram",
-    "metaDescription": "Pammal Main Road runs from the Pallavaram GST junction west to our door in Anakaputhur, about 4 km. Root canals, implants and braces by specialists."
+    "metaDescription": "Pammal Main Road runs from the Pallavaram GST junction west to our door in Anakaputhur, about 4 km. Root canals, implants and braces by specialists.",
+    "photo": {
+      "src": "/areas/pallavaram.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "Pallavaram railway station platform and station board",
+      "caption": "Pallavaram railway station platform and station board",
+      "author": "Sameer2905",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Pallavaram_railway_station_(June_2025).jpg"
+    }
   },
   {
     "slug": "thiruneermalai",
@@ -498,7 +568,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "What Thiruneermalai patients come to Anakaputhur for",
     "metaTitle": "Thiruneermalai to Anakaputhur",
-    "metaDescription": "From the foot of Thiruneermalai hill it is twenty minutes north to Rudra Dental, Anakaputhur, for implants, loose dentures and difficult extractions."
+    "metaDescription": "From the foot of Thiruneermalai hill it is twenty minutes north to Rudra Dental, Anakaputhur, for implants, loose dentures and difficult extractions.",
+    "photo": {
+      "src": "/areas/thiruneermalai.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "Neervanna Perumal temple gopuram, Thiruneermalai",
+      "caption": "Neervanna Perumal temple gopuram, Thiruneermalai",
+      "author": "Salemjones",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Neervannaperumal_Temple,_Thiruneermalai,_Chennai,_India.jpg"
+    }
   },
   {
     "slug": "perungalathur",
@@ -545,7 +625,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Getting from Perungalathur to Rudra Dental in Anakaputhur",
     "metaTitle": "Perungalathur dental specialists",
-    "metaDescription": "The Irumbuliyur queue decides the drive from Perungalathur to Rudra Dental in Anakaputhur, 13 km north. Wisdom teeth, kids dentistry, Saturday mornings."
+    "metaDescription": "The Irumbuliyur queue decides the drive from Perungalathur to Rudra Dental in Anakaputhur, 13 km north. Wisdom teeth, kids dentistry, Saturday mornings.",
+    "photo": {
+      "src": "/areas/perungalathur.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "Perungalathur railway station platform and nameboard",
+      "caption": "Perungalathur railway station platform and nameboard",
+      "author": "Gowtham Sampath",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Perungalathur_railway_station.jpg"
+    }
   },
   {
     "slug": "mudichur",
@@ -592,7 +682,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Planning treatment around the trip from Mudichur",
     "metaTitle": "Mudichur: implants and full mouth work",
-    "metaDescription": "Mudichur patients come to us for implant and full mouth treatment that runs over months. Rudra Dental, Anakaputhur, plans it into fewer 15 km trips."
+    "metaDescription": "Mudichur patients come to us for implant and full mouth treatment that runs over months. Rudra Dental, Anakaputhur, plans it into fewer 15 km trips.",
+    "photo": {
+      "src": "/areas/mudichur.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "Main road through Mudichur, near Tambaram",
+      "caption": "Main road through Mudichur, near Tambaram",
+      "author": "Dineshyaz2",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Chennai_mudichur_Tambaram.jpg"
+    }
   },
   {
     "slug": "pammal",
@@ -639,7 +739,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Specialist dental care for Pammal, 2 km along Pammal Main Road",
     "metaTitle": "Dentist for Pammal, 2 km away",
-    "metaDescription": "Close enough to walk from the Anakaputhur end of Pammal. Root canals, kids dentistry and extractions at Rudra Dental, 2 km west along Pammal Main Road."
+    "metaDescription": "Close enough to walk from the Anakaputhur end of Pammal. Root canals, kids dentistry and extractions at Rudra Dental, 2 km west along Pammal Main Road.",
+    "photo": {
+      "src": "/areas/pammal.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "Aerial view of Pammal, showing the temple tank and surrounding streets",
+      "caption": "Aerial view of Pammal, showing the temple tank and surrounding streets",
+      "author": "Oleg Yunakov",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Pammal,_Chennai,_Tamil_Nadu,_India_-_08.jpg"
+    }
   },
   {
     "slug": "chromepet",
@@ -687,7 +797,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Chromepet to Anakaputhur: 6 km west for specialist dentistry",
     "metaTitle": "Braces and root canals for Chromepet",
-    "metaDescription": "MIT students and GST Road workers make the 6 km run west to Anakaputhur for braces, aligners and molar root canals. Evening slots run to 9pm, Mon to Sat."
+    "metaDescription": "MIT students and GST Road workers make the 6 km run west to Anakaputhur for braces, aligners and molar root canals. Evening slots run to 9pm, Mon to Sat.",
+    "photo": {
+      "src": "/areas/chromepet.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "Chromepet railway station platform and name board",
+      "caption": "Chromepet railway station platform and name board",
+      "author": "Sameer2905",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Chromepet_railway_station_(June_2025).jpg"
+    }
   },
   {
     "slug": "kundrathur",
@@ -734,7 +854,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Kundrathur's dental specialists, straight down the Pallavaram road",
     "metaTitle": "Dental specialists for Kundrathur",
-    "metaDescription": "One road the whole way from Kundrathur, with no junction to cross and no bus change. Root canals, wisdom teeth and braces reviews, about 15 minutes south."
+    "metaDescription": "One road the whole way from Kundrathur, with no junction to cross and no bus change. Root canals, wisdom teeth and braces reviews, about 15 minutes south.",
+    "photo": {
+      "src": "/areas/kundrathur.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "Kandhazheeswarar temple entrance and gopuram, Kundrathur",
+      "caption": "Kandhazheeswarar temple entrance and gopuram, Kundrathur",
+      "author": "Nprathap4u",
+      "licence": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kandhazheeswarar_temple-_Kundrathur_-_Entrance.JPG"
+    }
   },
   {
     "slug": "mangadu",
@@ -780,7 +910,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Implants and full mouth work for Mangadu patients",
     "metaTitle": "Dental implants for Mangadu",
-    "metaDescription": "Teeth missing for a year or more are most of what we see from Mangadu. Implant and full mouth planning settled in one sitting, 10 km south on the same road."
+    "metaDescription": "Teeth missing for a year or more are most of what we see from Mangadu. Implant and full mouth planning settled in one sitting, 10 km south on the same road.",
+    "photo": {
+      "src": "/areas/mangadu.jpg",
+      "width": 1280,
+      "height": 900,
+      "alt": "Mangadu Kamakshi Amman temple gopuram",
+      "caption": "Mangadu Kamakshi Amman temple gopuram",
+      "author": "Rasnaboy",
+      "licence": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:MangaduEntranceLandscape.jpg"
+    }
   },
   {
     "slug": "kolapakkam",
@@ -872,7 +1012,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Coming to Rudra Dental from Peerkankaranai",
     "metaTitle": "Dentist for Peerkankaranai",
-    "metaDescription": "Peerkankaranai has no station of its own, so most patients drive or take a share auto. Rudra Dental is 12 km north in Anakaputhur, open Monday to Saturday."
+    "metaDescription": "Peerkankaranai has no station of its own, so most patients drive or take a share auto. Rudra Dental is 12 km north in Anakaputhur, open Monday to Saturday.",
+    "photo": {
+      "src": "/areas/peerkankaranai.jpg",
+      "width": 1200,
+      "height": 900,
+      "alt": "Government Higher Secondary School, Peerkankaranai",
+      "caption": "Government Higher Secondary School, Peerkankaranai",
+      "author": "Giri",
+      "licence": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Govt_School_PKR.jpg"
+    }
   },
   {
     "slug": "meenambakkam",
@@ -919,7 +1069,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Dental treatment for Meenambakkam, six kilometres down GST Road",
     "metaTitle": "Meenambakkam dental clinic, 6 km down GST Road",
-    "metaDescription": "Airport cargo shifts and office hours both fit our two consulting blocks. Rudra Dental is 6 km from Meenambakkam, south on GST Road then west at Pallavaram."
+    "metaDescription": "Airport cargo shifts and office hours both fit our two consulting blocks. Rudra Dental is 6 km from Meenambakkam, south on GST Road then west at Pallavaram.",
+    "photo": {
+      "src": "/areas/meenambakkam.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "Meenambakkam railway station name board",
+      "caption": "Meenambakkam railway station name board",
+      "author": "Gowtham Sampath",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Meenambakkam_Railway_Station.jpg"
+    }
   },
   {
     "slug": "adambakkam",
@@ -967,7 +1127,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "If you live in Adambakkam and need a specialist dentist",
     "metaTitle": "Adambakkam to Anakaputhur, 10 km",
-    "metaDescription": "The Nanganallur subways are how Adambakkam reaches GST Road, and they flood fast. Allow extra monsoon time for the 10 km run to Rudra Dental, Anakaputhur."
+    "metaDescription": "The Nanganallur subways are how Adambakkam reaches GST Road, and they flood fast. Allow extra monsoon time for the 10 km run to Rudra Dental, Anakaputhur.",
+    "photo": {
+      "src": "/areas/adambakkam.jpg",
+      "width": 1400,
+      "height": 900,
+      "alt": "Adambakkam railway station",
+      "caption": "Adambakkam railway station",
+      "author": "Darshan Simha",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Adambakkam_Railway_Station.jpg"
+    }
   },
   {
     "slug": "moulivakkam",
