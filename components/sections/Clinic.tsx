@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { GALLERY, SITE, type GalleryItem } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
 import { Reveal } from "@/components/ui/Motion";
@@ -159,6 +160,9 @@ function Tile({
 
 export function Gallery() {
   const [active, setActive] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const step = useCallback((delta: number) => {
     setActive((current) =>
@@ -265,76 +269,81 @@ export function Gallery() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {active !== null ? (
-          <motion.div
-            className="fixed inset-0 z-[220] flex items-center justify-center p-4 sm:p-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            role="dialog"
-            aria-modal="true"
-            aria-label={GALLERY[active].caption}
-          >
-            <div
-              className="absolute inset-0 bg-ink-950/94 backdrop-blur-md"
-              onClick={() => setActive(null)}
-            />
-            <motion.div
-              initial={{ scale: 0.94, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.96, opacity: 0 }}
-              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10 flex max-h-full w-full max-w-4xl flex-col"
-            >
-              <div className="relative overflow-hidden rounded-2xl border border-gold-500/25 bg-ink-900">
-                <Image
-                  src={GALLERY[active].src}
-                  alt={GALLERY[active].alt}
-                  width={GALLERY[active].width}
-                  height={GALLERY[active].height}
-                  quality={86}
-                  sizes="(max-width: 1024px) 92vw, 900px"
-                  className="max-h-[62vh] w-full object-contain sm:max-h-[74vh]"
+      {mounted
+        ? createPortal(
+            <AnimatePresence>
+              {active !== null ? (
+              <motion.div
+                className="fixed inset-0 z-[220] flex items-center justify-center p-4 sm:p-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                role="dialog"
+                aria-modal="true"
+                aria-label={GALLERY[active].caption}
+              >
+                <div
+                  className="absolute inset-0 bg-ink-950/94 backdrop-blur-md"
+                  onClick={() => setActive(null)}
                 />
-              </div>
-              <div className="mt-4 flex items-center justify-between gap-4">
-                <p className="text-sm text-mist-300">
-                  <span className="text-gold-300">{GALLERY[active].caption}</span>
-                  <span className="mx-2 text-mist-500">|</span>
-                  {active + 1} of {GALLERY.length}
-                </p>
-                <div className="flex gap-2">
-                  <button
-                    type="button"
-                    onClick={() => step(-1)}
-                    aria-label="Previous photo"
-                    className="grid h-11 w-11 place-items-center rounded-full border border-gold-500/30 text-gold-200 transition hover:bg-gold-500/12"
-                  >
-                    <IconChevron className="h-4 w-4 rotate-90" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => step(1)}
-                    aria-label="Next photo"
-                    className="grid h-11 w-11 place-items-center rounded-full border border-gold-500/30 text-gold-200 transition hover:bg-gold-500/12"
-                  >
-                    <IconChevron className="h-4 w-4 -rotate-90" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setActive(null)}
-                    aria-label="Close photo"
-                    className="grid h-11 w-11 place-items-center rounded-full border border-gold-500/30 text-gold-200 transition hover:bg-gold-500 hover:text-ink-950"
-                  >
-                    <IconClose className="h-4 w-4" />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+                <motion.div
+                  initial={{ scale: 0.94, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.96, opacity: 0 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative z-10 flex max-h-full w-full max-w-4xl flex-col"
+                >
+                  <div className="relative overflow-hidden rounded-2xl border border-gold-500/25 bg-ink-900">
+                    <Image
+                      src={GALLERY[active].src}
+                      alt={GALLERY[active].alt}
+                      width={GALLERY[active].width}
+                      height={GALLERY[active].height}
+                      quality={86}
+                      sizes="(max-width: 1024px) 92vw, 900px"
+                      className="max-h-[62vh] w-full object-contain sm:max-h-[74vh]"
+                    />
+                  </div>
+                  <div className="mt-4 flex items-center justify-between gap-4">
+                    <p className="text-sm text-mist-300">
+                      <span className="text-gold-300">{GALLERY[active].caption}</span>
+                      <span className="mx-2 text-mist-500">|</span>
+                      {active + 1} of {GALLERY.length}
+                    </p>
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={() => step(-1)}
+                        aria-label="Previous photo"
+                        className="grid h-11 w-11 place-items-center rounded-full border border-gold-500/30 text-gold-200 transition hover:bg-gold-500/12"
+                      >
+                        <IconChevron className="h-4 w-4 rotate-90" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => step(1)}
+                        aria-label="Next photo"
+                        className="grid h-11 w-11 place-items-center rounded-full border border-gold-500/30 text-gold-200 transition hover:bg-gold-500/12"
+                      >
+                        <IconChevron className="h-4 w-4 -rotate-90" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setActive(null)}
+                        aria-label="Close photo"
+                        className="grid h-11 w-11 place-items-center rounded-full border border-gold-500/30 text-gold-200 transition hover:bg-gold-500 hover:text-ink-950"
+                      >
+                        <IconClose className="h-4 w-4" />
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ) : null}
+            </AnimatePresence>,
+            document.body,
+          )
+        : null}
     </section>
   );
 }
