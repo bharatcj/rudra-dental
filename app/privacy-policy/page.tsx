@@ -115,7 +115,7 @@ export default function PrivacyPolicyPage() {
                 <p className="text-xs tracking-[0.16em] text-gold-400 uppercase">
                   On this page
                 </p>
-                <ul className="mt-4 space-y-2.5">
+                <ul className="mt-4 max-w-[58ch] space-y-2.5">
                   {SECTIONS.map((section) => (
                     <li key={section.heading}>
                       <a
@@ -151,13 +151,13 @@ export default function PrivacyPolicyPage() {
                   {section.body?.map((paragraph) => (
                     <p
                       key={paragraph.slice(0, 40)}
-                      className="mt-4 leading-relaxed text-mist-300"
+                      className="mt-4 max-w-[58ch] leading-relaxed text-mist-300"
                     >
                       {paragraph}
                     </p>
                   ))}
                   {section.list ? (
-                    <ul className="mt-4 space-y-2.5">
+                    <ul className="mt-4 max-w-[58ch] space-y-2.5">
                       {section.list.map((item) => (
                         <li
                           key={item.slice(0, 40)}
@@ -176,7 +176,7 @@ export default function PrivacyPolicyPage() {
                 <h2 className="display text-2xl text-gold-200 sm:text-[1.75rem]">
                   Image Use
                 </h2>
-                <p className="mt-4 leading-relaxed text-mist-300">
+                <p className="mt-4 max-w-[58ch] leading-relaxed text-mist-300">
                   The photographs of the clinic, the treatment rooms and our
                   dentists were taken at {SITE.address.shortDisplay} and belong to{" "}
                   {SITE.legalName}. If you want to use one, write to{" "}
@@ -188,7 +188,7 @@ export default function PrivacyPolicyPage() {
                   </a>{" "}
                   and say where it will appear. We usually say yes.
                 </p>
-                <p className="mt-4 leading-relaxed text-mist-300">
+                <p className="mt-4 max-w-[58ch] leading-relaxed text-mist-300">
                   The photographs on the area pages are not ours. Each one was
                   published on Wikimedia Commons under a Creative Commons licence,
                   and the photographer, the licence and a link to the original file
@@ -201,7 +201,7 @@ export default function PrivacyPolicyPage() {
                 <h2 className="display text-2xl text-gold-200 sm:text-[1.75rem]">
                   Contact Us
                 </h2>
-                <p className="mt-4 leading-relaxed text-mist-300">
+                <p className="mt-4 max-w-[58ch] leading-relaxed text-mist-300">
                   If you have any questions or concerns, please contact us at{" "}
                   <a
                     href={`mailto:${SITE.email}`}
