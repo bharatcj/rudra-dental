@@ -21,7 +21,7 @@ import TreatmentGrid from "@/components/sections/TreatmentGrid";
 
 const TITLE = "Dental Treatments in Anakaputhur, Chennai";
 const DESCRIPTION =
-  "Root canals, implants, braces, aligners, wisdom tooth surgery, laser gum treatment, children's dentistry and full mouth rehabilitation at Rudra Dental, Anakaputhur.";
+  "Root canals, implants, braces, wisdom tooth surgery, laser gum treatment and children's dentistry at Rudra Dental on Kamaraj Street, Anakaputhur.";
 
 export const metadata: Metadata = {
   title: TITLE,

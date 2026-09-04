@@ -37,7 +37,7 @@ const SOCIAL_DESCRIPTION =
   "Rudra Dental is the dental clinic on Kamaraj Street, Anakaputhur, Chennai 600070. Root canals, implants, braces, aligners and same day emergency care from five in-house specialists. Call +91 80721 43199.";
 
 const DESCRIPTION =
-  "Rudra Dental on Kamaraj Street, Anakaputhur, Chennai. Root canals, implants, braces, aligners and same day emergency care. Rated 5.0 by 275 patients, Monday to Saturday.";
+  "Rudra Dental on Kamaraj Street, Anakaputhur. Root canals, implants, braces and same day emergency care. Rated 5.0 by 275 patients. Monday to Saturday.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),

@@ -7,7 +7,8 @@ import BrandLogo from "@/components/ui/Logo";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Rudra Dental Privacy Policy.",
+  description:
+    "How Rudra Dental handles the details you share when you book an appointment or send a WhatsApp message, and the terms for using the photographs on this site.",
   keywords: ["Privacy", "Policy", "Rudra Dental"],
   alternates: { canonical: `${SITE.url}/privacy-policy` },
   robots: { index: true, follow: true },
@@ -170,6 +171,31 @@ export default function PrivacyPolicyPage() {
                   ) : null}
                 </section>
               ))}
+
+              <section id="image-use" className="scroll-mt-28">
+                <h2 className="display text-2xl text-gold-200 sm:text-[1.75rem]">
+                  Image Use
+                </h2>
+                <p className="mt-4 leading-relaxed text-mist-300">
+                  The photographs of the clinic, the treatment rooms and our
+                  dentists were taken at {SITE.address.shortDisplay} and belong to{" "}
+                  {SITE.legalName}. If you want to use one, write to{" "}
+                  <a
+                    href={`mailto:${SITE.email}`}
+                    className="text-gold-300 underline underline-offset-4"
+                  >
+                    {SITE.email}
+                  </a>{" "}
+                  and say where it will appear. We usually say yes.
+                </p>
+                <p className="mt-4 leading-relaxed text-mist-300">
+                  The photographs on the area pages are not ours. Each one was
+                  published on Wikimedia Commons under a Creative Commons licence,
+                  and the photographer, the licence and a link to the original file
+                  are printed under the picture on the page it appears on. Those
+                  terms come from the photographer, not from us.
+                </p>
+              </section>
 
               <section id="contact-us" className="scroll-mt-28">
                 <h2 className="display text-2xl text-gold-200 sm:text-[1.75rem]">

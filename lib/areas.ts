@@ -1193,3 +1193,15 @@ export const AREAS: ServiceArea[] = AREA_SEEDS.map(build);
 export function areaBySlug(slug: string) {
   return AREAS.find((area) => area.slug === slug);
 }
+
+const LICENCE_URLS: Record<string, string> = {
+  "CC0": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "CC BY 4.0": "https://creativecommons.org/licenses/by/4.0/",
+  "CC BY-SA 2.5": "https://creativecommons.org/licenses/by-sa/2.5/",
+  "CC BY-SA 3.0": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "CC BY-SA 4.0": "https://creativecommons.org/licenses/by-sa/4.0/",
+};
+
+export function licenceUrl(licence: string) {
+  return LICENCE_URLS[licence] ?? "https://creativecommons.org/licenses/";
+}

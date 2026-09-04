@@ -7,7 +7,7 @@ import {
   GALLERY,
 } from "./site";
 import { TREATMENTS, type Treatment } from "./treatments";
-import { AREAS, type ServiceArea } from "./areas";
+import { AREAS, licenceUrl, type ServiceArea } from "./areas";
 import { POSTS_BY_DATE, type BlogPost } from "./blog";
 
 const OG_IMAGE = `${SITE.url}/og.png`;
@@ -30,7 +30,51 @@ const LOGO = {
   url: `${SITE.url}/icon.png`,
   width: 512,
   height: 512,
+  caption: `${SITE.name} logo`,
+  creator: { "@id": CLINIC_ID },
+  creditText: SITE.name,
+  copyrightNotice: SITE.legalName,
+  license: `${SITE.url}/privacy-policy#image-use`,
+  acquireLicensePage: `${SITE.url}/privacy-policy#image-use`,
 };
+
+const IMAGE_LICENCE_PAGE = `${SITE.url}/privacy-policy#image-use`;
+
+function clinicImage(src: string, caption: string) {
+  return {
+    "@type": "ImageObject",
+    url: `${SITE.url}${src}`,
+    caption,
+    creator: { "@id": CLINIC_ID },
+    creditText: SITE.name,
+    copyrightNotice: `${SITE.legalName}`,
+    license: IMAGE_LICENCE_PAGE,
+    acquireLicensePage: IMAGE_LICENCE_PAGE,
+  };
+}
+
+function commonsImage(photo: {
+  src: string;
+  caption: string;
+  width: number;
+  height: number;
+  author: string;
+  licence: string;
+  source: string;
+}) {
+  return {
+    "@type": "ImageObject",
+    url: `${SITE.url}${photo.src}`,
+    caption: photo.caption,
+    width: photo.width,
+    height: photo.height,
+    creator: { "@type": "Person", name: photo.author },
+    creditText: `${photo.author}, ${photo.licence}, via Wikimedia Commons`,
+    copyrightNotice: `${photo.author}, licensed ${photo.licence}`,
+    license: licenceUrl(photo.licence),
+    acquireLicensePage: photo.source,
+  };
+}
 
 const DESCRIPTION = `${SITE.name} is a dental clinic on ${SITE.address.street}, ${SITE.address.locality}, Chennai ${SITE.address.postalCode}, open since ${SITE.established}. Five in-house specialists provide root canal treatment, dental implants, braces and clear aligners, laser dentistry, children's dentistry and full mouth rehabilitation, ${SITE.hours.days.toLowerCase()}, ${SITE.hours.short}.`;
 
@@ -83,11 +127,7 @@ export const dentistSchema = {
     longitude: SITE.geo.longitude,
   },
   hasMap: SITE.mapsShortLink,
-  photo: GALLERY.map((item) => ({
-    "@type": "ImageObject",
-    url: `${SITE.url}${item.src}`,
-    caption: item.alt,
-  })),
+  photo: GALLERY.map((item) => clinicImage(item.src, item.alt)),
   areaServed: SERVICE_AREAS.map((area) => ({
     "@type": "City",
     name: area,
@@ -204,7 +244,7 @@ export const privacySchema = {
   name: "Privacy Policy",
   url: `${SITE.url}/privacy-policy`,
   isPartOf: { "@type": "WebSite", name: SITE.name, url: SITE.canonical },
-  description: "Rudra Dental Privacy Policy.",
+  description: `How ${SITE.name} handles the details you share when you book an appointment or send a WhatsApp message, and the terms for using the photographs on this site.`,
 };
 
 export const videoSchema = {
@@ -221,7 +261,7 @@ export const videoSchema = {
   publisher: {
     "@type": "Organization",
     name: SITE.name,
-    logo: { "@type": "ImageObject", url: `${SITE.url}/brand/logo-full.png` },
+    logo: LOGO,
   },
 };
 
@@ -231,7 +271,7 @@ export const gallerySchema = {
   name: `Inside ${SITE.name}, Anakaputhur`,
   url: `${SITE.url}/#gallery`,
   associatedMedia: GALLERY.map((item) => ({
-    "@type": "ImageObject",
+    ...clinicImage(item.src, item.alt),
     contentUrl: `${SITE.url}${item.src}`,
     name: item.caption,
     description: item.alt,
@@ -262,11 +302,7 @@ export function treatmentSchema(treatment: Treatment) {
       followup: treatment.aftercare.join(" "),
       provider: { "@id": CLINIC_ID },
     },
-    primaryImageOfPage: {
-      "@type": "ImageObject",
-      url: `${SITE.url}${treatment.image}`,
-      caption: treatment.imageAlt,
-    },
+    primaryImageOfPage: `${SITE.url}${treatment.image}`,
     breadcrumb: {
       "@type": "BreadcrumbList",
       itemListElement: [
@@ -411,11 +447,7 @@ export function postSchema(post: BlogPost) {
     ]
       .join(" ")
       .split(/\s+/).length,
-    image: {
-      "@type": "ImageObject",
-      url: `${SITE.url}${post.image}`,
-      caption: post.imageAlt,
-    },
+    image: `${SITE.url}${post.image}`,
     datePublished: istTimestamp(post.date),
     dateModified: istTimestamp(post.date),
     author: { "@id": ORG_ID },
@@ -468,15 +500,7 @@ export function areaSchema(area: ServiceArea) {
     about: { "@id": CLINIC_ID },
     ...(area.photo
       ? {
-          primaryImageOfPage: {
-            "@type": "ImageObject",
-            url: `${SITE.url}${area.photo.src}`,
-            caption: area.photo.caption,
-            width: area.photo.width,
-            height: area.photo.height,
-            creditText: area.photo.author,
-            license: area.photo.source,
-          },
+          primaryImageOfPage: commonsImage(area.photo),
         }
       : {}),
     mainEntity: {

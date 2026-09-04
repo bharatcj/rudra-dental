@@ -299,7 +299,7 @@ export const TREATMENTS: Treatment[] = [
     slug: "tooth-extraction-and-impaction",
     name: "Tooth Extraction & Impaction",
     heading: "Extractions and wisdom teeth",
-    metaTitle: "Tooth Extraction and Wisdom Tooth Surgery in Anakaputhur",
+    metaTitle: "Wisdom Tooth Removal in Anakaputhur, Chennai",
     metaDescription:
       "Routine and surgical tooth extraction and impacted wisdom tooth removal at Rudra Dental, Anakaputhur, with an oral and maxillofacial surgeon in house.",
     summary:
