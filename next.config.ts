@@ -41,7 +41,7 @@ const nextConfig: NextConfig = {
         headers: SECURITY_HEADERS,
       },
       {
-        source: "/:all*(svg|jpg|jpeg|png|webp|avif|ico|woff2)",
+        source: "/:all*(svg|jpg|jpeg|png|webp|avif|ico|woff2|mp4|webm)",
         headers: [
           {
             key: "Cache-Control",

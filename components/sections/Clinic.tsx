@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { GALLERY, SITE, type GalleryItem } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
-import { Reveal } from "@/components/ui/Motion";
+import { Reveal, useMinWidth } from "@/components/ui/Motion";
 import { LogoMark } from "@/components/ui/Logo";
 import {
   IconArrow,
@@ -343,9 +343,16 @@ export function Gallery() {
 export function Story() {
   const { openBooking } = useBooking();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [started, setStarted] = useState(false);
   const [playing, setPlaying] = useState(false);
+  const ambient = useMinWidth(1024);
 
   const toggle = () => {
+    if (!started) {
+      setStarted(true);
+      setPlaying(true);
+      return;
+    }
     const node = videoRef.current;
     if (!node) return;
     if (node.paused) {
@@ -364,17 +371,18 @@ export function Story() {
       className="relative overflow-hidden py-12 sm:py-14 lg:py-16"
     >
       <div className="absolute inset-0 -z-10">
-        <video
-          className="hidden h-full w-full object-cover opacity-[0.14] lg:block"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster="/gallery/reception.jpg"
-        >
-          <source src="/media/loop-interior.mp4" type="video/mp4" />
-        </video>
+        {ambient ? (
+          <video
+            className="h-full w-full object-cover opacity-[0.14]"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+          >
+            <source src="/media/loop-interior.mp4" type="video/mp4" />
+          </video>
+        ) : null}
         <div className="absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-950/70 to-ink-950" />
       </div>
 
@@ -384,18 +392,32 @@ export function Story() {
             <div className="relative mx-auto w-full max-w-[520px]">
               <div className="edge-gold relative overflow-hidden rounded-[1.6rem] p-2">
                 <div className="relative overflow-hidden rounded-[1.1rem] bg-ink-950">
-                  <video
-                    ref={videoRef}
-                    className="aspect-video w-full object-cover"
-                    poster="/media/launch-2023-poster.jpg"
-                    preload="metadata"
-                    playsInline
-                    controls={playing}
-                    onEnded={() => setPlaying(false)}
-                    onPause={() => setPlaying(false)}
-                  >
-                    <source src="/media/launch-2023.mp4" type="video/mp4" />
-                  </video>
+                  {started ? (
+                    <video
+                      ref={videoRef}
+                      className="aspect-video w-full object-cover"
+                      preload="auto"
+                      autoPlay
+                      playsInline
+                      controls={playing}
+                      onEnded={() => setPlaying(false)}
+                      onPause={() => setPlaying(false)}
+                      onPlay={() => setPlaying(true)}
+                    >
+                      <source src="/media/launch-2023.mp4" type="video/mp4" />
+                    </video>
+                  ) : (
+                    <div className="relative aspect-video w-full">
+                      <Image
+                        src="/media/launch-2023-poster.jpg"
+                        alt="Rudra Dental on its opening day in Anakaputhur, 2023"
+                        fill
+                        quality={72}
+                        sizes="(max-width: 1024px) 92vw, 520px"
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
 
                   {!playing ? (
                     <button

@@ -249,6 +249,24 @@ export function useMounted() {
   return mounted;
 }
 
+export function useMinWidth(px: number) {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia(`(min-width: ${px}px)`);
+    const apply = () => setMatches(query.matches);
+    apply();
+    query.addEventListener("change", apply);
+    window.addEventListener("resize", apply, { passive: true });
+    return () => {
+      query.removeEventListener("change", apply);
+      window.removeEventListener("resize", apply);
+    };
+  }, [px]);
+
+  return matches;
+}
+
 export function GoldRule({ className }: { className?: string }) {
   return (
     <div className={`relative flex items-center justify-center ${className ?? ""}`}>
