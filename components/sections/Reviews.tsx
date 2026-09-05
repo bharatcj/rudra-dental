@@ -19,6 +19,7 @@ const BARS = [
 function Stars({ value, className }: { value: number; className?: string }) {
   return (
     <span
+      role="img"
       className={`flex items-center gap-0.5 ${className ?? ""}`}
       aria-label={`${value} out of 5 stars`}
     >

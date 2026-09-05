@@ -51,6 +51,7 @@ export default function TreatmentGrid() {
                   className="inline-flex min-h-11 items-center gap-2 text-[0.72rem] font-semibold tracking-[0.18em] text-gold-400 uppercase transition hover:text-gold-200"
                 >
                   Read more
+                  <span className="sr-only"> about {treatment.name}</span>
                   <IconArrow className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
                 </Link>
               </div>
