@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { SITE, SERVICE_AREAS } from "@/lib/site";
 import { type Treatment, treatmentBySlug } from "@/lib/treatments";
 import { postsForTreatment } from "@/lib/blog";
@@ -285,21 +285,16 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
                       <IconPlus className="h-3.5 w-3.5" />
                     </span>
                   </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen ? (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <p className="max-w-[58ch] pb-5 text-sm leading-relaxed text-mist-300">
-                          {faq.a}
-                        </p>
-                      </motion.div>
-                    ) : null}
-                  </AnimatePresence>
+                  <motion.div
+                    initial={false}
+                    animate={{ height: isOpen ? "auto" : 0 }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <p className="max-w-[58ch] pb-5 text-sm leading-relaxed text-mist-300">
+                      {faq.a}
+                    </p>
+                  </motion.div>
                 </div>
               );
             })}
