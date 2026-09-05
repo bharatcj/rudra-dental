@@ -154,8 +154,8 @@ export const POSTS: BlogPost[] = [
     excerpt:
       "Do not underestimate the importance of routine dental visits. Most cavities and gum problems are painless until they become expensive, and a six month recall catches them early.",
     tag: "Checkups",
-    date: "2022-05-21",
-    dateDisplay: "21 May 2022",
+    date: "2024-05-21",
+    dateDisplay: "21 May 2024",
     readMinutes: 4,
     image: "/blog/regular-checkups.jpg",
     imageAlt: "Dentist examining a patient's teeth with a mirror and probe",

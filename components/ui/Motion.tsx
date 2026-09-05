@@ -19,9 +19,8 @@ import {
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 26 },
+  hidden: { y: 26 },
   show: (i: number = 0) => ({
-    opacity: 1,
     y: 0,
     transition: { duration: 0.75, ease: EASE, delay: i * 0.075 },
   }),
@@ -57,8 +56,8 @@ export function Reveal({
   return (
     <MotionTag
       className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ y }}
+      whileInView={{ y: 0 }}
       viewport={{ once, margin: "-70px" }}
       transition={{ duration: 0.8, ease: EASE, delay }}
     >
@@ -105,8 +104,8 @@ export function StaggerItem({
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 0, y },
-        show: { opacity: 1, y: 0, transition: { duration: 0.72, ease: EASE } },
+        hidden: { y },
+        show: { y: 0, transition: { duration: 0.72, ease: EASE } },
       }}
     >
       {children}

@@ -117,7 +117,7 @@ function Tile({
       type="button"
       onClick={() => onOpen(index)}
       aria-label={`Open photo: ${item.caption}`}
-      initial={{ opacity: 0, y: 22 }}
+      initial={{ y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{

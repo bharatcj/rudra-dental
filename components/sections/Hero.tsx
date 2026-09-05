@@ -65,7 +65,7 @@ export default function Hero() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
           <div>
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="mb-5 inline-flex items-center rounded-full border border-gold-500/25 bg-gold-500/[0.07] px-4 py-1.5 lg:mb-7"
@@ -86,7 +86,7 @@ export default function Hero() {
             </h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 18 }}
+              initial={{ y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="mt-5 max-w-xl text-[1.02rem] leading-relaxed text-mist-300 lg:mt-7 lg:text-[1.05rem]"
@@ -97,7 +97,7 @@ export default function Hero() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 18 }}
+              initial={{ y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.68, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="mt-7 flex flex-wrap items-center gap-2.5 lg:mt-9 lg:gap-3"
@@ -131,7 +131,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.dl
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9, duration: 0.9 }}
               className="mt-9 grid max-w-lg grid-cols-3 gap-4 border-t border-gold-500/12 pt-6 lg:mt-12 lg:pt-7"
@@ -202,7 +202,7 @@ export default function Hero() {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
+              initial={{ scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.95, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="surface absolute bottom-[3%] left-1/2 flex -translate-x-1/2 items-center gap-2.5 rounded-full px-4 py-2 whitespace-nowrap shadow-[0_16px_40px_-16px_rgba(0,0,0,0.95)]"
@@ -225,7 +225,7 @@ export default function Hero() {
             ].map((chip) => (
               <motion.span
                 key={chip.text}
-                initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                initial={{ y: 10, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ delay: chip.delay, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 style={{
@@ -243,7 +243,7 @@ export default function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.05, duration: 0.8 }}
           className="mt-12 border-t border-gold-500/10 pt-6 lg:mt-16 lg:pt-7"
