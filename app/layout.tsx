@@ -102,11 +102,6 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    language: "English",
-    coverage: "Worldwide",
-    distribution: "global",
-    rating: "general",
-    "revisit-after": "7 days",
     "geo.region": "IN-TN",
     "geo.placename": "Anakaputhur, Chennai",
     "geo.position": `${SITE.geo.latitude};${SITE.geo.longitude}`,
