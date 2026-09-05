@@ -34,7 +34,7 @@ export const TREATMENTS: Treatment[] = [
     bodyPart: "Tooth pulp and root canal system",
     icon: "rct",
     image: "/treatments/root-canal-treatment.jpg",
-    imageAlt: "Endodontist working through a dental operating microscope during a root canal",
+    imageAlt: "Dentist working through a dental operating microscope during a root canal",
     intro: [
       "Inside every tooth is a soft core of nerve and blood vessels called the pulp. Deep decay, a crack, or a heavy knock lets bacteria reach it. Once the pulp is infected it cannot heal on its own, and the infection travels down the root towards the bone.",
       "A root canal takes that infected tissue out. The canals are cleaned, shaped and disinfected, then filled and sealed so bacteria cannot get back in. The tooth stays where it is and keeps doing its job.",
@@ -572,7 +572,7 @@ export const TREATMENTS: Treatment[] = [
     heading: "Full mouth rehabilitation",
     metaTitle: "Full Mouth Rehabilitation in Anakaputhur, Chennai",
     metaDescription:
-      "Staged full mouth rehabilitation at Rudra Dental, Anakaputhur. Crowns, bridges, implants and dentures planned together by five specialists in one clinic.",
+      "Staged full mouth rehabilitation at Rudra Dental, Anakaputhur. Crowns, bridges, implants and dentures planned together by five dentists in one clinic.",
     summary:
       "Rebuilding the bite when wear, decay or missing teeth have affected most of the mouth, planned as one case rather than tooth by tooth.",
     procedure: "Full mouth rehabilitation",
@@ -627,7 +627,7 @@ export const TREATMENTS: Treatment[] = [
     ],
     facts: [
       { label: "Duration", value: "Several months, staged" },
-      { label: "Specialists involved", value: "Prosthodontist, endodontist, surgeon and orthodontist as needed" },
+      { label: "Who is involved", value: "Prosthodontist, oral surgeon and orthodontist as needed" },
       { label: "Materials", value: "Zirconia and metal free options for visible teeth" },
       { label: "Protection", value: "A night guard where grinding is part of the cause" },
     ],

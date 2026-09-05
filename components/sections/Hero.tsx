@@ -1,11 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 import { SITE, SERVICE_AREAS } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
-import { SplitHeading, useParallaxEnabled } from "@/components/ui/Motion";
+import { SplitHeading } from "@/components/ui/Motion";
 import {
   IconArrow,
   IconPhone,
@@ -21,26 +19,15 @@ const HIGHLIGHTS = [
 ];
 
 export default function Hero() {
-  const ref = useRef<HTMLElement>(null);
   const { openBooking } = useBooking();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const parallax = useParallaxEnabled();
-  const bgShift = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
-  const contentShift = useTransform(scrollYProgress, [0, 1], ["0%", "-14%"]);
-  const bgY = parallax ? bgShift : undefined;
-  const contentY = parallax ? contentShift : undefined;
 
   return (
     <section
-      ref={ref}
       id="home"
       aria-label="Rudra Dental, best dental clinic in Anakaputhur Chennai"
       className="grain relative isolate overflow-hidden pt-10 pb-12 sm:pt-14 sm:pb-14 lg:pt-20 lg:pb-20"
     >
-      <motion.div style={{ y: bgY }} className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10">
         <div className="absolute -top-[22%] left-[6%] h-[46rem] w-[46rem] rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.22),transparent_62%)] anim-aurora" />
         <div
           className="absolute top-[12%] right-[-8%] h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(circle,rgba(79,209,197,0.14),transparent_65%)] anim-aurora"
@@ -59,21 +46,18 @@ export default function Hero() {
               "radial-gradient(ellipse 70% 60% at 50% 35%, #000 20%, transparent 75%)",
           }}
         />
-      </motion.div>
+      </div>
 
-      <motion.div style={{ y: contentY }} className="shell relative">
+      <div className="shell relative">
         <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
           <div>
-            <motion.div
-              initial={{ y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            <div
               className="mb-5 inline-flex items-center rounded-full border border-gold-500/25 bg-gold-500/[0.07] px-4 py-1.5 lg:mb-7"
             >
               <span className="text-xs tracking-wide text-gold-200">
                 Two years of brighter smiles in Anakaputhur
               </span>
-            </motion.div>
+            </div>
 
             <h1 className="display text-[2.7rem] leading-[1.03] text-mist-50 sm:text-6xl lg:text-[4.4rem]">
               <SplitHeading text="Rudra Dental" trailingSpace />
@@ -85,21 +69,15 @@ export default function Hero() {
               <SplitHeading text="Chennai" delay={0.34} />
             </h1>
 
-            <motion.p
-              initial={{ y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            <p
               className="mt-5 max-w-xl text-[1.02rem] leading-relaxed text-mist-300 lg:mt-7 lg:text-[1.05rem]"
             >
               Root canals, implants, braces, aligners and full mouth rehabilitation
-              delivered by five in-house specialists. Sterile protocols, digital
+              delivered by five in-house dentists, three of them specialists. Sterile protocols, digital
               diagnostics and written estimates before anything begins.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.68, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            <div
               className="mt-7 flex flex-wrap items-center gap-2.5 lg:mt-9 lg:gap-3"
             >
               <button
@@ -128,12 +106,9 @@ export default function Hero() {
                 <IconPin className="h-4 w-4" />
                 Locate us
               </a>
-            </motion.div>
+            </div>
 
-            <motion.dl
-              initial={false}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9, duration: 0.9 }}
+            <dl
               className="mt-9 grid max-w-lg grid-cols-3 gap-4 border-t border-gold-500/12 pt-6 lg:mt-12 lg:pt-7"
             >
               {HIGHLIGHTS.map((item) => (
@@ -146,13 +121,10 @@ export default function Hero() {
                   </dd>
                 </div>
               ))}
-            </motion.dl>
+            </dl>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.35, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          <div
             className="relative mx-auto aspect-square w-full max-w-[22rem] sm:max-w-[26rem] lg:max-w-[30rem]"
           >
             <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.2),transparent_66%)]" />
@@ -201,10 +173,7 @@ export default function Hero() {
               <span className="absolute inset-0 rounded-full shadow-[inset_0_0_70px_22px_rgba(6,8,14,0.55)]" />
             </div>
 
-            <motion.div
-              initial={{ scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.95, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            <div
               className="surface absolute bottom-[3%] left-1/2 flex -translate-x-1/2 items-center gap-2.5 rounded-full px-4 py-2 whitespace-nowrap shadow-[0_16px_40px_-16px_rgba(0,0,0,0.95)]"
             >
               <span className="flex items-center gap-0.5">
@@ -215,7 +184,7 @@ export default function Hero() {
               <span className="text-[0.78rem] font-medium text-mist-100">5.0</span>
               <span className="h-3 w-px bg-gold-500/30" />
               <span className="text-[0.78rem] text-mist-400">275 reviews</span>
-            </motion.div>
+            </div>
 
             {[
               { text: "Single sitting RCT", top: "7%", left: "-1%", delay: 1.0 },
@@ -223,11 +192,8 @@ export default function Hero() {
               { text: "Digital X-ray", top: "52%", right: "-6%", delay: 1.3 },
               { text: "Clear aligners", bottom: "24%", left: "-5%", delay: 1.45 },
             ].map((chip) => (
-              <motion.span
+              <span
                 key={chip.text}
-                initial={{ y: 10, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ delay: chip.delay, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 style={{
                   top: chip.top,
                   left: chip.left,
@@ -237,15 +203,12 @@ export default function Hero() {
                 className="surface absolute rounded-full px-3 py-1.5 text-[0.78rem] font-medium whitespace-nowrap text-mist-100 shadow-[0_10px_30px_-14px_rgba(0,0,0,0.9)]"
               >
                 {chip.text}
-              </motion.span>
+              </span>
             ))}
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          initial={{ y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.05, duration: 0.8 }}
+        <div
           className="mt-12 border-t border-gold-500/10 pt-6 lg:mt-16 lg:pt-7"
         >
           <span className="flex items-center gap-2 text-xs text-gold-300">
@@ -262,8 +225,8 @@ export default function Hero() {
               </span>
             ))}
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

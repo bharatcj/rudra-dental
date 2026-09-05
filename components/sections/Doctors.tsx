@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
 import { DOCTORS } from "@/lib/site";
 import { useBooking } from "@/components/booking/BookingProvider";
 import { Reveal, Tilt } from "@/components/ui/Motion";
@@ -40,8 +39,9 @@ export default function Doctors() {
             </Reveal>
             <Reveal delay={0.14}>
               <p className="mt-5 text-mist-300">
-                Five specialists, one floor. Endodontics, oral surgery, prosthodontics
-                and orthodontics under a single roof in Anakaputhur.
+                Five dentists, one floor. Three hold an MDS in oral surgery,
+                prosthodontics and orthodontics, and the whole team works under a single
+                roof in Anakaputhur.
               </p>
             </Reveal>
           </div>
@@ -81,13 +81,9 @@ export default function Doctors() {
           }}
         >
         {DOCTORS.map((doctor, index) => (
-          <motion.div
+          <div
             key={doctor.name}
             data-doctor-card
-            initial={{ y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, delay: index * 0.06, ease: [0.16, 1, 0.3, 1] }}
             className="w-[76vw] shrink-0 snap-start sm:w-[19rem]"
           >
             <Tilt max={6}>
@@ -129,7 +125,7 @@ export default function Doctors() {
                 </div>
               </article>
             </Tilt>
-          </motion.div>
+          </div>
         ))}
         </div>
       </div>

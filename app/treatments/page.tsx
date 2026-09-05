@@ -81,9 +81,10 @@ export default function TreatmentsIndex() {
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mt-6 max-w-2xl leading-relaxed text-mist-300">
-                Five specialists share one operatory floor on Kamaraj Street, so a case
-                that starts as a filling and turns out to need endodontics, orthodontics
-                or surgery never leaves the building. Each treatment below sets out what
+                Five dentists share one operatory floor on Kamaraj Street, three of them
+                specialists in oral surgery, prosthodontics and orthodontics, so a case
+                that starts as a filling and turns out to need a root canal, braces or
+                surgery never leaves the building. Each treatment below sets out what
                 it involves, what it costs you in time, and what happens afterwards.
               </p>
             </Reveal>

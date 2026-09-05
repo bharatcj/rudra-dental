@@ -10,7 +10,6 @@ import {
   Reveal,
   Stagger,
   StaggerItem,
-  useParallaxEnabled,
 } from "@/components/ui/Motion";
 import {
   IconArrow,
@@ -22,20 +21,11 @@ import {
 
 export function About() {
   const { openBooking } = useBooking();
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const parallax = useParallaxEnabled();
-  const imageShift = useTransform(scrollYProgress, [0, 1], [40, -40]);
-  const imageY = parallax ? imageShift : undefined;
-
   return (
     <section id="about" aria-label="About Rudra Dental" className="relative py-12 sm:py-14 lg:py-16">
       <div className="shell">
-        <div ref={ref} className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
-          <motion.div style={{ y: imageY }} className="relative">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
+          <div className="relative">
             <div className="relative overflow-hidden rounded-[2rem] border border-gold-500/20">
               <div className="absolute inset-0 bg-gradient-to-tr from-gold-500/12 via-transparent to-aqua-400/8" />
               <Image
@@ -50,13 +40,7 @@ export function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-transparent to-transparent" />
             </div>
 
-            <motion.div
-              initial={{ y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.25, duration: 0.7 }}
-              className="surface absolute -right-2 -bottom-6 w-56 rounded-2xl p-5 lg:-right-8"
-            >
+            <div className="surface absolute -right-2 -bottom-6 w-56 rounded-2xl p-5 lg:-right-8">
               <div className="flex items-center gap-3">
                 <span className="grid h-10 w-10 place-items-center rounded-full bg-gold-500/15 text-gold-300">
                   <IconShield className="h-5 w-5" />
@@ -66,10 +50,10 @@ export function About() {
                   <p className="text-[0.75rem] text-mist-400">Sterile protocols</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             <div className="absolute -top-8 -left-6 h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.15),transparent_70%)]" />
-          </motion.div>
+          </div>
 
           <div>
             <Reveal>
@@ -83,17 +67,19 @@ export function About() {
             </Reveal>
             <Reveal delay={0.14}>
               <p className="mt-6 leading-relaxed text-mist-300">
-                Rudra Dental began in Anakaputhur with a simple idea. Dentistry should
-                not be something people postpone out of fear or confusion about cost. Two
-                years and thousands of patients later, that idea still runs the clinic.
+                Dr. Gopinath started Rudra Dental in Anakaputhur with a simple idea.
+                Dentistry should not be something people postpone out of fear or confusion
+                about cost. Two years and thousands of patients later, he still runs the
+                clinic and that idea still runs with it.
               </p>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-4 leading-relaxed text-mist-300">
-                Five specialists share one operatory floor, so a case that begins as a
-                filling and turns out to need endodontics, orthodontics or surgery never
-                leaves the building. You get one diagnosis, one plan and one team
-                accountable for the outcome.
+                Five dentists share one operatory floor, three of them specialists in
+                oral surgery, prosthodontics and orthodontics, so a case that begins as a
+                filling and turns out to need a root canal, braces or surgery never leaves
+                the building. You get one diagnosis, one plan and one team accountable for
+                the outcome.
               </p>
             </Reveal>
 

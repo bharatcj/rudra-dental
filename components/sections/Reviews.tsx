@@ -172,12 +172,8 @@ export default function Reviews({
 
         <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
           {visible.map((review, index) => (
-            <motion.figure
+            <figure
               key={`${review.author}-${index}`}
-              initial={{ y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.55, delay: Math.min(index % PAGE, 6) * 0.05 }}
               className="surface group relative flex break-inside-avoid flex-col rounded-2xl p-6 transition duration-500 hover:border-gold-500/35"
             >
               <div className="flex items-start justify-between gap-3">
@@ -206,7 +202,7 @@ export default function Reviews({
               <span className="absolute top-6 right-14 rounded-full border border-gold-500/18 px-2.5 py-1 text-[0.6rem] whitespace-nowrap text-gold-400 opacity-0 transition group-hover:opacity-100">
                 {review.tag}
               </span>
-            </motion.figure>
+            </figure>
           ))}
         </div>
 

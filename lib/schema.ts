@@ -76,7 +76,7 @@ function commonsImage(photo: {
   };
 }
 
-const DESCRIPTION = `${SITE.name} is a dental clinic on ${SITE.address.street}, ${SITE.address.locality}, Chennai ${SITE.address.postalCode}, open since ${SITE.established}. Five in-house specialists provide root canal treatment, dental implants, braces and clear aligners, laser dentistry, children's dentistry and full mouth rehabilitation, ${SITE.hours.days.toLowerCase()}, ${SITE.hours.short}.`;
+const DESCRIPTION = `${SITE.name} is a dental clinic on ${SITE.address.street}, ${SITE.address.locality}, Chennai ${SITE.address.postalCode}, open since ${SITE.established}. Five in-house dentists, three of them MDS specialists, provide root canal treatment, dental implants, braces and clear aligners, laser dentistry, children's dentistry and full mouth rehabilitation, ${SITE.hours.days.toLowerCase()}, ${SITE.hours.short}.`;
 
 const DISAMBIGUATION = `${SITE.name} practises only from ${SITE.address.street}, ${SITE.address.locality}, Chennai ${SITE.address.postalCode}, on ${SITE.phoneDisplay}. It has no branches and is not connected to Rudra Dental Smilelature in Salem, to Dr Rudra Dental Care, or to any other practice using a similar name.`;
 
@@ -146,10 +146,17 @@ export const dentistSchema = {
     closes: session.closes,
   })),
   sameAs: SAME_AS,
+  founder: {
+    "@type": "Person",
+    name: DOCTORS[0].name,
+    jobTitle: DOCTORS[0].role,
+    honorificSuffix: DOCTORS[0].credentials,
+  },
   employee: DOCTORS.map((doctor) => ({
     "@type": "Physician",
     name: doctor.name,
     jobTitle: doctor.role,
+    honorificSuffix: doctor.credentials,
     medicalSpecialty: "Dentistry",
   })),
   potentialAction: {

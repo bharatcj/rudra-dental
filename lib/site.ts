@@ -229,7 +229,7 @@ export type Doctor = {
 export const DOCTORS: Doctor[] = [
   {
     name: "Dr. Gopinath",
-    role: "Chief Dental Surgeon",
+    role: "Founder and Chief Dental Surgeon",
     image: "/doctors/dr-gopinath.jpg",
     focus: "Full mouth rehabilitation and advanced restorative dentistry",
     credentials: "BDS",
@@ -296,7 +296,7 @@ export const PROCESS = [
 
 export const STATS = [
   { value: 275, suffix: "", label: "Google reviews" },
-  { value: 5, suffix: "", label: "Specialist dentists" },
+  { value: 5, suffix: "", label: "Dentists on staff" },
   { value: 14, suffix: "+", label: "Treatment specialities" },
   { value: 6, suffix: " days", label: "Open every week" },
 ];
@@ -445,5 +445,5 @@ export const TRUST_MARKERS = [
   "Transparent written estimates",
   "Open Monday to Saturday, 9:30am to 1pm and 4:30pm to 9pm",
   "Emergency same day slots",
-  "Five in-house specialists",
+  "Five dentists in house, three of them specialists",
 ];

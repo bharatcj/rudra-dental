@@ -171,7 +171,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
                   <div className="max-w-[46ch]">
                     <p className="eyebrow">Talk to a dentist</p>
                     <p className="mt-4 text-sm leading-relaxed text-mist-300">
-                      Reading only takes you so far. Five specialists sit on one floor
+                      Reading only takes you so far. Five dentists sit on one floor
                       on Kamaraj Street, Monday to Saturday, mornings and evenings.
                     </p>
                   </div>

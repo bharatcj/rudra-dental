@@ -113,18 +113,10 @@ function Tile({
   onOpen: (index: number) => void;
 }) {
   return (
-    <motion.button
+    <button
       type="button"
       onClick={() => onOpen(index)}
       aria-label={`Open photo: ${item.caption}`}
-      initial={{ y: 22 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{
-        duration: 0.65,
-        delay: Math.min(index, 5) * 0.06,
-        ease: [0.16, 1, 0.3, 1],
-      }}
       className="group relative block w-full overflow-hidden rounded-2xl border border-gold-500/14 bg-ink-800"
     >
       <Image
@@ -154,7 +146,7 @@ function Tile({
           <IconArrow className="h-3.5 w-3.5 -rotate-45" />
         </span>
       </span>
-    </motion.button>
+    </button>
   );
 }
 
@@ -447,17 +439,18 @@ export function Story() {
             </Reveal>
             <Reveal delay={0.14}>
               <p className="mt-6 leading-relaxed text-mist-300">
-                Rudra Dental opened its doors on Kamaraj Street in Anakaputhur with one
-                idea. Dentistry should not be something people postpone out of fear or
+                Dr. Gopinath opened Rudra Dental on Kamaraj Street in Anakaputhur with
+                one idea. Dentistry should not be something people postpone out of fear or
                 confusion about cost.
               </p>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-4 leading-relaxed text-mist-300">
                 Two years and 275 five star reviews later, that idea still runs the
-                clinic. Five specialists share one operatory floor, so a case that starts
-                as a filling and turns out to need endodontics, orthodontics or surgery
-                never leaves the building.
+                clinic. Five dentists share one operatory floor, three of them
+                specialists in oral surgery, prosthodontics and orthodontics, so a case
+                that starts as a filling and turns out to need a root canal, braces or
+                surgery never leaves the building.
               </p>
             </Reveal>
 

@@ -61,7 +61,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       "The clinic has been on Kamaraj Street since 2023. Most of the people who walk in live within a few streets of it, which is why the appointment book fills in the evenings and on Saturdays rather than through the working day.",
       "Anakaputhur is a working town rather than a commuter suburb. Plenty of patients arrive straight from a shift at one of the weaving units or from the market, so the evening session runs until nine."
     ],
-    "why": "This is the clinic itself, not a branch of anything. All five specialists sit on the same floor, so a case that starts as a filling and turns out to need endodontics or surgery is finished in the same building instead of being sent across the city.",
+    "why": "This is the clinic itself, not a branch of anything. All five dentists sit on the same floor, so a case that starts as a filling and turns out to need a root canal or surgery is finished in the same building instead of being sent across the city.",
     "commonTreatments": [
       "root-canal-treatment",
       "tooth-extraction-and-impaction",
@@ -79,7 +79,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "The dental clinic on Kamaraj Street, Anakaputhur",
     "metaTitle": "Dental Clinic in Anakaputhur, Chennai 600070",
-    "metaDescription": "Rudra Dental has been on Kamaraj Street in Anakaputhur since 2023. Five specialists, one floor, evenings until nine. Call +91 80721 43199.",
+    "metaDescription": "Rudra Dental has been on Kamaraj Street in Anakaputhur since 2023. Five dentists, one floor, evenings until nine. Call +91 80721 43199.",
     "photo": {
       "src": "/areas/anakaputhur.jpg",
       "width": 1400,
@@ -170,7 +170,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "intro": [
       "Porur is where Mount-Poonamallee Road and Arcot Road run into one signal, and people here measure a journey by what that junction is doing on the day. The clinic is about 14 km south. The useful part is that Kundrathur Main Road leaves from the same junction and carries you most of the way there.",
-      "Five specialists work out of this one building, and the reason that matters tends to show up mid treatment rather than at the start. A root canal turns out to need a post and a crown. An implant needs the bite reassessed before the crown goes on. Here the case moves one room across instead of turning into three appointments at three addresses.",
+      "Five dentists work out of this one building, and the reason that matters tends to show up mid treatment rather than at the start. A root canal turns out to need a post and a crown. An implant needs the bite reassessed before the crown goes on. Here the case moves one room across instead of turning into three appointments at three addresses.",
       "The late slots go quickly with Porur patients, most of them coming off a day at Sri Ramachandra or out of the office blocks near Commerzone on Mount-Poonamallee Road. The other argument for booking late is that traffic towards Kundrathur thins after about 7pm, so a 7:30 drive is often shorter than a 6 o'clock one. We work Monday to Saturday."
     ],
     "why": "Two things bring people here from Porur. One is second opinions on work already quoted somewhere else, usually root canals and implants. The other is complex cases: a patient sent from one clinic to another for the surgical part, who would rather have the whole plan handled by one team in one place.",
@@ -195,7 +195,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     ],
     "heading": "Coming down from Porur for dental treatment",
     "metaTitle": "Porur to Anakaputhur, 14 km south",
-    "metaDescription": "Finishing late at Sri Ramachandra or the Commerzone blocks? Rudra Dental in Anakaputhur books to 9pm and keeps five specialists in one building, 14 km south.",
+    "metaDescription": "Finishing late at Sri Ramachandra or the Commerzone blocks? Rudra Dental in Anakaputhur books to 9pm and keeps five dentists in one building, 14 km south.",
     "photo": {
       "src": "/areas/porur.jpg",
       "width": 1024,
