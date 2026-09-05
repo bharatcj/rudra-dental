@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { SITE } from "@/lib/site";
+import { pageMeta } from "@/lib/meta";
 import { POSTS, postBySlug } from "@/lib/blog";
 import { postSchema, postBreadcrumb } from "@/lib/schema";
 import BookingProvider from "@/components/booking/BookingProvider";
@@ -27,22 +27,14 @@ export async function generateMetadata({
   const post = postBySlug(slug);
   if (!post) return {};
 
-  const url = `${SITE.url}/blog/${post.slug}`;
-  return {
+  return pageMeta({
     title: post.metaTitle,
     description: post.metaDescription,
-    alternates: { canonical: url },
-    openGraph: {
-      type: "article",
-      title: post.metaTitle,
-      description: post.metaDescription,
-      url,
-      siteName: "Rudra Dental Clinic",
-      locale: "en_IN",
-      publishedTime: post.date,
-      images: [{ url: `${SITE.url}${post.image}`, alt: post.imageAlt }],
-    },
-  };
+    path: `/blog/${post.slug}`,
+    type: "article",
+    image: { url: post.image, alt: post.imageAlt },
+    publishedTime: post.date,
+  });
 }
 
 export default async function BlogPostPage({

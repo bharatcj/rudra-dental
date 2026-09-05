@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
+import { pageMeta } from "@/lib/meta";
 import { AREAS } from "@/lib/areas";
 import {
   areaIndexSchema,
@@ -24,19 +25,11 @@ const TITLE = "Areas We Serve Around Anakaputhur, Chennai";
 const DESCRIPTION =
   "Rudra Dental is on Kamaraj Street in Anakaputhur, and treats patients from Pallavaram, Pammal, Chromepet, Kundrathur, Tambaram and Porur.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: `${SITE.url}/dental-clinic` },
-  openGraph: {
-    type: "website",
-    title: TITLE,
-    description: DESCRIPTION,
-    url: `${SITE.url}/dental-clinic`,
-    siteName: "Rudra Dental",
-    locale: "en_IN",
-  },
-};
+  path: "/dental-clinic",
+});
 
 export default function AreaIndex() {
   return (

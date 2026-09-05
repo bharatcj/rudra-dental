@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { SITE } from "@/lib/site";
+import { pageMeta } from "@/lib/meta";
 import { TREATMENTS, treatmentBySlug } from "@/lib/treatments";
 import {
   treatmentSchema,
@@ -31,25 +31,13 @@ export async function generateMetadata({
   const treatment = treatmentBySlug(slug);
   if (!treatment) return {};
 
-  const url = `${SITE.url}/treatments/${treatment.slug}`;
-  return {
+  return pageMeta({
     title: treatment.metaTitle,
     description: treatment.metaDescription,
-    alternates: { canonical: url },
-    openGraph: {
-      type: "article",
-      title: treatment.metaTitle,
-      description: treatment.metaDescription,
-      url,
-      siteName: "Rudra Dental Clinic",
-      locale: "en_IN",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: treatment.metaTitle,
-      description: treatment.metaDescription,
-    },
-  };
+    path: `/treatments/${treatment.slug}`,
+    type: "article",
+    image: { url: treatment.image, alt: treatment.imageAlt },
+  });
 }
 
 export default async function Page({

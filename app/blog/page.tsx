@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
+import { pageMeta } from "@/lib/meta";
 import { POSTS } from "@/lib/blog";
 import {
   blogIndexSchema,
@@ -24,19 +25,11 @@ const TITLE = "Dental Blog from Anakaputhur, Chennai";
 const DESCRIPTION =
   "Straight answers on root canals, bleeding gums, wisdom teeth, whitening and children's dentistry, written by the dentists at Rudra Dental in Anakaputhur.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: `${SITE.url}/blog` },
-  openGraph: {
-    type: "website",
-    title: TITLE,
-    description: DESCRIPTION,
-    url: `${SITE.url}/blog`,
-    siteName: "Rudra Dental Clinic",
-    locale: "en_IN",
-  },
-};
+  path: "/blog",
+});
 
 export default function BlogIndex() {
   return (

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE, SERVICE_AREAS, STRUCTURED_SERVICES } from "@/lib/site";
+import { pageMeta } from "@/lib/meta";
 import {
   treatmentIndexSchema,
   treatmentIndexBreadcrumb,
@@ -23,19 +24,11 @@ const TITLE = "Dental Treatments in Anakaputhur, Chennai";
 const DESCRIPTION =
   "Root canals, implants, braces, wisdom tooth surgery, laser gum treatment and children's dentistry at Rudra Dental on Kamaraj Street, Anakaputhur.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: `${SITE.url}/treatments` },
-  openGraph: {
-    type: "website",
-    title: TITLE,
-    description: DESCRIPTION,
-    url: `${SITE.url}/treatments`,
-    siteName: "Rudra Dental Clinic",
-    locale: "en_IN",
-  },
-};
+  path: "/treatments",
+});
 
 export default function TreatmentsIndex() {
   return (

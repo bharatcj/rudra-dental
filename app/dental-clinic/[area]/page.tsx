@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { SITE } from "@/lib/site";
+import { pageMeta } from "@/lib/meta";
 import { AREAS, areaBySlug } from "@/lib/areas";
 import { areaSchema, areaBreadcrumb, areaFaqSchema } from "@/lib/schema";
 import BookingProvider from "@/components/booking/BookingProvider";
@@ -28,20 +28,11 @@ export async function generateMetadata({
   const { area: slug } = await params;
   const area = areaBySlug(slug);
   if (!area) return {};
-  const url = `${SITE.url}/dental-clinic/${area.slug}`;
-  return {
+  return pageMeta({
     title: area.metaTitle,
     description: area.metaDescription,
-    alternates: { canonical: url },
-    openGraph: {
-      type: "website",
-      title: area.metaTitle,
-      description: area.metaDescription,
-      url,
-      siteName: "Rudra Dental",
-      locale: "en_IN",
-    },
-  };
+    path: `/dental-clinic/${area.slug}`,
+  });
 }
 
 export default async function AreaRoute({

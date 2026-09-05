@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
+import { pageMeta } from "@/lib/meta";
 import { privacySchema } from "@/lib/schema";
 import { IconArrow, IconMail, IconPhone } from "@/components/ui/Icons";
 import BrandLogo from "@/components/ui/Logo";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "How Rudra Dental handles the details you share when you book an appointment or send a WhatsApp message, and the terms for using the photographs on this site.",
-  keywords: ["Privacy", "Policy", "Rudra Dental"],
-  alternates: { canonical: `${SITE.url}/privacy-policy` },
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: "Privacy Policy - Rudra Dental",
-    description: "Rudra Dental Privacy Policy.",
-    url: `${SITE.url}/privacy-policy`,
+  ...pageMeta({
+    title: "Privacy Policy",
+    description:
+      "How Rudra Dental handles the details you share when you book an appointment or send a WhatsApp message, and the terms for using the photographs on this site.",
+    path: "/privacy-policy",
     type: "article",
-  },
+  }),
+  robots: { index: true, follow: true },
 };
 
 const SECTIONS = [

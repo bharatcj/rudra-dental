@@ -28,6 +28,7 @@ const SAME_AS = [
 const LOGO = {
   "@type": "ImageObject",
   url: `${SITE.url}/icon.png`,
+  contentUrl: `${SITE.url}/icon.png`,
   width: 512,
   height: 512,
   caption: `${SITE.name} logo`,
@@ -40,10 +41,16 @@ const LOGO = {
 
 const IMAGE_LICENCE_PAGE = `${SITE.url}/privacy-policy#image-use`;
 
-function clinicImage(src: string, caption: string) {
+function clinicImage(
+  src: string,
+  caption: string,
+  size?: { width: number; height: number },
+) {
   return {
     "@type": "ImageObject",
     url: `${SITE.url}${src}`,
+    contentUrl: `${SITE.url}${src}`,
+    ...(size ? { width: size.width, height: size.height } : {}),
     caption,
     creator: { "@id": CLINIC_ID },
     creditText: SITE.name,
@@ -65,6 +72,7 @@ function commonsImage(photo: {
   return {
     "@type": "ImageObject",
     url: `${SITE.url}${photo.src}`,
+    contentUrl: `${SITE.url}${photo.src}`,
     caption: photo.caption,
     width: photo.width,
     height: photo.height,
@@ -127,24 +135,34 @@ export const dentistSchema = {
     longitude: SITE.geo.longitude,
   },
   hasMap: SITE.mapsShortLink,
-  photo: GALLERY.map((item) => clinicImage(item.src, item.alt)),
+  photo: GALLERY.map((item) =>
+    clinicImage(item.src, item.alt, { width: item.width, height: item.height }),
+  ),
   areaServed: SERVICE_AREAS.map((area) => ({
     "@type": "City",
     name: area,
   })),
-  openingHoursSpecification: SITE.hours.sessions.map((session) => ({
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ],
-    opens: session.opens,
-    closes: session.closes,
-  })),
+  openingHoursSpecification: [
+    ...SITE.hours.sessions.map((session) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: session.opens,
+      closes: session.closes,
+    })),
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [SITE.hours.closedDay],
+      opens: "00:00",
+      closes: "00:00",
+    },
+  ],
   sameAs: SAME_AS,
   founder: {
     "@type": "Person",
@@ -278,8 +296,10 @@ export const gallerySchema = {
   name: `Inside ${SITE.name}, Anakaputhur`,
   url: `${SITE.url}/#gallery`,
   associatedMedia: GALLERY.map((item) => ({
-    ...clinicImage(item.src, item.alt),
-    contentUrl: `${SITE.url}${item.src}`,
+    ...clinicImage(item.src, item.alt, {
+      width: item.width,
+      height: item.height,
+    }),
     name: item.caption,
     description: item.alt,
   })),
