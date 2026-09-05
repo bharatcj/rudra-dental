@@ -188,7 +188,7 @@ export default function Footer() {
             <Link
               key={area.slug}
               href={`/dental-clinic/${area.slug}`}
-              className="text-[0.78rem] text-mist-400/80 transition hover:text-gold-200"
+              className="text-[0.78rem] text-mist-400 transition hover:text-gold-200"
             >
               {area.name}
             </Link>
