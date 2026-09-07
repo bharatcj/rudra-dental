@@ -17,7 +17,12 @@ function istTimestamp(date: string, time = "10:00:00") {
   return `${date}T${time}${IST_OFFSET}`;
 }
 const CLINIC_ID = `${SITE.url}/#clinic`;
-const ORG_ID = CLINIC_ID;
+const CLINIC_REF = {
+  "@type": "Organization",
+  "@id": CLINIC_ID,
+  name: SITE.name,
+  url: SITE.canonical,
+};
 const SAME_AS = [
   SITE.social.facebook,
   SITE.social.instagram,
@@ -32,7 +37,7 @@ const LOGO = {
   width: 512,
   height: 512,
   caption: `${SITE.name} logo`,
-  creator: { "@id": CLINIC_ID },
+  creator: CLINIC_REF,
   creditText: SITE.name,
   copyrightNotice: SITE.legalName,
   license: `${SITE.url}/privacy-policy#image-use`,
@@ -52,7 +57,7 @@ function clinicImage(
     contentUrl: `${SITE.url}${src}`,
     ...(size ? { width: size.width, height: size.height } : {}),
     caption,
-    creator: { "@id": CLINIC_ID },
+    creator: CLINIC_REF,
     creditText: SITE.name,
     copyrightNotice: `${SITE.legalName}`,
     license: IMAGE_LICENCE_PAGE,
@@ -220,7 +225,7 @@ export const websiteSchema = {
   name: SITE.name,
   url: SITE.canonical,
   inLanguage: "en-IN",
-  publisher: { "@id": ORG_ID },
+  publisher: CLINIC_REF,
   about: { "@id": CLINIC_ID },
 };
 
@@ -284,8 +289,7 @@ export const videoSchema = {
   contentUrl: `${SITE.url}/media/launch-2023.mp4`,
   embedUrl: `${SITE.url}/#story`,
   publisher: {
-    "@type": "Organization",
-    name: SITE.name,
+    ...CLINIC_REF,
     logo: LOGO,
   },
 };
@@ -327,7 +331,7 @@ export function treatmentSchema(treatment: Treatment) {
         .join(" "),
       preparation: treatment.signs.map((sign) => sign.title).join(", "),
       followup: treatment.aftercare.join(" "),
-      provider: { "@id": CLINIC_ID },
+      provider: CLINIC_REF,
     },
     primaryImageOfPage: `${SITE.url}${treatment.image}`,
     breadcrumb: {
@@ -427,7 +431,7 @@ export const blogIndexSchema = {
     "Practical dentistry written by the team at Rudra Dental, Anakaputhur.",
   inLanguage: "en-IN",
   isPartOf: { "@id": `${SITE.url}/#website` },
-  publisher: { "@id": ORG_ID },
+  publisher: CLINIC_REF,
   blogPost: POSTS_BY_DATE.map((post) => ({
     "@type": "BlogPosting",
     headline: post.title,
@@ -436,8 +440,8 @@ export const blogIndexSchema = {
     datePublished: istTimestamp(post.date),
     dateModified: istTimestamp(post.date),
     description: post.excerpt,
-    author: { "@id": ORG_ID },
-    publisher: { "@id": ORG_ID },
+    author: CLINIC_REF,
+    publisher: CLINIC_REF,
   })),
 };
 
@@ -477,8 +481,8 @@ export function postSchema(post: BlogPost) {
     image: `${SITE.url}${post.image}`,
     datePublished: istTimestamp(post.date),
     dateModified: istTimestamp(post.date),
-    author: { "@id": ORG_ID },
-    publisher: { "@id": ORG_ID },
+    author: CLINIC_REF,
+    publisher: CLINIC_REF,
     isPartOf: { "@id": `${SITE.url}/blog` },
     about: { "@id": CLINIC_ID },
   };
