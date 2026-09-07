@@ -126,6 +126,7 @@ export default function Reviews({
                 </div>
 
                 <a
+                  data-contact="reviews"
                   href={SITE.social.googleReviews}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -225,6 +226,7 @@ export default function Reviews({
           </p>
 
           <a
+            data-contact="reviews"
             href={SITE.social.googleReviews}
             target="_blank"
             rel="noopener noreferrer"

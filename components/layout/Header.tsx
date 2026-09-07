@@ -75,7 +75,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="relative z-50 hidden border-b border-gold-500/10 bg-ink-950/95 lg:block">
+      <div data-cta="topbar" className="relative z-50 hidden border-b border-gold-500/10 bg-ink-950/95 lg:block">
         <div className="shell flex h-11 items-center justify-between text-xs">
           <div className="flex items-center gap-6 text-mist-300">
             <a
@@ -200,6 +200,7 @@ export default function Header() {
       <AnimatePresence>
         {menuOpen ? (
           <motion.div
+            data-cta="mobile-menu"
             className="fixed inset-0 z-[120] lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
