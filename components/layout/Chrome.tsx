@@ -126,7 +126,7 @@ export function BackToTop() {
 export function MobileDock() {
   const { openBooking } = useBooking();
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[100] border-t border-gold-500/15 bg-ink-950 px-3 py-2.5 lg:hidden">
+    <div data-dock className="fixed inset-x-0 bottom-0 z-[100] border-t border-gold-500/15 bg-ink-950 px-3 py-2.5 lg:hidden">
       <div className="flex items-center gap-2">
         <a
           href={`tel:${SITE.phone}`}
@@ -165,6 +165,7 @@ export function FloatingWhatsapp() {
       )}`}
       target="_blank"
       rel="noopener noreferrer"
+      data-floating
       aria-label="Chat with Rudra Dental on WhatsApp"
       className="anim-pulse-ring fixed right-5 bottom-24 z-[110] grid h-12 w-12 place-items-center rounded-full bg-gold-sheen text-ink-950 shadow-[0_14px_36px_-10px_rgba(195,150,69,0.75)] transition hover:scale-105 lg:bottom-6 lg:h-14 lg:w-14"
     >

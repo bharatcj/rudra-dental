@@ -12,6 +12,7 @@ import {
   IconWhatsapp,
 } from "@/components/ui/Icons";
 import { LogoMark } from "@/components/ui/Logo";
+import { track } from "@/lib/track";
 
 const LEAD_HOURS = 12;
 const MAX_DAYS = 30;
@@ -209,15 +210,12 @@ export default function BookingModal() {
     if (concern) message += `. Treatment needed: ${concern}`;
     if (name) message += `. My name is ${name}`;
 
-    const layer = (window as unknown as { dataLayer?: unknown[] }).dataLayer;
-    if (Array.isArray(layer)) {
-      layer.push({
-        event: "appointment_request",
-        booking_doctor: doctor,
-        booking_treatment: concern || "not specified",
-        booking_source: source,
-      });
-    }
+    track("generate_lead", {
+      booking_doctor: doctor,
+      booking_treatment: concern || "not specified",
+      booking_source: source,
+      lead_channel: "whatsapp",
+    });
 
     window.open(
       `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`,

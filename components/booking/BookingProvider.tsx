@@ -9,6 +9,7 @@ import {
   type ReactNode,
 } from "react";
 import BookingModal from "./BookingModal";
+import { track } from "@/lib/track";
 
 export type BookingPreset = {
   doctor?: string;
@@ -42,12 +43,7 @@ export default function BookingProvider({ children }: { children: ReactNode }) {
     setSource(from);
     setPreset(next);
     setOpen(true);
-    if (typeof window !== "undefined") {
-      const layer = (window as unknown as { dataLayer?: unknown[] }).dataLayer;
-      if (Array.isArray(layer)) {
-        layer.push({ event: "booking_modal_open", booking_source: from });
-      }
-    }
+    track("booking_modal_open", { booking_source: from });
   }, []);
 
   const closeBooking = useCallback(() => setOpen(false), []);

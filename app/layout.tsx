@@ -7,6 +7,7 @@ import {
   websiteSchema,
 } from "@/lib/schema";
 import "./globals.css";
+import ContactTracking from "@/components/layout/ContactTracking";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -163,6 +164,7 @@ export default function RootLayout({
           />
         </noscript>
         {children}
+        <ContactTracking />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${SITE.analytics.ga4}`}
           strategy="afterInteractive"
