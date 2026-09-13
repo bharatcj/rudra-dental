@@ -77,7 +77,7 @@ The clinic management SPA at `/app` and its PHP API at `/backend` still run on t
 
 ## Google reviews
 
-The reviews section renders the 116 written reviews in `lib/googleReviews.ts` by default, transcribed from the Rudra Dental Google Business Profile. The remaining reviews of the 275 total are star ratings with no text, so there is nothing to display for them. Setting `GOOGLE_PLACES_API_KEY` switches it to the live Google feed with a daily revalidate, and the checked in reviews stay as the fallback for any failure or empty response.
+The reviews section renders the 116 written reviews in `lib/googleReviews.ts` by default, transcribed from the Rudra Dental Google Business Profile. The rest of the 250+ reviews on Google are star ratings with no text, so there is nothing to display for them. Setting `GOOGLE_PLACES_API_KEY` switches it to the live Google feed with a daily revalidate, and the checked in reviews stay as the fallback for any failure or empty response.
 
 ```bash
 GOOGLE_PLACES_API_KEY=your_key

@@ -45,7 +45,7 @@ export const SITE = {
   placeId: "ChIJXzibfZpfUjoRWuSi32qhkHM",
   rating: {
     value: 5.0,
-    count: 275,
+    count: 250,
   },
   analytics: {
     ga4: "G-4NB7KXEQSP",
@@ -295,7 +295,7 @@ export const PROCESS = [
 ];
 
 export const STATS = [
-  { value: 275, suffix: "", label: "Google reviews" },
+  { value: SITE.rating.count, suffix: "+", label: "Five star reviews" },
   { value: 5, suffix: "", label: "Dentists on staff" },
   { value: 14, suffix: "+", label: "Treatment specialities" },
   { value: 6, suffix: " days", label: "Open every week" },

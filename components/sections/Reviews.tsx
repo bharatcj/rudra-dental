@@ -102,7 +102,7 @@ export default function Reviews({
                   </p>
                   <Stars value={5} className="mt-2" />
                   <p className="mt-2 text-xs text-mist-400">
-                    <Counter to={count} /> Google reviews
+                    <Counter to={count} suffix="+" /> Google reviews
                   </p>
                 </div>
 
@@ -221,8 +221,8 @@ export default function Reviews({
           ) : null}
 
           <p className="text-xs text-mist-400">
-            Showing {visible.length} of {filtered.length} written reviews. The remaining{" "}
-            {count - reviews.length} of {count} are star ratings without text.
+            Showing {visible.length} of {filtered.length} written reviews. The rest of
+            our {count}+ Google reviews are star ratings without text.
           </p>
 
           <a

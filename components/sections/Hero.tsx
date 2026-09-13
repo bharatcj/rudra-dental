@@ -14,7 +14,7 @@ import {
 
 const HIGHLIGHTS = [
   { value: "5.0", label: "Rated on Google" },
-  { value: "275", label: "Patient reviews" },
+  { value: `${SITE.rating.count}+`, label: "Five star reviews" },
   { value: "6 days", label: "Open every week" },
 ];
 
@@ -51,14 +51,6 @@ export default function Hero() {
       <div className="shell relative">
         <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
           <div>
-            <div
-              className="mb-5 inline-flex items-center rounded-full border border-gold-500/25 bg-gold-500/[0.07] px-4 py-1.5 lg:mb-7"
-            >
-              <span className="text-xs tracking-wide text-gold-200">
-                Two years of brighter smiles in Anakaputhur
-              </span>
-            </div>
-
             <h1 className="display text-[2.7rem] leading-[1.03] text-mist-50 sm:text-6xl lg:text-[4.4rem]">
               <SplitHeading text="Rudra Dental" trailingSpace />
               <br />
@@ -183,7 +175,7 @@ export default function Hero() {
               </span>
               <span className="text-[0.78rem] font-medium text-mist-100">5.0</span>
               <span className="h-3 w-px bg-gold-500/30" />
-              <span className="text-[0.78rem] text-mist-400">275 reviews</span>
+              <span className="text-[0.78rem] text-mist-400">{SITE.rating.count}+ reviews</span>
             </div>
 
             {[

@@ -468,7 +468,7 @@ export function Story() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-4 leading-relaxed text-mist-300">
-                Two years and 275 five star reviews later, that idea still runs the
+                Two years and {SITE.rating.count}+ five star reviews later, that idea still runs the
                 clinic. Five dentists share one operatory floor, three of them
                 specialists in oral surgery, prosthodontics and orthodontics, so a case
                 that starts as a filling and turns out to need a root canal, braces or
