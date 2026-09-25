@@ -36,12 +36,17 @@ let introPlayed = false;
 export function Preloader() {
   const [skip] = useState(() => introPlayed || BOOT_PATH !== "/");
   const [done, setDone] = useState(false);
+  const [gone, setGone] = useState(false);
 
   useEffect(() => {
     if (skip) return;
     introPlayed = true;
-    const timer = window.setTimeout(() => setDone(true), 1250);
-    return () => window.clearTimeout(timer);
+    const hide = window.setTimeout(() => setDone(true), 1250);
+    const remove = window.setTimeout(() => setGone(true), 2000);
+    return () => {
+      window.clearTimeout(hide);
+      window.clearTimeout(remove);
+    };
   }, [skip]);
 
   useEffect(() => {
@@ -52,37 +57,24 @@ export function Preloader() {
     };
   }, [done, skip]);
 
-  if (skip) return null;
+  if (skip || gone) return null;
 
   return (
-    <AnimatePresence>
-      {!done ? (
-        <motion.div
-          className="fixed inset-0 z-[300] grid place-items-center bg-ink-950"
-          exit={{ opacity: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }}
-        >
-          <div className="flex flex-col items-center gap-6">
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="relative"
-            >
-              <span className="absolute inset-0 -m-10 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.21),transparent_70%)]" />
-              <LogoLockup className="relative h-28 w-24" priority sizes="120px" />
-            </motion.div>
-            <div className="h-px w-40 overflow-hidden bg-mist-400/15">
-              <motion.div
-                initial={{ x: "-100%" }}
-                animate={{ x: "0%" }}
-                transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-                className="h-full w-full bg-gradient-to-r from-transparent via-gold-300 to-gold-500"
-              />
-            </div>
-          </div>
-        </motion.div>
-      ) : null}
-    </AnimatePresence>
+    <div
+      className={`fixed inset-0 z-[300] grid place-items-center bg-ink-950 transition-opacity duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        done ? "pointer-events-none opacity-0" : "opacity-100"
+      }`}
+    >
+      <div className="flex flex-col items-center gap-6">
+        <div className="anim-intro-mark relative">
+          <span className="absolute inset-0 -m-10 rounded-full bg-[radial-gradient(circle,rgba(195,150,69,0.21),transparent_70%)]" />
+          <LogoLockup className="relative h-28 w-24" priority sizes="120px" />
+        </div>
+        <div className="h-px w-40 overflow-hidden bg-mist-400/15">
+          <div className="anim-intro-line h-full w-full bg-gradient-to-r from-transparent via-gold-300 to-gold-500" />
+        </div>
+      </div>
+    </div>
   );
 }
 

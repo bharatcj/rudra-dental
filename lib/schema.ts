@@ -277,23 +277,6 @@ export const privacySchema = {
   description: `How ${SITE.name} handles the details you share when you book an appointment or send a WhatsApp message, and the terms for using the photographs on this site.`,
 };
 
-export const videoSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  name: "Rudra Dental clinic launch in Anakaputhur",
-  description:
-    "Opening day at Rudra Dental, the dental clinic on Kamaraj Street in Anakaputhur, Chennai.",
-  thumbnailUrl: [`${SITE.url}/media/launch-2023-poster.jpg`],
-  uploadDate: istTimestamp("2024-09-05"),
-  duration: "PT50S",
-  contentUrl: `${SITE.url}/media/launch-2023.mp4`,
-  embedUrl: `${SITE.url}/#story`,
-  publisher: {
-    ...CLINIC_REF,
-    logo: LOGO,
-  },
-};
-
 export const gallerySchema = {
   "@context": "https://schema.org",
   "@type": "ImageGallery",

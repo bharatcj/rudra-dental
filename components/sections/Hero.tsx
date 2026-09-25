@@ -166,16 +166,23 @@ export default function Hero() {
             </div>
 
             <div
-              className="surface absolute bottom-[3%] left-1/2 flex -translate-x-1/2 items-center gap-2.5 rounded-full px-4 py-2 whitespace-nowrap shadow-[0_16px_40px_-16px_rgba(0,0,0,0.95)]"
+              className="surface absolute bottom-[10%] left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full px-3 py-1.5 whitespace-nowrap shadow-[0_16px_40px_-16px_rgba(0,0,0,0.95)] sm:bottom-[3%] sm:gap-2.5 sm:px-4 sm:py-2"
             >
               <span className="flex items-center gap-0.5">
                 {Array.from({ length: 5 }).map((_, index) => (
-                  <IconStar key={index} className="h-3 w-3 text-gold-400" />
+                  <IconStar
+                    key={index}
+                    className="h-2.5 w-2.5 text-gold-400 sm:h-3 sm:w-3"
+                  />
                 ))}
               </span>
-              <span className="text-[0.78rem] font-medium text-mist-100">5.0</span>
-              <span className="h-3 w-px bg-gold-500/30" />
-              <span className="text-[0.78rem] text-mist-400">{SITE.rating.count}+ reviews</span>
+              <span className="text-[0.7rem] font-medium text-mist-100 sm:text-[0.78rem]">
+                5.0
+              </span>
+              <span className="h-2.5 w-px bg-gold-500/30 sm:h-3" />
+              <span className="text-[0.7rem] text-mist-400 sm:text-[0.78rem]">
+                {SITE.rating.count}+ reviews
+              </span>
             </div>
 
             {[

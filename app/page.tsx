@@ -20,7 +20,6 @@ import { getReviewFeed } from "@/lib/reviews";
 import {
   breadcrumbSchema,
   faqSchema,
-  videoSchema,
   gallerySchema,
 } from "@/lib/schema";
 import { GoldRule } from "@/components/ui/Motion";
@@ -31,7 +30,6 @@ export default async function HomePage() {
   const graph = [
     breadcrumbSchema,
     faqSchema,
-    videoSchema,
     gallerySchema,
   ];
 
