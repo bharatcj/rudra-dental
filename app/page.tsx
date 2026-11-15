@@ -18,7 +18,6 @@ import Reviews from "@/components/sections/Reviews";
 import Contact from "@/components/sections/Contact";
 import { getReviewFeed } from "@/lib/reviews";
 import {
-  breadcrumbSchema,
   faqSchema,
   gallerySchema,
 } from "@/lib/schema";
@@ -28,7 +27,6 @@ export default async function HomePage() {
   const feed = await getReviewFeed();
 
   const graph = [
-    breadcrumbSchema,
     faqSchema,
     gallerySchema,
   ];

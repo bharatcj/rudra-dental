@@ -63,6 +63,7 @@ export function Faq() {
                     type="button"
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${index}`}
                     className="group flex w-full items-start justify-between gap-6 py-6 text-left"
                   >
                     <span
@@ -83,8 +84,9 @@ export function Faq() {
                     </span>
                   </button>
                   <motion.div
+                    id={`faq-answer-${index}`}
                     initial={false}
-                    animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                    animate={{ height: isOpen ? "auto" : 0 }}
                     transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >

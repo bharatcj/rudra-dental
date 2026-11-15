@@ -143,7 +143,7 @@ export const dentistSchema = {
   photo: GALLERY.map((item) =>
     clinicImage(item.src, item.alt, { width: item.width, height: item.height }),
   ),
-  areaServed: SERVICE_AREAS.map((area) => ({
+  areaServed: [...AREAS.map((area) => area.name), "Chennai"].map((area) => ({
     "@type": "City",
     name: area,
   })),

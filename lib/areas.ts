@@ -1190,6 +1190,17 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
 
 export const AREAS: ServiceArea[] = AREA_SEEDS.map(build);
 
+export function areaDistanceKm(area: ServiceArea) {
+  const match = area.distance.match(/([\d.]+)\s*km/);
+  return match ? Number(match[1]) : 0;
+}
+
+export function areasForTreatment(slug: string, limit = 9) {
+  return AREAS.filter((area) => area.commonTreatments.includes(slug))
+    .sort((a, b) => areaDistanceKm(a) - areaDistanceKm(b))
+    .slice(0, limit);
+}
+
 export function areaBySlug(slug: string) {
   return AREAS.find((area) => area.slug === slug);
 }

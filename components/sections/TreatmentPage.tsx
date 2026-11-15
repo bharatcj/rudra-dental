@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { SITE, SERVICE_AREAS } from "@/lib/site";
+import { SITE } from "@/lib/site";
+import { areasForTreatment } from "@/lib/areas";
 import { type Treatment, treatmentBySlug } from "@/lib/treatments";
 import { postsForTreatment } from "@/lib/blog";
 import { useBooking } from "@/components/booking/BookingProvider";
@@ -373,13 +374,14 @@ export default function TreatmentPage({ treatment }: { treatment: Treatment }) {
                 {treatment.name} for patients from
               </p>
               <div className="mt-4 flex flex-wrap gap-1.5">
-                {SERVICE_AREAS.map((area) => (
-                  <span
-                    key={area}
-                    className="rounded-full border border-mist-400/12 px-2.5 py-1 text-[0.75rem] text-mist-400"
+                {areasForTreatment(treatment.slug).map((area) => (
+                  <Link
+                    key={area.slug}
+                    href={`/dental-clinic/${area.slug}`}
+                    className="inline-flex min-h-9 items-center rounded-full border border-mist-400/12 px-3 py-1.5 text-[0.75rem] text-mist-400 transition hover:border-gold-500/30 hover:text-gold-200"
                   >
-                    {area}
-                  </span>
+                    {area.name}
+                  </Link>
                 ))}
               </div>
             </div>
