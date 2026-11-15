@@ -4,7 +4,7 @@ import { TREATMENTS } from "@/lib/treatments";
 import { POSTS_BY_DATE } from "@/lib/blog";
 import { AREAS } from "@/lib/areas";
 
-const LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
+const LAST_MODIFIED = new Date("2026-11-16T00:00:00.000Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = LAST_MODIFIED;
