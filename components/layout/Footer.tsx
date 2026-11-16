@@ -41,9 +41,9 @@ export default function Footer() {
           </Link>
 
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-mist-400">
-            The best dental clinic in Anakaputhur, serving Pallavaram, Pammal,
-            Chromepet, Kundrathur, Tambaram and greater Chennai with comprehensive
-            dental care for adults and children.
+            A dental clinic on Kamaraj Street in Anakaputhur, open since 2023.
+            Five dentists, three of them specialists, treating adults and
+            children six days a week.
           </p>
 
           <div className="mt-6 flex items-center gap-3">

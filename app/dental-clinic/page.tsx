@@ -23,7 +23,7 @@ import AreaGrid from "@/components/sections/AreaGrid";
 
 const TITLE = "Areas We Serve Around Anakaputhur, Chennai";
 const DESCRIPTION =
-  "Rudra Dental is on Kamaraj Street in Anakaputhur, and treats patients from Pallavaram, Pammal, Chromepet, Kundrathur, Tambaram and Porur.";
+  "Rudra Dental is on Kamaraj Street in Anakaputhur. Pick your suburb for the route, the buses, and the treatments patients from there most often book.";
 
 export const metadata: Metadata = pageMeta({
   title: TITLE,

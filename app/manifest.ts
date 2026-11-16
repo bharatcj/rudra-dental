@@ -3,10 +3,10 @@ import { SITE } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Rudra Dental - Best Dental Clinic in Anakaputhur, Chennai",
+    name: "Rudra Dental - Dental Clinic in Anakaputhur, Chennai",
     short_name: "Rudra Dental",
     description:
-      "Comprehensive dental care including root canal treatment, dental implants, orthodontics, cosmetic dentistry and emergency care in Anakaputhur, Pallavaram, Pammal, Chromepet and Kundrathur, Chennai.",
+      "Root canal treatment, dental implants, orthodontics, cosmetic dentistry and emergency care at Rudra Dental on Kamaraj Street, Anakaputhur, Chennai.",
     start_url: "/",
     display: "standalone",
     background_color: "#05070c",

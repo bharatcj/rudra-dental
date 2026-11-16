@@ -61,8 +61,8 @@ export default function Contact() {
           </Reveal>
           <Reveal delay={0.14}>
             <p className="mt-5 text-mist-300">
-              Minutes from Pallavaram, Pammal, Chromepet and Kundrathur, with parking
-              right outside the clinic.
+              Kamaraj Street, off the main Anakaputhur road, with parking right
+              outside the clinic.
             </p>
           </Reveal>
         </div>

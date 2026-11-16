@@ -214,7 +214,7 @@ export const STRUCTURED_SERVICES = [
   {
     name: "Family Dentistry",
     description:
-      "Comprehensive dental care for the whole family, including preventive and restorative services.",
+      "Check-ups, cleaning, fillings and sealants for every age, from a first visit to dentures.",
   },
 ];
 

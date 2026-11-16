@@ -344,7 +344,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
         "a": "Weekday mornings. The 9:30am to 1pm block is lighter than the evening one, and the road in from your side clears well before ten. Saturday evening is the busiest slot we run, so if you want an unhurried appointment for a child, ask for a weekday morning."
       }
     ],
-    "heading": "Gerugambakkam to Anakaputhur, straight down the Kundrathur road",
+    "heading": "Gerugambakkam to Anakaputhur, one road south",
     "metaTitle": "Dental Clinic for Gerugambakkam, Crowns",
     "metaDescription": "A crown that came off months ago, a molar split after two fillings: most of what Gerugambakkam brings us. The last slots in Anakaputhur are kept for that run."
   },
@@ -852,7 +852,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
         "a": "We do, though a call to +91 80721 43199 first saves you a wasted run. Not every specialist is in at every session, so if it is the orthodontist or an implant consultation you want, check before you set out."
       }
     ],
-    "heading": "Kundrathur's dental specialists, straight down the Pallavaram road",
+    "heading": "The dental clinic at the other end of Kundrathur Main Road",
     "metaTitle": "Dental Clinic for Kundrathur, Root Canals",
     "metaDescription": "Kundrathur Main Road runs from the bus depot through Andakuppam into Anakaputhur, where Kamaraj Street turns off. Root canals, wisdom teeth and braces to 9pm.",
     "photo": {
@@ -1182,7 +1182,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
         "a": "Sometimes, sometimes not. A root treated tooth has lost a lot of its own structure, and without a crown to hold it together it eventually cracks under load. If the crack has run below the gum the tooth cannot be kept. If it has not, a crown still saves it. We x ray it and tell you which of the two you are dealing with at the first visit, before you have paid for any treatment. Ring +91 80721 43199 and ask for a consultation."
       }
     ],
-    "heading": "Rudra Dental for Moulivakkam, down Kundrathur Main Road",
+    "heading": "A dental clinic for Moulivakkam, across the Adyar",
     "metaTitle": "Dental Clinic for Moulivakkam, Evenings",
     "metaDescription": "Out of the DLF campus at seven? The evening block in Anakaputhur runs to 9pm. Implants for teeth lost years ago, second opinions before an extraction."
   }

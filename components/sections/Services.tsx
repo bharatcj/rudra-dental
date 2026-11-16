@@ -51,8 +51,8 @@ export default function Services() {
             <Reveal delay={0.14}>
               <p className="mt-5 text-mist-300">
                 Fourteen specialities under one roof, from a single sitting root canal
-                to full mouth reconstruction, delivered across Anakaputhur, Pallavaram,
-                Pammal, Chromepet and Kundrathur.
+                to full mouth reconstruction, with the specialist you need already
+                in the building.
               </p>
             </Reveal>
           </div>

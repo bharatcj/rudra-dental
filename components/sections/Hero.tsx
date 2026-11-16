@@ -24,7 +24,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      aria-label="Rudra Dental, best dental clinic in Anakaputhur Chennai"
+      aria-label="Rudra Dental, dental clinic in Anakaputhur, Chennai"
       className="grain relative isolate overflow-hidden pt-10 pb-12 sm:pt-14 sm:pb-14 lg:pt-20 lg:pb-20"
     >
       <div className="absolute inset-0 -z-10">
