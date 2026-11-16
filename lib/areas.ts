@@ -171,7 +171,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "intro": [
       "Porur is where Mount-Poonamallee Road and Arcot Road run into one signal, and people here measure a journey by what that junction is doing on the day. The clinic is about 14 km south. The useful part is that Kundrathur Main Road leaves from the same junction and carries you most of the way there.",
       "Five dentists work out of this one building, and the reason that matters tends to show up mid treatment rather than at the start. A root canal turns out to need a post and a crown. An implant needs the bite reassessed before the crown goes on. Here the case moves one room across instead of turning into three appointments at three addresses.",
-      "The late slots go quickly with Porur patients, most of them coming off a day at Sri Ramachandra or out of the office blocks near Commerzone on Mount-Poonamallee Road. The other argument for booking late is that traffic towards Kundrathur thins after about 7pm, so a 7:30 drive is often shorter than a 6 o'clock one. We work Monday to Saturday."
+      "The late slots go quickly with Porur patients, most of them coming off a day at Sri Ramachandra or out of the office blocks near Commerzone on Mount-Poonamallee Road. The other argument for booking late is that traffic towards [Kundrathur](/dental-clinic/kundrathur) thins after about 7pm, so a 7:30 drive is often shorter than a 6 o'clock one. We work Monday to Saturday."
     ],
     "why": "Two things bring people here from Porur. One is second opinions on work already quoted somewhere else, usually root canals and implants. The other is complex cases: a patient sent from one clinic to another for the surgical part, who would rather have the whole plan handled by one team in one place.",
     "commonTreatments": [
@@ -320,7 +320,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       "Pallavaram is your nearest suburban station at roughly 7 km, and it is also the station that serves Anakaputhur, so a train and one auto works."
     ],
     "intro": [
-      "Gerugambakkam sits about 4 km from Porur junction, down the Kundrathur road. Carry on the same way and you get to us. Past Kovur into Kundrathur, then join Pammal Main Road, which is the Pallavaram to Kundrathur road, and Anakaputhur is roughly 4 km along it. Around 9 km end to end, usually half an hour.",
+      "Gerugambakkam sits about 4 km from Porur junction, down the Kundrathur road. Carry on the same way and you get to us. Past Kovur into [Kundrathur](/dental-clinic/kundrathur), then join Pammal Main Road, which is the Pallavaram to Kundrathur road, and Anakaputhur is roughly 4 km along it. Around 9 km end to end, usually half an hour.",
       "Administratively Gerugambakkam is not in Chennai at all. Its village panchayat was annexed to Kundrathur Municipality, and the nearest suburban station is Pallavaram rather than anything closer in. Pallavaram happens to be the station that serves Anakaputhur too, so anyone here without a car is already pointed our way.",
       "Look at what counts as a landmark in Gerugambakkam and it is almost all schools. PSBB Millennium, Little Flower, Velammal over in Kolapakkam. That shows up in who calls us. A lot of the appointments from here start with something a school dental check flagged, or with a parent who has been putting their own molar off since the family moved in."
     ],
@@ -884,7 +884,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       "If your bus terminates at Kundrathur, share autos cover the last stretch to Anakaputhur along the same road."
     ],
     "intro": [
-      "Mangadu and Anakaputhur sit on the same road. State Highway 113A comes down from the Poonamallee end through Mangadu and Kundrathur and carries on into Anakaputhur, so the trip is about 10 km with Kundrathur as the halfway mark. Twenty five to thirty minutes, depending on how Kundrathur town is moving.",
+      "Mangadu and Anakaputhur sit on the same road. State Highway 113A comes down from the Poonamallee end through Mangadu and [Kundrathur](/dental-clinic/kundrathur) and carries on into Anakaputhur, so the trip is about 10 km with Kundrathur as the halfway mark. Twenty five to thirty minutes, depending on how Kundrathur town is moving.",
       "The alternative for most Mangadu families is Poonamallee or Porur. Both mean joining the highway traffic or the Porur junction, and neither is quick at six in the evening. The run south stays on one road and touches neither of them.",
       "Fridays are the day to avoid if you have a choice. The Kamakshi Amman temple draws steady crowds on Fridays and right through Aadi, and the streets around it get tight. On those days a morning appointment is easier to keep than an evening one."
     ],
@@ -940,7 +940,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       "Share autos between Kolapakkam and Kundrathur are frequent, and the second leg to Anakaputhur is a short one."
     ],
     "intro": [
-      "Kolapakkam sits on the road between Porur and Kundrathur, with Gerugambakkam just below it. Reaching us means going south rather than north: down through Kovur into Kundrathur, then on to the Pallavaram road for the last stretch into Anakaputhur. About 9 km in all, and it keeps you clear of the Porur junction.",
+      "Kolapakkam sits on the road between Porur and Kundrathur, with Gerugambakkam just below it. Reaching us means going south rather than north: down through Kovur into [Kundrathur](/dental-clinic/kundrathur), then on to the Pallavaram road for the last stretch into Anakaputhur. About 9 km in all, and it keeps you clear of the Porur junction.",
       "That last part matters more than the distance does. The default for anything medical in Kolapakkam is Porur, which means the junction and the Mount Poonamallee Road traffic behind it. Coming to Anakaputhur is a longer line on the map and often a shorter drive in practice, particularly after five.",
       "Kolapakkam has turned into a school area. Lalaji Memorial Omega International, Velammal Bodhi Campus and Pon Vidyashram all sit in the same pocket, and a fair share of our Kolapakkam appointments are children brought in straight after school with the uniform still on."
     ],
@@ -1160,7 +1160,7 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
     "intro": [
       "Moulivakkam sits on Kundrathur Main Road with Porur immediately north, Kolapakkam to the south, Mugalivakkam east and Manapakkam southeast. It is administered by Mangadu Municipality rather than the Chennai Corporation. Rudra Dental is about 12 km southwest in Anakaputhur, and Kundrathur Main Road takes you most of the way there.",
       "There is no railway station anywhere useful. St Thomas Mount and Guindy are both back towards the city and the wrong direction entirely, so rail plays no part in this trip. That leaves the road, and the road means Kundrathur Main Road: buses run down it as far as Kundrathur, where you change for Anakaputhur, and autos are plentiful on it.",
-      "On a map Moulivakkam and Anakaputhur are less than five kilometres apart. The reason the drive is twelve is the Adyar. The river runs between the two, and the crossing the road uses is the bridge at Anakaputhur on the Kundrathur side, so you go west to Kundrathur first and come back east afterwards. It looks like a detour on a screen and it is simply the road once you have driven it, and after seven in the evening that stretch moves quickly."
+      "On a map Moulivakkam and Anakaputhur are less than five kilometres apart. The reason the drive is twelve is the Adyar. The river runs between the two, and the crossing the road uses is the bridge at Anakaputhur on the Kundrathur side, so you go west to [Kundrathur](/dental-clinic/kundrathur) first and come back east afterwards. It looks like a detour on a screen and it is simply the road once you have driven it, and after seven in the evening that stretch moves quickly."
     ],
     "why": "Two things bring people out from Moulivakkam. One is an implant for a tooth that came out years ago and was never replaced. The other is a second opinion after being told a tooth has to go. Both are decisions that are difficult to undo, so people want them made by someone who does that work every day rather than every so often.",
     "commonTreatments": [

@@ -6,6 +6,7 @@ import { SITE } from "@/lib/site";
 import { type ServiceArea } from "@/lib/areas";
 import { treatmentBySlug } from "@/lib/treatments";
 import { useBooking } from "@/components/booking/BookingProvider";
+import LinkedText from "@/components/ui/LinkedText";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Motion";
 import {
   SERVICE_ICONS,
@@ -66,7 +67,7 @@ export default function AreaPage({ area }: { area: ServiceArea }) {
               </Reveal>
               <Reveal delay={0.12}>
                 <p className="mt-5 max-w-[53ch] text-[1.02rem] leading-relaxed text-mist-300">
-                  {area.intro[0]}
+                  <LinkedText text={area.intro[0]} />
                 </p>
               </Reveal>
               <Reveal delay={0.18}>
@@ -193,7 +194,9 @@ export default function AreaPage({ area }: { area: ServiceArea }) {
             </Reveal>
             {area.intro.slice(1).map((paragraph, index) => (
               <Reveal key={index} delay={0.14 + index * 0.04}>
-                <p className="mt-4 max-w-[53ch] leading-relaxed text-mist-300">{paragraph}</p>
+                <p className="mt-4 max-w-[53ch] leading-relaxed text-mist-300">
+                  <LinkedText text={paragraph} />
+                </p>
               </Reveal>
             ))}
           </div>
@@ -238,7 +241,9 @@ export default function AreaPage({ area }: { area: ServiceArea }) {
           <Reveal>
             <div className="rounded-3xl border border-gold-500/22 bg-gradient-to-br from-gold-500/[0.12] via-ink-800 to-ink-950 p-8 sm:p-10">
               <p className="eyebrow">Why the trip is worth it</p>
-              <p className="mt-4 max-w-[58ch] leading-relaxed text-mist-200">{area.why}</p>
+              <p className="mt-4 max-w-[58ch] leading-relaxed text-mist-200">
+                <LinkedText text={area.why} />
+              </p>
             </div>
           </Reveal>
         </div>
