@@ -78,8 +78,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "The dental clinic on Kamaraj Street, Anakaputhur",
-    "metaTitle": "Dental Clinic in Anakaputhur, Chennai 600070",
-    "metaDescription": "Five dentists on Kamaraj Street, three of them specialists, open since 2023. Root canals, extractions and kids dentistry, evenings to 9pm. Call +91 80721 43199.",
+    "metaTitle": "Dental Clinic in Anakaputhur, Kamaraj Street",
+    "metaDescription": "The clinic is on Kamaraj Street itself, not a branch of anything, and has been since 2023. Five dentists, three of them specialists. Call +91 80721 43199.",
     "photo": {
       "src": "/areas/anakaputhur.jpg",
       "width": 1400,
@@ -136,8 +136,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Nanganallur families, Anakaputhur clinic",
-    "metaTitle": "Dentist for Nanganallur, Braces and Kids",
-    "metaDescription": "Children's dentistry, braces and implants for Nanganallur families, 8 km west in Anakaputhur. Rated 5.0 by 250+ patients, evening chairs until 9pm.",
+    "metaTitle": "Dental Clinic for Nanganallur, Families",
+    "metaDescription": "Braces tightened on schedule, check-ups for the school children, implants for the grandparents. Pazhavanthangal to Pallavaram, then an auto west to Anakaputhur.",
     "photo": {
       "src": "/areas/nanganallur.jpg",
       "width": 1400,
@@ -194,8 +194,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Coming down from Porur for dental treatment",
-    "metaTitle": "Dentist for Porur, Open Until 9pm",
-    "metaDescription": "Finishing late at Sri Ramachandra or the Commerzone blocks? Five dentists in one building 14 km south, booking to 9pm. Root canals, implants and braces.",
+    "metaTitle": "Dental Clinic for Porur, Second Opinions",
+    "metaDescription": "Quoted for a root canal or an implant in Porur? Bring the x-ray and the written plan and we will read it through. Five dentists in one building in Anakaputhur.",
     "photo": {
       "src": "/areas/porur.jpg",
       "width": 1024,
@@ -251,8 +251,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Iyyappanthangal to Anakaputhur, skipping Porur junction",
-    "metaTitle": "Dentist for Iyyappanthangal, 16 km",
-    "metaDescription": "Wisdom teeth, root canals and full mouth work, 16 km south of Iyyappanthangal and clear of the Porur junction. Open to 9pm, rated 5.0 by 250+ patients."
+    "metaTitle": "Dental Clinic for Iyyappanthangal, to 9pm",
+    "metaDescription": "Wisdom teeth, root canals and braces in Anakaputhur, with the orthodontist and the surgeon in one building. From Kumananchavadi the road misses Porur junction."
   },
   {
     "slug": "madipakkam",
@@ -298,8 +298,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Implants and full mouth dentistry for Madipakkam",
-    "metaTitle": "Implant Dentist for Madipakkam, 11 km",
-    "metaDescription": "Teeth lost one at a time, dentures that stopped fitting, a wisdom tooth left too long. Implants and full mouth work 11 km west, 250+ five star reviews."
+    "metaTitle": "Implant Dental Clinic for Madipakkam",
+    "metaDescription": "Teeth lost one by one, a wisdom tooth left too long: the older problems Madipakkam brings. Implants and full mouth work, three specialists in Anakaputhur."
   },
   {
     "slug": "gerugambakkam",
@@ -345,8 +345,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Gerugambakkam to Anakaputhur, straight down the Kundrathur road",
-    "metaTitle": "Dentist for Gerugambakkam, 9 km",
-    "metaDescription": "Braces, children's dentistry and root canals, straight down the Kundrathur road from Gerugambakkam. Evening chairs until 9pm, 250+ five star Google reviews."
+    "metaTitle": "Dental Clinic for Gerugambakkam, Crowns",
+    "metaDescription": "A crown that came off months ago, a molar split after two fillings: most of what Gerugambakkam brings us. The last slots in Anakaputhur are kept for that run."
   },
   {
     "slug": "tambaram",
@@ -393,8 +393,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Dental specialists for Tambaram, Tambaram East and Sanatorium",
-    "metaTitle": "Specialist Dentist for Tambaram, 9 km",
-    "metaDescription": "Braces, implants and full mouth treatment for Tambaram, Tambaram East and Sanatorium, 9 km west. Rated 5.0 by 250+ patients, open Monday to Saturday.",
+    "metaTitle": "Dental Clinic for Tambaram and Sanatorium",
+    "metaDescription": "Braces, implants and full mouth treatment for Tambaram, Tambaram East and Sanatorium. Pallavaram station is three stops up, then an auto west to Anakaputhur.",
     "photo": {
       "src": "/areas/tambaram.jpg",
       "width": 1400,
@@ -451,8 +451,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "If you are in Alandur, the metro gets you most of the way here",
-    "metaTitle": "Dental Specialists for Alandur, 11 km",
-    "metaDescription": "Alandur patients come for the long jobs: implants, full mouth work and buried wisdom teeth. Three specialists on one floor, 250+ five star Google reviews.",
+    "metaTitle": "Dental Clinic for Alandur, Implants",
+    "metaDescription": "Green Line one stop to St Thomas Mount, a train to Pallavaram, an auto west. Implants, failed bridges and buried wisdom teeth, three specialists in Anakaputhur.",
     "photo": {
       "src": "/areas/alandur.jpg",
       "width": 1400,
@@ -509,8 +509,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Rudra Dental, four kilometres west of Pallavaram",
-    "metaTitle": "Dentist 4 km West of Pallavaram",
-    "metaDescription": "Root canals, implants and braces by specialists, 4 km west of the Pallavaram GST junction. Open Monday to Saturday until 9pm, 250+ five star Google reviews.",
+    "metaTitle": "Dental Clinic for Pallavaram Patients",
+    "metaDescription": "A root canal that never settled, a gap from an old extraction, braces started late. Anakaputhur is west of the GST junction, so a review costs half an hour.",
     "photo": {
       "src": "/areas/pallavaram.jpg",
       "width": 1400,
@@ -567,8 +567,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Implant and denture dentistry for Thiruneermalai",
-    "metaTitle": "Dentist for Thiruneermalai, 5 km",
-    "metaDescription": "Implants, loose dentures and difficult extractions handled in house, twenty minutes north of Thiruneermalai hill. Five dentists, three of them specialists.",
+    "metaTitle": "Dental Clinic for Thiruneermalai, Bridges",
+    "metaDescription": "Several teeth missing, a bridge that failed, a tooth sore for months managed with tablets. The surgical and the crown plan settled in one visit in Anakaputhur.",
     "photo": {
       "src": "/areas/thiruneermalai.jpg",
       "width": 1400,
@@ -624,8 +624,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Getting from Perungalathur to Rudra Dental in Anakaputhur",
-    "metaTitle": "Dentist for Perungalathur, 13 km",
-    "metaDescription": "Root canals, children's dentistry and wisdom teeth, 13 km north of Perungalathur. Saturday mornings and evening slots to 9pm, 5.0 on Google from 250+ reviews.",
+    "metaTitle": "Dental Clinic for Perungalathur, Saturdays",
+    "metaDescription": "Perungalathur parents take the Saturday morning session, and the evening block to 9pm suits wisdom teeth after work. One longer sitting in Anakaputhur, not two.",
     "photo": {
       "src": "/areas/perungalathur.jpg",
       "width": 1400,
@@ -681,8 +681,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Implant and full mouth dentistry for Mudichur",
-    "metaTitle": "Implant Dentist for Mudichur, 15 km",
-    "metaDescription": "Implants, full mouth work and braces planned into fewer trips from Mudichur. Three specialists on one floor in Anakaputhur, 250+ five star Google reviews.",
+    "metaTitle": "Dental Clinic for Mudichur, Fewer Trips",
+    "metaDescription": "Implants, full mouth work and braces for Mudichur patients, planned into fewer trips. Three specialists on one floor in Anakaputhur, evening chairs to 9pm.",
     "photo": {
       "src": "/areas/mudichur.jpg",
       "width": 1400,
@@ -738,8 +738,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Specialist dental care for Pammal, 2 km along Pammal Main Road",
-    "metaTitle": "Dental Clinic for Pammal, 2 km Away",
-    "metaDescription": "The nearest specialist dentistry to Pammal, 2 km west along Pammal Main Road. Root canals, kids dentistry and extractions, rated 5.0 by 250+ patients.",
+    "metaTitle": "Dental Clinic for Pammal, Evening Check-ups",
+    "metaDescription": "Pammal Main Road runs straight into Anakaputhur, so a child can be seen after school and still be home for dinner. Root canals, extractions, kids dentistry.",
     "photo": {
       "src": "/areas/pammal.jpg",
       "width": 1400,
@@ -796,8 +796,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Chromepet to Anakaputhur: 6 km west for specialist dentistry",
-    "metaTitle": "Dentist for Chromepet, Braces and Lasers",
-    "metaDescription": "Braces, aligners, laser gum work and molar root canals, 6 km west of Chromepet. Evening slots to 9pm for GST Road shifts, 5.0 on Google from 250+ reviews.",
+    "metaTitle": "Dental Clinic for Chromepet, Aligners",
+    "metaDescription": "Students from MIT and people working the GST Road stretch come west to Anakaputhur for braces, aligners and laser gum work. Last appointments at 9pm, six days.",
     "photo": {
       "src": "/areas/chromepet.jpg",
       "width": 1400,
@@ -853,8 +853,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Kundrathur's dental specialists, straight down the Pallavaram road",
-    "metaTitle": "Dental Specialists for Kundrathur, 5 km",
-    "metaDescription": "Root canals, wisdom teeth and braces from five dentists rated 5.0 by 250+ patients. Fifteen minutes down Kundrathur Main Road, open to 9pm Monday to Saturday.",
+    "metaTitle": "Dental Clinic for Kundrathur, Root Canals",
+    "metaDescription": "Kundrathur Main Road runs from the bus depot through Andakuppam into Anakaputhur, where Kamaraj Street turns off. Root canals, wisdom teeth and braces to 9pm.",
     "photo": {
       "src": "/areas/kundrathur.jpg",
       "width": 1400,
@@ -909,8 +909,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Implants and full mouth work for Mangadu patients",
-    "metaTitle": "Implant Dentist for Mangadu, 10 km",
-    "metaDescription": "Teeth missing for a year or more are most of what we see from Mangadu. Implant and full mouth planning settled in one sitting, 250+ five star Google reviews.",
+    "metaTitle": "Dental Clinic for Mangadu, Implant Work",
+    "metaDescription": "Teeth missing for a year or more are most of what we see from Mangadu. One road the whole way into Anakaputhur, and the implant plan settled in one sitting.",
     "photo": {
       "src": "/areas/mangadu.jpg",
       "width": 1280,
@@ -965,8 +965,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "A family dental clinic Kolapakkam reaches without Porur",
-    "metaTitle": "Family Dentist for Kolapakkam, 11 km",
-    "metaDescription": "The evening session opens at 4:30pm, after school, for Kolapakkam check-ups and braces. Five dentists and 250+ five star reviews, Monday to Saturday."
+    "metaTitle": "Family Dental Clinic for Kolapakkam",
+    "metaDescription": "Children come from Kolapakkam straight after school with the uniform still on, from 4:30pm. Fillings, braces and root canals, five dentists in Anakaputhur."
   },
   {
     "slug": "peerkankaranai",
@@ -1011,8 +1011,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Coming to Rudra Dental from Peerkankaranai",
-    "metaTitle": "Dentist for Peerkankaranai, 12 km",
-    "metaDescription": "Impacted wisdom teeth, root canals and laser gum work, 12 km north of Peerkankaranai. Open Monday to Saturday, rated 5.0 by 250+ patients in Anakaputhur.",
+    "metaTitle": "Dental Clinic for Peerkankaranai, Surgery",
+    "metaDescription": "A wisdom tooth impacted rather than crowded, a tooth still aching months after a root canal, gums that bleed. Seen in Anakaputhur, Monday to Saturday.",
     "photo": {
       "src": "/areas/peerkankaranai.jpg",
       "width": 1200,
@@ -1068,8 +1068,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Dental treatment for Meenambakkam, six kilometres down GST Road",
-    "metaTitle": "Dentist for Meenambakkam, 6 km",
-    "metaDescription": "Two consulting blocks a day, 9:30am and 4:30pm, fit airport cargo shifts and office hours. Root canals, extractions and implants 6 km from Meenambakkam.",
+    "metaTitle": "Dental Clinic for Meenambakkam, Early Slots",
+    "metaDescription": "Two sessions a day, 9:30am and 4:30pm, so an appointment before a morning shift or after a late one works. Root canals, extractions and implants in Anakaputhur.",
     "photo": {
       "src": "/areas/meenambakkam.jpg",
       "width": 1400,
@@ -1126,8 +1126,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "If you live in Adambakkam and need a specialist dentist",
-    "metaTitle": "Dentist for Adambakkam, 10 km West",
-    "metaDescription": "Laser gum treatment, braces and root canals, 10 km west of Adambakkam. Rated 5.0 by 250+ patients, with evening appointments to 9pm Monday to Saturday.",
+    "metaTitle": "Dental Clinic for Adambakkam, Laser Gums",
+    "metaDescription": "A root canal that never got its crown, gum treatment never booked, braces put off at nineteen. All three are finished here. Mornings from 9:30am in Anakaputhur.",
     "photo": {
       "src": "/areas/adambakkam.jpg",
       "width": 1400,
@@ -1183,8 +1183,8 @@ export const AREA_SEEDS: ServiceAreaSeed[] = [
       }
     ],
     "heading": "Rudra Dental for Moulivakkam, down Kundrathur Main Road",
-    "metaTitle": "Dentist for Moulivakkam, 12 km",
-    "metaDescription": "Implants, root canals and full mouth treatment until 9pm, 12 km from Moulivakkam by way of Kundrathur. Five dentists, three of them specialists, rated 5.0."
+    "metaTitle": "Dental Clinic for Moulivakkam, Evenings",
+    "metaDescription": "Out of the DLF campus at seven? The evening block in Anakaputhur runs to 9pm. Implants for teeth lost years ago, second opinions before an extraction."
   }
 ];
 

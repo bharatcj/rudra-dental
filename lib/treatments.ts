@@ -27,7 +27,7 @@ export const TREATMENTS: Treatment[] = [
     heading: "Root canal treatment",
     metaTitle: "Root Canal Treatment in Anakaputhur, Chennai",
     metaDescription:
-      "Single sitting and multi visit root canal treatment at Rudra Dental, Anakaputhur. Rotary endodontics, digital x-ray, and a crown to finish. Open Monday to Saturday.",
+      "Single sitting and multi visit root canal treatment in Anakaputhur, with rotary files, a digital x-ray and a crown to finish. Evening chairs until 9pm.",
     summary:
       "Removing infected pulp from inside a tooth, disinfecting the canals and sealing them, so the tooth can stay in the mouth instead of coming out.",
     procedure: "Endodontic therapy",
@@ -118,7 +118,7 @@ export const TREATMENTS: Treatment[] = [
     heading: "Dental implants",
     metaTitle: "Dental Implants in Anakaputhur, Chennai",
     metaDescription:
-      "Single tooth, multiple tooth and full arch dental implants at Rudra Dental, Anakaputhur. Planned on x-ray, placed under local anaesthesia, restored with a crown.",
+      "An implant replaces the root, not just the tooth. Single, multiple and full arch implants planned on x-ray in Anakaputhur, restored with a crown after healing.",
     summary:
       "A titanium post placed in the jaw to replace the root of a missing tooth, restored with a crown once the bone has grown around it.",
     procedure: "Dental implant placement",
@@ -208,9 +208,9 @@ export const TREATMENTS: Treatment[] = [
     slug: "orthodontic-treatment",
     name: "Orthodontic Treatment",
     heading: "Braces and aligners",
-    metaTitle: "Braces and Clear Aligners in Anakaputhur, Chennai",
+    metaTitle: "Braces and Clear Aligners in Anakaputhur",
     metaDescription:
-      "Metal, ceramic and self ligating braces plus clear aligners at Rudra Dental, Anakaputhur. Records, a written plan and monthly reviews with an orthodontist.",
+      "You see the appliance options, the duration and the cost before anything is fitted. Metal, ceramic and self ligating braces or clear aligners in Anakaputhur.",
     summary:
       "Moving teeth into position with steady, controlled force, using fixed braces or a series of removable aligners.",
     procedure: "Orthodontic treatment",
@@ -299,9 +299,9 @@ export const TREATMENTS: Treatment[] = [
     slug: "tooth-extraction-and-impaction",
     name: "Tooth Extraction & Impaction",
     heading: "Extractions and wisdom teeth",
-    metaTitle: "Wisdom Tooth Removal in Anakaputhur, Chennai",
+    metaTitle: "Wisdom Teeth Treatment and Removal, Chennai",
     metaDescription:
-      "Routine and surgical tooth extraction and impacted wisdom tooth removal at Rudra Dental, Anakaputhur, with an oral and maxillofacial surgeon in house.",
+      "A wisdom tooth that swells, settles, then swells again? Routine and surgical extractions in Anakaputhur, with an oral and maxillofacial surgeon in house.",
     summary:
       "Removing a tooth that cannot be saved, and surgically removing wisdom teeth that are trapped against bone or the tooth in front.",
     procedure: "Tooth extraction and surgical removal of impacted teeth",
@@ -392,9 +392,9 @@ export const TREATMENTS: Treatment[] = [
     slug: "laser-dentistry",
     name: "Laser Dentistry",
     heading: "Laser dentistry",
-    metaTitle: "Laser Dentistry in Anakaputhur, Chennai",
+    metaTitle: "Laser Dentistry in Chennai, Anakaputhur",
     metaDescription:
-      "Laser gum treatment, contouring and minor soft tissue procedures at Rudra Dental, Anakaputhur. Less bleeding, often no sutures, quicker healing.",
+      "Laser gum treatment, contouring, frenum release and ulcer work in Anakaputhur. Less bleeding, often no sutures, and we use it only where it beats a blade.",
     summary:
       "Using a focused beam of light in place of a blade for gum and soft tissue work, which cuts and seals at the same time.",
     procedure: "Laser assisted dental treatment",
@@ -479,9 +479,9 @@ export const TREATMENTS: Treatment[] = [
     slug: "kids-dentistry",
     name: "Kids Dentistry",
     heading: "Dentistry for children",
-    metaTitle: "Kids Dentist in Anakaputhur, Chennai",
+    metaTitle: "Kids Dentist in Anakaputhur, Evenings to 9pm",
     metaDescription:
-      "Children's dentistry at Rudra Dental, Anakaputhur. Sealants, fluoride, fillings and habit appliances, at a pace that suits the child.",
+      "Sealants, fluoride, fillings and thumb sucking appliances for children in Anakaputhur. A nervous first visit can be the chair, a mirror and counting teeth.",
     summary:
       "Looking after children's teeth from the first tooth onwards, and building the habit of coming to a dentist without dreading it.",
     procedure: "Paediatric dental care",
@@ -570,9 +570,9 @@ export const TREATMENTS: Treatment[] = [
     slug: "full-mouth-rehabilitation",
     name: "Full Mouth Rehabilitation",
     heading: "Full mouth rehabilitation",
-    metaTitle: "Full Mouth Rehabilitation in Anakaputhur, Chennai",
+    metaTitle: "Full Mouth Rehabilitation in Anakaputhur",
     metaDescription:
-      "Staged full mouth rehabilitation at Rudra Dental, Anakaputhur. Crowns, bridges, implants and dentures planned together by five dentists in one clinic.",
+      "Worn, heavily filled or missing teeth rebuilt as one case rather than tooth by tooth. Crowns, bridges, implants and dentures planned together by five dentists.",
     summary:
       "Rebuilding the bite when wear, decay or missing teeth have affected most of the mouth, planned as one case rather than tooth by tooth.",
     procedure: "Full mouth rehabilitation",
